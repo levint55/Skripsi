@@ -1,0 +1,3 @@
+[submodule "SharIF-Judge"]
+	path = SharIF-Judge
+	url = https://github.com/levint55/SharIF-Judge.git
