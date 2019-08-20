@@ -16,7 +16,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Genap 2016/2017}}}
+\markright{\textbf{\textsc{AIF184001 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2019/2020}}}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\baselinestretch}{1}
@@ -44,42 +44,32 @@
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-- lengkapi draft
-- harus tau apa saja istilah" di dokumen
-- ambil dokumentasi sharif judge di github
-- tambahkan penjelasan WCAG + versi sebelum"nya
-- penjelasan tingkat kepatuhan , contoh : Level A itu apa
-- "meningkatkan tingkat kepatuhan WCAG"
-- 
-
+%- lengkapi draft
+%- harus tau apa saja istilah" di dokumen
+%- ambil dokumentasi sharif judge di github
+%- tambahkan penjelasan WCAG + versi sebelum"nya
+%- penjelasan tingkat kepatuhan , contoh : Level A itu apa
+%- "meningkatkan tingkat kepatuhan WCAG" 
 SharIF Judge adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa C , C++, Java dan Python. SharIF Judge adalah pencabangan dari Sharif Judge yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework}) dan bagian backendnya dibuat dengan BASH.
 
-Pada skripsi ini, akan dilakukan analisis dan rekomendasi perbaikan aplikasi SharIF Judge berdasarkan \textit{Web Content Accessibility Guideline} 2.1. WCAG 2.1 merupakan pembaruan dari WCAG 2.0 yang dibuat pada desember 2008. WCAG memuat rekomendasi untuk membuat konten \textit{web} lebih mudah diakses. Pedoman - pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, photosensivitas, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Pedoman ini mencakup aksesibilitas konten \textit{web} di dekstop, laptop, tablet, dan perangkat bergerak. Dengan mengikuti pedoman ini juga akan sering membuat konten \textit{web} lebih bermanfaat bagi pengguna secara umum. Kriteria keberhasilan WCAG 2.1 ditulis sebagai pernyataan yang dapat diuji yang tidak teknologi spesifik.
+Pada skripsi ini, akan dilakukan analisis dan rekomendasi perbaikan aplikasi SharIF Judge berdasarkan \textit{Web Content Accessibility Guideline} 2.1. WCAG 2.1 merupakan pembaruan dari WCAG 2.0 yang dibuat pada desember 2008. WCAG memuat rekomendasi untuk membuat konten \textit{web} lebih mudah diakses. Pedoman - pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, photosensivitas, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Pedoman ini mencakup aksesibilitas konten \textit{web} di desktop, laptop, tablet, dan perangkat bergerak. Dengan mengikuti pedoman ini juga akan sering membuat konten \textit{web} lebih bermanfaat bagi pengguna secara umum. Kriteria Sukses WCAG 2.1 ditulis sebagai pernyataan yang dapat diuji yang tidak teknologi spesifik.
 
-Ada beberapa kondisi yang harus dipenuhi untuk sebuah \textit{Success Criterion} yaitu:
+Ada beberapa kondisi yang harus dipenuhi untuk sebuah Kriteria Sukses yaitu :
 \begin{enumerate}
-	\item Semua \textit{Success Criteria} harus menjadi masalah akses penting bagi orang disabilitas yang mengatasi masalah di luar masalah kegunaan yang dihadapi oleh semua pengguna. Dengan kata lain, masalah akses harus menyebabkan masalah yang lebih besar bagi orang disabilitas daripada orang yang tidak disabilitas agar dianggap sebagai masalah aksesibilitas.
-	\item Semua \textit{Success Criteria} harus dapat diuji. Hal ini penting karena jika tidak, maka tidak mungkin untuk menentukan apakah suatu halaman memenuhi \textit{Success Criteria}. \textit{Success Criteria} dapat diuji dengan kombinasi evaluasi mesin dan manusia selama pengujian dapat menentukan apakah sebuah \textit{Success Criteria} terpenuhi dengan tingkat kepercayaan yang tinggi.
+	\item Semua Kriteria Sukses harus menjadi masalah akses penting bagi orang disabilitas yang mengatasi masalah di luar masalah kegunaan yang dihadapi oleh semua pengguna. Dengan kata lain, masalah akses harus menyebabkan masalah yang lebih besar bagi orang disabilitas daripada orang yang tidak disabilitas agar dianggap sebagai masalah aksesibilitas.
+	\item Semua Kriteria Sukses harus dapat diuji. Hal ini penting karena jika tidak, maka tidak mungkin untuk menentukan apakah suatu halaman memenuhi Kriteria Sukses. Kriteria Sukses dapat diuji dengan kombinasi evaluasi mesin dan manusia selama pengujian dapat menentukan apakah sebuah Kriteria Sukses terpenuhi dengan tingkat kepercayaan yang tinggi.
 \end{enumerate}
 
-Pada \textit{Success Criteria} ada tiga tingkat kesesuaian yaitu \textit{Level} A, AA, AAA. Ada beberapa faktor yang menentukan tingat kesesuaian. Faktor tersebut termasuk :
+Kriteria Sukses memiliki tiga tingkat kesesuaian yaitu \textit{Level} A, AA, AAA. Ada beberapa faktor yang menentukan tingat kesesuaian. Faktor tersebut termasuk :
 \begin{enumerate}
-	\item Apakah \textit{Success Criterion} penting (dalam kata lain, jika \textit{Success Criterion} tidak terpenuhi maka teknologi bantuan juga tidak dapat membuat konten dapat diakses).
-	\item Apakah mungkin untuk memenuhi \textit{Success Criterion} untuk semua situs \textit{Web} dan jenis konten yang akan diterapkan \textit{Success Criteria}.
-	\item Apakah \textit{Success Criterion} membutuhkan keterampilan yang dapat dicapai secara wajar oleh pembuat konten (Pengetahuan dan keterampilan untuk memenuhi \textit{Success Criteria} dapat diperoleh dalam pelatihan seminggu atau kurang).
-	\item Apakah \textit{Success Criterion} dapat memaksakan batasan tampilan dan fungsi dari halaman \textit{Web} (batasan dari fungsi, presentasi, kebebasan berekspresi, desain atau estetika)
-	\item Apakah tidak ada solusi jika \textit{Success Criterion} tidak terpenuhi
+	\item Apakah Kriteria Sukses esensiil (dalam kata lain, jika Kriteria Sukses tidak terpenuhi maka teknologi bantuan juga tidak dapat membuat konten dapat diakses).
+	\item Apakah mungkin untuk memenuhi Kriteria Sukses untuk semua situs \textit{Web} dan jenis konten yang akan diterapkan Kriteria Sukses.
+	\item Apakah Kriteria Sukses membutuhkan keterampilan yang dapat dicapai secara wajar oleh pembuat konten (Pengetahuan dan keterampilan untuk memenuhi Kriteria Sukses dapat diperoleh dalam pelatihan seminggu atau kurang).
+	\item Apakah Kriteria Sukses dapat memaksakan batasan tampilan dan fungsi dari halaman \textit{Web} (batasan dari fungsi, presentasi, kebebasan berekspresi, desain atau estetika)
+	\item Apakah tidak ada solusi jika Kriteria Sukses tidak terpenuhi
 \end{enumerate}
 
 Dengan perbaikan ini diharapkan aplikasi SharIF Judge dapat diakses oleh banyak kalangan.
-
-Summary
-- selesaikan rencana kerja
-- isi bab 1
-- isi bab 2
-	2.1 WCAG 2.1 (deskripsi umum) 
-		2.1.1 Kriteria non text
-
 
 \section{Rumusan Masalah}
 \begin{itemize}
@@ -94,9 +84,8 @@ Summary
 \end{itemize}                         
 
 \section{Deskripsi Perangkat Lunak}
-- Memiliki seluruh fitur yang sudah ada pada sharif judge yang asli (tidak ada regresi)
-- fitur tambahan untuk meningkatkan level kepatuhan WCAG (pada tahap analisis)
-
+%- Memiliki seluruh fitur yang sudah ada pada sharif judge yang asli (tidak ada regresi)
+%- fitur tambahan untuk meningkatkan level kepatuhan WCAG (pada tahap analisis)
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
 	\item Perangkat lunak memiliki seluruh fitur yang sudah ada
@@ -104,15 +93,12 @@ Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
-- Mempelajari dokumen WCGA 2.1 (78 subbab)
-- Mempelajari struktur dan fitur sharif judge
-- Mengukur tingkat kepatuhan Sharif judge terhadap WCGA 2.1 (bab 3)
-- Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan
-- Mengimplementasikan rekomendasi perbaikan
-- Menguji hasil perbaikan
-
-Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
-
+%- Mempelajari dokumen WCGA 2.1 (78 subbab)
+%- Mempelajari struktur dan fitur sharif judge
+%- Mengukur tingkat kepatuhan Sharif judge terhadap WCGA 2.1 (bab 3)
+%- Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan
+%- Mengimplementasikan rekomendasi perbaikan
+%- Menguji hasil perbaikan
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
 		\item Melakukan studi literatur mengenai WCAG 2.1.
@@ -121,30 +107,30 @@ Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 		\item Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan.
 		\item Mengimplementasikan rekomendasi perbaikan.
 		\item Menguji hasil perbaikan.
+		\item Membuat dokumen skripsi.
 	\end{enumerate}
 
 \section{Rencana Kerja}
-
+%- Mempelajari dokumen WCGA 2.1 (78 subbab)
+%- Mempelajari struktur dan fitur sharif judge
+%- Mengukur tingkat kepatuhan Sharif judge terhadap WCGA 2.1 (bab 3)
 Rincian capaian yang direncanakan di Skripsi 1 adalah sebagai berikut:
-- Mempelajari dokumen WCGA 2.1 (78 subbab)
-- Mempelajari struktur dan fitur sharif judge
-- Mengukur tingkat kepatuhan Sharif judge terhadap WCGA 2.1 (bab 3)
-
 \begin{enumerate}
 	\item Melakukan studi literatur mengenai WCAG 2.1.
 	\item Mempelajari struktur dan fitur SharIF Judge.
 	\item Mengukur tingkat kepatuhan SharIF Judge terhadap WCAG 2.1.
+	\item Membuat dokumen skripsi.
 \end{enumerate}
 
+%- Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan
+%- Mengimplementasikan rekomendasi perbaikan
+%- Menguji hasil perbaikan
 Sedangkan yang akan diselesaikan di Skripsi 2 adalah sebagai berikut:
-- Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan
-- Mengimplementasikan rekomendasi perbaikan
-- Menguji hasil perbaikan
-
 \begin{enumerate}
 	\item Memberikan rekomendasi perbaikan pada setiap kriteria kesuksessan.
 	\item Mengimplementasikan rekomendasi perbaikan.
 	\item Menguji hasil perbaikan.
+	\item Membuat dokumen skripsi.
 \end{enumerate}
 
 \vspace{1cm}
