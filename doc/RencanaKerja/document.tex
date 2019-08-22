@@ -35,7 +35,7 @@
 \newcommand{\@npm}{2016730013}
 \newcommand{\@judultopik}{Kepatuhan dan Rekomendasi Perbaikan Web Content Accessibility Guideline 2.1 untuk Aplikasi SharIF Judge} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{01/01/1900}
+\newcommand{\tanggal}{23/08/2019}
 
 % Dokumen hasil template ini harus dicetak bolak-balik !!!!
 
@@ -52,21 +52,23 @@
 %- "meningkatkan tingkat kepatuhan WCAG" 
 SharIF Judge adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa C , C++, Java dan Python. SharIF Judge adalah pencabangan dari Sharif Judge yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework}) dan bagian backendnya dibuat dengan BASH.
 
-Pada skripsi ini, akan dilakukan analisis dan rekomendasi perbaikan aplikasi SharIF Judge berdasarkan \textit{Web Content Accessibility Guideline} 2.1. WCAG 2.1 merupakan pembaruan dari WCAG 2.0 yang dibuat pada desember 2008. WCAG memuat rekomendasi untuk membuat konten \textit{web} lebih mudah diakses. Pedoman - pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, photosensivitas, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Pedoman ini mencakup aksesibilitas konten \textit{web} di desktop, laptop, tablet, dan perangkat bergerak. Dengan mengikuti pedoman ini juga akan sering membuat konten \textit{web} lebih bermanfaat bagi pengguna secara umum. Kriteria Sukses WCAG 2.1 ditulis sebagai pernyataan yang dapat diuji yang tidak teknologi spesifik.
+Pada skripsi ini, akan dilakukan analisis dan rekomendasi perbaikan aplikasi SharIF Judge berdasarkan \textit{Web Content Accessibility Guideline} 2.1. WCAG 2.1 merupakan pembaruan dari WCAG 2.0 yang dibuat pada Desember 2008. WCAG memuat rekomendasi untuk membuat konten \textit{web} lebih mudah diakses. Pedoman - pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, photosensivitas, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Pedoman ini mencakup aksesibilitas konten \textit{web} di desktop, laptop, tablet, dan perangkat bergerak. Dengan mengikuti pedoman ini juga akan sering membuat konten \textit{web} lebih bermanfaat bagi pengguna secara umum. Kriteria Sukses WCAG 2.1 ditulis sebagai pernyataan yang dapat diuji yang tidak teknologi spesifik.
 
 Ada beberapa kondisi yang harus dipenuhi untuk sebuah Kriteria Sukses yaitu :
+
 \begin{enumerate}
 	\item Semua Kriteria Sukses harus menjadi masalah akses penting bagi orang disabilitas yang mengatasi masalah di luar masalah kegunaan yang dihadapi oleh semua pengguna. Dengan kata lain, masalah akses harus menyebabkan masalah yang lebih besar bagi orang disabilitas daripada orang yang tidak disabilitas agar dianggap sebagai masalah aksesibilitas.
 	\item Semua Kriteria Sukses harus dapat diuji. Hal ini penting karena jika tidak, maka tidak mungkin untuk menentukan apakah suatu halaman memenuhi Kriteria Sukses. Kriteria Sukses dapat diuji dengan kombinasi evaluasi mesin dan manusia selama pengujian dapat menentukan apakah sebuah Kriteria Sukses terpenuhi dengan tingkat kepercayaan yang tinggi.
 \end{enumerate}
 
-Kriteria Sukses memiliki tiga tingkat kesesuaian yaitu \textit{Level} A, AA, AAA. Ada beberapa faktor yang menentukan tingat kesesuaian. Faktor tersebut termasuk :
+Kriteria Sukses memiliki tiga tingkat kesesuaian yaitu \textit{Level} A(terkecil), AA, AAA(terbesar). Ada beberapa faktor yang menentukan tingat kesesuaian. Faktor tersebut termasuk :
+
 \begin{enumerate}
 	\item Apakah Kriteria Sukses esensiil (dalam kata lain, jika Kriteria Sukses tidak terpenuhi maka teknologi bantuan juga tidak dapat membuat konten dapat diakses).
 	\item Apakah mungkin untuk memenuhi Kriteria Sukses untuk semua situs \textit{Web} dan jenis konten yang akan diterapkan Kriteria Sukses.
 	\item Apakah Kriteria Sukses membutuhkan keterampilan yang dapat dicapai secara wajar oleh pembuat konten (Pengetahuan dan keterampilan untuk memenuhi Kriteria Sukses dapat diperoleh dalam pelatihan seminggu atau kurang).
-	\item Apakah Kriteria Sukses dapat memaksakan batasan tampilan dan fungsi dari halaman \textit{Web} (batasan dari fungsi, presentasi, kebebasan berekspresi, desain atau estetika)
-	\item Apakah tidak ada solusi jika Kriteria Sukses tidak terpenuhi
+	\item Apakah Kriteria Sukses dapat memaksakan batasan tampilan dan fungsi dari halaman \textit{Web} (batasan dari fungsi, presentasi, kebebasan berekspresi, desain atau estetika).
+	\item Apakah tidak ada solusi jika Kriteria Sukses tidak terpenuhi.
 \end{enumerate}
 
 Dengan perbaikan ini diharapkan aplikasi SharIF Judge dapat diakses oleh banyak kalangan.
@@ -80,7 +82,7 @@ Dengan perbaikan ini diharapkan aplikasi SharIF Judge dapat diakses oleh banyak 
 \section{Tujuan}
 \begin{itemize}
 	\item Mengetahui tingkat kepatuhan SharIF Judge terhadap WCAG 2.1.
-	\item Membuat rekomendasi yang perlu dilakukan terhadap SharIF Judge untuk menaikkan level kepatuhannya
+	\item Membuat rekomendasi yang perlu dilakukan terhadap SharIF Judge untuk menaikkan level kepatuhannya.
 \end{itemize}                         
 
 \section{Deskripsi Perangkat Lunak}
@@ -88,7 +90,7 @@ Dengan perbaikan ini diharapkan aplikasi SharIF Judge dapat diakses oleh banyak 
 %- fitur tambahan untuk meningkatkan level kepatuhan WCAG (pada tahap analisis)
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Perangkat lunak memiliki seluruh fitur yang sudah ada
+	\item Perangkat lunak memiliki seluruh fitur yang sudah ada.
 	\item Perangkat lunak pada skripsi ini akan memiliki fitur tambahan untuk meningkatkan level kepatuhan WCAG.
 \end{itemize}
 
