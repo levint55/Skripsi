@@ -201,16 +201,19 @@ Level AAA.
 
 \subsection{Kriteria Sukses 1.4.9 Images of Text (No Exception)}
 \label{sec:kriteria_1.4.9}
-Gambar teks hanya digunakan untuk dekorasi murni atau dimana presentasi teks tertentu esensiil untuk informasi yang disampaikan. 
+Gambar teks hanya digunakan untuk dekorasi murni atau dimana presentasi teks tertentu esensial untuk informasi yang disampaikan. 
 Level AAA.
 
 \subsection{Kriteria Sukses 1.4.10 Reflow}
 \label{sec:kriteria_1.4.10}
-Konten dapat dipersembahkan tanpa kehilangan informasi atau fungsionalitasnya, dan tanpa memerlukan \textit{scrolling} di 2 dimensi untuk :
+Konten dapat ditampilkan tanpa kehilangan informasi atau fungsionalitasnya, dan tanpa memerlukan gulir di 2 dimensi untuk :
 
 \begin{itemize}
-	\item content
+	\item Gulir vertikal untuk konten yang lebarnya setara dengan 320 piksel \textit{css}.
+	\item Gulir horizontal untuk konten yang tingginya setara dengan 256 piksel \textit{css}.
 \end{itemize}
+
+Kecuali bagian konten yang memerlukan tata letak dua dimensi untuk keperluan dan tujuannya.
 Level AA.
 
 \subsection{Kriteria Sukses 1.4.11 Non-text Contrast}
@@ -218,39 +221,46 @@ Level AA.
 Presentasi visual berikut harus memiliki rasio kontras setidaknya 3:1 terhadap warna yang bedekatan :
 
 \begin{itemize}
-	\item content
+	\item Komponen antarmuka : Informasi visual diperlukan untuk mengidentifikasi komponen antarmuka dan statusnya, kecuali antarmuka yang tidak aktif atau tampilan komponen ditentukan oleh agen pengguna dan tidak diubah oleh pembuat web.
+	\item Objek grafik : Bagian dari grafik diperlukan untuk menjelaskan kontennya, kecuali tampilan grafik esensial untuk informasi yang disampaikan.
 \end{itemize}
+
 Level AA.
 
 \subsection{Kriteria Sukses 1.4.12 Text Spacing}
 \label{sec:kriteria_1.4.12}
-Dalam konten yang diimplementasikan menggunakan \textit{markup languages} yang mendukung properti \textit{text style} berikut, tidak ada kehilangan konten atau fungsionalitas 
--belum beres , sisanya kurang paham
+Dalam konten yang diimplementasikan menggunakan bahasa \textit{markup} yang mendukung properti gaya teks berikut, tidak ada kehilangan konten atau fungsionalitas ketika mengatur setelan semua hal berikut dan tidak mengganti properti tampilannya : 
 
 \begin{itemize}
-	\item content
+	\item Tinggi baris setidaknya 1.5 kali ukuran teks.
+	\item Spasi antar paragraf setidaknya 2 kali ukuran teks.
+	\item Spasi antar huruf setidaknya 0.12 kali ukuran teks
+	\item Spasi antar kata setidaknya 0.16 kali ukuran teks.
 \end{itemize}
 Level AA.
 
 \subsection{Kriteria Sukses 1.4.13 Content on Hover or Focus}
 \label{sec:kriteria_1.4.13}
-Ketika mendapatkan dan kemudian menghapus kursor pointer atau fokus keyboard memicu konten tambahan untuk menjadi terlihat dan kemudian disembunyikan, berikut ini benar :
+Ketika mendapatkan dan kemudian menghapus \textit{pointer hover} atau fokus keyboard memicu konten tambahan untuk menjadi terlihat dan kemudian disembunyikan, berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Dapat disingkirkan : Tersedianya mekanisme untuk menyingkirkan konten tambahan tanpa menggerakkan \textit{pointer hover} atau fokus keyboard, kecuali konten tambahan menunjukkan kesalahan input, atau tidak mengganggu atau menggantikan konten lain.
+	\item \textit{Hoverable} : Jika \textit{pointer hover} dapat memicu konten tambahan, maka penunjuk dapat digerakkan di atas konten tambahan tanpa konten tambahan tersebut hilang.
+	\item Persisten : Konten tambahan dapat terlihat sampai penunjuk atau fokus dihilangkan, pengguna menyingkirkannya, atau informasinya sudah tidak valid.
 \end{itemize}
+
+Kecuali : Presentasi visual dari konten tambahan dikontrol oleh agen pengguna dan tidak diubah oleh pembuat web.
+
 Level AA.
 
 \subsection{Kriteria Sukses 2.1.1 Keyboard}
 \label{sec:kriteria_2.1.1}
-Semua fungsionalitas konten dapat dioperasikan melalui antarmuka keyboard tanpa memerlukan waktu spesifik untuk penekanan tombolnya, kecuali jika fungsi yang mendasarinya membutuhkan input yang bergantung pada pergerakan pengguna dan bukan hanya \textit{endpoints}.
+Semua fungsionalitas konten dapat dioperasikan melalui antarmuka keyboard tanpa memerlukan waktu spesifik untuk penekanan tombolnya, kecuali jika fungsi yang mendasarinya membutuhkan input yang bergantung pada pergerakan pengguna dan bukan hanya pada titik akhir.
 Level A.
 
 \subsection{Kriteria Sukses 2.1.2 No Keyboard Trap}
 \label{sec:kriteria_2.1.2}
-Jika fokus keyboard dapat dipindahkan ke komponen halaman menggunakan antarmuka keyboard, maka fokus dapat dipindahkan dari komponen itu hanya menggunakan antarmuka keyboard, dan jika memerlukan lebih dari \textit{unmodified arrow} atau tombol tab atau metode keluar standar lainnya, pengguna diberikan saran tentang metode tersebut untuk memindahkan fokus.
-
-(Kurang yakin)
+Jika fokus keyboard dapat dipindahkan ke komponen tertentu pada halaman menggunakan antarmuka keyboard, maka fokus dapat dipindahkan dari komponen itu hanya menggunakan antarmuka keyboard, dan jika memerlukan lebih dari sekadar penekanan tombol panah atau tombol \textit{tab} atau metode keluar standar lainnya, pengguna diberikan informasi tentang metode tersebut untuk memindahkan fokus.
 
 Level A.
 
@@ -261,10 +271,12 @@ Level AAA.
 
 \subsection{Kriteria Sukses 2.1.4 Character Key Shortcuts}
 \label{sec:kriteria_2.1.4}
-Jika \textit{shortcut} keyboard diimplementasi dengan menggunakan huruf (termasuk huruf besar dan kecil), tanda baca, angka, atau karakter simbol, maka setidaknya salah satu dari yang berikut ini benar :
+Jika pintasan keyboard diimplementasi dengan menggunakan huruf (termasuk huruf besar dan kecil), tanda baca, angka, atau karakter simbol, maka setidaknya salah satu dari yang berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Matikan : Tersedia mekanisme untuk mematikan pintasan.
+	\item Dipetakan kembali : Tersedia mekanisme untuk memetakan kembali pintasan untuk menggunakan satu atau lebih karaktek keyboard yang tidak dapat dicetak.
+	\item Hanya aktif saat fokus : Pintasan keyboard untuk komponen antarmuka pengguna hanya aktif saat komponen tersebut memiliki fokus.
 \end{itemize}
 
 Level A.
@@ -274,23 +286,29 @@ Level A.
 Untuk setiap batasan waktu yang ditentukan oleh konten, setidaknya salah satu dari yang berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Matikan : Pengguna dapat mematikan batas waktu sebelum mencapai batas tersebut; atau
+	\item Sesuaikan : Pengguna dapat menyesuaikan batas waktu sebelum mencapai batas tersebut, dengan waktu tambahan yang setidaknya sepuluh kali lebih panjang dari setelan standar; atau
+	\item Perpanjangan : Pengguna diperingati ketika batas waktu habis dan diberikan waktu setidaknya 20 detik untuk menambah batas waktu dengan perintah sederhana (misalnya, tekan tombol spasi), dan pengguna dapat menambah batas waktu setidaknya sepuluh kali lipat; atau
+	\item Perkecualian waktu riil : Batas waktu diperlukan sebagai bagian dari kejadian waktu riil (misalnya, lelang), dan mustahil untuk menyediakan alternatif untuk batas waktu; atau
+	\item Perkecualian esensial : Batas waktu esensial dan perpanjangan batas ini menyalahi inti dari kegiatan tersebut; atau
+	\item Perkecualian 20 jam : Batas waktu yang diberikan lebih dari 20 jam.
 \end{itemize}
 Level A.
 
 \subsection{Kriteria Sukses 2.2.2 Pause, Stop, Hide}
 \label{sec:kriteria_2.2.2}
-Untuk memindahkan, \textit{scrolling}, \textit{scrolling}, atau memperbarui informasi secara otomatis, semua hal berikut ini benar :
+Untuk informasi yang bergerak, berkedip, bergulir, atau diperbarui secara otomatis, semua hal berikut ini benar :
 
 \begin{itemize}
-	\item content...
+	\item Bergerak, berkedip, bergulir : Untuk informasi yang bergerak, berkedip, bergulir yang (1) mulainya otomatis, (2) berlangsung lebih dari lima detik, dan (3) ditampilkan paralel dengan konten lain, ada mekanisme bagi pengguna untuk memberi jeda, memberhentikan, atau menyembunyikan informasi tersebut; kecuali jika aktivitas bergerak, berkedip, atau bergulir tersebut merupakan bagian dari aktivitas yang esensial; dan
+	\item Diperbarui otomatis : Untuk informasi mana pun yang diperbarui secara otomatis, yaitu yang (1) mulainya otomatis dan (2) ditampilkan paralel dengan konten lain, ada mekanisme bagi pengguna untuk memberi jeda, memberhentikan, atau menyembunyikan informasi tersebut; kecuali jika pembaruan otomatis tersebut merupakan bagian dari aktivitas yang esensial; dan
 \end{itemize}
 
 Level A.
 
 \subsection{Kriteria Sukses 2.2.3 No Timing}
 \label{sec:kriteria_2.2.3}
-Waktu bukanlah bagian esensiil dari \textit{event} atau aktivitas yang disajikan konten, kecuali untuk \textit{synchronized media} non-interaktif dan \textit{real-time events}.
+Waktu bukanlah bagian esensial dari kejadian atau aktivitas yang disajikan oleh konten, kecuali untuk media yang disingkronisasi non-interaktif dan kejadian waktu riil.
 Level AAA.
 
 \subsection{Kriteria Sukses 2.2.4 Interruptions}
@@ -310,42 +328,42 @@ Level AAA.
 
 \subsection{Kriteria Sukses 2.3.1 Three Flashes or Below Threshold}
 \label{sec:kriteria_2.3.1}
-Halaman \textit{web} tidak mengandung apapun yang berkedip lebih dari tiga kali dalam periode satu detik, atau \textit{flash} berada dibawah batas umum \textit{flash} dan \textit{flash} merah
+Halaman web tidak mengandung apapun yang berkelip lebih dari tiga kali dalam periode satu detik, atau kelipan berada dibawah batas umum kelipan dan kelipan merah
 Level A.
 
 \subsection{Kriteria Sukses 2.3.2 Three Flashes}
 \label{sec:kriteria_2.3.2}
-Halaman \textit{web} tidak mengandung apapun yang berkedip lebih dari tiga kali dalam periode satu detik
+Halaman web tidak mengandung apapun yang berkelip lebih dari tiga kali dalam periode satu detik
 Level AAA.
 
 \subsection{Kriteria Sukses 2.3.3 Animation from Interactions}
 \label{sec:kriteria_2.3.3}
-Animasi gerak yang dipicu oleh interakdi dapat dinonaktifkan, kecuali jika animasi itu penting untuk fungsionalitas atau ada informasi yang sedang disampaikan.
+Animasi gerak yang dipicu oleh interaksi dapat dinonaktifkan, kecuali jika animasi itu penting untuk fungsionalitas atau informasi yang sedang disampaikan.
 Level AAA.
 
 \subsection{Kriteria Sukses 2.4.1 Bypass Blocks}
 \label{sec:kriteria_2.4.1}
-Tersedianya sebuah mekanisme untuk memotong blok konten yang diulang pada beberapa halaman \textit{web}.
+Tersedianya sebuah mekanisme untuk meloncati area konten yang diulang-ulang pada berbagai halaman web.
 Level A.
 
 \subsection{Kriteria Sukses 2.4.2 Page Titled}
 \label{sec:kriteria_2.4.2}
-Halaman \textit{web} memiliki judul yang menggambarkan topik atau tujuan.
+Halaman web memiliki judul yang menggambarkan topik atau tujuan.
 Level A.
 
 \subsection{Kriteria Sukses 2.4.3 Focus Order}
 \label{sec:kriteria_2.4.3}
-Jika halaman web dapat dinavigasi secara berurutan dan urutan navigasi memengaruhi makna atau operasi, komponen yang dapat fokus menerima fokus dalam urutan yang menjaga makna dan pengoperasian.
+Jika halaman web dapat dinavigasi secara berurutan dan urutan navigasi memengaruhi makna atau operasi, maka komponen yang dapat dapat menerima fokus akan menerima fokus dalam urutan yang menjaga makna dan pengoperasian.
 Level A.
 
 \subsection{Kriteria Sukses 2.4.4 Link Purpose (In Context)}
 \label{sec:kriteria_2.4.4}
-Tujuan setiap tautan dapat ditentukan dari teks tautan saja atau dari teks tautan beserta konten tautan yang ditentukan secara program, kecuali jika tautan tersebut bersifat ambigu bagi pengguna secara umum.
+Tujuan setiap tautan dapat ditentukan dari teks tautan saja atau dari kombinasi teks tautan beserta konteks tautan yang ditentukan secara program, kecuali jika tautan tersebut bersifat ambigu bagi pengguna secara umum.
 Level A.
 
 \subsection{Kriteria Sukses 2.4.5 Multiple Ways}
 \label{sec:kriteria_2.4.5}
-Lebih dari satu cara tersedia untuk menemukan halaman \textit{web} dalam satu set halaman \textit{web} kecuali halaman \textit{web} adalah hasil dari, atau langkah dalam suatu proses.
+Ada berbagai cara untuk menemukan halaman web dalam satu set halaman web kecuali halaman web adalah hasil dari, atau langkah dalam suatu proses.
 Level AA.
 
 \subsection{Kriteria Sukses 2.4.6 Headings and Labels}
@@ -355,12 +373,12 @@ Level AA.
 
 \subsection{Kriteria Sukses 2.4.7 Focus Visible}
 \label{sec:kriteria_2.4.7}
-Setiap antarmuka pegguna yang dapat dioperasikan dengan keyboard memiliki mode operasi di mana indikator fokus keyboard terlihat.
+Setiap antarmuka pegguna yang dapat dioperasikan dengan keyboard memiliki mode pengoperasian di mana indikator fokus keyboard terlihat jelas.
 Level AA.
 
 \subsection{Kriteria Sukses 2.4.8 Location}
 \label{sec:kriteria_2.4.8}
-Informasi tentang lokasi pengguna dalam satu set halaman web tersedia.
+Informasi mengenai lokasi pengguna dalam satu set halaman web tersedia.
 Level AAA.
 
 \subsection{Kriteria Sukses 2.4.9 Link Purpose (Link Only)}
