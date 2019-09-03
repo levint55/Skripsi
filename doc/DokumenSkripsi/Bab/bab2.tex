@@ -90,12 +90,12 @@ Level AAA.
 
 \subsection{Kriteria Sukses 1.3.1 Info dan Relationships}
 \label{sec:kriteria_1.3.1}
-Informasi , struktur, dan hubungan yang ditampilkan melalui presentasi dapat ditentukan secara program atau tersedia dalam teks.
+Informasi , struktur, dan hubungan yang ditampilkan melalui presentasi dapat ditentukan secara pemrograman atau tersedia dalam teks.
 Level A.
 
 \subsection{Kriteria Sukses 1.3.2 Meaningful Sequence}
 \label{sec:kriteria_1.3.2}
-Ketika urutan konten disajikan memengaruhi maknanya, urutan bacaan yang benar dapat ditentukan secara program.
+Ketika urutan konten disajikan memengaruhi maknanya, urutan bacaan yang benar dapat ditentukan secara pemrograman.
 Level A.
 
 \subsection{Kriteria Sukses 1.3.3 Sensory Characteristics}
@@ -110,7 +110,7 @@ Level AA.
 
 \subsection{Kriteria Sukses 1.3.5 Identify Input Purpose}
 \label{sec:kriteria_1.3.5}
-Tujuan untuk setiap bidang masukan yang digunakan untuk mendapatkan informasi pengguna dapat ditentukan secara program ketika :
+Tujuan untuk setiap bidang masukan yang digunakan untuk mendapatkan informasi pengguna dapat ditentukan secara pemrograman ketika :
 
 \begin{itemize}
 	\item Bidang masukan menyajikan tujuan yang diidentifikasi di bagian tujuan masukan untuk komponen atarmuka pengguna.
@@ -121,7 +121,7 @@ Level AA.
 
 \subsection{Kriteria Sukses 1.3.6 Identify Purpose}
 \label{sec:kriteria_1.3.6}
-Dalam konten yang diimplementasi dengan bahasa \textit{markup}, tujuan dari komponen antarmuka, ikon, dan bidang dapat ditentukan secara program.
+Dalam konten yang diimplementasi dengan bahasa \textit{markup}, tujuan dari komponen antarmuka, ikon, dan bidang dapat ditentukan secara pemrograman.
 Level AAA.
 
 \subsection{Kriteria Sukses 1.4.1 Use of Color}
@@ -358,7 +358,7 @@ Level A.
 
 \subsection{Kriteria Sukses 2.4.4 Link Purpose (In Context)}
 \label{sec:kriteria_2.4.4}
-Tujuan setiap tautan dapat ditentukan dari teks tautan saja atau dari kombinasi teks tautan beserta konteks tautan yang ditentukan secara program, kecuali jika tautan tersebut bersifat ambigu bagi pengguna secara umum.
+Tujuan setiap tautan dapat ditentukan dari teks tautan saja atau dari kombinasi teks tautan beserta konteks tautan yang ditentukan secara pemrograman, kecuali jika tautan tersebut bersifat ambigu bagi pengguna secara umum.
 Level A.
 
 \subsection{Kriteria Sukses 2.4.5 Multiple Ways}
@@ -393,7 +393,7 @@ Level AAA.
 
 \subsection{Kriteria Sukses 2.5.1 Pointer Gestures}
 \label{sec:kriteria_2.5.1}
-Semua fungsionalitas yang menggunakan gerakan multipoint atau berbasis path untuk operasi dapat dioperasikan dengan pointer tunggal tanpa gestur berbasis path, kecuali jika multipoint atau gestur berbasis path sangat penting.
+Semua fungsionalitas yang menggunakan gerakan \textit{multipoint} atau berbasis jalur untuk operasi dapat dioperasikan dengan \textit{pointer} tunggal tanpa gestur berbasis jalur, kecuali jika multipoint atau gestur berbasis jalur sangat penting.
 Level A.
 
 \subsection{Kriteria Sukses 2.5.2 Pointer Cancellation}
@@ -401,49 +401,56 @@ Level A.
 Untuk fungsionalitas yang dapat dioperasikan menggunakan pointer tunggal, setidaknya salah satu dari yang berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Tidak Ada \textit{Down-Event} : \textit{Down-Event} dari \textit{pointer} tidak dipakai untuk eksekusi bagian dari fungsi;
+	\item Gagalkan atau Batalkan : Keberhasilan fungsi pada \textit{up-event}, dan tersedia mekanisme untuk mengagalkan fungsi sebelum berhasil atau membatalkan fungsi setelah berhasil;
+	\item \textit{Up Reversal} : 
+	\item Esensial : Keberhasilan fungsi saat \textit{down-event} esensial.
 \end{itemize}
 
 Level A.
 
 \subsection{Kriteria Sukses 2.5.3 Label in Name}
 \label{sec:kriteria_2.5.3}
-Untuk komponen antarmuka pengguna dengan label yang menyertakan teks atau gambar teks, nama tersebut berisi teks yang disajikan secara visual.
+Untuk komponen antarmuka pengguna dengan label yang menyertakan teks atau gambar teks, nama tersebut berisi teks yang ditampilkan secara visual.
 Level A.
 
 \subsection{Kriteria Sukses 2.5.4 Motion Actuation}
 \label{sec:kriteria_2.5.4}
-Fungsi yang dapat dioperasikan oleh gerakan perangkat atau gerakan pengguna juga dapat dioperasikan oleh komponen antarmuka pengguna dan merespons gerakan dapat dinonaktifkan untuk mencegah aktuasi tidak disengaja, kecuali ketika :
+Fungsi yang dapat dioperasikan oleh gerakan perangkat atau gerakan pengguna juga dapat dioperasikan oleh komponen antarmuka pengguna dan merespons gerakan dapat dinonaktifkan untuk mencegah pergerakan tidak disengaja, kecuali ketika :
 
 \begin{itemize}
-	\item content
+	\item Antarmuka yang Didukung : Gerakan digunakan untuk mengoperasikan fungsi melalui antarmuka yang mendukung aksesibilitas;
+	\item Esensial : Gerakan sangat esensial untuk fungsi dan jika menonaktifkannya maka membuat aktivitas tersebut tidak valid.
 \end{itemize}
 
 Level A.
 
 \subsection{Kriteria Sukses 2.5.5 Target Size}
 \label{sec:kriteria_2.5.5}
-Ukuran target untuk input pointer setidaknya 44 css piksel kecuali jika :
+Ukuran target untuk \textit{pointer} masukan setidaknya 44 \textit{css} piksel kecuali jika :
 
 \begin{itemize}
-	\item content
+	\item Setara : Target tersedia melalui tautan atau kontrol yang setara pada halaman yang sama berukuran setidaknya 44 \textit{css} piksel;
+	\item \textit{Inline} : Target terdapat pada kalimat atau blok teks;
+	\item Kontrol Agen Pengguna : Ukuran dari target ditentukan oleh agen pengguna dan tidak diubah oleh pembuat web;
+	\item Esensial : Presentasi visual dari target sangat penting untuk informasi yang disampaikan.
 \end{itemize}
 
 Level AAA.
 
 \subsection{Kriteria Sukses 2.5.6 Concurrent Input Mechanisms}
 \label{sec:kriteria_2.5.6}
-Konten web tidak membatasi penggunaan modalitas input yang tersedia pada platform kecuali jika pembatasan itu penting, diperlukan untuk memastikan keamanan konten, atau diperlukan untuk menghormati pengaturan pengguna.
+Konten web tidak membatasi penggunaan modalitas masukan yang tersedia pada platform kecuali jika pembatasan itu penting, diperlukan untuk memastikan keamanan konten, atau diperlukan untuk menghormati pengaturan pengguna.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.1.1 Language of Page}
 \label{sec:kriteria_3.1.1}
-Bahasa manusia dari setiap halaman Web dapat ditentukan secara programatis.
+Standar bahasa manusia dari setiap halaman web dapat ditentukan secara pemrograman.
 Level A.
 
 \subsection{Kriteria Sukses 3.1.2 Language of Parts}
 \label{sec:kriteria_3.1.2}
-Bahasa manusia dari setiap bagian atau frasa dalam konten dapat ditentukan secara programatis kecuali untuk nama yang tepat, istilah teknis, kata-kata dari bahasa yang tidak ditentukan, dan kata-kata atau frasa yang telah menjadi bagian dari bahasa sehari-hari dari teks yang langsung mengelilinginya.
+Bahasa manusia dari setiap bait atau frasa dalam konten dapat ditentukan secara pemrograman kecuali untuk nama diri, istilah teknis, kata-kata dari bahasa yang tidak ditentukan, dan kata-kata atau frasa yang telah menjadi bagian dari bahasa sehari-hari dari teks yang ada di sekelilingnya.
 Level AA.
 
 \subsection{Kriteria Sukses 3.1.3 Unusual Words}
@@ -453,17 +460,17 @@ Level AAA.
 
 \subsection{Kriteria Sukses 3.1.4 Abbreviations}
 \label{sec:kriteria_3.1.4}
-Tersedianya mekanisme untuk mengidentifikasi bentuk atau makna singkatan yang diperluas.
+Tersedianya mekanisme untuk mengidentifikasi kepanjangan dari singkatan.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.1.5 Reading Level}
 \label{sec:kriteria_3.1.5}
-Ketika teks membutuhkan kemampuan membaca lebih maju daripada tingkat pendidikan menengah bawah setelah penghapusan nama dan judul yang tepat, konten tambahan, atau versi yang tidak memerlukan kemampuan membaca lebih maju daripada tingkat pendidikan menengah bawah tersedia.
+Ketika teks membutuhkan kemampuan membaca lebih maju daripada tingkat pendidikan menengah bawah setelah penghapusan nama diri dan jabatan, konten tambahan atau versi yang tidak memerlukan kemampuan membaca lebih maju daripada tingkat pendidikan menengah bawah harus tersedia.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.1.6 Pronunciation}
 \label{sec:kriteria_3.1.6}
-Tersedianya mekanisme untuk mengidentifikasi pengucapan kata tertentu di mana makna kata tersebut, dalam konteksnya, bersifat ambigu tanpa mengetahui pengucapannya.
+Tersedianya mekanisme untuk mengidentifikasi pengucapan kata tertentu ketika makna kata tersebut, dalam konteksnya, bersifat ambigu tanpa mengetahui pengucapannya.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.2.1 On Focus}
@@ -473,79 +480,81 @@ Level A.
 
 \subsection{Kriteria Sukses 3.2.2 On Input}
 \label{sec:kriteria_3.2.2}
-Mengubah pengaturan komponen antarmuka pengguna apapun tidak secara otomatis menyebabkan perubahan konteks kecuali jika pengguna telah diberitahu tentang hal ini sebelum menggunakan komponen.
+Mengubah pengaturan komponen antarmuka pengguna mana pun tidak otomatis menyebabkan perubahan konteks kecuali jika pengguna telah diperingati tentang hal ini sebelum menggunakan komponen.
 Level A.
 
 \subsection{Kriteria Sukses 3.2.3 Consistent Navigation}
 \label{sec:kriteria_3.2.3}
-Mekanisme navigasi yang diulang pada beberapa halaman Web dalam satu set halaman Web terjadi dalam urutan relatif yang sama setiap kali diulang, kecuali jika perubahan dilakukan oleh pengguna.
+Mekanisme navigasi yang diulang pada beberapa halaman web dalam satu set halaman web muncul dalam urutan relatif yang sama setiap kali diulang, kecuali jika perubahan dilakukan oleh pengguna.
 Level AA.
 
 \subsection{Kriteria Sukses 3.2.4 Consistent Identification}
 \label{sec:kriteria_3.2.4}
-Komponen yang memiliki fungsi yang sama dalam satu set halaman Web diidentifikasi secara konsisten.
+Komponen yang memiliki fungsi yang sama dalam satu set halaman web diidentifikasi secara konsisten.
 Level AA.
 
 \subsection{Kriteria Sukses 3.2.5 Change on Request}
 \label{sec:kriteria_3.2.5}
-Perubahan konteks dimulai hanya oleh permintaan pengguna atau mekanisme tersedia untuk mematikan perubahan tersebut
+Perubahan konteks hanya terjadi oleh permintaan pengguna atau ada mekanisme tersedia untuk menonaktifkan perubahan tersebut.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.3.1 Error Identification}
 \label{sec:kriteria_3.3.1}
-Jika kesalahan input terdeteksi secara otomatis, item yang salah diidentifikasi dan kesalahan tersebut dijelaskan kepada pengguna dalam teks.
+Jika kesalahan masukan terdeteksi secara otomatis, \textit{item} yang salah diidentifikasi dan kesalahan tersebut dijelaskan kepada pengguna dalam teks.
 Level A.
 
 \subsection{Kriteria Sukses 3.3.2 Labels or Instructions}
 \label{sec:kriteria_3.3.2}
-Label atau instruksi diberikan saat konten membutuhkan input pengguna.
+Label atau instruksi diberikan saat konten membutuhkan masukan pengguna.
 Level A.
 
 \subsection{Kriteria Sukses 3.3.3 Error Suggestion}
 \label{sec:kriteria_3.3.3}
-Jika kesalahan input terdeteksi secara otomatis dan saran untuk koreksi diketahui, maka saran tersebut diberikan kepada pengguna, kecuali jika itu akan membahayakan keamanan atau tujuan konten.
+Jika kesalahan masukan terdeteksi secara otomatis dan saran untuk mengoreksi diketahui, maka saran tersebut diberikan kepada pengguna, kecuali jika itu akan membahayakan keamanan atau tujuan konten.
 Level AA.
 
 \subsection{Kriteria Sukses 3.3.4 Error Prevention (Legal, Financial, Data)}
 \label{sec:kriteria_3.3.4}
-Untuk halaman Web yang menyebabkan komitmen hukum atau transaksi keuangan bagi pengguna terjadi, yang memodifikasi atau menghapus data yang dapat dikontrol pengguna dalam sistem penyimpanan data, atau yang mengirimkan tanggapan pengujian pengguna, setidaknya salah satu dari yang berikut ini benar :
+Untuk halaman web yang menyebabkan komitmen legal atau transaksi finansial bagi pengguna, dan memodifikasi atau menghapus data yang dapat dikontrol pengguna dalam sistem penyimpanan data, atau yang mengirimkan tanggapan tes pengguna, setidaknya salah satu dari yang berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Bisa dibatalkan : Data yang dikirim bisa dibatalkan;
+	\item Dicek : Data yang dimasukkan oleh pengguna dapat dicek untuk eror masukan dan pengguna dipersilakan untuk mengoreksinya;
+	\item Dikonfirmasi : Tersedianya mekanisme untuk meninjau, mengonfirmasi, dan mengoreksi informasi sebelum informasi tersebut dikirim.
 \end{itemize}
 
 Level AA.
 
 \subsection{Kriteria Sukses 3.3.5 Help}
 \label{sec:kriteria_3.3.5}
-Bantuan konteks-sensitif tersedia.
+Tersedianya bantuan pada konteks yang sedang berjalan.
 Level AAA.
 
 \subsection{Kriteria Sukses 3.3.6 Error Prevention (All)}
 \label{sec:kriteria_3.3.6}
-Untuk halaman Web yang mengharuskan pengguna untuk mengirimkan informasi, setidaknya salah satu dari yang berikut ini benar :
+Untuk halaman web yang mengharuskan pengguna untuk mengirimkan informasi, setidaknya salah satu dari yang berikut ini benar :
 
 \begin{itemize}
-	\item content
+	\item Bisa dibatalkan : Data yang dikirim bisa dibatalkan;
+	\item Dicek : Data yang dimasukkan oleh pengguna dapat dicek untuk eror masukan dan pengguna dipersilakan untuk mengoreksinya;
+	\item Dikonfirmasi : Tersedianya mekanisme untuk meninjau, mengonfirmasi, dan mengoreksi informasi sebelum informasi tersebut dikirim.
 \end{itemize}
 
 Level AAA.
 
 \subsection{Kriteria Sukses 4.1.1 Parsing}
 \label{sec:kriteria_4.1.1}
--kurang yakin
-
-Dalam konten yang diimplementasikan menggunakan bahasa markup, elemen memiliki tag awal dan akhir yang lengkap, elemen bersarang sesuai dengan spesifikasinya, elemen tidak mengandung atribut duplikat, dan ID apa pun unik, kecuali jika spesifikasi mengizinkan fitur ini.
+Dalam konten yang diimplementasikan menggunakan bahasa \textit{markup}, elemen memiliki tag awal dan akhir yang lengkap, elemen disusun berlapis sesuai dengan spesifikasinya, elemen tidak mengandung atribut duplikat, dan setiap ID unik, kecuali jika spesifikasi mengizinkan fitur ini.
 Level A.
 
 \subsection{Kriteria Sukses 4.1.2 Name, Role, Value}
 \label{sec:kriteria_4.1.2}
-Untuk semua komponen antarmuka pengguna (termasuk tetapi tidak terbatas pada: elemen formulir, tautan, dan komponen yang dihasilkan oleh skrip), nama dan peran dapat ditentukan secara pemrograman; keadaan, properti, dan nilai-nilai yang dapat diatur oleh pengguna dapat diatur secara terprogram; dan pemberitahuan perubahan pada item-item ini tersedia untuk agen pengguna, termasuk teknologi bantu.
+Untuk semua komponen antarmuka pengguna (termasuk tetapi tidak terbatas pada: elemen formulir, tautan, dan komponen yang dihasilkan oleh skrip), nama dan peran dapat ditentukan secara pemrograman; keadaan, properti, dan nilai-nilai yang dapat diatur oleh pengguna dapat diatur secara terprogram; dan pemberitahuan perubahan pada \textit{item-item} ini tersedia untuk agen pengguna, termasuk teknologi bantu.
 Level A.
 
 \subsection{Kriteria Sukses 4.1.3 Status Messages}
 \label{sec:kriteria_4.1.3}
-Dalam konten yang diimplementasikan menggunakan bahasa markup, pesan status dapat ditentukan secara program melalui peran atau properti sedemikian rupa sehingga dapat disajikan kepada pengguna dengan teknologi bantuan tanpa menerima fokus.
+Dalam konten yang diimplementasikan menggunakan bahasa \textit{markup}, pesan status dapat ditentukan secara terprogram melalui peran atau sifat sedemikian rupa sehingga dapat disajikan kepada pengguna dengan teknologi bantuan tanpa menerima fokus.
 Level AA.
 
 \section{SharIF Judge}
