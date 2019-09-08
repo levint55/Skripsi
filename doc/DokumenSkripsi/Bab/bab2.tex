@@ -560,6 +560,128 @@ Level AA.
 \section{SharIF Judge}
 SharIF Judge adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa C , C++, Java dan Python. SharIF Judge adalah pencabangan dari Sharif Judge yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework}) dan bagian backendnya dibuat dengan BASH.
 
+\subsection{Instalasi}
+
+\subsubsection{Persyaratan}
+Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server} dengan persyaratan berikut :
+\begin{itemize}
+	\item \textit{Webserver} menjalankan PHP versi 5.3 atau lebih baru
+	\item Pengguna dapat menjalankan PHP melalui \textit{command line}. Pada \textit{Ubuntu}, pengguna perlu menginstal paket \textit{php5-cli}
+	\item \textit{MySql database} (dengan ekstensi untuk PHP) atau \textit{PostgreSql database}
+	\item PHP harus diberikan akses untuk menjalankan perintah menggunakan fungsi \textit{shell\textunderscore exec}. Contoh seperti perintah berikut :
+	\item TODO
+	\item Perkakas yang digunakan untuk melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands})
+	\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim. \textit{Perl} merupakan salah satu bahasa pemrograman
+\end{itemize}
+
+\subsubsection{Instalasi}
+\begin{itemize}
+	\item Mengunduh versi terakhir dari \textit{SharIF Judge} dan \textit{unpack} hasil unduhan di direktori \textit{public html}
+	\item Memindahkan folder \textit{system} dan \textit{application} ke luar \textit{public directory}, dan masukkan \textit{path} lengkap di \textit{file index.php}
+	\item TODO
+	\item Membuat sebuah database \textit{Mysql} atau \textit{PostgreSql} untuk Sharif Judge. Jangan menginstall paket koneksi database untuk \textit{C/C++, Java}, atau \textit{Python}
+	\item Mengatur koneksi \textit{database} di \textit{file application/config/database.php}. Pengguna dapat
+	menggunakan awalan untuk nama tabel.
+	\item TODO
+	\item Mengatur \textit{RADIUS server} dan \textit{mail server} pada \textit{file application/config/secrets.example.php} dan simpan dengan nama \textit{secrets.php}
+	\item Membuat direktori \textit{application/cache/Twig} agar dapat ditulis oleh PHP
+	\item Membuka halaman utama \textit{SharIF Judge} pada \textit{web browser} dan ikuti proses instalasi berikutnya
+	\item \textit{Log in} menggunakan akun \textit{admin}
+	\item Memindahkan folder \textit{tester} dan \textit{assigments} ke luar public directory lalu simpan path lengkap di halaman \textit{Settings}. Dua folder tersebut harus dapat ditulis oleh PHP. File-file yang diunggah
+	akan disimpan di folder \textit{assigments} sehingga tidak dapat diakses publik.
+\end{itemize}
+
+\subsection{\textit{Clean URLs}}
+Secara standar, \textit{index.php} merupakan bagian dari seluruh \textit{URLs} yang ada pada \textit{SharIF Judge}. Berikut contoh \textit{URLs} \textit{SharIF Judge} :
+
+- TODO
+
+Pengguna dapat menghilangkan \textit{index.php} di atas dan memiliki \textit{URLs} yang baik jika sistem pengguna mendukung \textit{URL rewriting}. \textit{URL rewriting} adalah proses mengubah parameter yang terdapat pada \textit{URL}. Berikut contoh \textit{URL} yang telah melewati proses \textit{URL rewriting} :
+
+- TODO
+
+\subsubsection{Cara memakai \textit{Clean URLs}}
+Untuk menggunakan \textit{clean URL}, pengguna harus melakukan langkah berikut :
+\begin{itemize}
+	\item Mengubah nama \textit{file .htaccess2} menjadi \textit{.htaccess} yang ada di direktori utama \textit{SharIF Judge}. \textit{.htaccess} merupakan sebuah file konfigurasi yang digunakan pada \textit{web server}
+	\item Mengubah \textit{\$config['index\_page']} = \textit{'index.php'}; menjadi\textit{ \$config['index\_page']} = "; pada file \textit{application/config/config.php}
+\end{itemize} 
+
+\subsection{Users}
+Pada \textit{SharIF Judge}, \textit{users} dibagi menjadi 4 \textit{role}. Keempat \textit{role} tersebut adalah \textit{Admins, Head Instructor, Instructor}, dan \textit{Students}
+
+- TODO
+
+Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat dilakukan para \textit{users} akan disesuaikan dengan tingkat masing-masing.
+
+- TODO
+
+Pengguna dapat menambahkan \textit{users} dengan masuk ke bagian \textit{Add Users} di halaman \textit{Users}. Pengguna harus mengisi semua informasi yang ada pada \textit{text area}.
+
+- TODO
+
+\subsection{Menambah Assignment}
+Pengguna dapat menambahkan \textit{assignment} dengan cara masuk ke bagian \textit{Add} di halaman \textit{assigments}
+
+- TODO
+
+Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments}:
+\begin{itemize}
+	\item \textit{Assignment Name} \\
+	Nama \textit{assignment} yang akan ditampilkan dalam daftar \textit{assignment}.
+	
+	\item \textit{Start Time} \\
+	\textit{User} tidak dapat mengumpulkan assignment sebelum \textit{"Start Time"}. Format yang digunakan untuk pengaturan start time adalah \textit{MM/DD/YYYY HH:MM:SS}. Contohnya: 08/31/2013 12:00:00
+	
+	\item \textit{Finish Time, Extra Time} \\
+	Peserta tidak dapat mengumpulkan \textit{assignment} setelah \textit{Finish Time + Extra Time}. \textit{Assignment} yang telat akan dikalikan dengan koefisien tertentu. Pengguna harus menulis \textit{script} PHP untuk menghitung koefisien pada bidang \textit{"Coefficient Rule"}. Format yang digunakan untuk pengaturan \textit{finish time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contoh: \textit{08/31/2013 23:59:59}. "\textit{Extra Time}" akan terhitung dalam satuan menit. Pengguna juga dapat menggunakan operator aritmatika seperti *, -, +, /. Contoh \textit{120} (2 jam) atau \textit{48*60} (2 hari).
+	
+	\item \textit{Participants} \\
+	Pengguna dapat menggunakan kata kunci \textit{ALL} pada kolom \textit{Participants} untuk mengijinkan seluruh peserta agar dapat mengumpulkan \textit{assignment}. Untuk membatasi peserta tertentu, pengguna dapat memasukan \textit{username} peserta pada kolom \textit{Participants}. Setiap \textit{username} dapat dipisahkan menggunakan tanda koma. Contoh: \textit{admin, instructor1, instructor2, student1, student2, student3, student4}.
+	
+	\item \textit{Test} \\
+	Pengguna dapat mengunggah \textit{test cases} dalam bentuk \textit{zip file} dengan struktur yang sudah ditentukan.
+	
+	\item \textit{Open} \\
+	Pengguna dapat membuka atau menutup \textit{assignment} untuk \textit{user students} menggunakan pilihan ini. Jika pengguna menutup \textit{assignment}, \textit{non-student users} masih dapat mengumpulkan \textit{assignment}.
+	
+	\item \textit{Scoreboard} \\
+	Pengguna dapat mengaktifkan atau mematikan papan nilai dengan menggunakan pilihan ini.
+	
+	\item \textit{Java Exceptions} \\
+	Pengguna dapat mengaktifkan dan mematikan \textit{java exception} yang ditunjukan kepada \textit{students}. Perubahan pada pilihan ini tidak berdampak pada kode yang sebelumnya sudah dinilai. Nama \textit{exception} akan muncul jika pada \textit{file} path{tester/java\_exceptions\_list} berisikan nama \textit{exception} tersebut. Berikut adalah hasil \textit{exception} yang ditunjukan jika pengguna mengaktifkan pengaturan \textit{Java Exceptions}: \\
+	
+	- TODO
+	
+	\item \textit{Archieved Assignment} \\
+	Jika fitur ini diaktifkan maka \textit{assignment} akan dibuat dengan \textit{Finish Time} 2038-01-18 00:00:00 (\textit{UTC}+ 7) dengan kata lain pengguna memiliki waktu yang tidak terbatas untuk mengumpulkan \textit{assignment} tersebut.
+	
+	\item \textit{Coefficient Rule} \\
+	Pengguna dapat menulis \textit{script} PHP pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} PHP pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
+	
+	- TODO
+	
+	\item \textit{Time Limit} \\
+	Pengguna dapat mengatur batas waktu untuk menjalankan kode dalam satuan milisekon. Program yang ditulis menggunakan \textit{Python} dan \textit{Java} biasanya lebih lambat dari \textit{C/C++}. Oleh karena itu \textit{Python} dan \textit{Java} membutuhkan waktu yang lebih.
+	
+	\item \textit{Memory Limit} \\
+	Pengguna dapat mengatur batas memori dalam satuan \textit{kilobytes}, namun penggunaan \textit{Memory Limit} tidak terlalu akurat.
+	
+	\item \textit{Allowed Languages} \\
+	Pengguna dapat mengatur bahasa untuk setiap \textit{problem} (dipisahkan menggunakan koma). Bahasa yang tersedia seperti \textit{C, C++, Java, Python 2, Python 3, zip, PDF}. Pengguna dapat menggunakan \textit{zip} atau \textit{PDF} jika mengaktifkan pilihan \textit{Upload Only}. Contoh: \textit{C, C++ , zip} atau \textit{Python 2,Python 3} atau \textit{Java ,C}.
+	
+	\item \textit{Diff Command} \\
+	\textit{Command} ini digunakan untuk membandingkan keluaran dengan keluaran yang benar. Secara standar \textit{SharIF Judge} menggunakan \textit{diff}, namun pengguna dapat mengubah \textit{command} pada bagian ini. Bidang ini tidak boleh mengandung spasi.
+	
+	\item \textit{Diff Arguments} \\
+	Pengguna dapat mengatur argumen dari \textit{Diff Command} disini. Pengguna dapat melihat \textit{man diff} untuk melihat daftar lengkap \textit{diff} argumen. \textit{SharIF Judge} menambahkan dua pilihan baru yaitu \textit{ignore} dan \textit{identical}. \textit{Ignore} akan menghiraukan semua baris baru dan spasi. \textit{Identical} tidak akan menghiraukan apapun namun keluaran dari file yang dikumpulkan harus identik dengan keluaran \textit{test case} agar dapat diterima.
+	
+	\item \textit{Upload Only} \\
+	Jika pengguna mengatur \textit{problem} sebagai \textit{Upload-Only}, maka \textit{SharIF Judge} tidak akan menilai \textit{assignment} pada \textit{problem} tersebut. Pengguna dapat menggunakan \textit{zip} dan \textit{PDF} pada \textit{allowed languages} jika mengaktifkan pilihan ini.
+	
+	
+\end{itemize}
+
 \section{\LaTeX}
 \label{sec:latex}
 
