@@ -705,6 +705,47 @@ Pengguna dapat menemukan \textit{file zip} pada folder \textit{Assignment}. Beri
 
 \textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek keluaran, sehingga memiliki \textit{file tester.cpp (Tester Script)}. \textit{Problem} 2 menggunakan metode \textit{Output Comparison} untuk mengecek keluaran, sehingga memiliki dua folder (\textit{in} dan \textit{out}) yang berisi \textit{test case}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only}.
 
+\subsection{\textit{Test Structure}}
+Saat menambah \textit{assignments}, pengguna harus menyediakan \textit{file zip} yang berisi \textit{test cases}. \textit{File zip} ini berisi folder-folder untuk setiap \textit{problem}. Pengguna harus memberi nama folder sesuai aturan seperti \textit{p1, p2, p3}, dst. \textit{Assignment} yang menggunakan pilihan \textit{Upload-Only} tidak membutuhkan \textit{folder}.
+
+\subsubsection{Metode Pengecekan}
+\textit{SharIF Judge} memiliki dua metode pengecekan untuk setiap \textit{problem} yaitu metode \textit{"Input/Output Comparison"} dan metode \textit{"Tester"}.
+
+\begin{enumerate}
+	\item Metode \textit{Input/Output Comparison} \\
+	Dalam metode ini pengguna harus memasukkan beberapa \textit{file input} dan beberapa \textit{output} ke dalam folder \textit{problem}. \textit{SharIF Judge} akan memasukkan nilai dari \textit{file input} ke kode \textit{users} dan membandingkan hasil keluaran dari kode \textit{users} dengan \textit{file output}. \textit{Input files} harus berada dalam folder \textit{"in"} dengan nama \textit{input1.txt, input2.txt,} dst. \textit{Output files} harus berada dalam folder \textit{"out"} dengan nama \textit{output1.txt, output2.txt,} dst.
+	
+	\item Metode \textit{Tester} \\
+	Dalam metode ini pengguna harus memasukkan beberapa \textit{file input}, sebuah \textit{file C++ (tester.cpp)}, dan beberapa \textit{file output}. \textit{SharIF Judge} akan memasukkan nilai dari \textit{file input} ke kode \textit{users} dan mengambil keluaran dari kode \textit{users}. \textit{tester.cpp} akan mengambil nilai dari \textit{file input, file output,} dan keluaran \textit{users}. Jika keluaran dari kode \textit{users} benar maka akan mengembalikan nilai 0, sedangkan jika salah akan mengembalikan nilai 1.
+	
+	- TODO
+\end{enumerate}
+
+\subsubsection{Contoh \textit{File}}
+Pengguna dapat menemukan contoh \textit{file} penguji dalam folder \textit{Assignments}. Berikut contoh susunan pohon dari \textit{file} tersebut:
+
+- TODO
+
+\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek hasil keluarannya sehingga memiliki \textit{file tester.cpp}.
+
+- TODO
+
+\textit{Problem} 2 menggunakan metode \textit{"Input/Output Comparison"} untuk mengecek hasil keluarannya sehingga memiliki dua folder \textit{in} dan \textit{out} yang berisi \textit{test cases}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only} sehingga tidak memiliki folder apapun.
+
+\subsection{Deteksi Kecurangan}
+\textit{SharIF Judge} menggunakan \textit{Moss} untuk mendeteksi kode yang mirip. \textit{Moss (Measure Of Software Similarity)} merupakan sistem otomatis untuk menentukan kemiripan program. Pada saat ini, aplikasi utama \textit{Moss} telah digunakan untuk mendeteksi plagiarisme pada kelas \textit{programming}. Pengguna dapat mengirimkan kode final (yang dipilih oleh \textit{students} sebagai \textit{Final Submission}) ke server \textit{Moss} dengan satu klik.
+
+Sebelum menggunakan \textit{Moss} ada beberapa hal yang perlu diperhatikan yaitu:
+
+\begin{itemize}
+	\item Pengguna harus mendapatkan \textit{Moss user id} dan mengaturnya di \textit{SharIF Judge}. Untuk mendapatkan \textit{Moss user id}, pengguna harus terlebih dahulu mendaftar pada halaman \path{http://theory.stanford.edu/~aiken/moss/}. Pengguna akan menerima sebuah \textit{email} yang berisi \textit{script perl}. Dalam \textit{script} tersebut terdapat \textit{Moss user id}.
+	
+	TODO
+	
+	\textit{User id} yang terdapat pada potongan \textit{script perl} di atas, dapat digunakan pada \textit{SharIF Judge} pada halaman \textit{Moss}. \textit{SharIF Judge} akan menggunakan \textit{user id} tersebut di \textit{Moss perl script}. \textit{Perl} harus terinstal pada server agar dapat menggunakan \textit{Moss}.  
+	
+	\item Pengguna dianjurkan untuk mendeteksi kode yang mirip setelah waktu \textit{assignment} selesai, karena para peserta masih dapat mengubah \textit{Final Submissions} masing-masing sebelum waktu habis. Dengan cara tersebut, \textit{SharIF Judge} dapat mengirimkan \textit{Final submissions} para peserta ke \textit{server Moss}.
+\end{itemize}
 
 \section{\LaTeX}
 \label{sec:latex}
