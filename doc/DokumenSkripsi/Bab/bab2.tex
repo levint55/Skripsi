@@ -679,8 +679,32 @@ Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments
 	\item \textit{Upload Only} \\
 	Jika pengguna mengatur \textit{problem} sebagai \textit{Upload-Only}, maka \textit{SharIF Judge} tidak akan menilai \textit{assignment} pada \textit{problem} tersebut. Pengguna dapat menggunakan \textit{zip} dan \textit{PDF} pada \textit{allowed languages} jika mengaktifkan pilihan ini.
 	
-	
 \end{itemize}
+
+\subsection{\textit{Sample Assignment}}
+Berikut adalah contoh \textit{assignment} untuk testing pada \textit{SharIF Judge}. Untuk menambah \textit{assignment} pengguna dapat menekan \textit{Add} pada halaman \textit{Assignments}.
+
+\begin{enumerate}
+	\item \textit{Problem} 1 (Penjumlahan) \\
+	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan n buah bilangan integer tersebut.
+	
+	-TODO
+	
+	\item \textit{Problem} 2 (\textit{Max}) \\
+	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan dari dua nilai tertinggi.
+	
+	-TODO
+	
+	\item \textit{Problem} 3 \textit{Upload} \\
+	Program pengguna akan menerima sebuah \textit{file C} atau \textit{zip}. \textit{Problem} ini menggunakan pilihan \textit{Upload Only} sehingga tidak dinilai oleh \textit{SharIF Judge}.
+\end{enumerate}
+
+Pengguna dapat menemukan \textit{file zip} pada folder \textit{Assignment}. Berikut susunan pohon dari tiga \textit{problem} di atas:
+
+- TODO
+
+\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek keluaran, sehingga memiliki \textit{file tester.cpp (Tester Script)}. \textit{Problem} 2 menggunakan metode \textit{Output Comparison} untuk mengecek keluaran, sehingga memiliki dua folder (\textit{in} dan \textit{out}) yang berisi \textit{test case}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only}.
+
 
 \section{\LaTeX}
 \label{sec:latex}
