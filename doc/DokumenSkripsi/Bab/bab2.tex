@@ -571,7 +571,7 @@ Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server}
 	\item PHP harus diberikan akses untuk menjalankan perintah menggunakan fungsi \textit{shell\textunderscore exec}. Contoh seperti perintah berikut :
 	\item TODO
 	\item Perkakas yang digunakan untuk melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands})
-	\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim. \textit{Perl} merupakan salah satu bahasa pemrograman
+	\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim.
 \end{itemize}
 
 \subsubsection{Instalasi}
@@ -746,6 +746,74 @@ Sebelum menggunakan \textit{Moss} ada beberapa hal yang perlu diperhatikan yaitu
 	
 	\item Pengguna dianjurkan untuk mendeteksi kode yang mirip setelah waktu \textit{assignment} selesai, karena para peserta masih dapat mengubah \textit{Final Submissions} masing-masing sebelum waktu habis. Dengan cara tersebut, \textit{SharIF Judge} dapat mengirimkan \textit{Final submissions} para peserta ke \textit{server Moss}.
 \end{itemize}
+
+\subsection{Keamanan}
+Pengguna dapat mengatur keamanan \textit{SharIF Judge} dengan beberapa langkah. Berikut adalah langkah-langkah yang dapat dilakukan.
+
+\subsubsection{Memakai \textit{Sandbox}}
+Pengguna harus memakai \textit{Sandbox} untuk \textit{C/C++} dan mengaktifkan \textit{Java Security Manager (Java Policy)} untuk \textit{Java}. Penjelasan lebih lanjut tentang \textit{Sandbox} ada pada point ini.
+
+- TODO
+
+\subsubsection{Memakai \textit{Shield}}
+\textit{Shield} bukan merupakan pertahanan yang asli, tetapi lebih baik ada daripada tidak sama sekali. Pengguna dapat mengaktifkan \textit{Shield} untuk \textit{C, C++, Python}. Penjelasan lebih lanjut tentang \textit{Shield} ada pada point ini.
+
+- TODO
+
+\subsubsection{Jalankan sebagai \textit{Non-Privileged User}}
+Pengguna diharapkan menjalankan kode yang sudah dikumpulkan sebagai \textit{non-privileged user} - \textit{user} yang tidak memiliki akses jaringan, tidak dapat menulis \textit{file} apapun, dan tidak dapat membuat banyak proses.
+
+Pengguna harus menjalankan \textit{PHP} pada server sebagai \textit{user www-data}. Membuat \textit{user} baru dengan nama \textit{restricted\_user} dan passwordnya. Jalankan \textit{sudo visudo} dan tambahkan baris berikut pada akhir file \textit{sudoers} :
+
+- TODO
+
+Pada file \textit{tester/runcode.sh} ubah 
+
+- TODO
+
+menjadi
+
+- TODO
+
+dan \textit{uncomment} baris berikut:
+
+- TODO
+
+\begin{itemize}
+	\item Menonaktifkan jaringan pada \textit{restricted\_user} \\
+	\textit{restricted\_user} seharusnya tidak dapat mengakses jaringan. Pengguna dapat menonaktifkan jaringan untuk sebuah \textit{user} pada \textit{Linux} dengan menggunakan \textit{iptables}. Setelah dinonaktifkan, uji dengan \textit{ping} sebagai \textit{restricted\_user}.
+	
+	\item Menolak izin menulis \\
+	Pastikan tidak ada \textit{file} atau \textit{directory} yang dapat ditulis oleh \textit{restricted\_user}.
+	
+	\item Membatasi jumlah proses \\
+	Pengguna dapat membatasi jumlah proses dengan cara menambahkan baris berikut pada file \textit{/etc/security/limits.conf}:
+	
+	- TODO
+	
+\end{itemize}
+
+\subsubsection{Memakai Dua \textit{Server}}
+Pengguna dapat memakai sebuah \textit{server} untuk antarmuka web dan menangani permintaan web, dan memakai \textit{server} lainnya untuk menjalankan kode yang dikumpulkan. Hal ini mengurangi risiko menjalankan kode yang dikumpulkan. Untuk memakai dua \textit{server} pengguna harus mengganti \textit{source code SharIF Judge} 
+
+
+\subsection{\textit{Sandbox}}
+\textit{SharIF Judge} menjalankan banyak \textit{arbitary codes} yang \textit{user} kumpulkan sehingga memerlukan perkakas untuk \textit{sandbox} kode yang sudah dikumpulkan. Pengguna dapat meningkatkan keamanan dengan cara mengaktifkan \textit{shield} dan \textit{sandbox} secara bersamaan.
+
+\subsubsection{\textit{C/C++ Sandboxing}}
+\textit{SharIF Judge} menggunakan \textit{EasySandbox} untuk \textit{sandboxing} kode \textit{C/C++}. \textit{EasySandbox} membatasi jalannya kode mengguna \textit{seccomp}, mekanisme \textit{sandboxing} pada \textit{Linux kernel}.
+
+Secara standar, \textit{EasySandbox} dinonaktifkan pada \textit{SharIF Judge}. Pengguna dapat mengaktifkannya pada halaman \textit{Settings}. Pengguna harus \textit{"Build EasySandbox"} sebelum mengaktifkannya.
+
+\textit{Build EasySandbox} \\
+\textit{EasySandbox files} terletak pada \textit{tester/easysandbox}. Untuk membangun \textit{EasySandbox} jalankan :
+
+- TODO
+
+Jika pesan yang ditampilkan adalah \textit{"All tests passed!"}, maka \textit{EasySandbox} telah berhasil dibangun dan dapat dipakai pada sistem. Pengguna dapat mengaktifkan \textit{EasySandbox} pada halaman \textit{Settings}.
+
+\subsubsection{\textit{Java Sandboxing}}
+\textit{Java Sandbox} dapat diaktifkan secara standar menggunakan \textit{Java Security Manager}. Pengguna dapat mengaktifkan/menonaktifkan hal ini pada halaman \textit{Settings}.
 
 \section{\LaTeX}
 \label{sec:latex}
