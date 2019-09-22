@@ -536,7 +536,7 @@ Untuk halaman web yang mengharuskan pengguna untuk mengirimkan informasi, setida
 
 \begin{itemize}
 	\item Bisa dibatalkan : Data yang dikirim bisa dibatalkan;
-	\item Dicek : Data yang dimasukkan oleh pengguna dapat dicek untuk eror masukan dan pengguna dipersilakan untuk mengoreksinya;
+	\item Diperiksa : Data yang dimasukkan oleh pengguna dapat diperiksa untuk eror masukan dan pengguna dipersilakan untuk mengoreksinya;
 	\item Dikonfirmasi : Tersedianya mekanisme untuk meninjau, mengonfirmasi, dan mengoreksi informasi sebelum informasi tersebut dikirim.
 \end{itemize}
 
@@ -569,7 +569,9 @@ Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server}
 	\item Pengguna dapat menjalankan PHP melalui \textit{command line}. Pada \textit{Ubuntu}, pengguna perlu menginstal paket \textit{php5-cli}
 	\item \textit{MySql database} (dengan ekstensi untuk PHP) atau \textit{PostgreSql database}
 	\item PHP harus diberikan akses untuk menjalankan perintah menggunakan fungsi \textit{shell\textunderscore exec}. Contoh seperti perintah berikut :
-	\item TODO
+	\begin{lstlisting}
+	echo shell_exec("php -v");
+	\end{lstlisting}
 	\item Perkakas yang digunakan untuk melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands})
 	\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim.
 \end{itemize}
@@ -578,11 +580,23 @@ Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server}
 \begin{itemize}
 	\item Mengunduh versi terakhir dari \textit{SharIF Judge} dan \textit{unpack} hasil unduhan di direktori \textit{public html}
 	\item Memindahkan folder \textit{system} dan \textit{application} ke luar \textit{public directory}, dan masukkan \textit{path} lengkap di \textit{file index.php}
-	\item TODO
+	\begin{lstlisting}
+	$system_path = '/home/mohammad/secret/system';
+	$application_folder = '/home/mohammad/secret/application';
+	\end{lstlisting}
 	\item Membuat sebuah database \textit{Mysql} atau \textit{PostgreSql} untuk Sharif Judge. Jangan menginstall paket koneksi database untuk \textit{C/C++, Java}, atau \textit{Python}
 	\item Mengatur koneksi \textit{database} di \textit{file application/config/database.php}. Pengguna dapat
 	menggunakan awalan untuk nama tabel.
-	\item TODO
+	\begin{lstlisting}
+	/*  Enter database connection settings here:  */
+	'dbdriver' => 'postgre',    // database driver (mysqli, postgre)
+	'hostname' => 'localhost',  // database host
+	'username' => `,           // database username
+	'password' => `,           // database password
+	'database' => `,           // database name
+	'dbprefix' => 'shj_',       // table prefix
+	/**********************************************/
+	\end{lstlisting}
 	\item Mengatur \textit{RADIUS server} dan \textit{mail server} pada \textit{file application/config/secrets.example.php} dan simpan dengan nama \textit{secrets.php}
 	\item Membuat direktori \textit{application/cache/Twig} agar dapat ditulis oleh PHP
 	\item Membuka halaman utama \textit{SharIF Judge} pada \textit{web browser} dan ikuti proses instalasi berikutnya
@@ -594,14 +608,20 @@ Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server}
 \subsection{\textit{Clean URLs}}
 Secara standar, \textit{index.php} merupakan bagian dari seluruh \textit{URLs} yang ada pada \textit{SharIF Judge}. Berikut contoh \textit{URLs} \textit{SharIF Judge} :
 
-- TODO
+\begin{itemize}
+	\item \path{http://example.mjnaderi.ir/index.php/dashboard}
+	\item \path{http://example.mjnaderi.ir/index.php/users/add}
+\end{itemize}
 
-Pengguna dapat menghilangkan \textit{index.php} di atas dan memiliki \textit{URLs} yang baik jika sistem pengguna mendukung \textit{URL rewriting}. \textit{URL rewriting} adalah proses mengubah parameter yang terdapat pada \textit{URL}. Berikut contoh \textit{URL} yang telah melewati proses \textit{URL rewriting} :
+Pengguna dapat menghilangkan \textit{index.php} di atas dan memiliki \textit{URLs} yang baik jika sistem pengguna mendukung \textit{URL rewriting}. \textit{URL rewriting} merupakan proses mengubah parameter yang terdapat pada \textit{URL}. Berikut adalah contoh \textit{URL} yang telah melewati proses \textit{URL rewriting} :
 
-- TODO
+\begin{itemize}
+	\item \path{http://example.mjnaderi.ir/dashboard}
+	\item \path{http://example.mjnaderi.ir/users/add}
+\end{itemize}
 
 \subsubsection{Cara memakai \textit{Clean URLs}}
-Untuk menggunakan \textit{clean URL}, pengguna harus melakukan langkah berikut :
+Pengguna dapat melakukan langkah berikut untuk menggunakan \textit{clean URL} :
 \begin{itemize}
 	\item Mengubah nama \textit{file .htaccess2} menjadi \textit{.htaccess} yang ada di direktori utama \textit{SharIF Judge}. \textit{.htaccess} merupakan sebuah file konfigurasi yang digunakan pada \textit{web server}
 	\item Mengubah \textit{\$config['index\_page']} = \textit{'index.php'}; menjadi\textit{ \$config['index\_page']} = "; pada file \textit{application/config/config.php}
@@ -610,15 +630,57 @@ Untuk menggunakan \textit{clean URL}, pengguna harus melakukan langkah berikut :
 \subsection{Users}
 Pada \textit{SharIF Judge}, \textit{users} dibagi menjadi 4 \textit{role}. Keempat \textit{role} tersebut adalah \textit{Admins, Head Instructor, Instructor}, dan \textit{Students}
 
+\begin{table}[H]
+	\centering 
+	\caption{\textit{User Roles Table}}
+	\label{tab:userrole}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textit{\textbf{User Role}} & \textit{\textbf{User Level}} \\
+		\hline
+		\textit{Admin} & 3 \\
+		\hline
+		\textit{Head Instructor} & 2 \\
+		\hline
+		\textit{Instructor} & 1 \\
+		\hline
+		\textit{Student} & 0 \\
+		\hline		
+	\end{tabular} 
+\end{table}
+
+Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat dilakukan para \textit{users} akan disesuaikan pada tingkat masing-masing.
+
 - TODO
 
-Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat dilakukan para \textit{users} akan disesuaikan dengan tingkat masing-masing.
+Pengguna dapat menambahkan \textit{users} dengan masuk ke bagian \textit{Add Users} di halaman \textit{Users}. Pengguna harus mengisi semua informasi yang ada pada \textit{text area}. Baris yang diawali dengan \textit{\#} adalah komentar. Setiap baris lainnya mewakili pengguna dengan sintaksis berikut:
 
-- TODO
+\begin{lstlisting}
+USERNAME EMAIL PASSWORD ROLE
 
-Pengguna dapat menambahkan \textit{users} dengan masuk ke bagian \textit{Add Users} di halaman \textit{Users}. Pengguna harus mengisi semua informasi yang ada pada \textit{text area}.
+* Usernames dapat berisikan huruf kecil atau nomor dan harus terdiri 
+antara 3 sampai 20 karakter.
+* Passwords harus terdiri antara 6 sampai 30 karakter.
+* Pengguna dapat menggunakan RANDOM[n] untuk menghasilkan password 
+acak yang terdiri dari n-digit karakter.
+* ROLE harus terdiri dari salah satu ini: `admin`, `head_instructor`, 
+`instructor`, `student`
+\end{lstlisting}
 
-- TODO
+Berikut adalah contohnya:
+\begin{lstlisting}
+# This is a comment!
+# This is another comment!
+instructor instructor@sharifjudge.ir 123456 head_instructor
+instructor2 instructor2@sharifjudge.ir random[7] instructor
+student1 st1@sharifjudge.ir random[6] student
+student2 st2@sharifjudge.ir random[6] student
+student3 st3@sharifjudge.ir random[6] student
+student4 st4@sharifjudge.ir random[6] student
+student5 st5@sharifjudge.ir random[6] student
+student6 st6@sharifjudge.ir random[6] student
+student7 st7@sharifjudge.ir random[6] student
+\end{lstlisting}
 
 \subsection{Menambah Assignment}
 Pengguna dapat menambahkan \textit{assignment} dengan cara masuk ke bagian \textit{Add} di halaman \textit{assigments}
@@ -634,7 +696,7 @@ Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments
 	\textit{User} tidak dapat mengumpulkan assignment sebelum \textit{"Start Time"}. Format yang digunakan untuk pengaturan start time adalah \textit{MM/DD/YYYY HH:MM:SS}. Contohnya: 08/31/2013 12:00:00
 	
 	\item \textit{Finish Time, Extra Time} \\
-	Peserta tidak dapat mengumpulkan \textit{assignment} setelah \textit{Finish Time + Extra Time}. \textit{Assignment} yang telat akan dikalikan dengan koefisien tertentu. Pengguna harus menulis \textit{script} PHP untuk menghitung koefisien pada bidang \textit{"Coefficient Rule"}. Format yang digunakan untuk pengaturan \textit{finish time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contoh: \textit{08/31/2013 23:59:59}. "\textit{Extra Time}" akan terhitung dalam satuan menit. Pengguna juga dapat menggunakan operator aritmatika seperti *, -, +, /. Contoh \textit{120} (2 jam) atau \textit{48*60} (2 hari).
+	Peserta tidak dapat mengumpulkan \textit{assignment} setelah \textit{Finish Time + Extra Time}. \textit{Assignment} yang telat akan dikalikan dengan koefisien tertentu. Pengguna harus menulis \textit{script} PHP untuk menghitung koefisien pada bidang \textit{"Coefficient Rule"}. Format yang digunakan untuk pengaturan \textit{finish time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contoh: \textit{08/31/2013 23:59:59}. "\textit{Extra Time}" akan terhitung dalam satuan menit. Pengguna juga dapat menggunakan operator aritmatika seperti *, -, +, /. Contohnya \textit{120} (2 jam) atau \textit{48*60} (2 hari).
 	
 	\item \textit{Participants} \\
 	Pengguna dapat menggunakan kata kunci \textit{ALL} pada kolom \textit{Participants} untuk mengijinkan seluruh peserta agar dapat mengumpulkan \textit{assignment}. Untuk membatasi peserta tertentu, pengguna dapat memasukan \textit{username} peserta pada kolom \textit{Participants}. Setiap \textit{username} dapat dipisahkan menggunakan tanda koma. Contoh: \textit{admin, instructor1, instructor2, student1, student2, student3, student4}.
@@ -646,20 +708,65 @@ Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments
 	Pengguna dapat membuka atau menutup \textit{assignment} untuk \textit{user students} menggunakan pilihan ini. Jika pengguna menutup \textit{assignment}, \textit{non-student users} masih dapat mengumpulkan \textit{assignment}.
 	
 	\item \textit{Scoreboard} \\
-	Pengguna dapat mengaktifkan atau mematikan papan nilai dengan menggunakan pilihan ini.
+	Pengguna dapat mengaktifkan atau menonaktifkan papan nilai dengan menggunakan pilihan ini.
 	
 	\item \textit{Java Exceptions} \\
-	Pengguna dapat mengaktifkan dan mematikan \textit{java exception} yang ditunjukan kepada \textit{students}. Perubahan pada pilihan ini tidak berdampak pada kode yang sebelumnya sudah dinilai. Nama \textit{exception} akan muncul jika pada \textit{file} path{tester/java\_exceptions\_list} berisikan nama \textit{exception} tersebut. Berikut adalah hasil \textit{exception} yang ditunjukan jika pengguna mengaktifkan pengaturan \textit{Java Exceptions}: \\
+	Pengguna dapat mengaktifkan dan menonaktifkan \textit{java exception} yang ditunjukan kepada \textit{students}. Perubahan pada pilihan ini tidak memengaruhi kode yang sebelumnya sudah dinilai. Nama \textit{exception} akan muncul jika pada \textit{file} path{tester/java\_exceptions\_list} berisikan nama \textit{exception} tersebut. Berikut adalah hasil \textit{exception} yang ditunjukan jika pengguna mengaktifkan pengaturan \textit{Java Exceptions}: \\
 	
-	- TODO
+	\begin{lstlisting}
+	Test 1
+	ACCEPT
+	Test 2
+	Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+	Test 3
+	Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+	Test 4
+	ACCEPT
+	Test 5
+	ACCEPT
+	Test 6
+	ACCEPT
+	Test 7
+	ACCEPT
+	Test 8
+	Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+	Test 9
+	Runtime Error (java.lang.StackOverflowError)
+	Test 10
+	Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+	\end{lstlisting}
 	
 	\item \textit{Archieved Assignment} \\
-	Jika fitur ini diaktifkan maka \textit{assignment} akan dibuat dengan \textit{Finish Time} 2038-01-18 00:00:00 (\textit{UTC}+ 7) dengan kata lain pengguna memiliki waktu yang tidak terbatas untuk mengumpulkan \textit{assignment} tersebut.
+	Jika fitur ini diaktifkan maka \textit{assignment} akan dibuat dengan \textit{Finish Time} 2038-01-18 00:00:00 (\textit{UTC}+ 7) dalam kata lain pengguna memiliki waktu yang tidak terbatas untuk mengumpulkan \textit{assignment} tersebut.
 	
 	\item \textit{Coefficient Rule} \\
 	Pengguna dapat menulis \textit{script} PHP pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} PHP pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
 	
-	- TODO
+	\begin{lstlisting}
+	if ($delay<=0)
+	// no delay
+	$coefficient = 100;
+	
+	elseif ($delay<=3600)
+	// delay less than 1 hour
+	$coefficient = ceil(100-((30*$delay)/3600));
+	
+	elseif ($delay<=86400)
+	// delay more than 1 hour and less than 1 day
+	$coefficient = 70;
+	
+	elseif (($delay-86400)<=3600)
+	// delay less than 1 hour in second day
+	$coefficient = ceil(70-((20*($delay-86400))/3600));
+	
+	elseif (($delay-86400)<=86400)
+	// delay more than 1 hour in second day
+	$coefficient = 50;
+	
+	elseif ($delay > $extra_time)
+	// too late
+	$coefficient = 0;
+	\end{lstlisting}
 	
 	\item \textit{Time Limit} \\
 	Pengguna dapat mengatur batas waktu untuk menjalankan kode dalam satuan milisekon. Program yang ditulis menggunakan \textit{Python} dan \textit{Java} biasanya lebih lambat dari \textit{C/C++}. Oleh karena itu \textit{Python} dan \textit{Java} membutuhkan waktu yang lebih.
@@ -688,12 +795,12 @@ Berikut adalah contoh \textit{assignment} untuk testing pada \textit{SharIF Judg
 	\item \textit{Problem} 1 (Penjumlahan) \\
 	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan n buah bilangan integer tersebut.
 	
-	-TODO
+	- TODO
 	
 	\item \textit{Problem} 2 (\textit{Max}) \\
 	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan dari dua nilai tertinggi.
 	
-	-TODO
+	- TODO
 	
 	\item \textit{Problem} 3 \textit{Upload} \\
 	Program pengguna akan menerima sebuah \textit{file C} atau \textit{zip}. \textit{Problem} ini menggunakan pilihan \textit{Upload Only} sehingga tidak dinilai oleh \textit{SharIF Judge}.
@@ -701,9 +808,55 @@ Berikut adalah contoh \textit{assignment} untuk testing pada \textit{SharIF Judg
 
 Pengguna dapat menemukan \textit{file zip} pada folder \textit{Assignment}. Berikut susunan pohon dari tiga \textit{problem} di atas:
 
-- TODO
+\begin{lstlisting}
+.
+|-- p1
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   --- output1.txt
+|   |-- tester.cpp
+|   --- desc.md
+|-- p2
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   |-- output1.txt
+|   |   |-- output2.txt
+|   |   |-- output3.txt
+|   |   |-- output4.txt
+|   |   |-- output5.txt
+|   |   |-- output6.txt
+|   |   |-- output7.txt
+|   |   |-- output8.txt
+|   |   |-- output9.txt
+|   |   --- output10.txt
+|   |-- desc.md
+|   --- Problem2.pdf
+|-- p3
+|   --- desc.md
+--- SampleAssignment.pdf
+\end{lstlisting}
 
-\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek keluaran, sehingga memiliki \textit{file tester.cpp (Tester Script)}. \textit{Problem} 2 menggunakan metode \textit{Output Comparison} untuk mengecek keluaran, sehingga memiliki dua folder (\textit{in} dan \textit{out}) yang berisi \textit{test case}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only}.
+\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk memeriksa keluaran, sehingga memiliki \textit{file tester.cpp (Tester Script)}. \textit{Problem} 2 menggunakan metode \textit{Output Comparison} untuk memeriksa keluaran, sehingga memiliki dua folder (\textit{in} dan \textit{out}) yang berisi \textit{test case}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only}.
 
 \subsection{\textit{Test Structure}}
 Saat menambah \textit{assignments}, pengguna harus menyediakan \textit{file zip} yang berisi \textit{test cases}. \textit{File zip} ini berisi folder-folder untuk setiap \textit{problem}. Pengguna harus memberi nama folder sesuai aturan seperti \textit{p1, p2, p3}, dst. \textit{Assignment} yang menggunakan pilihan \textit{Upload-Only} tidak membutuhkan \textit{folder}.
@@ -718,17 +871,133 @@ Saat menambah \textit{assignments}, pengguna harus menyediakan \textit{file zip}
 	\item Metode \textit{Tester} \\
 	Dalam metode ini pengguna harus memasukkan beberapa \textit{file input}, sebuah \textit{file C++ (tester.cpp)}, dan beberapa \textit{file output}. \textit{SharIF Judge} akan memasukkan nilai dari \textit{file input} ke kode \textit{users} dan mengambil keluaran dari kode \textit{users}. \textit{tester.cpp} akan mengambil nilai dari \textit{file input, file output,} dan keluaran \textit{users}. Jika keluaran dari kode \textit{users} benar maka akan mengembalikan nilai 0, sedangkan jika salah akan mengembalikan nilai 1.
 	
-	- TODO
+	Pengguna dapat menggunakan kode berikut sebagai templat untuk menulis \textit{tester.cpp}:
+	\begin{lstlisting}
+	/*
+	* tester.cpp
+	*/
+	
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	using namespace std;
+	int main(int argc, char const *argv[])
+	{
+	
+	ifstream test_in(argv[1]);  /* Stream ini membaca 
+	isi file input */
+	ifstream test_out(argv[2]); /* Stream ini membaca 
+	isi file output */
+	ifstream user_out(argv[3]); /* Stream ini membaca 
+	isi keluaran users */
+	
+	/* Kode Pengguna */
+	/* Jika keluaran kode user benar, mengembalikan nilai 0, 
+	sebaliknya mengembalikan 1 */
+	
+	...
+	
+	}
+	\end{lstlisting}
 \end{enumerate}
 
 \subsubsection{Contoh \textit{File}}
 Pengguna dapat menemukan contoh \textit{file} penguji dalam folder \textit{Assignments}. Berikut contoh susunan pohon dari \textit{file} tersebut:
 
-- TODO
+\begin{lstlisting}
+.
+|-- p1
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   --- output1.txt
+|   --- tester.cpp
+--- p2
+|-- in
+|   |-- input1.txt
+|   |-- input2.txt
+|   |-- input3.txt
+|   |-- input4.txt
+|   |-- input5.txt
+|   |-- input6.txt
+|   |-- input7.txt
+|   |-- input8.txt
+|   |-- input9.txt
+|   --- input10.txt
+--- out
+|-- output1.txt
+|-- output2.txt
+|-- output3.txt
+|-- output4.txt
+|-- output5.txt
+|-- output6.txt
+|-- output7.txt
+|-- output8.txt
+|-- output9.txt
+--- output10.txt
+\end{lstlisting}
 
 \textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek hasil keluarannya sehingga memiliki \textit{file tester.cpp}.
 
-- TODO
+\begin{lstlisting}
+/*
+* tester.cpp
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main(int argc, char const *argv[])
+{
+
+ifstream test_in(argv[1]);  /* Stream ini membaca 
+isi file input */
+ifstream test_out(argv[2]); /* Stream ini membaca 
+isi file output */
+ifstream user_out(argv[3]); /* Stream ini membaca 
+isi keluaran users */
+
+/* Kode Pengguna */
+/* Jika keluaran kode user benar, mengembalikan nilai 0, 
+sebaliknya mengembalikan 1 */
+/* e.g.: Permasalahan: membaca n nomor dan keluarkan 
+hasil penjumlahannya: */
+
+int sum, user_output;
+user_out >> user_output;
+
+if ( test_out.good() ) // if test's output file exists
+{
+	test_out >> sum;
+}
+	else
+{
+	int n, a;
+	sum=0;
+	test_in >> n;
+	for (int i=0 ; i<n ; i++){
+		test_in >> a;
+		sum += a;
+	}
+}
+
+if (sum == user_output)
+	return 0;
+else
+	return 1;
+
+}
+\end{lstlisting}
 
 \textit{Problem} 2 menggunakan metode \textit{"Input/Output Comparison"} untuk mengecek hasil keluarannya sehingga memiliki dua folder \textit{in} dan \textit{out} yang berisi \textit{test cases}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only} sehingga tidak memiliki folder apapun.
 
@@ -740,7 +1009,35 @@ Sebelum menggunakan \textit{Moss} ada beberapa hal yang perlu diperhatikan yaitu
 \begin{itemize}
 	\item Pengguna harus mendapatkan \textit{Moss user id} dan mengaturnya di \textit{SharIF Judge}. Untuk mendapatkan \textit{Moss user id}, pengguna harus terlebih dahulu mendaftar pada halaman \path{http://theory.stanford.edu/~aiken/moss/}. Pengguna akan menerima sebuah \textit{email} yang berisi \textit{script perl}. Dalam \textit{script} tersebut terdapat \textit{Moss user id}.
 	
-	TODO
+	Berikut adalah bagian dari \textit{script perl} yang mengandung \textit{user id}:
+	\begin{lstlisting}
+	...
+	
+	$server = 'moss.stanford.edu';
+	$port = '7690';
+	$noreq = "Request not sent.";
+	$usage = "usage: moss [-x] [-l language] [-d] 
+	[-b basefile1] ... [-b basefilen] [-m #] 
+	[-c \"string\"] file1 file2 file3 ...";
+	
+	#
+	# The userid is used to authenticate your queries to the server; 
+	don't change it!
+	#
+	$userid=YOUR_MOSS_USER_ID;
+	
+	#
+	# Process the command line options.  This is done in a non-standard
+	# way to allow multiple -b's.
+	#
+	$opt_l = "c";   # default language is c
+	$opt_m = 10;
+	$opt_d = 0;
+	
+	...
+	}
+	
+	\end{lstlisting}
 	
 	\textit{User id} yang terdapat pada potongan \textit{script perl} di atas, dapat digunakan pada \textit{SharIF Judge} pada halaman \textit{Moss}. \textit{SharIF Judge} akan menggunakan \textit{user id} tersebut di \textit{Moss perl script}. \textit{Perl} harus terinstal pada server agar dapat menggunakan \textit{Moss}.  
 	
@@ -765,19 +1062,35 @@ Pengguna diharapkan menjalankan kode yang sudah dikumpulkan sebagai \textit{non-
 
 Pengguna harus menjalankan \textit{PHP} pada server sebagai \textit{user www-data}. Membuat \textit{user} baru dengan nama \textit{restricted\_user} dan passwordnya. Jalankan \textit{sudo visudo} dan tambahkan baris berikut pada akhir file \textit{sudoers} :
 
-- TODO
+\begin{lstlisting}
+www-data ALL=(restricted_user) NOPASSWD: ALL
+\end{lstlisting}
 
 Pada file \textit{tester/runcode.sh} ubah 
 
-- TODO
+\begin{lstlisting}
+if $TIMEOUT_EXISTS; then
+	timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
+else
+	$CMD <$IN >out 2>err        
+fi
+\end{lstlisting}
 
 menjadi
 
-- TODO
+\begin{lstlisting}
+if $TIMEOUT_EXISTS; then
+	sudo -u restricted_user timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
+else
+	sudo -u restricted_user $CMD <$IN >out 2>err        
+fi
+\end{lstlisting}
 
 dan \textit{uncomment} baris berikut:
 
-- TODO
+\begin{lstlisting}
+sudo -u restricted_user pkill -9 -u restricted_user
+\end{lstlisting}
 
 \begin{itemize}
 	\item Menonaktifkan jaringan pada \textit{restricted\_user} \\
@@ -789,7 +1102,10 @@ dan \textit{uncomment} baris berikut:
 	\item Membatasi jumlah proses \\
 	Pengguna dapat membatasi jumlah proses dengan cara menambahkan baris berikut pada file \textit{/etc/security/limits.conf}:
 	
-	- TODO
+	\begin{lstlisting}
+	restricted_user     soft    nproc   3
+	restricted_user     hard    nproc   5
+	\end{lstlisting}
 	
 \end{itemize}
 
@@ -808,7 +1124,12 @@ Secara standar, \textit{EasySandbox} dinonaktifkan pada \textit{SharIF Judge}. P
 \textit{Build EasySandbox} \\
 \textit{EasySandbox files} terletak pada \textit{tester/easysandbox}. Untuk membangun \textit{EasySandbox} jalankan :
 
-- TODO
+\begin{lstlisting}
+$ cd tester/easysandbox
+$ chmod +x runalltests.sh
+$ chmod +x runtest.sh
+$ make runtests
+\end{lstlisting}
 
 Jika pesan yang ditampilkan adalah \textit{"All tests passed!"}, maka \textit{EasySandbox} telah berhasil dibangun dan dapat dipakai pada sistem. Pengguna dapat mengaktifkan \textit{EasySandbox} pada halaman \textit{Settings}.
 
@@ -823,7 +1144,9 @@ Dengan mengaktifkan \textit{Shield} untuk \textit{C/C++}, \textit{SharIF Judge} 
 
 Pengguna dapat melarang menggunakan \textit{goto} dengan cara menambahkan baris berikut pada bagian awal kode yang dikumpulkan :
 
-- TODO
+\begin{lstlisting}
+#define goto YouCannotUseGoto
+\end{lstlisting}
 
 Dengan baris ini pada awal \textit{files}, semua kode yang sudah dikumpulkan yang menggunakan \textit{goto} akan mendapatkan \textit{compilation error}.
 
@@ -837,7 +1160,31 @@ Daftar aturan \textit{\#define} terletak pada \textit{file} \textit{tester/shiel
 
 Berikut adalah sintaksis yang digunakan pada \textit{files} tersebut :
 
-- TODO
+\begin{lstlisting}
+/*
+
+@file defc.h
+There should be a newline at end of this file.
+Put the message displayed to user after // in each line
+
+e.g. If you want to disallow goto, add this line:
+#define goto errorNo13    //Goto is not allowd
+
+*/
+
+#define system errorNo1      //"system" is not allowed
+#define freopen errorNo2     //File operation is not allowed
+#define fopen errorNo3       //File operation is not allowed
+#define fprintf errorNo4     //File operation is not allowed
+#define fscanf errorNo5      //File operation is not allowed
+#define feof errorNo6        //File operation is not allowed
+#define fclose errorNo7      //File operation is not allowed
+#define ifstream errorNo8    //File operation is not allowed
+#define ofstream errorNo9    //File operation is not allowed
+#define fork errorNo10       //Fork is not allowed
+#define clone errorNo11      //Clone is not allowed
+#define sleep errorNo12      //Sleep is not allowed
+\end{lstlisting}
 
 Pada akhir \textit{files} \textit{defc.h} dan \textit{defcpp.h} harus ada baris baru. Ada banyak aturan yang tidak dapat dipakai pada \textit{g++}. Sebagai contoh pengguna tidak dapat memakai \textit{\#define fopen errorNo3} pada \textit{C++} karena hasilnya \textit{compile error}.
 
@@ -846,7 +1193,27 @@ Dengan mengaktifkan \textit{Shield} untuk \textit{Python}, \textit{SharIF Judge}
 
 Berikut adalah cara untuk keluar dari \textit{Shield} dan menggunakan fungsi yang telah di \textit{blacklist} :
 
-- TODO
+\begin{lstlisting}
+# @file shield_py3.py
+
+import sys
+sys.modules['os']=None
+
+BLACKLIST = [
+	#'__import__', # deny importing modules
+	'eval', # eval is evil
+	'open',
+	'file',
+	'exec',
+	'execfile',
+	'compile',
+	'reload',
+	#'input'
+	]
+for func in BLACKLIST:
+	if func in __builtins__.__dict__:
+		del __builtins__.__dict__[func]
+\end{lstlisting}
 
 \section{\LaTeX}
 \label{sec:latex}
