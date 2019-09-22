@@ -798,7 +798,7 @@ Pengguna dapat memakai sebuah \textit{server} untuk antarmuka web dan menangani 
 
 
 \subsection{\textit{Sandbox}}
-\textit{SharIF Judge} menjalankan banyak \textit{arbitary codes} yang \textit{user} kumpulkan sehingga memerlukan perkakas untuk \textit{sandbox} kode yang sudah dikumpulkan. Pengguna dapat meningkatkan keamanan dengan cara mengaktifkan \textit{shield} dan \textit{sandbox} secara bersamaan.
+\textit{SharIF Judge} menjalankan banyak \textit{arbitary codes} yang \textit{user} kumpulkan sehingga memerlukan perkakas untuk kode \textit{sandbox} yang sudah dikumpulkan. Pengguna dapat meningkatkan keamanan dengan cara mengaktifkan \textit{shield} dan \textit{sandbox} secara bersamaan.
 
 \subsubsection{\textit{C/C++ Sandboxing}}
 \textit{SharIF Judge} menggunakan \textit{EasySandbox} untuk \textit{sandboxing} kode \textit{C/C++}. \textit{EasySandbox} membatasi jalannya kode mengguna \textit{seccomp}, mekanisme \textit{sandboxing} pada \textit{Linux kernel}.
@@ -814,6 +814,39 @@ Jika pesan yang ditampilkan adalah \textit{"All tests passed!"}, maka \textit{Ea
 
 \subsubsection{\textit{Java Sandboxing}}
 \textit{Java Sandbox} dapat diaktifkan secara standar menggunakan \textit{Java Security Manager}. Pengguna dapat mengaktifkan/menonaktifkan hal ini pada halaman \textit{Settings}.
+
+\subsection{\textit{Shield}}
+\textit{Shield} merupakan mekanisme sederhana yang melarang jalannya kode yang berbahaya. \textit{Shield} bukan solusi \textit{sandboxing}. \textit{Shield} hanya menyediakan sebagian pertahanan terhadap serangan sepele. Pertahanan yang asli terhadap kode yang tidak terpercaya hanya didapatkan dengan mengaktifkan \textit{Sandbox}.
+
+\subsubsection{\textit{Shield} untuk \textit{C/C++}}
+Dengan mengaktifkan \textit{Shield} untuk \textit{C/C++}, \textit{SharIF Judge} hanya menambahkan \textit{\#define} pada bagian awal kode \textit{C/C++} sebelum menjalankannya.
+
+Pengguna dapat melarang menggunakan \textit{goto} dengan cara menambahkan baris berikut pada bagian awal kode yang dikumpulkan :
+
+- TODO
+
+Dengan baris ini pada awal \textit{files}, semua kode yang sudah dikumpulkan yang menggunakan \textit{goto} akan mendapatkan \textit{compilation error}.
+
+Jika pengguna menggunakan \textit{Shield}, semua kode yang berisi \textit{\#undef} akan mendapatkan \textit{compilation error}.
+
+\subsubsection{Mengaktifkan \textit{Shield} untuk \textit{C} atau \textit{C++}}
+Pengguna dapat mengaftikan dan menonaktifkan \textit{Shield} pada halaman \textit{Settings}.
+
+\subsubsection{Menambahkan aturan untuk \textit{C/C++}}
+Daftar aturan \textit{\#define} terletak pada \textit{file} \textit{tester/shield/defc.h} (untuk \textit{C}) dan \textit{tester/shield/defcpp.h} (untuk \textit{C++}). Pengguna dapat menambahkan aturan \textit{\#define} baru pada \textit{file} ini. Konten dari \textit{file} ini dapat diganti pada halaman \textit{Settings}.
+
+Berikut adalah sintaksis yang digunakan pada \textit{files} tersebut :
+
+- TODO
+
+Pada akhir \textit{files} \textit{defc.h} dan \textit{defcpp.h} harus ada baris baru. Ada banyak aturan yang tidak dapat dipakai pada \textit{g++}. Sebagai contoh pengguna tidak dapat memakai \textit{\#define fopen errorNo3} pada \textit{C++} karena hasilnya \textit{compile error}.
+
+\subsubsection{\textit{Shield} untuk \textit{Python}}
+Dengan mengaktifkan \textit{Shield} untuk \textit{Python}, \textit{SharIF Judge} hanya menambahkan beberapa kode pada bagian awal kode \textit{Python} yang telah dikumpulkan sebelum dijalankan untuk mencegah penggunaan fungsi yang berbahaya. Kode tersebut terletak pada \textit{files} \textit{tester/shield/shield\_py2.py} dan \textit{tester/shield/shield\_py3.py}. Pengguna dapat mengaktifkan/menonaktifkan \textit{Shield} untuk \textit{Python} pada halaman \textit{Settings}.
+
+Berikut adalah cara untuk keluar dari \textit{Shield} dan menggunakan fungsi yang telah di \textit{blacklist} :
+
+- TODO
 
 \section{\LaTeX}
 \label{sec:latex}
