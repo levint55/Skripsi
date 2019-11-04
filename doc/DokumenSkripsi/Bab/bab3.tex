@@ -60,10 +60,10 @@ Kesuksesan aplikasi SharIF Judge dalam mematuhi kriteria sukses \textit{WCAG} 2.
 		2.1.4 & A & Sukses \\
 		2.2.1 & A & Sukses \\
 		2.2.2 & A & Sukses \\
-		2.2.3 & AAA & \\
-		2.2.4 & AAA & \\
-		2.2.5 & AAA & \\
-		2.2.6 & AAA & \\
+		2.2.3 & AAA & Sukses \\
+		2.2.4 & AAA & Sukses \\
+		2.2.5 & AAA & Tidak Sukses \\
+		2.2.6 & AAA & Tidak Sukses \\
 		2.3.1 & A & Sukses\\
 		2.3.2 & AAA & Sukses\\
 		2.3.3 & AAA & Sukses\\
@@ -76,13 +76,13 @@ Kesuksesan aplikasi SharIF Judge dalam mematuhi kriteria sukses \textit{WCAG} 2.
 		2.4.7 & AA & Tidak Sukses\\
 		2.4.8 & AAA & Sukses\\
 		2.4.9 & AAA & Tidak Sukses\\
-		2.4.10 & AAA & \\
+		2.4.10 & AAA & Tidak Sukses\\
 		2.5.1 & A & Sukses\\
 		2.5.2 & A & Sukses\\
 		2.5.3 & A & \\
 		2.5.4 & A & Sukses\\
-		2.5.5 & AAA & \\
-		2.5.6 & AAA & \\
+		2.5.5 & AAA & Tidak Sukses\\
+		2.5.6 & AAA & Sukses\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -277,7 +277,7 @@ Tanya : Bagaimana cara mereferensinya ?
 \label{subsubsec:kepatuhan_kriteria_1.3.6}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi.
+Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi dan judul bagian.
 
 \subsubsection{Kriteria Sukses 1.4.1 Use of Color}
 \label{subsubsec:kepatuhan_kriteria_1.4.1}
@@ -421,31 +421,37 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 \label{subsubsec:kepatuhan_kriteria_2.2.1}
 (Sukses) \\
 
-Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} batas waktu untuk mengumpulkan \textit{Assignment} dapat diatur setidaknya sepuluh kali lebih panjang dari setelan standar.
+Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} batas waktu untuk mengumpulkan \textit{Assignment} merupakan hal yang esensial dan perpanjangan batas waktu menyalahi inti dari kegiatan tersebut.
 
 \subsubsection{Kriteria Sukses 2.2.2 Pause, Stop, Hide}
 \label{subsubsec:kepatuhan_kriteria_2.2.2}
 (Sukses) \\
 
-Kriteria ini sukses dipatuhi karena satu-satunya informasi yang berkedip pada aplikasi \textit{SharIF Judge} adalah batas waktu pengumpulan \textit{Assignment} yang fungsinya penting.
+Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} satu-satunya informasi yang diperbarui secara otomatis adalah batas waktu pengumpulan \textit{Assignment} yang merupakan bagian dari aktivitas yang esensial.
 
 \subsubsection{Kriteria Sukses 2.2.3 No Timing}
 \label{subsubsec:kepatuhan_kriteria_2.2.3}
+(Sukses) \\
 
-Tanya : Apakah timing mengumpulkan assignment termasuk real-time event ?
+Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} waktu pengumpulan \textit{Assignment} bukanlah bagian esensial, pengguna dapat mendapatkan nilai yang sama selama mengumpulkan \textit{Assignment} dalam batas waktu yang telah ditentukan.
 
 \subsubsection{Kriteria Sukses 2.2.4 Interruptions}
 \label{subsubsec:kepatuhan_kriteria_2.2.4}
+(Sukses) \\
 
-Tanya : Apa interupsi di Sharif Judge ?
+Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada interupsi.
 
 \subsubsection{Kriteria Sukses 2.2.5 Re-authenticating}
 \label{subsubsec:kepatuhan_kriteria_2.2.5}
+(Tidak Sukses) \\
 
-Tanya : Bagaimana contoh skenarionya ?
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ketika sesi autentikasi berakhir, data yang belum disimpan akan hilang.
 
 \subsubsection{Kriteria Sukses 2.2.6 Timeouts}
 \label{subsubsec:kepatuhan_kriteria_2.2.6}
+(Tidak Sukses) \\
+
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} waktu ketidakaktifan yang dapat menyebabkan kehilangan data kurang dari 20 jam.
 
 \subsubsection{Kriteria Sukses 2.3.1 Three Flashes or Below Threshold}
 \label{subsubsec:kepatuhan_kriteria_2.3.1}
@@ -494,7 +500,8 @@ Kriteria ini sukses dipatuhi karena semua halaman pada aplikasi \textit{SharIF J
 
 Kriteria ini tidak sukses dipatuhi karena :
 \begin{itemize}
-	\item \textit{Link} yang berada pada sidebar tidak memiliki teks yang dapat diakses.
+	\item Pada halaman \textit{Assignment} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut.
+	\item Pada menu \textit{Top Bar} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut.
 \end{itemize}
 
 \subsubsection{Kriteria Sukses 2.4.5 Multiple Ways}
@@ -534,6 +541,9 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Assignment} logo 
 
 \subsubsection{Kriteria Sukses 2.4.10 Section Headings}
 \label{subsubsec:kepatuhan_kriteria_2.4.10}
+(Tidak Sukses) \\
+
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} judul bagian tidak dipakai untuk mengatur konten.
 
 Tanya : Apakah setiap judul bagian harus memakai heading atau setiap heading yang dipakai digunakan untuk mengatur konten ?
 
@@ -560,9 +570,15 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 
 \subsubsection{Kriteria Sukses 2.5.5 Target Size}
 \label{subsubsec:kepatuhan_kriteria_2.5.5}
+(Tidak Sukses) \\
+
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak target yang dapat difokus berukuran kurang dari 44 piksel \textit{css}.
 
 \subsubsection{Kriteria Sukses 2.5.6 Concurrent Input Mechanisms}
 \label{subsubsec:kepatuhan_kriteria_2.5.6}
+(Sukses) \\
+
+Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak membatasi modalitas masukan yang tersedia pada platform.
 
 \subsection{\textit{Understandable}}
 \label{subsec:kepatuhan_understandable}
