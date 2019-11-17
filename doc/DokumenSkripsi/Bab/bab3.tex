@@ -230,19 +230,17 @@ Kriteria ini tidak sukses dipatuhi karena :
 	\end{figure}
 	\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label.
 	
-	Tanya : Apakah sukses karena secara tidak langsung ada label di atasnya
-	
 	\item Dalam halaman \textit{Problem} terdapat elemen form yang tidak diberi label.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_problem_edit_markdown}  
-		\caption[Elemen yang tidak diberi label pada halaman \textit{Edit Markdown}]{Elemen yang tidak diberi label pada halaman \textit{Edit Markdown}} 
+		\caption[Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Markdown}]{Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Markdown}} 
 		\label{fig:kepatuhan_1_3_1_problem_edit_markdown} 
 	\end{figure}
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_edit_plain_html}  
-		\caption[Elemen yang tidak diberi label pada halaman \textit{Edit Plain Html}]{Elemen yang tidak diberi label pada halaman \textit{Edit Plain Html}} 
+		\caption[Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Plain Html}]{Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Plain Html}} 
 		\label{fig:kepatuhan_1_3_1_plain_html} 
 	\end{figure}
 \end{itemize}
@@ -269,9 +267,15 @@ Kriteria ini sukses dipatuhi karena konten dari \textit{SharIF Judge} dapat dita
 \label{subsubsec:kepatuhan_kriteria_1.3.5}
 (Tidak Sukses)\\
 
-Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label seperti pada point \ref{subsubsec:kepatuhan_kriteria_1.3.1}.
-
-Tanya : Bagaimana cara mereferensinya ?
+Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label, salah satunya pada halaman \textit{Problems} bagian \textit{Edit Markdown}. Berikut adalah potongan kodenya :
+\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5]
+...
+<p class="input_p">
+	<textarea name="text">{{ problem.description }}</textarea>
+</p>
+...
+\end{lstlisting}
 
 \subsubsection{Kriteria Sukses 1.3.6 Identify Purpose}
 \label{subsubsec:kepatuhan_kriteria_1.3.6}
@@ -469,12 +473,7 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ad
 \label{subsubsec:kepatuhan_kriteria_2.3.3}
 (Sukses) \\
 
-Tanya : Apakah pergerakan yang muncul ketika hide/show sidebar termasuk animasi ?
-
-Kriteria ini sukses dipatuhi karena :
-\begin{itemize}
-	\item Animasi yang terdapat pada batas waktu penting untuk informasi yang disampaikan.
-\end{itemize}
+Kriteria ini sukses dipatuhi karena satu-satunya animasi yang terdapat di aplikasi \textit{SharIF Judge} adalah tampilan batas waktu pengumpulan \textit{Assignment}, animasi ini penting untuk informasi yang disampaikan.
 
 \subsubsection{Kriteria Sukses 2.4.1 Bypass Blocks}
 \label{subsubsec:kepatuhan_kriteria_2.4.1}
@@ -544,8 +543,6 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Assignment} logo 
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} judul bagian tidak dipakai untuk mengatur konten.
-
-Tanya : Apakah setiap judul bagian harus memakai heading atau setiap heading yang dipakai digunakan untuk mengatur konten ?
 
 \subsubsection{Kriteria Sukses 2.5.1 Pointer Gestures}
 \label{subsubsec:kepatuhan_kriteria_2.5.1}
