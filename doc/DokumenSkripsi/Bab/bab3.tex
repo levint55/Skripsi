@@ -140,9 +140,9 @@ Kesuksesan aplikasi SharIF Judge dalam mematuhi kriteria sukses \textit{WCAG} 2.
 
 Kriteria ini tidak sukses dipatuhi karena :
 \begin{itemize}
-	\item Gambar logo \textit{SharIF Judge} tidak memiliki alternatif teks.
+	\item Gambar logo \textit{SharIF Judge} tidak memiliki alternatif teks. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_sharif_judge}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan:1]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_sharif_judge, caption=Kriteria Sukses 1.1.1 - Logo SharIF Judge Tidak Diberi Teks Alternatif]
 	...
 	<a href="{{ site_url('/') }}">
 		<img src="{{ base_url('assets/images/logo_small.png') }}"/>
@@ -150,9 +150,9 @@ Kriteria ini tidak sukses dipatuhi karena :
 	</a>
 	...
 	\end{lstlisting}
-	\item Gambar pdf pada halaman \textit{Assignment} tidak memiliki teks alternatif.
+	\item Gambar pdf pada halaman \textit{Assignment} tidak memiliki teks alternatif. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_pdf}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan:2]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_pdf, caption=Kriteria Sukses 1.1.1 - Gambar PDF Tidak Diberi Teks Alternatif]
 	...
 	<td>
 	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
@@ -221,26 +221,32 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 
 Kriteria ini tidak sukses dipatuhi karena :
 \begin{itemize}
-	\item Ada elemen dalam form \textit{Add Users} yang tidak diberi label.
+	\item Ada elemen dalam form \textit{Add Users} yang tidak diberi label. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_3_1_add_user}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_add_user}  
-		\caption[Elemen yang tidak diberi label pada halaman \textit{Add Users}]{Elemen yang tidak diberi label pada halaman \textit{Add Users}} 
+		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}} 
 		\label{fig:kepatuhan_1_3_1_add_user} 
 	\end{figure}
-	\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label.
+	\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_1_add_assignment}.
+	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_1_add_assignment, caption=Kriteria Sukses 1.3.1 - Elemen Dalam Form yang Tidak Diberi Label]
+	...
+	<td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
+	...
+	\end{lstlisting}
 	
 	\item Dalam halaman \textit{Problem} terdapat elemen form yang tidak diberi label.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_problem_edit_markdown}  
-		\caption[Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Markdown}]{Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Markdown}} 
+		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}} 
 		\label{fig:kepatuhan_1_3_1_problem_edit_markdown} 
 	\end{figure}
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_edit_plain_html}  
-		\caption[Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Plain Html}]{Elemen yang tidak diberi label pada halaman \textit{Problems} bagian \textit{Edit Plain Html}} 
+		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}} 
 		\label{fig:kepatuhan_1_3_1_plain_html} 
 	\end{figure}
 \end{itemize}
@@ -267,9 +273,9 @@ Kriteria ini sukses dipatuhi karena konten dari \textit{SharIF Judge} dapat dita
 \label{subsubsec:kepatuhan_kriteria_1.3.5}
 (Tidak Sukses)\\
 
-Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label, salah satunya pada halaman \textit{Problems} bagian \textit{Edit Markdown}. Berikut adalah potongan kodenya :
+Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label, salah satunya pada halaman \textit{Problems} bagian \textit{Edit Markdown}. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_5}.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5, caption=Kriteria Sukses 1.3.5 - Elemen Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]
 ...
 <p class="input_p">
 	<textarea name="text">{{ problem.description }}</textarea>
@@ -281,7 +287,15 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5
 \label{subsubsec:kepatuhan_kriteria_1.3.6}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi dan judul bagian.
+Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi dan judul bagian. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_6}.
+\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_6, caption=Kriteria Sukses 1.3.6 - \textit{Sidebar}]
+...
+<div id="side_bar" class="sidebar_open">
+	<ul>
+		<li class="color-dashboard{{ selected=='dashboard' ? ' selected' }}">
+...
+\end{lstlisting}
 
 \subsubsection{Kriteria Sukses 1.4.1 Use of Color}
 \label{subsubsec:kepatuhan_kriteria_1.4.1}
@@ -301,23 +315,65 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} terdapat beberapa teks dengan rasio kontras kurang dari 4.5:1, antara lain:
 \begin{itemize}
-	\item Navigasi Atas: Teks tempat waktu yang tersisa untuk mengumpulkan suatu \textit{Assignment} memiliki rasio kontras 2.52:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Dashboard}: Teks pada tombol \textit{today} memiliki rasio kontras 4.01:1 terhadap warna latar belakangnya. Teks pada kalender memiliki rasio kontras 2.69:1 terhadap warna latar belakangnya. Teks pada kalender yang menunjukkan tanggal memiliki rasio kontras 1.57:1 terhadap warna latar belakangnya. Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 2.07:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Settings}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Assignment}: Teks yang berwana merah pada tabel \textit{Assignment} memiliki rasio kontras 3.89:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Add Assignment}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya.
+	\item Navigasi Atas: Teks tempat waktu yang tersisa untuk mengumpulkan suatu \textit{Assignment} memiliki rasio kontras 2.52:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_navigasi_atas}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.25]{kepatuhan_1_4_3_navigasi_atas}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas]{Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas} 
+		\label{fig:kepatuhan_1_4_3_navigasi_atas} 
+	\end{figure}
+
+	\item Halaman \textit{Dashboard}: Teks pada tombol \textit{today} memiliki rasio kontras 4.01:1 terhadap warna latar belakangnya. Teks pada kalender memiliki rasio kontras 2.69:1 terhadap warna latar belakangnya. Teks pada kalender yang menunjukkan tanggal memiliki rasio kontras 1.57:1 terhadap warna latar belakangnya. Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 2.07:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_dashboard}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_3_dashboard}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Dashboard]{Kriteria Sukses 1.4.3 - Kontras Elemen Dashboard} 
+		\label{fig:kepatuhan_1_4_3_dashboard} 
+	\end{figure}
+
+	\item Halaman \textit{Settings}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_settings}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_3_settings}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Settings]{Kriteria Sukses 1.4.3 - Kontras Elemen Settings} 
+		\label{fig:kepatuhan_1_4_3_settings} 
+	\end{figure}
+
+	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{kepatuhan_1_4_3_notifications}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_3_notifications}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Notifications]{Kriteria Sukses 1.4.3 - Kontras Elemen Notifications} 
+		\label{fig:kepatuhan_1_4_3_notifications} 
+	\end{figure}
+	
+	\item Halaman \textit{Assignment}: Teks yang berwana merah pada tabel \textit{Assignment} memiliki rasio kontras 3.89:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_assignments}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.3]{kepatuhan_1_4_3_assignments}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Assignments]{Kriteria Sukses 1.4.3 - Kontras Elemen Assignments} 
+		\label{fig:kepatuhan_1_4_3_assignments} 
+	\end{figure}
+	
+	\item Halaman \textit{Add Assignment}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_add_assignment}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_3_add_assignment}  
+		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}]{Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}} 
+		\label{fig:kepatuhan_1_4_3_add_assignment} 
+	\end{figure}
+	
 \end{itemize}
 
 \subsubsection{Kriteria Sukses 1.4.4 Resize text}
 \label{subsubsec:kepatuhan_kriteria_1.4.4}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena fungsionalitas \textit{navigation bar} tidak berjalan pada pembesaran 125 persen.
+Kriteria ini tidak sukses dipatuhi karena fungsionalitas \textit{navigation bar} tidak berjalan pada pembesaran 125 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_4_nav_bar}.
 \begin{figure}[H]
 	\centering  
 	\includegraphics[width=0.5\textwidth]{kepatuhan_1_4_4_nav_bar}  
-	\caption[Fungsionalitas \textit{sidebar} tidak berjalan pada pembesaran 125 persen]{Fungsionalitas \textit{sidebar} tidak berjalan pada pembesaran 125 persen} 
+	\caption[Kriteria Sukses 1.4.4 - Sidenav]{Kriteria Sukses 1.4.4 - Sidenav} 
 	\label{fig:kepatuhan_1_4_4_nav_bar} 
 \end{figure}
 
@@ -335,12 +391,54 @@ Kriteria ini sukses dipatuhi karena semua gambar teks yang ada pada aplikasi \te
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} terdapat beberapa teks dengan rasio kontras kurang dari 4.5:1, antara lain:
 \begin{itemize}
-	\item Navigasi Atas: Teks tempat waktu yang tersisa untuk mengumpulkan suatu \textit{Assignment} memiliki rasio kontras 2.52:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Dashboard}: Teks pada tombol \textit{today} memiliki rasio kontras 4.01:1 terhadap warna latar belakangnya. Teks pada kalender memiliki rasio kontras 2.69:1 terhadap warna latar belakangnya. Teks pada kalender yang menunjukkan tanggal memiliki rasio kontras 1.57:1 terhadap warna latar belakangnya. Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 2.07:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Settings}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Assignment}: Teks yang berwana merah pada tabel \textit{Assignment} memiliki rasio kontras 3.89:1 terhadap warna latar belakangnya.
-	\item Halaman \textit{Add Assignment}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya.
+	\item Navigasi Atas: Teks tempat waktu yang tersisa untuk mengumpulkan suatu \textit{Assignment} memiliki rasio kontras 2.52:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_navigasi_atas}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.25]{kepatuhan_1_4_6_navigasi_atas}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas]{Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas} 
+		\label{fig:kepatuhan_1_4_6_navigasi_atas} 
+	\end{figure}
+
+	\item Halaman \textit{Dashboard}: Teks pada tombol \textit{today} memiliki rasio kontras 4.01:1 terhadap warna latar belakangnya. Teks pada kalender memiliki rasio kontras 2.69:1 terhadap warna latar belakangnya. Teks pada kalender yang menunjukkan tanggal memiliki rasio kontras 1.57:1 terhadap warna latar belakangnya. Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 2.07:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_dashboard}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_6_dashboard}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Dashboard]{Kriteria Sukses 1.4.6 - Kontras Elemen Dashboard} 
+		\label{fig:kepatuhan_1_4_6_dashboard} 
+	\end{figure}
+
+	\item Halaman \textit{Settings}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_settings}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_6_settings}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Settings]{Kriteria Sukses 1.4.6 - Kontras Elemen Settings} 
+		\label{fig:kepatuhan_1_4_6_settings} 
+	\end{figure}
+
+	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_notifications}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_6_notifications}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Notifications]{Kriteria Sukses 1.4.6 - Kontras Elemen Notifications} 
+		\label{fig:kepatuhan_1_4_6_notifications} 
+	\end{figure}
+
+	\item Halaman \textit{Assignment}: Teks yang berwana merah pada tabel \textit{Assignment} memiliki rasio kontras 3.89:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_assignments}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.3]{kepatuhan_1_4_6_assignments}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Assignments]{Kriteria Sukses 1.4.6 - Kontras Elemen Assignments} 
+		\label{fig:kepatuhan_1_4_6_assignments} 
+	\end{figure}
+
+	\item Halaman \textit{Add Assignment}: Informasi tambahan pada bidang masukkan memiliki rasio kontras 3.55:1 terhadap warna latar belakangnya. Informasi peringatan pada bidang masukkan memiliki rasio kontras 3.69:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_6_add_assignment}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_1_4_6_add_assignment}  
+		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Add Assignments]{Kriteria Sukses 1.4.6 - Kontras Elemen Add Assignments} 
+		\label{fig:kepatuhan_1_4_6_add_assignment} 
+	\end{figure}
+
 \end{itemize}
 
 \subsubsection{Kriteria Sukses 1.4.7 Low atau No Background Audio}
@@ -354,7 +452,13 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 \label{subsubsec:kepatuhan_kriteria_1.4.8}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \textit{Notifications} teks yang menampilkan isi notifikasi memiliki lebar lebih dari 80 karakter.
+Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \textit{Notifications} teks yang menampilkan isi notifikasi memiliki lebar lebih dari 80 karakter. Tampilan halaman web ditampilkan pada gambar \ref{kepatuhan_1_4_8_notifications}.
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{kepatuhan_1_4_8_notifications}  
+	\caption[Kriteria Sukses 1.4.8 - Notifications]{Kriteria Sukses 1.4.8 - Notifications} 
+	\label{fig:kepatuhan_1_4_8_notifications} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 1.4.9 Images of Text (No Exception)}
 \label{subsubsec:kepatuhan_kriteria_1.4.9}
@@ -366,10 +470,25 @@ Kriteria ini sukses dipatuhi karena semua gambar teks yang ada pada aplikasi \te
 \label{subsubsec:kepatuhan_kriteria_1.4.10}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{SharIF Judge} memerlukan \textit{scroll} secara horizontal ketika ditampilkan pada resolusi layar 1280 pixel dengan pembesaran 400 persen.
+Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{SharIF Judge} memerlukan \textit{scroll} secara horizontal ketika ditampilkan pada resolusi layar 1280 pixel dengan pembesaran 400 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_10_reflow}
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.25]{kepatuhan_1_4_10}  
+	\caption[Kriteria Sukses 1.4.10 - Horizontal \textit{Scroll}]{Kriteria Sukses 1.4.10 - Horizontal \textit{Scroll}} 
+	\label{fig:kepatuhan_1_4_10_reflow} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 1.4.11 Non-text Contrast}
 \label{subsubsec:kepatuhan_kriteria_1.4.11}
+(Diabaikan) \\
+
+Kriteria ini diabaikan karena pengukuran kontras sulit untuk dilakukan. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_11_reflow}.
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.3]{kepatuhan_1_4_11}  
+	\caption[Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}]{Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}} 
+	\label{fig:kepatuhan_1_4_11_reflow} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 1.4.12 Text Spacing}
 \label{subsubsec:kepatuhan_kriteria_1.4.12}
