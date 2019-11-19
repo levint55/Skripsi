@@ -98,7 +98,7 @@ Kesuksesan aplikasi SharIF Judge dalam mematuhi kriteria sukses \textit{WCAG} 2.
 		3.1.1 & A & Tidak Sukses \\
 		3.1.2 & AA & Tidak Sukses \\
 		3.1.3 & AAA & Sukses \\
-		3.1.4 & AAA & Tidak Sukses \\
+		3.1.4 & AAA & Sukses \\
 		3.1.5 & AAA & Sukses \\
 		3.1.6 & AAA & Sukses \\
 		3.2.1 & A & Sukses \\
@@ -339,7 +339,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 		\label{fig:kepatuhan_1_4_3_settings} 
 	\end{figure}
 
-	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{kepatuhan_1_4_3_notifications}.
+	\item Halaman \textit{Notifications}: Teks yang menunjukkan waktu notifikasi dibuat memiliki rasio kontras 1.91:1 terhadap warna latar belakangnya. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_3_notifications}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_3_notifications}  
@@ -452,10 +452,10 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 \label{subsubsec:kepatuhan_kriteria_1.4.8}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \textit{Notifications} teks yang menampilkan isi notifikasi memiliki lebar lebih dari 80 karakter. Tampilan halaman web ditampilkan pada gambar \ref{kepatuhan_1_4_8_notifications}.
+Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \textit{Notifications} teks yang menampilkan isi notifikasi memiliki lebar lebih dari 80 karakter. Tampilan halaman web ditampilkan pada gambar \ref{fig:kepatuhan_1_4_8_notifications}.
 \begin{figure}[H]
 	\centering  
-	\includegraphics[scale=0.5]{kepatuhan_1_4_8_notifications}  
+	\includegraphics[scale=0.25]{kepatuhan_1_4_8_notifications}  
 	\caption[Kriteria Sukses 1.4.8 - Notifications]{Kriteria Sukses 1.4.8 - Notifications} 
 	\label{fig:kepatuhan_1_4_8_notifications} 
 \end{figure}
@@ -556,7 +556,7 @@ Kriteria ini tidak sukses dipatuhi karena :
 		\label{fig:kepatuhan_2_1_2_add_assignment} 
 	\end{figure}
 
-	\item Dalam halaman \textit{Problems}(\textit{Edit Markdown}) ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}.\textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{figfig:kepatuhan_2_1_2_problems_edit_markdown}.
+	\item Dalam halaman \textit{Problems}(\textit{Edit Markdown}) ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}.\textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_problems_edit_markdown}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_2_1_2_problems_edit_markdown}  
@@ -719,9 +719,34 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman aplikasi \textit{SharIF J
 
 Kriteria ini tidak sukses dipatuhi karena :
 \begin{itemize}
-	\item Pada halaman \textit{Add User} ada \textit{field input} yang tidak menggunakan label.
-	\item Pada halaman \textit{Add Assignment} ada \textit{field input} yang tidak menggunakan label.
-	\item Pada halaman \textit{Problem} bagian \textit{Edit Markdown} dan \textit{Edit Plain HTML} memiliki \textit{field input} yang tidak menggunakan label.
+	\item Pada halaman \textit{Add User} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_user} ada bidang masukan yang tidak memiliki label.
+	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_user, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add User}]
+	...
+	<p class="input_p">
+		<textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
+		# Lines starting with a # sign are comments.
+	...
+	\end{lstlisting}
+	
+	\item Pada halaman \textit{Add Assignment} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_assignment} ada bidang masukan yang tidak memiliki label.
+	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_assignment, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add Assignment}]
+	...
+	<td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
+	...
+	\end{lstlisting}
+	
+	\item Pada halaman \textit{Problems} bagian \textit{Edit Markdown} dan \textit{Edit Plain HTML} memiliki \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_edit_markdown} ada bidang masukan yang tidak memiliki label.
+	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_edit_markdown, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Problems} bagian \textit{Edit Markdown}]
+	...
+	<p class="input_p">
+		<textarea name="text">{{ problem.description }}</textarea>
+	</p>
+	...
+	\end{lstlisting}
+	
 \end{itemize}
 
 \subsubsection{Kriteria Sukses 2.4.7 Focus Visible}
@@ -794,7 +819,14 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ad
 \label{subsubsec:kepatuhan_kriteria_2.5.3}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak elemen yang tidak diberi label.
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak elemen yang tidak diberi label. Salah satu contohnya adalah halaman \textit{Problems} bagian \textit{Edit Markdown}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_5_3}.
+
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{kepatuhan_2_5_3}  
+	\caption[Kriteria Sukses 2.5.3 - \textit{Edit Markdown}]{Kriteria Sukses 2.5.3 - \textit{Edit Markdown}} 
+	\label{fig:kepatuhan_2_5_3} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 2.5.4 Motion Actuation}
 \label{subsubsec:kepatuhan_kriteria_2.5.4}
@@ -806,7 +838,14 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak te
 \label{subsubsec:kepatuhan_kriteria_2.5.5}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak target yang dapat difokus berukuran kurang dari 44 piksel \textit{css}.
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak target yang dapat difokus berukuran kurang dari 44 piksel \textit{css}. Salah satu contohnya adalah bidang masukan \textit{Upload Size Limit} yang berukuran 30 piksel css. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_5_5}.
+
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{kepatuhan_2_5_5}  
+	\caption[Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 css Piksel]{Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 css Piksel} 
+	\label{fig:kepatuhan_2_5_5} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 2.5.6 Concurrent Input Mechanisms}
 \label{subsubsec:kepatuhan_kriteria_2.5.6}
@@ -821,13 +860,20 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak me
 \label{subsubsec:kepatuhan_kriteria_3.1.1}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}.
+Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}. Pada potongan kode \ref{ls_kepatuhan_3_1_1} ditunjukkan bahwa elemen \textit{html} tidak memiliki atribut \textit{lang}.
+\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_3_1_1, caption=Kriteria Sukses 3.1.1 - Elemen \textit{HTML}]
+...
+<html>
+<head>
+...
+\end{lstlisting}
 
 \subsubsection{Kriteria Sukses 3.1.2 Language of Parts}
 \label{subsubsec:kepatuhan_kriteria_3.1.2}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}.
+Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}. Semua halaman pada aplikasi \textit{SharIF Judge} memakai bahasa Inggris, jika elemen \textit{html} memiliki atribut \textit{lang} maka kriteria ini akan terpenuhi.
 
 \subsubsection{Kriteria Sukses 3.1.3 Unusual Words}
 \label{subsubsec:kepatuhan_kriteria_3.1.3}
@@ -837,14 +883,9 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ad
 
 \subsubsection{Kriteria Sukses 3.1.4 Abbreviations}
 \label{subsubsec:kepatuhan_kriteria_3.1.4}
-(Tidak Sukses) \\
+(Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena tidak tersedia mekanisme untuk mengidentifikasi kepanjangan dari singkatan. Singkatan-singkatan yang terdapat pada halaman aplikasi \textit{SharIF Judge}, antara lain:
-
-\begin{itemize}
-	\item Pada halaman \textit{Assignment} dan \textit{Add Assignment} terdapat singkatan "PDF".
-	\item Pada halaman \textit{24-hour Log} terdapat singkatan "IP".
-\end{itemize}
+Kriteria ini sukses dipatuhi karena singkatan yang ada pada \textit{SharIF Judge} lazim digunakan oleh kalangan informatika, singkatan yang dimaksud adalah IP, PDF.
 
 \subsubsection{Kriteria Sukses 3.1.5 Reading Level}
 \label{subsubsec:kepatuhan_kriteria_3.1.5}
@@ -883,9 +924,30 @@ Kriteria ini sukses dipatuhi karena bagian navigasi menu yang muncul berulang pa
 Kriteria ini tidak sukses dipatuhi karena ada komponen yang memiliki fungsi yang sama tetapi tidak diidentifikasi secara konsisten. Komponen tersebut antara lain :
 
 \begin{itemize}
-	\item Pada halaman \textit{Assignments} istilah untuk menambah \textit{Assignment} diberi nama \textit{Add}.
-	\item Pada halaman \textit{Users} istilah untuk menambah \textit{user} diberi nama \textit{Add User}
-	\item Pada halaman. \textit{Notifications} istilah untuk menambah \textit{Notification} diberi nama \textit{New}.
+	\item Pada halaman \textit{Assignments} istilah untuk menambah \textit{Assignment} diberi nama \textit{Add}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_3_2_4_assignments}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_3_2_4_assignments}  
+		\caption[Kriteria Sukses 3.2.4 - \textit{Assignments}]{Kriteria Sukses 3.2.4 - \textit{Assignments}} 
+		\label{fig:kepatuhan_3_2_4_assignments} 
+	\end{figure}
+
+	\item Pada halaman \textit{Users} istilah untuk menambah \textit{user} diberi nama \textit{Add User}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_3_2_4_users}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_3_2_4_users}  
+		\caption[Kriteria Sukses 3.2.4 - \textit{Users}]{Kriteria Sukses 3.2.4 - \textit{Users}} 
+		\label{fig:kepatuhan_3_2_4_users} 
+	\end{figure}
+
+	\item Pada halaman. \textit{Notifications} istilah untuk menambah \textit{Notification} diberi nama \textit{New}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_3_2_4_notifications}.
+	\begin{figure}[H]
+		\centering  
+		\includegraphics[scale=0.5]{kepatuhan_3_2_4_notifications}  
+		\caption[Kriteria Sukses 3.2.4 - \textit{Notifications}]{Kriteria Sukses 3.2.4 - \textit{Notifications}} 
+		\label{fig:kepatuhan_3_2_4_notifications} 
+	\end{figure}
+
 \end{itemize}
 
 \subsubsection{Kriteria Sukses 3.2.5 Change on Request}
@@ -904,7 +966,13 @@ Kriteria ini sukses dipatuhi karena kesalahan masukan terdeteksi secara otomatis
 \label{subsubsec:kepatuhan_kriteria_3.3.2}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses karena pada halaman problem bagian edit html, edit markdown, dan edit plain html tidak ada label atau instruksi untuk pengisiannya.
+Kriteria ini tidak sukses karena pada halaman problem bagian edit html, edit markdown, dan edit plain html tidak ada label atau instruksi untuk pengisiannya. Salah satu contoh tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_3_3_2_edit_markdown}.
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.25]{kepatuhan_3_3_2_edit_markdown}  
+	\caption[Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi]{Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi} 
+	\label{fig:kepatuhan_3_3_2_edit_markdown} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 3.3.3 Error Suggestion}
 \label{subsubsec:kepatuhan_kriteria_3.3.3}
@@ -923,7 +991,7 @@ Kriteria ini sukses dipatuhi karena pada halaman yang mengirim tanggapan penggun
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena
-pada aplikasi \textit{SharIF Judge} masih ada konten yang tidak diberi label.
+pada aplikasi \textit{SharIF Judge} masih ada konten yang tidak diberi label. Pengguna harus dapat mengetahui tujuan dari konten melalui labelnya.
 
 \subsubsection{Kriteria Sukses 3.3.6 Error Prevention (All)}
 \label{subsubsec:kepatuhan_kriteria_3.3.6}
