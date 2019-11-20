@@ -34,7 +34,7 @@
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
 \newcommand{\pembA}{Pascal Alfadian Nugroho}
 \newcommand{\pembB}{-}
-\newcommand{\semesterPertama}{7 - Ganjil 19/20} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\semesterPertama}{47 - Ganjil 19/20} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
 \newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
 \newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
 \newcommand{\tipePR}{B} % tipe progress report :
@@ -65,9 +65,9 @@ Tipe Laporan : {\bf \tipePR} -
 		}
 		
 \section{Latar Belakang}
-\textit{SharIF Judge} adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan dari \textit{Sharif Judge} yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR.
+\textit{SharIF Judge} adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan dari \textit{Sharif Judge} yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework}) dan bagian backendnya dibuat dengan BASH.
 
-\textit{Web Content Accessibility Guidelines} (\textit{WCAG}) 2.1 memuat rekomendasi untuk membuat konten web lebih mudah diakses. Pedoman-pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, fotosensitif, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Di dalam \textit{WCAG} 2.1 ada 78 kriteria sukses. Kriteria sukses adalah pedoman untuk membuat konten lebih mudah diakses. Ada 3 tingkat kepatuhan yaitu A (terkecil), AA, AAA (terbesar).
+\textit{Web Content Accessibility Guidelines} (\textit{WCAG}) 2.1 memuat rekomendasi untuk membuat konten web lebih mudah diakses. Pedoman-pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, fotosensitif, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. Di dalam \textit{WCAG} 2.1 ada 78 kriteria sukses. Kriteria sukses adalah pedoman untuk membuat konten lebih mudah diakses. Ada 3 tingkat kepatuhan yaitu A (terkecil), AA, AAA (terbesar). Tingkat kepatuhan A adalah tingkat kepatuhan terkecil yang diperoleh jika seluruh kriteria sukses tingkat A terpenuhi atau versi alternatifnya tersedia. Tingkat kepatuhan AA adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat A dan AA terpenuhi atau versi alternatif tingkat AA tersedia. Tingkat kepatuhan AAA adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat A, AA, dan AAA terpenuhi atau veri alternatif tingkat AAA tersedia.
 
 Pada skripsi ini, akan dilakukan analisis tingkat kepatuhan dan rekomendasi perbaikan aplikasi \textit{SharIF Judge} berdasarkan \textit{Web Content Accessibility Guideline} 2.1. Selain itu, aplikasi \textit{SharIF Judge} juga akan diuji dengan beberapa kondisi keterbatasan seperti keterbatasan visual, keterbatasan gerak, keterbatasan pendengaran. Dengan perbaikan ini diharapkan aplikasi \textit{SharIF Judge} dapat diakses oleh banyak kalangan.
 
@@ -86,9 +86,34 @@ Pada skripsi ini, akan dilakukan analisis tingkat kepatuhan dan rekomendasi perb
 \section{Detail Perkembangan Pengerjaan Skripsi}
 Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan terakhir :
 	\begin{enumerate}
-		\item \textbf{Studi literatur mengenai \textit{SharIF Judge} dan \textit{WCAG 2.1}}\\
+		\item \textbf{Studi literatur mengenai \textit{WCAG 2.1}}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :} \textit{Web Content Accessibility Guidelines} (\textit{WCAG}) 2.1 memuat rekomendasi untuk membuat konten web lebih mudah diakses. Pedoman-pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, fotosensitif, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. \textit{WCAG} dikembangkan oleh\textit{World Wide Web Consortium} melalui kerja sama dengan individu dan organisasi di seluruh dunia dengan tujuan memberikan standar bersama untuk aksesibilitas konten web yang memenuhi kebutuhan individu, organisasi, dan pemerintah internasional. \textit{WCAG} 2.1 merupakan pembaruan dari \textit{WCAG} 2.0 yang dibuat pada 11 Desember 2008. Ada 78 kriteria sukses dalam \textit{WCAG} 2.1. Kriteria sukses adalah pedoman untuk membuat konten lebih mudah diakses. Kriteria Sukses \textit{WCAG} 2.1 ditulis sebagai pernyataan yang dapat diuji yang tidak teknologi spesifik. Pedoman ini mencakup aksesibilitas konten web di desktop, laptop, tablet, dan perangkat bergerak. Dengan mengikuti pedoman ini juga akan sering membuat konten web lebih bermanfaat bagi pengguna secara umum.
+		
+		Ada beberapa kondisi yang harus dipenuhi untuk sebuah Kriteria Sukses yaitu :
+		
+		\begin{enumerate}
+			\item Semua Kriteria Sukses harus menjadi masalah akses penting bagi orang disabilitas yang mengatasi masalah di luar masalah kegunaan yang dihadapi oleh semua pengguna. Dengan kata lain, masalah akses harus menyebabkan masalah yang lebih besar bagi orang disabilitas daripada orang yang tidak disabilitas agar dianggap sebagai masalah aksesibilitas.
+			\item Semua Kriteria Sukses harus dapat diuji. Hal ini penting karena jika tidak, maka tidak mungkin untuk menentukan apakah suatu halaman memenuhi Kriteria Sukses. Kriteria Sukses dapat diuji dengan kombinasi evaluasi mesin dan manusia selama pengujian dapat menentukan apakah sebuah Kriteria Sukses terpenuhi dengan tingkat kepercayaan yang tinggi.
+		\end{enumerate}
+		
+		Kriteria Sukses memiliki tiga tingkat kesesuaian yaitu tingkat A (terkecil), AA, AAA (terbesar). Ada beberapa faktor yang menentukan tingkat tersebut. Faktor tersebut termasuk :
+		
+		\begin{enumerate}
+			\item Apakah Kriteria Sukses esensial (dalam kata lain, jika Kriteria Sukses tidak terpenuhi maka teknologi bantuan juga tidak dapat membuat konten dapat diakses).
+			\item Apakah mungkin untuk memenuhi Kriteria Sukses untuk semua situs web dan jenis konten yang akan diterapkan Kriteria Sukses.
+			\item Apakah Kriteria Sukses membutuhkan keterampilan yang dapat dicapai secara wajar oleh pembuat konten (Pengetahuan dan keterampilan untuk memenuhi Kriteria Sukses dapat diperoleh dalam pelatihan seminggu atau kurang).
+			\item Apakah Kriteria Sukses dapat memaksakan batasan tampilan dan fungsi dari halaman web (batasan dari fungsi, presentasi, kebebasan berekspresi, desain atau estetika)
+			\item Apakah tidak ada solusi jika Kriteria Sukses tidak terpenuhi
+		\end{enumerate}
+		
+		Berikut adalah uraian kriteria sukses \textit{WCAG} 2.1 :		
+		 
+		
+		\item \textbf{Studi literatur mengenai \textit{SharIF Judge}}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil :} Dapat menginstal aplikasi \textit{SharIF Judge} pada perangkat pribadi serta mengetahui fitur-fitur yang ada pada aplikasi \textit{SharIF Judge}. Mengetahui apa saja pedoman yang ada dalam \textit{WCAG 2.1}.
+		
 		
 		\item \textbf{Mengukur tingkat kepatuhan aplikasi \textit{SharIF Judge} terhadap \textit{WCAG 2.1}}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
