@@ -14,7 +14,7 @@
 \usepackage{multirow}% untul multirow pada tabel
 \usepackage{listings}%untuk penulisan source code
 \usepackage[obeyspaces]{url}
-
+\usepackage{xstring}%manipulasi string, strchar, ifstreq
 
 \graphicspath{{../DokumenSkripsi/Gambar/}}% folder tempat gambar 
 
@@ -760,7 +760,7 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			\item PHP harus diberikan akses untuk menjalankan perintah menggunakan fungsi \textit{shell\textunderscore exec}. Contoh seperti perintah berikut :
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:1]
-			echo shell_exec("php -v");
+echo shell_exec("php -v");
 			\end{lstlisting}
 			\item Perkakas yang digunakan untuk melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands})
 			\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim.
@@ -773,22 +773,22 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			\item Memindahkan folder \textit{system} dan \textit{application} ke luar \textit{public directory}, dan masukkan \textit{path} lengkap di \textit{file index.php}
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:2]
-			$system_path = '/home/mohammad/secret/system';
-			$application_folder = '/home/mohammad/secret/application';
+$system_path = '/home/mohammad/secret/system';
+$application_folder = '/home/mohammad/secret/application';
 			\end{lstlisting}
 			\item Membuat sebuah database \textit{Mysql} atau \textit{PostgreSql} untuk Sharif Judge. Jangan menginstall paket koneksi database untuk \textit{C/C++, Java}, atau \textit{Python}
 			\item Mengatur koneksi \textit{database} di \textit{file application/config/database.php}. Pengguna dapat
 			menggunakan awalan untuk nama tabel.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:3]
-			/*  Enter database connection settings here:  */
-			'dbdriver' => 'postgre',    // database driver (mysqli, postgre)
-			'hostname' => 'localhost',  // database host
-			'username' => `,           // database username
-			'password' => `,           // database password
-			'database' => `,           // database name
-			'dbprefix' => 'shj_',       // table prefix
-			/**********************************************/
+/*  Enter database connection settings here:  */
+'dbdriver' => 'postgre',    // database driver (mysqli, postgre)
+'hostname' => 'localhost',  // database host
+'username' => `,           // database username
+'password' => `,           // database password
+'database' => `,           // database name
+'dbprefix' => 'shj_',       // table prefix
+/**********************************************/
 			\end{lstlisting}
 			\item Mengatur \textit{RADIUS server} dan \textit{mail server} pada \textit{file application/config/secrets.example.php} dan simpan dengan nama \textit{secrets.php}
 			\item Membuat direktori \textit{application/cache/Twig} agar dapat ditulis oleh PHP
@@ -881,28 +881,28 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:4]
-		USERNAME,EMAIL,DISPLAY-NAME,PASSWORD,ROLE
+USERNAME,EMAIL,DISPLAY-NAME,PASSWORD,ROLE
 		
-		* Usernames may contain lowercase letters or numbers and must be between 3 and 20 characters in length.
-		* Passwords must be between 6 and 30 characters in length.
-		* You can use RANDOM[n] for password to generate random n-digit password.
-		* ROLE must be one of these: `admin`, `head_instructor`, `instructor`, `student`
+* Usernames may contain lowercase letters or numbers and must be between 3 and 20 characters in length.
+* Passwords must be between 6 and 30 characters in length.
+* You can use RANDOM[n] for password to generate random n-digit password.
+* ROLE must be one of these: `admin`, `head_instructor`, `instructor`, `student`
 		\end{lstlisting}
 		
 		Berikut adalah contohnya:
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:5]
-		# This is a comment!
-		# This is another comment!
-		instructor instructor@sharifjudge.ir 123456 head_instructor
-		instructor2 instructor2@sharifjudge.ir random[7] instructor
-		student1 st1@sharifjudge.ir random[6] student
-		student2 st2@sharifjudge.ir random[6] student
-		student3 st3@sharifjudge.ir random[6] student
-		student4 st4@sharifjudge.ir random[6] student
-		student5 st5@sharifjudge.ir random[6] student
-		student6 st6@sharifjudge.ir random[6] student
-		student7 st7@sharifjudge.ir random[6] student
+# This is a comment!
+# This is another comment!
+instructor instructor@sharifjudge.ir 123456 head_instructor
+instructor2 instructor2@sharifjudge.ir random[7] instructor
+student1 st1@sharifjudge.ir random[6] student
+student2 st2@sharifjudge.ir random[6] student
+student3 st3@sharifjudge.ir random[6] student
+student4 st4@sharifjudge.ir random[6] student
+student5 st5@sharifjudge.ir random[6] student
+student6 st6@sharifjudge.ir random[6] student
+student7 st7@sharifjudge.ir random[6] student
 		\end{lstlisting}
 		
 		\subsection*{Menambah Assignment}
@@ -944,26 +944,26 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:6]
-			Test 1
-			ACCEPT
-			Test 2
-			Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
-			Test 3
-			Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
-			Test 4
-			ACCEPT
-			Test 5
-			ACCEPT
-			Test 6
-			ACCEPT
-			Test 7
-			ACCEPT
-			Test 8
-			Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
-			Test 9
-			Runtime Error (java.lang.StackOverflowError)
-			Test 10
-			Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+Test 1
+ACCEPT
+Test 2
+Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+Test 3
+Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+Test 4
+ACCEPT
+Test 5
+ACCEPT
+Test 6
+ACCEPT
+Test 7
+ACCEPT
+Test 8
+Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
+Test 9
+Runtime Error (java.lang.StackOverflowError)
+Test 10
+Runtime Error (java.lang.ArrayIndexOutOfBoundsException)
 			\end{lstlisting}
 			
 			\item \textit{Archieved Assignment} \\
@@ -974,29 +974,29 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:7]
-			if ($delay<=0)
-			// no delay
-			$coefficient = 100;
-			
-			elseif ($delay<=3600)
-			// delay less than 1 hour
-			$coefficient = ceil(100-((30*$delay)/3600));
-			
-			elseif ($delay<=86400)
-			// delay more than 1 hour and less than 1 day
-			$coefficient = 70;
-			
-			elseif (($delay-86400)<=3600)
-			// delay less than 1 hour in second day
-			$coefficient = ceil(70-((20*($delay-86400))/3600));
-			
-			elseif (($delay-86400)<=86400)
-			// delay more than 1 hour in second day
-			$coefficient = 50;
-			
-			elseif ($delay > $extra_time)
-			// too late
-			$coefficient = 0;
+if ($delay<=0)
+// no delay
+$coefficient = 100;
+
+elseif ($delay<=3600)
+// delay less than 1 hour
+$coefficient = ceil(100-((30*$delay)/3600));
+
+elseif ($delay<=86400)
+// delay more than 1 hour and less than 1 day
+$coefficient = 70;
+
+elseif (($delay-86400)<=3600)
+// delay less than 1 hour in second day
+$coefficient = ceil(70-((20*($delay-86400))/3600));
+
+elseif (($delay-86400)<=86400)
+// delay more than 1 hour in second day
+$coefficient = 50;
+
+elseif ($delay > $extra_time)
+// too late
+$coefficient = 0;
 			\end{lstlisting}
 			
 			\item \textit{Time Limit} \\
@@ -1072,51 +1072,51 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:8]
-		.
-		|-- p1
-		|   |-- in
-		|   |   |-- input1.txt
-		|   |   |-- input2.txt
-		|   |   |-- input3.txt
-		|   |   |-- input4.txt
-		|   |   |-- input5.txt
-		|   |   |-- input6.txt
-		|   |   |-- input7.txt
-		|   |   |-- input8.txt
-		|   |   |-- input9.txt
-		|   |   --- input10.txt
-		|   |-- out
-		|   |   --- output1.txt
-		|   |-- tester.cpp
-		|   --- desc.md
-		|-- p2
-		|   |-- in
-		|   |   |-- input1.txt
-		|   |   |-- input2.txt
-		|   |   |-- input3.txt
-		|   |   |-- input4.txt
-		|   |   |-- input5.txt
-		|   |   |-- input6.txt
-		|   |   |-- input7.txt
-		|   |   |-- input8.txt
-		|   |   |-- input9.txt
-		|   |   --- input10.txt
-		|   |-- out
-		|   |   |-- output1.txt
-		|   |   |-- output2.txt
-		|   |   |-- output3.txt
-		|   |   |-- output4.txt
-		|   |   |-- output5.txt
-		|   |   |-- output6.txt
-		|   |   |-- output7.txt
-		|   |   |-- output8.txt
-		|   |   |-- output9.txt
-		|   |   --- output10.txt
-		|   |-- desc.md
-		|   --- Problem2.pdf
-		|-- p3
-		|   --- desc.md
-		--- SampleAssignment.pdf
+.
+|-- p1
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   --- output1.txt
+|   |-- tester.cpp
+|   --- desc.md
+|-- p2
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   |-- output1.txt
+|   |   |-- output2.txt
+|   |   |-- output3.txt
+|   |   |-- output4.txt
+|   |   |-- output5.txt
+|   |   |-- output6.txt
+|   |   |-- output7.txt
+|   |   |-- output8.txt
+|   |   |-- output9.txt
+|   |   --- output10.txt
+|   |-- desc.md
+|   --- Problem2.pdf
+|-- p3
+|   --- desc.md
+--- SampleAssignment.pdf
 		\end{lstlisting}
 		
 		\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk memeriksa keluaran, sehingga memiliki \textit{file tester.cpp (Tester Script)}. \textit{Problem} 2 menggunakan metode \textit{Output Comparison} untuk memeriksa keluaran, sehingga memiliki dua folder (\textit{in} dan \textit{out}) yang berisi \textit{test case}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only}.
@@ -1139,26 +1139,26 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			Pengguna dapat menggunakan kode pada listing \ref{ls:9} sebagai templat untuk menulis \textit{tester.cpp}:
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:9, caption=Contoh kode \textit{tester.cpp}]
-			/*
-			* tester.cpp
-			*/
-			
-			#include <iostream>
-			#include <fstream>
-			#include <string>
-			using namespace std;
-			int main(int argc, char const *argv[])
-			{
-			
-			ifstream test_in(argv[1]);    /* This stream reads from test's input file   */
-			ifstream test_out(argv[2]);   /* This stream reads from test's output file  */
-			ifstream user_out(argv[3]);   /* This stream reads from user's output file  */
-			
-			/* Your code here */
-			/* If user's output is correct, return 0, otherwise return 1       */
-			
-			...
-			
+/*
+* tester.cpp
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main(int argc, char const *argv[])
+{
+
+ifstream test_in(argv[1]);    /* This stream reads from test's input file   */
+ifstream test_out(argv[2]);   /* This stream reads from test's output file  */
+ifstream user_out(argv[3]);   /* This stream reads from user's output file  */
+
+/* Your code here */
+/* If user's output is correct, return 0, otherwise return 1       */
+
+...
+
 			}
 			\end{lstlisting}
 		\end{enumerate}
@@ -1169,94 +1169,94 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:10]
-		.
-		|-- p1
-		|   |-- in
-		|   |   |-- input1.txt
-		|   |   |-- input2.txt
-		|   |   |-- input3.txt
-		|   |   |-- input4.txt
-		|   |   |-- input5.txt
-		|   |   |-- input6.txt
-		|   |   |-- input7.txt
-		|   |   |-- input8.txt
-		|   |   |-- input9.txt
-		|   |   --- input10.txt
-		|   |-- out
-		|   |   --- output1.txt
-		|   --- tester.cpp
-		--- p2
-		|-- in
-		|   |-- input1.txt
-		|   |-- input2.txt
-		|   |-- input3.txt
-		|   |-- input4.txt
-		|   |-- input5.txt
-		|   |-- input6.txt
-		|   |-- input7.txt
-		|   |-- input8.txt
-		|   |-- input9.txt
-		|   --- input10.txt
-		--- out
-		|-- output1.txt
-		|-- output2.txt
-		|-- output3.txt
-		|-- output4.txt
-		|-- output5.txt
-		|-- output6.txt
-		|-- output7.txt
-		|-- output8.txt
-		|-- output9.txt
-		--- output10.txt
+.
+|-- p1
+|   |-- in
+|   |   |-- input1.txt
+|   |   |-- input2.txt
+|   |   |-- input3.txt
+|   |   |-- input4.txt
+|   |   |-- input5.txt
+|   |   |-- input6.txt
+|   |   |-- input7.txt
+|   |   |-- input8.txt
+|   |   |-- input9.txt
+|   |   --- input10.txt
+|   |-- out
+|   |   --- output1.txt
+|   --- tester.cpp
+--- p2
+|-- in
+|   |-- input1.txt
+|   |-- input2.txt
+|   |-- input3.txt
+|   |-- input4.txt
+|   |-- input5.txt
+|   |-- input6.txt
+|   |-- input7.txt
+|   |-- input8.txt
+|   |-- input9.txt
+|   --- input10.txt
+--- out
+|-- output1.txt
+|-- output2.txt
+|-- output3.txt
+|-- output4.txt
+|-- output5.txt
+|-- output6.txt
+|-- output7.txt
+|-- output8.txt
+|-- output9.txt
+--- output10.txt
 		\end{lstlisting}
 		
 		\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek hasil keluarannya sehingga memiliki \textit{file tester.cpp}. Listing \ref{ls:11} menunjukkan isi dari \textit{file tester.cpp} untuk \textit{Problem} 1:
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:11, caption=Isi \textit{File tester.cpp} untuk \textit{Problem} 1]
-		/*
-		* tester.cpp
-		*/
-		
-		#include <iostream>
-		#include <fstream>
-		#include <string>
-		using namespace std;
-		int main(int argc, char const *argv[])
-		{
-		
-		ifstream test_in(argv[1]);    /* This stream reads from test's input file   */
-		ifstream test_out(argv[2]);   /* This stream reads from test's output file  */
-		ifstream user_out(argv[3]);   /* This stream reads from user's output file  */
-		
-		/* Your code here */
-		/* If user's output is correct, return 0, otherwise return 1       */
-		/* e.g.: Here the problem is: read n numbers and print their sum:  */
-		
-		int sum, user_output;
-		user_out >> user_output;
-		
-		if ( test_out.good() ) // if test's output file exists
-		{
+/*
+* tester.cpp
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main(int argc, char const *argv[])
+{
+
+	ifstream test_in(argv[1]);    /* This stream reads from test's input file   */
+	ifstream test_out(argv[2]);   /* This stream reads from test's output file  */
+	ifstream user_out(argv[3]);   /* This stream reads from user's output file  */
+	
+	/* Your code here */
+	/* If user's output is correct, return 0, otherwise return 1       */
+	/* e.g.: Here the problem is: read n numbers and print their sum:  */
+	
+	int sum, user_output;
+	user_out >> user_output;
+	
+	if ( test_out.good() ) // if test's output file exists
+	{
 		test_out >> sum;
-		}
-		else
-		{
+	}
+	else
+	{
 		int n, a;
 		sum=0;
 		test_in >> n;
 		for (int i=0 ; i<n ; i++){
-		test_in >> a;
-		sum += a;
+			test_in >> a;
+			sum += a;
 		}
-		}
-		
-		if (sum == user_output)
+	}
+
+	if (sum == user_output)
 		return 0;
-		else
+	else
 		return 1;
-		
-		}
+
+}
 		\end{lstlisting}
 		
 		\textit{Problem} 2 menggunakan metode \textit{"Input/Output Comparison"} untuk mengecek hasil keluarannya sehingga memiliki dua folder \textit{in} dan \textit{out} yang berisi \textit{test cases}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only} sehingga tidak memiliki folder apapun.
@@ -1273,30 +1273,30 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			Listing \ref{ls:12} menunjukkan potongan \textit{script perl} yang mengandung \textit{user id}:
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:12, caption=Potongan \textit{script perl}]
-			...
-			
-			$server = 'moss.stanford.edu';
-			$port = '7690';
-			$noreq = "Request not sent.";
-			$usage = "usage: moss [-x] [-l language] [-d] 
-			[-b basefile1] ... [-b basefilen] [-m #] 
-			[-c \"string\"] file1 file2 file3 ...";
-			
-			#
-			# The userid is used to authenticate your queries to the server; 
-			don't change it!
-			#
-			$userid=YOUR_MOSS_USER_ID;
-			
-			#
-			# Process the command line options.  This is done in a non-standard
-			# way to allow multiple -b's.
-			#
-			$opt_l = "c";   # default language is c
-			$opt_m = 10;
-			$opt_d = 0;
-			
-			...
+...
+
+$server = 'moss.stanford.edu';
+$port = '7690';
+$noreq = "Request not sent.";
+$usage = "usage: moss [-x] [-l language] [-d] 
+[-b basefile1] ... [-b basefilen] [-m #] 
+[-c \"string\"] file1 file2 file3 ...";
+
+#
+# The userid is used to authenticate your queries to the server; 
+don't change it!
+#
+$userid=YOUR_MOSS_USER_ID;
+
+#
+# Process the command line options.  This is done in a non-standard
+# way to allow multiple -b's.
+#
+$opt_l = "c";   # default language is c
+$opt_m = 10;
+$opt_d = 0;
+
+...
 			}
 			
 			\end{lstlisting}
@@ -1326,36 +1326,36 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:13]
-		www-data ALL=(restricted_user) NOPASSWD: ALL
+www-data ALL=(restricted_user) NOPASSWD: ALL
 		\end{lstlisting}
 		
 		Pada file \textit{tester/runcode.sh} ganti 
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:14]
-		if $TIMEOUT_EXISTS; then
-		timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
-		else
-		$CMD <$IN >out 2>err        
-		fi
+if $TIMEOUT_EXISTS; then
+	timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
+else
+	$CMD <$IN >out 2>err        
+fi
 		\end{lstlisting}
 		
 		menjadi
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:15]
-		if $TIMEOUT_EXISTS; then
-		sudo -u restricted_user timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
-		else
-		sudo -u restricted_user $CMD <$IN >out 2>err        
-		fi
+if $TIMEOUT_EXISTS; then
+	sudo -u restricted_user timeout -s9 $((TIMELIMITINT*2)) $CMD <$IN >out 2>err
+else
+	sudo -u restricted_user $CMD <$IN >out 2>err        
+fi
 		\end{lstlisting}
 		
 		dan \textit{uncomment} baris berikut:
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:16]
-		sudo -u restricted_user pkill -9 -u restricted_user
+sudo -u restricted_user pkill -9 -u restricted_user
 		\end{lstlisting}
 		
 		\begin{itemize}
@@ -1370,8 +1370,8 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 			
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls:17]
-			restricted_user     soft    nproc   3
-			restricted_user     hard    nproc   5
+restricted_user     soft    nproc   3
+restricted_user     hard    nproc   5
 			\end{lstlisting}
 			
 		\end{itemize}
@@ -1396,10 +1396,10 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:18]
-		$ cd tester/easysandbox
-		$ chmod +x runalltests.sh
-		$ chmod +x runtest.sh
-		$ make runtests
+$ cd tester/easysandbox
+$ chmod +x runalltests.sh
+$ chmod +x runtest.sh
+$ make runtests
 		\end{lstlisting}
 		
 		Jika pesan yang ditampilkan adalah \textit{"All tests passed!"}, maka \textit{EasySandbox} telah berhasil dibangun dan dapat dipakai pada sistem. Pengguna dapat mengaktifkan \textit{EasySandbox} pada halaman \textit{Settings}.
@@ -1420,7 +1420,7 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:19]
-		#define goto YouCannotUseGoto
+#define goto YouCannotUseGoto
 		\end{lstlisting}
 		
 		Dengan baris ini pada awal \textit{files}, semua kode yang sudah dikumpulkan yang menggunakan \textit{goto} akan mendapatkan \textit{compilation error}.
@@ -1439,29 +1439,29 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:20]
-		/*
-		
-		@file defc.h
-		There should be a newline at end of this file.
-		Put the message displayed to user after // in each line
-		
-		e.g. If you want to disallow goto, add this line:
-		#define goto errorNo13    //Goto is not allowd
-		
-		*/
-		
-		#define system errorNo1      //"system" is not allowed
-		#define freopen errorNo2     //File operation is not allowed
-		#define fopen errorNo3       //File operation is not allowed
-		#define fprintf errorNo4     //File operation is not allowed
-		#define fscanf errorNo5      //File operation is not allowed
-		#define feof errorNo6        //File operation is not allowed
-		#define fclose errorNo7      //File operation is not allowed
-		#define ifstream errorNo8    //File operation is not allowed
-		#define ofstream errorNo9    //File operation is not allowed
-		#define fork errorNo10       //Fork is not allowed
-		#define clone errorNo11      //Clone is not allowed
-		#define sleep errorNo12      //Sleep is not allowed
+/*
+
+@file defc.h
+There should be a newline at end of this file.
+Put the message displayed to user after // in each line
+
+e.g. If you want to disallow goto, add this line:
+#define goto errorNo13    //Goto is not allowd
+
+*/
+
+#define system errorNo1      //"system" is not allowed
+#define freopen errorNo2     //File operation is not allowed
+#define fopen errorNo3       //File operation is not allowed
+#define fprintf errorNo4     //File operation is not allowed
+#define fscanf errorNo5      //File operation is not allowed
+#define feof errorNo6        //File operation is not allowed
+#define fclose errorNo7      //File operation is not allowed
+#define ifstream errorNo8    //File operation is not allowed
+#define ofstream errorNo9    //File operation is not allowed
+#define fork errorNo10       //Fork is not allowed
+#define clone errorNo11      //Clone is not allowed
+#define sleep errorNo12      //Sleep is not allowed
 		\end{lstlisting}
 		
 		Pada akhir \textit{files} \textit{defc.h} dan \textit{defcpp.h} harus ada baris baru. Ada banyak aturan yang tidak dapat dipakai pada \textit{g++}. Sebagai contoh pengguna tidak dapat memakai \textit{\#define fopen errorNo3} pada \textit{C++} karena hasilnya \textit{compile error}.
@@ -1474,25 +1474,25 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls:21]
-		# @file shield_py3.py
-		
-		import sys
-		sys.modules['os']=None
-		
-		BLACKLIST = [
-		#'__import__', # deny importing modules
-		'eval', # eval is evil
-		'open',
-		'file',
-		'exec',
-		'execfile',
-		'compile',
-		'reload',
-		#'input'
-		]
-		for func in BLACKLIST:
-		if func in __builtins__.__dict__:
-		del __builtins__.__dict__[func]
+# @file shield_py3.py
+
+import sys
+sys.modules['os']=None
+
+BLACKLIST = [
+#'__import__', # deny importing modules
+'eval', # eval is evil
+'open',
+'file',
+'exec',
+'execfile',
+'compile',
+'reload',
+#'input'
+]
+for func in BLACKLIST:
+if func in __builtins__.__dict__:
+del __builtins__.__dict__[func]
 		\end{lstlisting}
 		
 		
