@@ -130,7 +130,7 @@ Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit
 		\hline
 		Kriteria Sukses & Tingkat Kepatuhan & Hasil \\
 		\hline
-		4.1.1 &  & AAA\\
+		4.1.1 & Tidak Sukses & AAA\\
 		4.1.2 & Tidak Sukses & AAA\\
 		4.1.3 & Tidak Sukses & AAA\\
 		\hline
@@ -854,7 +854,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ma
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.5]{kepatuhan_2_5_5}  
-	\caption[Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 css Piksel]{Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 css Piksel} 
+	\caption[Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 CSS Piksel]{Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 CSS Piksel} 
 	\label{fig:kepatuhan_2_5_5} 
 \end{figure}
 
@@ -1015,6 +1015,15 @@ Kriteria ini sukses dipatuhi karena pada halaman yang mengharuskan pengguna untu
 
 \subsubsection{Kriteria Sukses 4.1.1 Parsing}
 \label{subsubsec:kepatuhan_kriteria_4.1.1}
+(Tidak Sukses)\\
+
+Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak elemen yang tidak memiliki tag awal dan akhir yang lengkap, elemen tidak disusun berlapis sesuai dengan spesifikasinya, elemen mengandung atribut duplikat, dan ada ID yang unik. Pada potongan kode \ref{ls_kepatuhan_4_1_1} ditunjukkan bahwa masih ada elemen yang memiliki atribut yang duplikat.
+\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_4_1_1, caption=Kriteria Sukses 4.1.1 - Elemen Memiliki Atribut Duplikat]
+...
+<input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
+...
+\end{lstlisting}
 
 \subsubsection{Kriteria Sukses 4.1.2 Name, Role, Value}
 \label{subsubsec:kepatuhan_kriteria_4.1.2}
