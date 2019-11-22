@@ -560,7 +560,7 @@ Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan
 		\begin{itemize}
 			\item Tidak Ada \textit{Down-Event} : \textit{Down-Event} dari \textit{pointer} tidak dipakai untuk eksekusi bagian dari fungsi;
 			\item Gagalkan atau Batalkan : Keberhasilan fungsi pada \textit{up-event}, dan tersedia mekanisme untuk mengagalkan fungsi sebelum berhasil atau membatalkan fungsi setelah berhasil;
-			\item \textit{Up Reversal} : 
+			\item \textit{Up Reversal} : \textit{Up-event} akan membalikkan setiap hasil dari \textit{down-event} sebelumnya;
 			\item Esensial : Keberhasilan fungsi saat \textit{down-event} esensial.
 		\end{itemize}
 		
@@ -1625,9 +1625,9 @@ del __builtins__.__dict__[func]
 				\hline
 				Kriteria Sukses & Tingkat Kepatuhan & Hasil \\
 				\hline
-				4.1.1 & Tidak Sukses & AAA\\
-				4.1.2 & Tidak Sukses & AAA\\
-				4.1.3 & Tidak Sukses & AAA\\
+				4.1.1 & Tidak Sukses & A\\
+				4.1.2 & Tidak Sukses & A\\
+				4.1.3 & Tidak Sukses & AA\\
 				\hline
 				\multicolumn{2}{|c|}{Kesimpulan} & - \\
 				\hline
@@ -1646,21 +1646,19 @@ del __builtins__.__dict__[func]
 			\item Gambar logo \textit{SharIF Judge} tidak memiliki alternatif teks. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_sharif_judge}.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_sharif_judge, caption=Kriteria Sukses 1.1.1 - Logo SharIF Judge Tidak Diberi Teks Alternatif]
-			...
-			<a href="{{ site_url('/') }}">
-			<img src="{{ base_url('assets/images/logo_small.png') }}"/>
-			<h1 class="shjlogo-text">SharIF <span>Judge</span></h1>
-			</a>
-			...
+...
+<a href="{{ site_url('/') }}">
+<img src="{{ base_url('assets/images/logo_small.png') }}"/>
+...
 			\end{lstlisting}
 			\item Gambar pdf pada halaman \textit{Assignment} tidak memiliki teks alternatif. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_pdf}.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_pdf, caption=Kriteria Sukses 1.1.1 - Gambar PDF Tidak Diberi Teks Alternatif]
-			...
-			<td>
-			<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
-			</td>
-			...
+...
+<td>
+	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
+</td>
+...
 			\end{lstlisting}
 		\end{itemize}
 		
@@ -1733,9 +1731,9 @@ del __builtins__.__dict__[func]
 			\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_1_add_assignment}.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_1_add_assignment, caption=Kriteria Sukses 1.3.1 - Elemen Dalam Form yang Tidak Diberi Label]
-			...
-			<td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
-			...
+...
+<td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
+...
 			\end{lstlisting}
 			
 			\item Dalam halaman \textit{Problem} terdapat elemen form yang tidak diberi label.
@@ -1778,11 +1776,11 @@ del __builtins__.__dict__[func]
 		Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label, salah satunya pada halaman \textit{Problems} bagian \textit{Edit Markdown}. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_5}.
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5, caption=Kriteria Sukses 1.3.5 - Elemen Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]
-		...
-		<p class="input_p">
-		<textarea name="text">{{ problem.description }}</textarea>
-		</p>
-		...
+...
+<p class="input_p">
+	<textarea name="text">{{ problem.description }}</textarea>
+</p>
+...
 		\end{lstlisting}
 		
 		\subsubsection*{Kriteria Sukses 1.3.6 Identify Purpose}
@@ -1792,11 +1790,11 @@ del __builtins__.__dict__[func]
 		Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi dan judul bagian. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_6}.
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_6, caption=Kriteria Sukses 1.3.6 - \textit{Sidebar}]
-		...
-		<div id="side_bar" class="sidebar_open">
-		<ul>
-		<li class="color-dashboard{{ selected=='dashboard' ? ' selected' }}">
-		...
+...
+<div id="side_bar" class="sidebar_open">
+	<ul>
+	<li class="color-dashboard{{ selected=='dashboard' ? ' selected' }}">
+...
 		\end{lstlisting}
 		
 		\subsubsection*{Kriteria Sukses 1.4.1 Use of Color}
@@ -2199,19 +2197,19 @@ del __builtins__.__dict__[func]
 			\item Pada halaman \textit{Assignment} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_4_assignment} ditunjukkan bahwa gambar pdf memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_assignment, caption=Kriteria Sukses 2.4.4 - Gambar PDF]
-			...
-			<td>
-			<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
-			</td>
-			...
+...
+<td>
+	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
+</td>
+...
 			\end{lstlisting}
 			
 			\item Pada menu \textit{Top Bar} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_4_top_bar} ditunjukkan bahwa gambar logo profil memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_top_bar, caption=Kriteria Sukses 2.4.4 - Gambar Logo Profile]
-			...
-			<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
-			...
+...
+<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
+...
 			\end{lstlisting}
 			
 		\end{itemize}
@@ -2237,29 +2235,29 @@ del __builtins__.__dict__[func]
 			\item Pada halaman \textit{Add User} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_user} ada bidang masukan yang tidak memiliki label.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_user, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add User}]
-			...
-			<p class="input_p">
-			<textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
-			# Lines starting with a # sign are comments.
-			...
+...
+<p class="input_p">
+	<textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
+	# Lines starting with a # sign are comments.
+...
 			\end{lstlisting}
 			
 			\item Pada halaman \textit{Add Assignment} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_assignment} ada bidang masukan yang tidak memiliki label.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_assignment, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add Assignment}]
-			...
-			<td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
-			...
+...
+<td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
+...
 			\end{lstlisting}
 			
 			\item Pada halaman \textit{Problems} bagian \textit{Edit Markdown} dan \textit{Edit Plain HTML} memiliki \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_edit_markdown} ada bidang masukan yang tidak memiliki label.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_edit_markdown, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Problems} bagian \textit{Edit Markdown}]
-			...
-			<p class="input_p">
-			<textarea name="text">{{ problem.description }}</textarea>
-			</p>
-			...
+...
+<p class="input_p">
+	<textarea name="text">{{ problem.description }}</textarea>
+</p>
+...
 			\end{lstlisting}
 			
 		\end{itemize}
@@ -2285,19 +2283,19 @@ del __builtins__.__dict__[func]
 			\item Pada halaman \textit{Assignment} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_9_assignment} ditunjukkan bahwa gambar pdf memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_assignment, caption=Kriteria Sukses 2.4.9 - Gambar PDF]
-			...
-			<td>
-			<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
-			</td>
-			...
+...
+<td>
+	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
+</td>
+...
 			\end{lstlisting}
 			
 			\item Pada menu \textit{Top Bar} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_9_top_bar} ditunjukkan bahwa gambar logo profil memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 			\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 			columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_top_bar, caption=Kriteria Sukses 2.4.9 - Gambar Logo Profile]
-			...
-			<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
-			...
+...
+<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
+...
 			\end{lstlisting}
 			
 		\end{itemize}
@@ -2309,13 +2307,13 @@ del __builtins__.__dict__[func]
 		Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} judul bagian tidak dipakai untuk mengatur konten. Pada potongan kode \ref{ls_kepatuhan_2_4_10_section_headings} bagian judul bagian tidak menggunakan tag \textit{heading}.
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_10_section_headings, caption=Kriteria Sukses 2.4.10 - Title Heading]
-		...
-		<div id="page_title">
-		<i class="fa {% block icon %}{% endblock %}"></i>
-		<span dir="auto">{% block title %}{% endblock %}</span>
-		{% block title_menu %}{% endblock %}
-		</div>
-		...
+...
+<div id="page_title">
+	<i class="fa {% block icon %}{% endblock %}"></i>
+	<span dir="auto">{% block title %}{% endblock %}</span>
+	{% block title_menu %}{% endblock %}
+</div>
+...
 		\end{lstlisting}
 		
 		\subsubsection*{Kriteria Sukses 2.5.1 Pointer Gestures}
@@ -2371,10 +2369,10 @@ del __builtins__.__dict__[func]
 		Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}. Pada potongan kode \ref{ls_kepatuhan_3_1_1} ditunjukkan bahwa elemen \textit{html} tidak memiliki atribut \textit{lang}.
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_3_1_1, caption=Kriteria Sukses 3.1.1 - Elemen \textit{HTML}]
-		...
-		<html>
-		<head>
-		...
+...
+<html>
+<head>
+...
 		\end{lstlisting}
 		
 		\subsubsection*{Kriteria Sukses 3.1.2 Language of Parts}
@@ -2517,9 +2515,9 @@ del __builtins__.__dict__[func]
 		Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak elemen yang tidak memiliki tag awal dan akhir yang lengkap, elemen tidak disusun berlapis sesuai dengan spesifikasinya, elemen mengandung atribut duplikat, dan ada ID yang unik. Pada potongan kode \ref{ls_kepatuhan_4_1_1} ditunjukkan bahwa masih ada elemen yang memiliki atribut yang duplikat.
 		\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 		columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_4_1_1, caption=Kriteria Sukses 4.1.1 - Elemen Memiliki Atribut Duplikat]
-		...
-		<input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
-		...
+...
+<input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
+...
 		\end{lstlisting}
 		
 		\subsubsection*{Kriteria Sukses 4.1.2 Name, Role, Value}
@@ -2539,7 +2537,7 @@ del __builtins__.__dict__[func]
 
 		\item \textbf{Menulis dokumen skripsi}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
-		{\bf Hasil :} Dokumen skripsi yang sudah dibuat sampai Bab 3.
+		{\bf Hasil :} Dokumen skripsi sedang dikerjakan.
 
 	\end{enumerate}
 
