@@ -15,7 +15,7 @@ yang belum sukses dipatuhi menjadi sukses dipatuhi.
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.1.1:
 
 \begin{itemize}
-	\item Pada bagian menu atas logo \textit{SharIF Judge} tidak memiliki teks alternatif yang menjelaskan gambar dari logo tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada \ref{lst_1.1.1:1}.
+	\item Pada bagian menu atas logo \textit{SharIF Judge} tidak memiliki teks alternatif yang menjelaskan gambar dari logo tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.1.1:1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{top\_bar.twig}, label=lst_1.1.1:1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -30,7 +30,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 </div>
 \end{lstlisting}
 
-	\item Pada halaman \textit{Assignments} terdapat gambar \textit{PDF} di daftar \textit{Assignment} yang tidak memiliki teks alternatif yang menjelaskan gambar tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada \ref{lst_1.1.1:2}.
+	\item Pada halaman \textit{Assignments} terdapat gambar \textit{PDF} di daftar \textit{Assignment} yang tidak memiliki teks alternatif yang menjelaskan gambar tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.1.1:2}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{assignments.twig}, label=lst_1.1.1:2, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -52,7 +52,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.3.1:
 
 \begin{itemize}
-	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk memberikan informasi sesuai elemennya. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:1}.
+	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk memberikan informasi sesuai elemennya. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{add\_assignment.twig}, label=lst_1.3.1:1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -85,7 +85,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 {% endfor %}
 \end{lstlisting}
 
-	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:2}.
+	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:2}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{add\_user.twig}, label=lst_1.3.1:2, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -104,7 +104,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 # The syntax of each line is:
 \end{lstlisting}
 
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:3}.
+	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:3}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{edit\_problem\_md.twig}, label=lst_1.3.1:3, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -119,7 +119,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 <input type="submit" value="Save" class="sharif_input"/>
 \end{lstlisting}
 
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:4}.
+	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:4}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{edit\_problem\_plain.twig}, label=lst_1.3.1:4, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -134,7 +134,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 <input type="submit" value="Save" class="sharif_input"/>
 \end{lstlisting}
 	
-	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:5}.
+	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:5}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{problems.twig} untuk \textit{Dropdown Select Language}, label=lst_1.3.1:5, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -150,7 +150,7 @@ $(document).ready(function(){
 <option value="{{ l }}">{{ l }}</option>
 \end{lstlisting}
 
-	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada \ref{lst_1.3.1:6}.
+	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:6}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{problems.twig} untuk masukan \textit{Upload \textit{file}}, label=lst_1.3.1:6, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -181,7 +181,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 </div>
 {%  if user.level >= 2 %}
 - <div class="top_object shj_menu top_left" id="admin_tools_top">
-+ <div class="top_object shj_menu top_left test" tabindex="0" id="admin_tools_top">
++ <div class="top_object shj_menu top_left" tabindex="0" id="admin_tools_top">
 Tools
 <ul class="top_menu">
 <li><a href="{{ site_url('rejudge') }}">Rejudge</a></li>
@@ -215,7 +215,7 @@ $(this).children(".top_menu").show();
 	
 	\item \textit{Sub-menu} memilih \textit{Assignment} pada bagian menu atas tidak muncul ketika fokus \textit{keyboard} berada pada tautan \textit{Assigntment} sekarang. Tautan \textit{Assignment} memiliki kelas yang sama seperti menu \textit{Tools} sehingga perubahan yang terjadi pada listing \ref{lst_2.1.1:2} dapat memunculkan \textit{sub-menu} yang dimiliki oleh \textit{Assignment}.
 	
-	\textit{Sum-menu} memilih \textit{Assignemnt} pada bagian menu atas tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:3}.
+	\textit{Sub-menu} memilih \textit{Assignment} pada bagian menu atas tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:3}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{top\_bar.twig}, label=lst_2.1.1:3, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -249,7 +249,7 @@ function () {
 var id = $(this).children('i').addBack('i').data('id');
 \end{lstlisting}
 	
-	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan keyboard sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:5}.
+	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:5}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{users.twig}, label=lst_2.1.1:5, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -266,7 +266,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 {% endfor %}
 \end{lstlisting}
 
-	Fungsi \textit{Delete User} tidak bisa dijalankan dengan keyboard sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete User}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:6}.
+	Fungsi \textit{Delete User} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete User}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:6}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{shj\_functions.js}, label=lst_2.1.1:6, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -284,7 +284,7 @@ var row = $(this).parents('tr');
 var user_id = row.data('id');
 \end{lstlisting}
 
-	Fungsi \textit{Delete Submission} tidak bisa dijalankan dengan keyboard sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete Submission}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:7}.
+	Fungsi \textit{Delete Submission} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete Submission}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:7}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{shj\_functions.js}, label=lst_2.1.1:7, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -302,7 +302,7 @@ var row = $(this).parents('tr');
 var user_id = row.data('id');
 \end{lstlisting}
 
-	\item \textit{Checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan keyboard sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:8}.
+	\item \textit{Checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:8}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{assignments.twig}, label=lst_2.1.1:8, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -317,7 +317,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 <td>{{ item.total_submits }} submission{{ item.total_submits != 1 ? 's' }}</td>
 \end{lstlisting}
 
-	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan keyboard sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode untuk \textit{Add Problem} dapat dilihat pada listing \ref{lst_2.1.1:9} dan potongan kode untuk \textit{Delete Problem} dapat dilihat pada listing \ref{lst_2.1.1:10}.
+	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode untuk \textit{Add Problem} dapat dilihat pada listing \ref{lst_2.1.1:9} dan potongan kode untuk \textit{Delete Problem} dapat dilihat pada listing \ref{lst_2.1.1:10}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk \textit{Add Problem} pada \textit{file} \textit{add\_assignment.twig}, label=lst_2.1.1:9, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -383,7 +383,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 {% if user.level > 0 %}
 \end{lstlisting}
 	
-	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan keyboard sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''enter''} pada keyboard. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:13}.
+	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''enter''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:13}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{shj\_functions.js}, label=lst_2.1.1:13, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -459,7 +459,7 @@ div#top_bar {
 top: 0;
 \end{lstlisting}
 
-Tidak semua \textit{browser} dapat menangani \textit{in-page links}. Secara visual fokus \textit{keyboard} sudah berada pada lokasi target, tetapi sebenarnya fokus \textit{keyboard} belum diset ke lokasi target. Masalah ini dapat diselesaikan dengan menggunakan \textit{Javascript} untuk set fokus \textit{keyboard} ke lokasi target. Perubahan ada pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada \ref{lst_2.4.1:3}.
+Tidak semua \textit{browser} dapat menangani \textit{in-page links}. Secara visual fokus \textit{keyboard} sudah berada pada lokasi target, tetapi sebenarnya fokus \textit{keyboard} belum diset ke lokasi target. Masalah ini dapat diselesaikan dengan menggunakan \textit{Javascript} untuk set fokus \textit{keyboard} ke lokasi target. Perubahan ada pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.4.1:3}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{shj\_functions.js}, label=lst_2.4.1:3, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -499,7 +499,7 @@ $('input').attr('dir', 'auto');
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.4.4:
 
 \begin{itemize}
-	\item Seluruh link pada \textit{sidebar} perlu diberikan label yang menjelaskan link tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/side\_bar.twig}, potongan kode dapat dilihat pada \ref{lst_2.4.4:1}.
+	\item Seluruh link pada \textit{sidebar} perlu diberikan label yang menjelaskan link tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/side\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.4:1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{side\_bar.twig}, label=lst_2.4.4:1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -608,7 +608,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 {% endif %}
 \end{lstlisting}
 
-	\item Tautan pada gambar \textit{Profile} yang ada di menu atas perlu diberi label untuk menjelaskan tujuan dari tautan tersebut. Perubahan yang terjadi ada pada \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada \ref{lst_2.4.4:2}.
+	\item Tautan pada gambar \textit{Profile} yang ada di menu atas perlu diberi label untuk menjelaskan tujuan dari tautan tersebut. Perubahan yang terjadi ada pada \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.4:2}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{top\_bar.twig}, label=lst_2.4.4:2, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -651,7 +651,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 \subsection{Implementasi Kriteria Sukses 3.1.1 Language of Page}
 \label{subsec:implementasi_A_3.1.1}
 
-Seluruh halaman aplikasi \textit{SharIF Judge} menggunakan Bahasa Inggris sehingga perlu diberikan atribut \textit{lang} yang bernilai \textit{''en''} pada awal \textit{tag html} untuk menunjukkan bahwa bahasa yang dipakai di halaman tersebut adalah Bahasa Inggris. Setiap kali halaman dibuka, aplikasi \textit{SharIF Judge} akan menjalankan \textit{file} \textit{base.twig} sebagai dasarnya sehingga perubahan hanya perlu dilakukan pada \textit{file} tersebut. Perubahan dapat dilihat pada \textit{/application/views/templates/base.twig}, potongan kode dapat dilihat pada \ref{lst_3.1.1:1}.
+Seluruh halaman aplikasi \textit{SharIF Judge} menggunakan Bahasa Inggris sehingga perlu diberikan atribut \textit{lang} yang bernilai \textit{''en''} pada awal \textit{tag html} untuk menunjukkan bahwa bahasa yang dipakai di halaman tersebut adalah Bahasa Inggris. Setiap kali halaman dibuka, aplikasi \textit{SharIF Judge} akan menjalankan \textit{file} \textit{base.twig} sebagai dasarnya sehingga perubahan hanya perlu dilakukan pada \textit{file} tersebut. Perubahan dapat dilihat pada \textit{/application/views/templates/base.twig}, potongan kode dapat dilihat pada listing \ref{lst_3.1.1:1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{base.twig}, label=lst_3.1.1:1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -672,23 +672,23 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 3.3.2:
 
 \begin{itemize}
-	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:1}.
+	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:1}.
 	
-	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:2}.
+	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:2}.
 	
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:3}.
+	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:3}.
 	
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:4}.
+	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:4}.
 	
-	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:5}.
+	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:5}.
 	
-	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada \ref{lst_1.3.1:6}.
+	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:6}.
 \end{itemize}
 
 \subsection{Implementasi Kriteria Sukses 4.1.1 Parsing}
 \label{subsec:implementasi_A_4.1.1}
 
-\textit{Form} masukan \textit{Extra Time} pada halaman \textit{Add Assignment} memiliki atribut id yang duplikat. Atribut yang dibuang yaitu atribut \textit{id=''extra\_time''} karena sudah dipakai pada elemen \textit{extra time} pada menu bagian atas. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada \ref{lst_4.1.1:1}.
+\textit{Form} masukan \textit{Extra Time} pada halaman \textit{Add Assignment} memiliki atribut id yang duplikat. Atribut yang dibuang yaitu atribut \textit{id=''extra\_time''} karena sudah dipakai pada elemen \textit{extra time} pada menu bagian atas. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada listing \ref{lst_4.1.1:1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{add\_assignment.twig}, label=lst_4.1.1:1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
