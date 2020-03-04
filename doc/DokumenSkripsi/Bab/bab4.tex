@@ -7,7 +7,7 @@ Pada Bab ini akan dijelaskan bagaimana implementasi untuk menaikkan tingkat kepa
 \label{sec:implementasi}
 
 Pada bagian ini akan dibahas perbaikan apa saja yang dilakukan untuk membuat kriteria sukses pada bagian 3.1
-yang belum sukses dipatuhi menjadi sukses dipatuhi.
+yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditampilkan dalam format \textit{diff}.
 
 \subsection{Implementasi Kriteria Sukses 1.1.1 Non-text Content}
 \label{subsec:implementasi_A_1.1.1}
@@ -85,7 +85,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 {% endfor %}
 \end{lstlisting}
 
-	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:2}.
+	\item \textit{checkbox} dan \textit{textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:2}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{add\_user.twig}, label=lst_1.3.1:2, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -104,7 +104,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 # The syntax of each line is:
 \end{lstlisting}
 
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:3}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:3}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{edit\_problem\_md.twig}, label=lst_1.3.1:3, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -119,7 +119,7 @@ columns=fullflexible, keepspaces=true, breaklines=true]
 <input type="submit" value="Save" class="sharif_input"/>
 \end{lstlisting}
 
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:4}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1:4}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{edit\_problem\_plain.twig}, label=lst_1.3.1:4, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -302,7 +302,7 @@ var row = $(this).parents('tr');
 var user_id = row.data('id');
 \end{lstlisting}
 
-	\item \textit{Checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:8}.
+	\item \textit{checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:8}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{assignments.twig}, label=lst_2.1.1:8, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -368,7 +368,7 @@ $('#problems_table>tbody').append(shj.row.replace(/PID/g, (shj.num_of_problems+1
 shj.num_of_problems++;
 \end{lstlisting}
 
-	\item \textit{Checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:12}.
+	\item \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1:12}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan pada \textit{file} \textit{submissions.twig}, label=lst_2.1.1:12, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -674,11 +674,11 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 3.3
 \begin{itemize}
 	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:1}.
 	
-	\item \textit{Checkbox} dan \textit{Textarea} pada halaman \textit{Add Users} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:2}.
+	\item \textit{checkbox} dan \textit{textarea} pada halaman \textit{Add Users} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:2}.
 	
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:3}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:3}.
 	
-	\item \textit{Textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:4}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:4}.
 	
 	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label yang menjelaskan tujuan dari elemen tersebut. Perubahan sudah dilakukan pada listing \ref{lst_1.3.1:5}.
 	
