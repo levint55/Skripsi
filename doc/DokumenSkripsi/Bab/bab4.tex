@@ -7,7 +7,7 @@ Pada Bab ini akan dijelaskan bagaimana implementasi untuk menaikkan tingkat kepa
 \label{sec:implementasi}
 
 Pada bagian ini akan dibahas perbaikan apa saja yang dilakukan untuk membuat kriteria sukses pada bagian 3.1
-yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditampilkan dalam format \textit{diff}.
+yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditampilkan dalam format \textit{diff} dengan jarak \textit{identation} sebanyak empat spasi.
 
 \subsection{Implementasi Kriteria Sukses 1.1.1 Non-text Content}
 \label{subsec:implementasi_A_1.1.1}
@@ -15,9 +15,11 @@ yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditamp
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.1.1:
 
 \begin{itemize}
-	\item Pada bagian menu atas logo \textit{SharIF Judge} tidak memiliki alternatif teks yang menjelaskan gambar dari logo tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.1.1}.
+	\item Pada bagian menu atas logo \textit{SharIF Judge} tidak memiliki alternatif teks yang menjelaskan gambar dari logo tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/top\_bar.twig}.
 
-	\item Pada halaman \textit{Assignments} terdapat gambar \textit{PDF} di daftar \textit{Assignment} yang tidak memiliki alternatif teks yang menjelaskan gambar tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.1.1}.
+	\item Pada halaman \textit{Assignments} terdapat gambar \textit{PDF} di daftar \textit{Assignment} yang tidak memiliki alternatif teks yang menjelaskan gambar tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/assignments.twig}.
+	
+	Semua perubahan kode dapat dilihat pada \ref{lst_1.1.1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 1.1.1, label=lst_1.1.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -29,14 +31,14 @@ index 13a0ddea..aa9fc435 100644
 <th rowspan="2">Score</th>
 <th colspan="3" style="border-bottom: 1px solid #BDBDBD">Time Limit (ms)</th>
 <th rowspan="2">Memory<br>Limit (kB)</th>
-- 		<th rowspan="2">Allowed<br>Languages (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#allowed-languages">?</a>)</th>
-- 		<th rowspan="2">Diff<br>Command (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-command">?</a>)</th>
-- 		<th rowspan="2">Diff<br>Argument (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-arguments">?</a>)</th>
-- 		<th rowspan="2">Upload<br>Only (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#upload-only">?</a>)</th>
-+ 		<th rowspan="2">Allowed<br>Languages (<a aria-label="Link Help For Languages" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#allowed-languages">?</a>)</th>
-+ 		<th rowspan="2">Diff<br>Command (<a aria-label="Link Help For Diff Command" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-command">?</a>)</th>
-+ 		<th rowspan="2">Diff<br>Argument (<a aria-label="Link Help For Diff Argument" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-arguments">?</a>)</th>
-+ 		<th rowspan="2">Upload<br>Only (<a aria-label="Link Help For Upload Only" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#upload-only">?</a>)</th>
+-    <th rowspan="2">Allowed<br>Languages (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#allowed-languages">?</a>)</th>
+-    <th rowspan="2">Diff<br>Command (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-command">?</a>)</th>
+-    <th rowspan="2">Diff<br>Argument (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-arguments">?</a>)</th>
+-    <th rowspan="2">Upload<br>Only (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#upload-only">?</a>)</th>
++    <th rowspan="2">Allowed<br>Languages (<a aria-label="Link Help For Languages" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#allowed-languages">?</a>)</th>
++    <th rowspan="2">Diff<br>Command (<a aria-label="Link Help For Diff Command" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-command">?</a>)</th>
++    <th rowspan="2">Diff<br>Argument (<a aria-label="Link Help For Diff Argument" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#diff-arguments">?</a>)</th>
++    <th rowspan="2">Upload<br>Only (<a aria-label="Link Help For Upload Only" target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#upload-only">?</a>)</th>
 <th rowspan="2"></th>
 </tr>
 <tr>
@@ -49,8 +51,8 @@ index f4091385..5d4bafa3 100644
 {% endif %}
 </td>
 <td>
-- 		<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
-+ 		<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" aria-label="Download PDF For Assignment {{ item.name }}"/></a>
+-    <a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
++    <a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" aria-label="Download PDF For Assignment {{ item.name }}"/></a>
 </td>
 {% if user.level > 0 %}
 <td>
@@ -63,8 +65,8 @@ index ccb67df9..57ed6ca4 100644
 </div>
 <div id="shj_logo" class="top_left">
 <a href="{{ site_url('/') }}">
-- 			<img src="{{ base_url('assets/images/logo_small.png') }}"/>
-+ 			<img src="{{ base_url('assets/images/logo_small.png') }}" aria-label="Logo SharIF Judge"/>
+-    <img src="{{ base_url('assets/images/logo_small.png') }}"/>
++    <img src="{{ base_url('assets/images/logo_small.png') }}" aria-label="Logo SharIF Judge"/>
 <h1 class="shjlogo-text">SharIF <span>Judge</span></h1>
 </a>
 </div>
@@ -78,20 +80,22 @@ index ccb67df9..57ed6ca4 100644
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.3.1:
 
 \begin{itemize}
-	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk memberikan informasi sesuai elemennya. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item Semua elemen bagian tabel \textit{Problems} pada halaman \textit{Add Assignment} perlu diberi label untuk memberikan informasi sesuai elemennya. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
 
-	\item \textit{checkbox} dan \textit{textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item \textit{checkbox} dan \textit{textarea} pada halaman \textit{Add Users} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/add\_user.twig}.
 
-	\item \textit{textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Markdown} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_md.twig}.
 
-	\item \textit{textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item \textit{textarea} pada halaman \textit{Edit Problem Plain HTML} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/admin/edit\_problem\_plain.twig}.
 	
-	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item \textit{Dropdown} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}.
 
-	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	\item Masukan \textit{Upload File} pada halaman \textit{Problems} perlu diberi label untuk memberikan informasi elemen tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/problems.twig}.
 	
 	\item Setiap judul bagian pada halaman \textit{SharIF Judge} tidak memakai \textit{tag heading}. Perubahan yang perlu dilakukan adalah dengan cara memakai \textit{tag heading} pada setiap judul bagian.
-	Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/base.twig}, potongan kode dapat dilihat pada listing \ref{lst_1.3.1}.
+	Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/base.twig}.
+	
+	Semua perubahan kode dapat dilihat pada \ref{lst_1.3.1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 1.3.1, label=lst_1.3.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -103,26 +107,26 @@ index 13a0ddea..0d3d0cb3 100644
 <script>
 shj.num_of_problems={{ problems|length }};
 shj.row='<tr><td>PID</td>\
-- 	<td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
-- 	<td><input type="text" name="score[]" class="sharif_input tiny2" value="100"/></td>\
-- 	<td><input type="text" name="c_time_limit[]" class="sharif_input tiny2" value="500"/></td>\
-- 	<td><input type="text" name="python_time_limit[]" class="sharif_input tiny2" value="1500"/></td>\
-- 	<td><input type="text" name="java_time_limit[]" class="sharif_input tiny2" value="2000"/></td>\
-- 	<td><input type="text" name="memory_limit[]" class="sharif_input tiny" value="50000"/></td>\
-- 	<td><input type="text" name="languages[]" class="sharif_input short2" value="C,C++,Python 2,Python 3,Java"/></td>\
-- 	<td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="diff"/></td>\
-- 	<td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="-bB"/></td>\
-- 	<td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
-+ 	<td><input aria-label="Problem Name" type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
-+ 	<td><input aria-label="Score" type="text" name="score[]" class="sharif_input tiny2" value="100"/></td>\
-+ 	<td><input aria-label="Time Limit for C" type="text" name="c_time_limit[]" class="sharif_input tiny2" value="500"/></td>\
-+ 	<td><input aria-label="Time Limit for Python" type="text" name="python_time_limit[]" class="sharif_input tiny2" value="1500"/></td>\
-+ 	<td><input aria-label="Time Limit for Java" type="text" name="java_time_limit[]" class="sharif_input tiny2" value="2000"/></td>\
-+ 	<td><input aria-label="Memory Limit" type="text" name="memory_limit[]" class="sharif_input tiny" value="50000"/></td>\
-+ 	<td><input aria-label="Allowed Languages" type="text" name="languages[]" class="sharif_input short2" value="C,C++,Python 2,Python 3,Java"/></td>\
-+ 	<td><input aria-label="Diff Command" type="text" name="diff_cmd[]" class="sharif_input tiny" value="diff"/></td>\
-+ 	<td><input aria-label="Diff Argument" type="text" name="diff_arg[]" class="sharif_input tiny" value="-bB"/></td>\
-+ 	<td><input aria-label="Upload Only" type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
+-    <td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
+-    <td><input type="text" name="score[]" class="sharif_input tiny2" value="100"/></td>\
+-    <td><input type="text" name="c_time_limit[]" class="sharif_input tiny2" value="500"/></td>\
+-    <td><input type="text" name="python_time_limit[]" class="sharif_input tiny2" value="1500"/></td>\
+-    <td><input type="text" name="java_time_limit[]" class="sharif_input tiny2" value="2000"/></td>\
+-    <td><input type="text" name="memory_limit[]" class="sharif_input tiny" value="50000"/></td>\
+-    <td><input type="text" name="languages[]" class="sharif_input short2" value="C,C++,Python 2,Python 3,Java"/></td>\
+-    <td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="diff"/></td>\
+-    <td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="-bB"/></td>\
+-    <td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
++    <td><input aria-label="Problem Name" type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
++    <td><input aria-label="Score" type="text" name="score[]" class="sharif_input tiny2" value="100"/></td>\
++    <td><input aria-label="Time Limit for C" type="text" name="c_time_limit[]" class="sharif_input tiny2" value="500"/></td>\
++    <td><input aria-label="Time Limit for Python" type="text" name="python_time_limit[]" class="sharif_input tiny2" value="1500"/></td>\
++    <td><input aria-label="Time Limit for Java" type="text" name="java_time_limit[]" class="sharif_input tiny2" value="2000"/></td>\
++    <td><input aria-label="Memory Limit" type="text" name="memory_limit[]" class="sharif_input tiny" value="50000"/></td>\
++    <td><input aria-label="Allowed Languages" type="text" name="languages[]" class="sharif_input short2" value="C,C++,Python 2,Python 3,Java"/></td>\
++    <td><input aria-label="Diff Command" type="text" name="diff_cmd[]" class="sharif_input tiny" value="diff"/></td>\
++    <td><input aria-label="Diff Argument" type="text" name="diff_arg[]" class="sharif_input tiny" value="-bB"/></td>\
++    <td><input aria-label="Upload Only" type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
 </tr>';
 $(document).ready(function(){
 $("#add").click(function(){
@@ -130,26 +134,26 @@ $("#add").click(function(){
 {% for problem in problems %}
 <tr>
 <td>{{ problem.id }}</td>
-- 			<td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
-- 			<td><input type="text" name="score[]" class="sharif_input tiny2" value="{{ problem.score }}"/></td>
-- 			<td><input type="text" name="c_time_limit[]" class="sharif_input tiny2" value="{{ problem.c_time_limit }}"/></td>
-- 			<td><input type="text" name="python_time_limit[]" class="sharif_input tiny2" value="{{ problem.python_time_limit }}"/></td>
-- 			<td><input type="text" name="java_time_limit[]" class="sharif_input tiny2" value="{{ problem.java_time_limit }}"/></td>
-- 			<td><input type="text" name="memory_limit[]" class="sharif_input tiny" value="{{ problem.memory_limit }}"/></td>
-- 			<td><input type="text" name="languages[]" class="sharif_input short2" value="{{ problem.allowed_languages }}"/></td>
-- 			<td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
-- 			<td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
-- 			<td><input type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
-+ 			<td><input aria-label="Problem Name" type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
-+ 			<td><input aria-label="Score" type="text" name="score[]" class="sharif_input tiny2" value="{{ problem.score }}"/></td>
-+ 			<td><input aria-label="Time Limit for C" type="text" name="c_time_limit[]" class="sharif_input tiny2" value="{{ problem.c_time_limit }}"/></td>
-+ 			<td><input aria-label="Time Limit for Python" type="text" name="python_time_limit[]" class="sharif_input tiny2" value="{{ problem.python_time_limit }}"/></td>
-+ 			<td><input aria-label="Time Limit for Java" type="text" name="java_time_limit[]" class="sharif_input tiny2" value="{{ problem.java_time_limit }}"/></td>
-+ 			<td><input aria-label="Memory Limit" type="text" name="memory_limit[]" class="sharif_input tiny" value="{{ problem.memory_limit }}"/></td>
-+ 			<td><input aria-label="Allowed Languages" type="text" name="languages[]" class="sharif_input short2" value="{{ problem.allowed_languages }}"/></td>
-+ 			<td><input aria-label="Diff Command" type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
-+ 			<td><input aria-label="Diff Argument" type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
-+ 			<td><input aria-label="Upload Only" type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
+-    <td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
+-    <td><input type="text" name="score[]" class="sharif_input tiny2" value="{{ problem.score }}"/></td>
+-    <td><input type="text" name="c_time_limit[]" class="sharif_input tiny2" value="{{ problem.c_time_limit }}"/></td>
+-    <td><input type="text" name="python_time_limit[]" class="sharif_input tiny2" value="{{ problem.python_time_limit }}"/></td>
+-    <td><input type="text" name="java_time_limit[]" class="sharif_input tiny2" value="{{ problem.java_time_limit }}"/></td>
+-    <td><input type="text" name="memory_limit[]" class="sharif_input tiny" value="{{ problem.memory_limit }}"/></td>
+-    <td><input type="text" name="languages[]" class="sharif_input short2" value="{{ problem.allowed_languages }}"/></td>
+-    <td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
+-    <td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
+-    <td><input type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
++    <td><input aria-label="Problem Name" type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
++    <td><input aria-label="Score" type="text" name="score[]" class="sharif_input tiny2" value="{{ problem.score }}"/></td>
++    <td><input aria-label="Time Limit for C" type="text" name="c_time_limit[]" class="sharif_input tiny2" value="{{ problem.c_time_limit }}"/></td>
++    <td><input aria-label="Time Limit for Python" type="text" name="python_time_limit[]" class="sharif_input tiny2" value="{{ problem.python_time_limit }}"/></td>
++    <td><input aria-label="Time Limit for Java" type="text" name="java_time_limit[]" class="sharif_input tiny2" value="{{ problem.java_time_limit }}"/></td>
++    <td><input aria-label="Memory Limit" type="text" name="memory_limit[]" class="sharif_input tiny" value="{{ problem.memory_limit }}"/></td>
++    <td><input aria-label="Allowed Languages" type="text" name="languages[]" class="sharif_input short2" value="{{ problem.allowed_languages }}"/></td>
++    <td><input aria-label="Diff Command" type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
++    <td><input aria-label="Diff Argument" type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
++    <td><input aria-label="Upload Only" type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
 <td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
 </tr>
 {% endfor %}
@@ -162,12 +166,12 @@ index 7f7ef43d..0b85aeb6 100644
 <li>If you want to send passwords by email, do not add too many users at one time. This may result in mail delivery fail.</li>
 </ul>
 <p class="input_p">
-- 	<input type="checkbox" name="send_mail" id="send_mail" /> Send usernames and passwords by email (Waits <input type="text" name="delay" id="delay" class="sharif_input tiny" value="2"/> second(s) before sending each email, so please be patient).
-+ 	<input type="checkbox" name="send_mail" id="send_mail" aria-label="Send mail"/> Send usernames and passwords by email (Waits <input type="text" name="delay" id="delay" class="sharif_input tiny" value="2" aria-label="Delay"/> second(s) before sending each email, so please be patient).
+-    <input type="checkbox" name="send_mail" id="send_mail" /> Send usernames and passwords by email (Waits <input type="text" name="delay" id="delay" class="sharif_input tiny" value="2"/> second(s) before sending each email, so please be patient).
++    <input type="checkbox" name="send_mail" id="send_mail" aria-label="Send mail"/> Send usernames and passwords by email (Waits <input type="text" name="delay" id="delay" class="sharif_input tiny" value="2" aria-label="Delay"/> second(s) before sending each email, so please be patient).
 </p>
 <p class="input_p">
-- <textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
-+ <textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input" aria-label="Command for creating new user">
+-    <textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
++    <textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input" aria-label="Command for creating new user">
 # Lines starting with a # sign are comments.
 # Each line (except comments) represents a user.
 # The syntax of each line is:
@@ -180,8 +184,8 @@ index a9bed8fb..e6fd7923 100644
 </p>
 {{ form_open("problems/edit/md/#{description_assignment.id}/#{problem.id}") }}
 <p class="input_p">
-- 		<textarea dir="auto" name="text" rows="30" cols="75" class="sharif_input" id="md_editor">{{ problem.description }}</textarea>
-+ 		<textarea dir="auto" name="text" rows="30" cols="75" class="sharif_input" id="md_editor" aria-label="Markdown Editor">{{ problem.description }}</textarea>
+-    <textarea dir="auto" name="text" rows="30" cols="75" class="sharif_input" id="md_editor">{{ problem.description }}</textarea>
++    <textarea dir="auto" name="text" rows="30" cols="75" class="sharif_input" id="md_editor" aria-label="Markdown Editor">{{ problem.description }}</textarea>
 </p>
 <p class="input_p">
 <input type="submit" value="Save" class="sharif_input"/>
@@ -194,8 +198,8 @@ index 2693e63d..cf8b0e76 100644
 </p>
 {{ form_open("problems/edit/html/#{description_assignment.id}/#{problem.id}") }}
 <p class="input_p">
-- 	<textarea name="text" rows="30" cols="80" class="sharif_input" id="html_editor">{{ problem.description }}</textarea>
-+ 	<textarea name="text" rows="30" cols="80" class="sharif_input" id="html_editor" aria-label="HTML Editor">{{ problem.description }}</textarea>
+-    <textarea name="text" rows="30" cols="80" class="sharif_input" id="html_editor">{{ problem.description }}</textarea>
++    <textarea name="text" rows="30" cols="80" class="sharif_input" id="html_editor" aria-label="HTML Editor">{{ problem.description }}</textarea>
 </p>
 <p class="input_p">
 <input type="submit" value="Save" class="sharif_input"/>
@@ -208,8 +212,8 @@ index 4f66153e..d1c119fc 100644
 <input type="hidden" name="problem" value="{{ problem.id }}"/>
 
 <p class="input_p">
-- 			<select id="languages" name="language" class="sharif_input full-width">
-+ 			<select id="languages" name="language" class="sharif_input full-width" aria-label="Select Language">
+-    <select id="languages" name="language" class="sharif_input full-width">
++    <select id="languages" name="language" class="sharif_input full-width" aria-label="Select Language">
 <option value="0" selected="selected">-- Select Language --</option>
 {% for l in problem.allowed_languages %}
 <option value="{{ l }}">{{ l }}</option>
@@ -217,8 +221,8 @@ index 4f66153e..d1c119fc 100644
 </select>
 </p>
 <p class="input_p">
-- 			<input type="file" id="file" class="sharif_input full-width" name="userfile"/>
-+ 			<input type="file" id="file" class="sharif_input full-width" name="userfile" aria-label="Upload File"/>
+-    <input type="file" id="file" class="sharif_input full-width" name="userfile"/>
++    <input type="file" id="file" class="sharif_input full-width" name="userfile" aria-label="Upload File"/>
 </p>
 <p class="input_p">
 <input type="submit" value="Submit" class="sharif_input"/>
@@ -231,8 +235,8 @@ index e580f5de..047dc432 100644
 
 <div id="page_title">
 <i class="fa {% block icon %}{% endblock %}"></i>
-- 			<span dir="auto">{% block title %}{% endblock %}</span>
-+ 			<h1 dir="auto">{% block title %}{% endblock %}</h1>
+-    <span dir="auto">{% block title %}{% endblock %}</span>
++    <h1 dir="auto">{% block title %}{% endblock %}</h1>
 {% block title_menu %}{% endblock %}
 </div>
 
@@ -245,13 +249,13 @@ margin-left: 8px;
 }
 
 + div#page_title > h1 {
-+ 	margin-left: 8px;
-+ 	display: inline !important;
-+ 	font-size: 20px !important;
-+ 	margin-block-start: 0em !important;
-+ 	margin-block-end: 0em !important;
++    margin-left: 8px;
++    display: inline !important;
++    font-size: 20px !important;
++    margin-block-start: 0em !important;
++    margin-block-end: 0em !important;
 + }
-+ 
++
 span.title_menu_item {
 font-size: 12px;
 margin-left: 10px;
@@ -264,36 +268,41 @@ margin-left: 10px;
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.1.1:
 
 \begin{itemize}
-	\item Fokus \textit{keyboard} tidak dapat terfokus pada menu \textit{Tools} pada menu bagian atas. Hal ini dapat diperbaiki dengan cara menambahkan \textit{tabindex} yang bernilai 0 sehingga fokus \textit{keyboard} dapat terfokus di elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	\item Fokus \textit{keyboard} tidak dapat terfokus pada menu \textit{Tools} pada menu bagian atas. Hal ini dapat diperbaiki dengan cara menambahkan \textit{tabindex} yang bernilai 0 sehingga fokus \textit{keyboard} dapat terfokus di elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}.
 	
-	Menu \textit{Tools} pada bagian menu atas memiliki \textit{sub-menu} yang dapat muncul ketika \textit{pointer cursor} berada diatasnya, menu ini tidak muncul ketika fokus \textit{keyboard} berada pada menu \textit{Tools}. Perlu ditambahkan fungsi untuk memunculkan \textit{sub-menu} ketika fokus \textit{keyboard} berada pada menu \textit{Tools}. \textit{Sub-menu} akan hilang jika fokus \textit{keyboard} terfokus pada \textit{sidebar}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}
+	Menu \textit{Tools} pada bagian menu atas memiliki \textit{sub-menu} yang dapat muncul ketika \textit{pointer cursor} berada diatasnya, menu ini tidak muncul ketika fokus \textit{keyboard} berada pada menu \textit{Tools}. Perlu ditambahkan fungsi untuk memunculkan \textit{sub-menu} ketika fokus \textit{keyboard} berada pada menu \textit{Tools}. \textit{Sub-menu} akan hilang jika fokus \textit{keyboard} terfokus pada \textit{sidebar}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 
 	\item \textit{Sub-menu} \textit{Profile} pada bagian menu atas tidak muncul ketika fokus \textit{keyboard} berada pada gambar \textit{Profile}. Gambar \textit{Profile} memiliki kelas yang sama seperti menu \textit{Tools} sehingga perubahan yang dilakukan pada kelas tersebut dapat memperbaiki masalah ini.
 	
 	\item \textit{Sub-menu} memilih \textit{Assignment} pada bagian menu atas tidak muncul ketika fokus \textit{keyboard} berada pada tautan \textit{Assigntment} sekarang. Tautan \textit{Assignment} memiliki kelas yang sama seperti menu \textit{Tools} sehingga perubahan yang dilakukan pada kelas tersebut dapat memperbaiki masalah ini.
 	
-	\textit{Sub-menu} memilih \textit{Assignment} pada bagian menu atas tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	\textit{Sub-menu} memilih \textit{Assignment} pada bagian menu atas tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus keyboard dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/top\_bar.twig}.
 
-	Pada \textit{Sub-menu} memilih \textit{Assignment} pada menu atas, pengguna tidak dapat memilih \textit{Assignment} dengan menggunakan \textit{keyboard}. Hal ini dapat diperbaiki dengan cara menambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan salah satu dari \textit{list} \textit{Assignment}. Pengguna harus menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini untuk menjalankan fungsi tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	Pada \textit{Sub-menu} memilih \textit{Assignment} pada menu atas, pengguna tidak dapat memilih \textit{Assignment} dengan menggunakan \textit{keyboard}. Hal ini dapat diperbaiki dengan cara menambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan salah satu dari \textit{list} \textit{Assignment}. Pengguna harus menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini untuk menjalankan fungsi tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 	
-	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}.
 
-	Fungsi \textit{Delete User} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete User}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	Fungsi \textit{Delete User} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete User}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 
-	Fungsi \textit{Delete Submission} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete Submission}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	Fungsi \textit{Delete Submission} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete Submission}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 
-	\item \textit{checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	\item \textit{checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}.
 
-	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode untuk \textit{Add Problem} dan \textit{Delete Problem} dapat dilihat pada listing \ref{lst_2.1.1}.
+	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
 
-	Aksi \textit{Add} dan \textit{Delete Problem} tidak dapat dijalankan menggunakan \textit{keyboard} sehingga perlu ditambahkan fungsi yang sama ketika pengguna menekan tombol tersebut. Pengguna dapat menjalankan fungsi ini dengan menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	Aksi \textit{Add} dan \textit{Delete Problem} tidak dapat dijalankan menggunakan \textit{keyboard} sehingga perlu ditambahkan fungsi yang sama ketika pengguna menekan tombol tersebut. Pengguna dapat menjalankan fungsi ini dengan menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
 
-	\item \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	\item \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}.
 	
-	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''enter''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.1.1}.
+	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''enter''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
+	
+	Aksi melihat status, melihat kode, melihat \textit{log} dan aksi \textit{rejudge} pada halaman \textit{All Submission} dan \textit{Final Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Selain itu fungsi dari elemen tersebut tidak dapat dijalankan ketika pengguna menekan tombol \textit{''enter''} pada \textit{keyboard} sehingga perlu ditambahkan sebuah fungsi yang menjalankan fungsi yang sama ketika pengguna menekan tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
+	
+	Semua perubahan kode dapat dilihat pada \ref{lst_2.1.1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.1.1, label=lst_2.1.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
+
 diff --git a/application/views/pages/admin/add_assignment.twig b/application/views/pages/admin/add_assignment.twig
 index 13a0ddea..aaae452c 100644
 --- a/application/views/pages/admin/add_assignment.twig
@@ -302,16 +311,16 @@ index 13a0ddea..aaae452c 100644
 <td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
 </tr>';
 $(document).ready(function(){
-+ 		$("#add").on('keyup', function (e) {
-+ 			if(e.which==13){
-+ 				$(this).trigger("click");
-+ 			}
-+ 		})
-+ 		$(".delete_problem").on('keyup', function (e) {
-+ 			if(e.which==13){
-+ 				$(this).trigger("click");
-+ 			}
-+ 		})
++    $("#add").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
++    $(".delete_problem").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
 $("#add").click(function(){
 $('#problems_table>tbody').append(shj.row.replace(/PID/g, (shj.num_of_problems+1)));
 shj.num_of_problems++;
@@ -319,8 +328,8 @@ shj.num_of_problems++;
 {{ form_error('late_rule', '<div class="shj_error">', '</div>') }}
 </p>
 </div>
-- <p class="input_p" id="add_problems">Problems <i class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
-+ <p class="input_p" id="add_problems">Problems <i tabindex="0" class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
+-    <p class="input_p" id="add_problems">Problems <i class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
++    <p class="input_p" id="add_problems">Problems <i tabindex="0" class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
 <table id="problems_table">
 <thead>
 <tr>
@@ -328,12 +337,11 @@ shj.num_of_problems++;
 <td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
 <td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
 <td><input type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
-- 			<td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
-+ 			<td><i tabindex="0" class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
+-    <td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
++    <td><i tabindex="0" class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
 </tr>
 {% endfor %}
 </tbody>
-
 diff --git a/application/views/pages/admin/users.twig b/application/views/pages/admin/users.twig
 index 21d51fe2..1f3aef41 100644
 --- a/application/views/pages/admin/users.twig
@@ -342,14 +350,13 @@ index 21d51fe2..1f3aef41 100644
 <td>
 <a title="Edit" href="{{ site_url('profile/'~user.id) }}"><i class="fa fa-pencil fa-lg color9"></i></a>
 <a title="Submissions" href="{{ site_url('submissions/all/user/'~user.username) }}"><i class="fa fa-bars fa-lg color12"></i></a>
-- 				<span title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
-- 				<span title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
-+ 				<span tabindex="0" title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
-+ 				<span tabindex="0" title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
+-    <span title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
+-    <span title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
++    <span tabindex="0" title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
++    <span tabindex="0" title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
 </td>
 </tr>
 {% endfor %}
-
 diff --git a/application/views/pages/assignments.twig b/application/views/pages/assignments.twig
 index f4091385..e6b13589 100644
 --- a/application/views/pages/assignments.twig
@@ -358,26 +365,61 @@ index f4091385..e6b13589 100644
 </thead>
 {% for item in all_assignments|reverse %}
 <tr>
-- 	<td><i class="pointer select_assignment fa {{ item.id == user.selected_assignment.id ? 'fa-check-square-o color6' : 'fa-square-o' }} fa-2x" data-id="{{ item.id }}"></i></td>
-+ 	<td><i tabindex="0" class="pointer select_assignment fa {{ item.id == user.selected_assignment.id ? 'fa-check-square-o color6' : 'fa-square-o' }} fa-2x" data-id="{{ item.id }}"></i></td>
+-    <td><i class="pointer select_assignment fa {{ item.id == user.selected_assignment.id ? 'fa-check-square-o color6' : 'fa-square-o' }} fa-2x" data-id="{{ item.id }}"></i></td>
++    <td><i tabindex="0" class="pointer select_assignment fa {{ item.id == user.selected_assignment.id ? 'fa-check-square-o color6' : 'fa-square-o' }} fa-2x" data-id="{{ item.id }}"></i></td>
 <td dir="auto">{{ item.name }}</td>
 <td><a href="{{ site_url('problems/'~item.id) }}">{{ item.problems }} problem{{ item.problems != 1 ? 's' }}</a></td>
 <td>{{ item.total_submits }} submission{{ item.total_submits != 1 ? 's' }}</td>
-
 diff --git a/application/views/pages/submissions.twig b/application/views/pages/submissions.twig
-index 2f58f9cf..43a6d519 100644
+index 2f58f9cf..fd02ac19 100644
 --- a/application/views/pages/submissions.twig
 +++ b/application/views/pages/submissions.twig
 @@ -108,7 +108,7 @@
 <tr data-u="{{ submission.username }}" data-a="{{ submission.assignment }}" data-p="{{ submission.problem }}" data-s="{{ submission.submit_id }}" {% if view == 'final' and j is even %}class="hl"{% endif %}>
 {% if view == 'all' %}
 <td>
-- 				<i class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
-+ 				<i tabindex="0" class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
+-    <i class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
++    <i tabindex="0" class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
 </td>
 {% endif %}
 {% if user.level > 0 %}
-
+@@ -148,7 +148,7 @@
+{% else %}
+{% set submission_class = 'btn shj-blue' %}
+{% endif %}
+-    <div class="{{ submission_class }}" data-type="result" >
++    <div tabindex="0" class="{{ submission_class }}" data-type="result" >
+{% if submission.status == 'SCORE' %}
+{{ submission.final_score }}
+{% else %}
+@@ -159,9 +159,9 @@
+</td>
+<td>
+{% if submission.file_type == 'zip' or submission.file_type == 'pdf' or submission.file_type == 'txt' %}
+-    <div class="btn shj-orange" data-type="download">Download</div>
++    <div tabindex="0" class="btn shj-orange" data-type="download">Download</div>
+{% else %}
+-    <div class="btn shj-orange" data-type="code" >Code</div>
++    <div tabindex="0" class="btn shj-orange" data-type="code" >Code</div>
+{% endif %}
+</td>
+{% if user.level > 0 %}
+@@ -169,13 +169,13 @@
+{% if submission.status == 'Uploaded' %}
+---
+{% else %}
+-    <div class="btn" data-type="log" >Log</div>
++    <div tabindex="0" class="btn" data-type="log" >Log</div>
+{% endif %}
+</td>
+{% endif %}
+{% if user.level >= 2 %}
+<td>
+-    <div class="shj_rejudge pointer"><i class="fa fa-refresh fa-lg color10"></i></div>
++    <div tabindex="0" class="shj_rejudge pointer"><i class="fa fa-refresh fa-lg color10"></i></div>
+</td>
+{% endif %}
+</tr>
 diff --git a/application/views/templates/top_bar.twig b/application/views/templates/top_bar.twig
 index ccb67df9..d6b4fc0d 100644
 --- a/application/views/templates/top_bar.twig
@@ -386,8 +428,8 @@ index ccb67df9..d6b4fc0d 100644
 </a>
 </div>
 {%  if user.level >= 2 %}
-- 	<div class="top_object shj_menu top_left" id="admin_tools_top">
-+ 	<div class="top_object shj_menu top_left" tabindex="0" id="admin_tools_top">
+-    <div class="top_object shj_menu top_left" id="admin_tools_top">
++    <div class="top_object shj_menu top_left" tabindex="0" id="admin_tools_top">
 Tools
 <ul class="top_menu">
 <li><a href="{{ site_url('rejudge') }}">Rejudge</a></li>
@@ -395,12 +437,11 @@ Tools
 <a href="{{ site_url('assignments') }}"><span dir="auto" class="assignment_name">{{ user.selected_assignment.name|length > 30 ? user.selected_assignment.name|slice(0, 30) ~ '...' : user.selected_assignment.name }}</span></a>
 <ul class="top_menu" id="select_assignment_menu">
 {% for assignment_item in all_assignments|reverse[:5] %}
-- 				<li class="assignment_block select_assignment">
-+ 				<li class="assignment_block select_assignment" tabindex="0">
+-    <li class="assignment_block select_assignment">
++    <li class="assignment_block select_assignment" tabindex="0">
 <i class="fa {{ assignment_item.id == user.selected_assignment.id ? 'fa-check-square-o color6' : 'fa-square-o' }}" data-id="{{ assignment_item.id }}"></i>
 <span class="assignment_item" dir="auto">{{ assignment_item.name }}</span>
 </li>
-
 diff --git a/assets/js/shj_functions.js b/assets/js/shj_functions.js
 index c7b7140f..b5e63d62 100644
 --- a/assets/js/shj_functions.js
@@ -409,16 +450,16 @@ index c7b7140f..b5e63d62 100644
 * Top Bar
 */
 $(document).ready(function () {
-+ 	$('.shj_menu').on('focusin',function(e){
-+ 		$(this).children(".top_menu").show();
-+ 		$(this).addClass('shj_white');
-+ 		$("#side_bar").on('focusin', function (e) {
-+ 			if(!$(e.target).parent().is('top_menu')){
-+ 				$('.shj_menu').children(".top_menu").hide();
-+ 				$('.shj_menu').removeClass('shj_white');
-+ 			}
-+ 		})
-+ 	});
++    $('.shj_menu').on('focusin',function(e){
++      $(this).children(".top_menu").show();
++      $(this).addClass('shj_white');
++      $("#side_bar").on('focusin', function (e) {
++        if(!$(e.target).parent().is('top_menu')){
++          $('.shj_menu').children(".top_menu").hide();
++          $('.shj_menu').removeClass('shj_white');
++        }
++      })
++    });
 $("#top_bar").hoverIntent({
 over: function () {
 $(this).children(".top_menu").show();
@@ -426,11 +467,11 @@ $(this).children(".top_menu").show();
 },
 selector: '.top_object.shj_menu'
 });
-+ 	$(".select_assignment").on('keyup', function (e) {
-+ 		if(e.which==13){
-+ 			$(this).trigger("click");
-+ 		}
-+ 	})
++    $(".select_assignment").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
 $(".select_assignment").click(
 function () {
 var id = $(this).children('i').addBack('i').data('id');
@@ -438,11 +479,11 @@ var id = $(this).children('i').addBack('i').data('id');
 * "Users" page
 */
 $(document).ready(function(){
-+ 	$(".delete_user").on('keyup', function (e) {
-+ 		if(e.which==13){
-+ 			$(this).trigger("click");
-+ 		}
-+ 	})
++    $(".delete_user").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
 $('.delete_user').click(function(){
 var row = $(this).parents('tr');
 var user_id = row.data('id');
@@ -450,35 +491,57 @@ var user_id = row.data('id');
 ]
 });
 });
-+ 	$(".delete_submissions").on('keyup', function (e) {
-+ 		if(e.which==13){
-+ 			$(this).trigger("click");
-+ 		}
-+ 	})
++    $(".delete_submissions").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
 $('.delete_submissions').click(function(){
 var row = $(this).parents('tr');
 var user_id = row.data('id');
-
 diff --git a/assets/js/shj_submissions.js b/assets/js/shj_submissions.js
-index e92c3f01..9ec74dfd 100644
+index e92c3f01..c27a86da 100644
 --- a/assets/js/shj_submissions.js
 +++ b/assets/js/shj_submissions.js
-@@ -87,6 +87,11 @@ $(document).ready(function () {
+@@ -12,6 +12,11 @@ $(document).ready(function () {
+e.preventDefault();
+$('.code-column').selectText();
+});
++    $(".btn").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
+$(".btn").click(function () {
+var button = $(this);
+var row = button.parents('tr');
+@@ -62,6 +67,11 @@ $(document).ready(function () {
+
+});
+$(".shj_rejudge").attr('title', 'Rejudge');
++    $(".shj_rejudge").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
+$(".shj_rejudge").click(function () {
+var row = $(this).parents('tr');
+$.ajax({
+@@ -87,6 +97,11 @@ $(document).ready(function () {
 }
 });
 });
-+ 	$(".set_final").on('keyup', function (e) {
-+ 		if(e.which==13){
-+ 			$(this).trigger("click");
-+ 		}
-+ 	})
++    $(".set_final").on('keyup', function (e) {
++      if(e.which==13){
++        $(this).trigger("click");
++      }
++    })
 $(".set_final").click(
 function () {
 var row = $(this).parents('tr');
 \end{lstlisting}
 
 \end{itemize}
-
 
 \subsection{Implementasi Kriteria Sukses 2.1.2 No Keyboard Trap}
 \label{subsec:implementasi_A_2.1.2}
@@ -495,13 +558,13 @@ index 13a0ddea..5953bd21 100644
 <script>
 $(document).ready(function(){
 tabOverride.set(document.getElementsByTagName('textarea'));
-+ 		$switch = false;
-+ 		$("textarea").keyup(function (e) {
-+ 			if (e.which==27){
-+ 				tabOverride.set(document.getElementsByTagName('textarea'),$switch);
-+  				$switch = !$switch;
-+      		}
-+ 	 	});
++    $switch = false;
++    $("textarea").keyup(function (e) {
++      if (e.which==27){
++        tabOverride.set(document.getElementsByTagName('textarea'),$switch);
++        $switch = !$switch;
++      }
++    });
 });
 </script>
 <script type="text/javascript" src="{{ base_url('assets/js/jquery-ui-timepicker-addon.js') }}"></script>
@@ -509,7 +572,7 @@ tabOverride.set(document.getElementsByTagName('textarea'));
 <label for="form_participants">Participants<br>
 <span class="form_comment">Enter username of participants here (comma separated).
 Only these users are able to submit. You can use keyword "ALL".</span>
-+ 			<span class="form_comment clear">Press "esc" to enable/disable tabindent</span>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span>
 </label>
 <textarea id="form_participants" name="participants" rows="5" class="sharif_input medium">{{ edit ? edit_assignment.participants : set_value('participants', 'ALL') }}</textarea>
 </p>
@@ -517,7 +580,7 @@ Only these users are able to submit. You can use keyword "ALL".</span>
 <p class="input_p">
 <label for="form_late_rule">Coefficient rule (<a target="_blank" href="https://github.com/ifunpar/Sharif-Judge/blob/docs/v1.4/add_assignment.md#coefficient-rule">?</a>)</label><br>
 <span class="form_comment medium clear" style="display: block;">PHP script without &lt;?php ?&gt; tags</span>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_late_rule" name="late_rule" rows="20" class="sharif_input add_text">{{ edit ? edit_assignment.late_rule : set_value('late_rule', default_late_rule) }}</textarea>
 {{ form_error('late_rule', '<div class="shj_error">', '</div>') }}
 </p>
@@ -530,13 +593,13 @@ index 7f7ef43d..a0e91e60 100644
 <script>
 $(document).ready(function(){
 tabOverride.set(document.getElementsByTagName('textarea'));
-+ 		$switch = false;
-+ 		$("textarea").keyup(function (e) {
-+ 			if (e.which==27){
-+ 				tabOverride.set(document.getElementsByTagName('textarea'),$switch);
-+ 				$switch = !$switch;
-+      		}
-+ 		});
++    $switch = false;
++    $("textarea").keyup(function (e) {
++        if (e.which==27){
++          tabOverride.set(document.getElementsByTagName('textarea'),$switch);
++          $switch = !$switch;
++        }
++    });
 });
 </script>
 <script>
@@ -544,7 +607,7 @@ tabOverride.set(document.getElementsByTagName('textarea'));
 <input type="checkbox" name="send_mail" id="send_mail" /> Send usernames and passwords by email (Waits <input type="text" name="delay" id="delay" class="sharif_input tiny" value="2"/> second(s) before sending each email, so please be patient).
 </p>
 <p class="input_p">
-+ <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
 # Lines starting with a # sign are comments.
 # Each line (except comments) represents a user.
@@ -557,17 +620,17 @@ index a9bed8fb..a0bc3110 100644
 <script type='text/javascript' src="{{ base_url('assets/js/taboverride.min.js') }}"></script>
 <script>
 $(document).ready(function(){
-- 	tabOverride.set(document.getElementById('md_editor'));
-- });
-+ 		tabOverride.set(document.getElementById('md_editor'));
-+ 		$switch = false;
-+ 		$("textarea").keyup(function (e) {
-+ 			if (e.which==27){
-+ 				tabOverride.set(document.getElementById('md_editor'),$switch);
-+  				$switch = !$switch;
-+      		}
-+ 		});
-+ 	});
+-    tabOverride.set(document.getElementById('md_editor'));
+-    });
++    tabOverride.set(document.getElementById('md_editor'));
++    $switch = false;
++    $("textarea").keyup(function (e) {
++      if (e.which==27){
++        tabOverride.set(document.getElementById('md_editor'),$switch);
++        $switch = !$switch;
++      }
++    });
++    });
 </script>
 {% endblock %}
 
@@ -575,7 +638,7 @@ $(document).ready(function(){
 Problem {{ problem.id }}
 </p>
 {{ form_open("problems/edit/md/#{description_assignment.id}/#{problem.id}") }}
-+ 	<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <p class="input_p">
 <textarea dir="auto" name="text" rows="30" cols="75" class="sharif_input" id="md_editor">{{ problem.description }}</textarea>
 </p>
@@ -588,17 +651,17 @@ index 56bbe8cb..827955cc 100644
 <script type='text/javascript' src="{{ base_url('assets/js/taboverride.min.js') }}"></script>
 <script>
 $(document).ready(function(){
-- 	tabOverride.set(document.getElementsByTagName('textarea'));
-- });
-+ 		tabOverride.set(document.getElementsByTagName('textarea'));
-+ 		$switch = false;
-+ 		$("textarea").keyup(function (e) {
-+ 			if (e.which==27){
-+ 				tabOverride.set(document.getElementsByTagName('textarea'),$switch);
-+  				$switch = !$switch;
-+      		}
-+ 		});
-+ 	});
+-    tabOverride.set(document.getElementsByTagName('textarea'));
+-    });
++    tabOverride.set(document.getElementsByTagName('textarea'));
++    $switch = false;
++    $("textarea").keyup(function (e) {
++      if (e.which==27){
++        tabOverride.set(document.getElementsByTagName('textarea'),$switch);
++        $switch = !$switch;
++      }
++    });
++    });
 </script>
 {% endblock %}
 
@@ -606,7 +669,7 @@ $(document).ready(function(){
 <p class="input_p">
 <label for="form_late_rule">Default Coefficient Rule</label>
 <span class="form_comment clear">PHP script without &lt;?php ?&gt; tags</span><br>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_late_rule" name="default_late_rule" rows="15" class="sharif_input add_text clear">{{ default_late_rule }}</textarea>
 </p>
 
@@ -614,13 +677,13 @@ $(document).ready(function(){
 <p class="input_p">
 <label for="form_mail_reset">Password Reset Email</label>
 <span class="form_comment">You can use {SITE_URL}, {RESET_LINK} and {VALID_TIME}</span><br>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_mail_reset" name="reset_password_mail" rows="15" class="sharif_input add_text clear">{{ reset_password_mail }}</textarea>
 </p>
 <p class="input_p">
 <label for="form_mail_add">Add User Email</label>
 <span class="form_comment clear">You can use {SITE_URL}, {LOGIN_URL}, {ROLE}, {USERNAME} and {PASSWORD}</span><br>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_mail_add" name="add_user_mail" rows="15" class="sharif_input add_text clear">{{ add_user_mail }}</textarea>
 </p>
 
@@ -628,22 +691,22 @@ $(document).ready(function(){
 </p>
 <p class="input_p">
 <label for="form_def_c">Shield Rules (for C)</label>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_def_c" name="def_c" rows="15" class="sharif_input add_text clear">{{ defc }}</textarea>
 </p>
 <p class="input_p">
 <label for="form_def_cpp">Shield Rules (for C++)</label>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_def_cpp" name="def_cpp" rows="15" class="sharif_input add_text clear">{{ defcpp }}</textarea>
 </p>
 <p class="input_p">
 <label for="form_shield_py2">Shield (for Python 2)</label>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_shield_py2" name="shield_py2" rows="15" class="sharif_input add_text clear">{{ shield_py2 }}</textarea>
 </p>
 <p class="input_p">
 <label for="form_shield_py3">Shield (for Python 3)</label>
-+ 		<span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
++    <span class="form_comment clear">Press "esc" to enable/disable tabindent</span><br>
 <textarea id="form_shield_py3" name="shield_py3" rows="15" class="sharif_input add_text clear">{{ shield_py3 }}</textarea>
 </p>
 <p class="input_p">
@@ -652,9 +715,11 @@ $(document).ready(function(){
 \subsection{Implementasi Kriteria Sukses 2.4.1 Bypass Blocks}
 \label{subsec:implementasi_A_2.4.1}
 
-Kriteria 2.4.1 dapat dipenuhi dengan cara menambahkan tautan di awal setiap halaman untuk meloncati menu navigasi. Tautan hanya dapat dijalankan jika pengguna mengoperasikannya dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/base.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.1}. Selain itu ada juga penambahan untuk \textit{style} baru yang dapat dilihat pada \textit{file} \textit{/assets/styles/main.css}.
+Kriteria 2.4.1 dapat dipenuhi dengan cara menambahkan tautan di awal setiap halaman untuk meloncati menu navigasi. Tautan hanya dapat dijalankan jika pengguna mengoperasikannya dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/templates/base.twig}. Selain itu ada juga penambahan untuk \textit{style} baru yang dapat dilihat pada \textit{file} \textit{/assets/styles/main.css}.
 
-Tidak semua \textit{browser} dapat menangani \textit{in-page links}. Secara visual fokus \textit{keyboard} sudah berada pada lokasi target, tetapi sebenarnya fokus \textit{keyboard} belum diset ke lokasi target. Masalah ini dapat diselesaikan dengan menggunakan \textit{Javascript} untuk set fokus \textit{keyboard} ke lokasi target. Perubahan ada pada \textit{file} \textit{/assets/js/shj\_functions.js}, potongan kode dapat dilihat pada listing \ref{lst_2.4.1}.
+Tidak semua \textit{browser} dapat menangani \textit{in-page links}. Secara visual fokus \textit{keyboard} sudah berada pada lokasi target, tetapi sebenarnya fokus \textit{keyboard} belum diset ke lokasi target. Masalah ini dapat diselesaikan dengan menggunakan \textit{Javascript} untuk set fokus \textit{keyboard} ke lokasi target. Perubahan ada pada \textit{file} \textit{/assets/js/shj\_functions.js}.
+
+Semua perubahan kode dapat dilihat pada \ref{lst_2.4.1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.4.1, label=lst_2.4.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -666,8 +731,8 @@ index e580f5de..c0b6a8d0 100644
 {% block other_assets %}{% endblock %}
 
 <body id="body">
-+ <a href="#page_title" class="skip">Skip to content</a>
-+ 
++    <a href="#page_title" class="skip">Skip to content</a>
++    
 {% include 'templates/top_bar.twig' %}
 {% include 'templates/side_bar.twig' %}
 <div id="main_container" class="scroll-wrapper">
@@ -680,29 +745,29 @@ index c7b7140f..9899d077 100644
 $(document).ready(function(){
 $('input').attr('dir', 'auto');
 });
-+ 
-+ /**
-+  * Skip links
-+  */
-+ $(document).ready(function(){
-+ 	// bind a click event to the 'skip' link
-+ 	$(".skip").click(function(event){
-+     
-+ 		// strip the leading hash and declare
-+ 		// the content we're skipping to
-+ 		var skipTo="#"+this.href.split('#')[1];
-+ 
-+ 		// Setting 'tabindex' to -1 takes an element out of normal 
-+ 		// tab flow but allows it to be focused via javascript
-+ 		$(skipTo).attr('tabindex', -1).on('blur focusout', function () {
-+ 
-+ 			// when focus leaves this element, 
-+ 			// remove the tabindex attribute
-+ 			$(this).removeAttr('tabindex');
-+ 
-+ 		}).focus(); // focus on the content container
-+ 	});
-+ });
++    
++    /**
++    * Skip links
++    */
++  $(document).ready(function(){
++    // bind a click event to the 'skip' link
++    $(".skip").click(function(event){
++    
++    // strip the leading hash and declare
++    // the content we're skipping to
++    var skipTo="#"+this.href.split('#')[1];
++  
++    // Setting 'tabindex' to -1 takes an element out of normal 
++    // tab flow but allows it to be focused via javascript
++    $(skipTo).attr('tabindex', -1).on('blur focusout', function () {
++  
++    // when focus leaves this element, 
++    // remove the tabindex attribute
++    $(this).removeAttr('tabindex');
++  
++    }).focus(); // focus on the content container
++    });
++  });
 
 diff --git a/assets/styles/main.css b/assets/styles/main.css
 index a0e61502..333bd795 100644
@@ -712,25 +777,25 @@ index a0e61502..333bd795 100644
 margin-left: 7px!important;
 }
 
-+ .skip {
-+ 	position: absolute;
-+ 	top: -1000px;
-+ 	left: -1000px;
-+  	height: 1px;
-+ 	width: 1px;
-+ 	text-align: left;
-+ 	overflow: hidden;
-+ }
-+ 
-+ a.skip:active, 
-+ a.skip:focus, 
-+ a.skip:hover {
-+ 	left: 0; 
-+ 	top: 0;
-+ 	width: auto; 
-+ 	height: auto; 
-+ 	overflow: visible; 
-+ }
++    .skip {
++      position: absolute;
++      top: -1000px;
++      left: -1000px;
++      height: 1px;
++      width: 1px;
++      text-align: left;
++      overflow: hidden;
++    }
++  
++    a.skip:active, 
++    a.skip:focus, 
++    a.skip:hover {
++      left: 0; 
++      top: 0;
++      width: auto; 
++      height: auto; 
++      overflow: visible; 
++    }
 + 
 /********************************************/
 div#top_bar {
@@ -743,13 +808,15 @@ top: 0;
 Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.4.4:
 
 \begin{itemize}
-	\item Seluruh link pada \textit{sidebar} perlu diberikan label yang menjelaskan link tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/side\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.4}.
+	\item Seluruh link pada \textit{sidebar} perlu diberikan label yang menjelaskan link tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/side\_bar.twig}.
 
-	\item Tautan pada gambar \textit{Profile} yang ada di menu atas perlu diberi label untuk menjelaskan tujuan dari tautan tersebut. Perubahan yang terjadi ada pada \textit{/application/views/templates/top\_bar.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.4}.
+	\item Tautan pada gambar \textit{Profile} yang ada di menu atas perlu diberi label untuk menjelaskan tujuan dari tautan tersebut. Perubahan yang terjadi ada pada \textit{/application/views/templates/top\_bar.twig}.
 
 	\item Tautan pada gambar \textit{PDF} perlu diberi label untuk menjelaskan tujuannya. Perubahan untuk tautan pada gambar \textit{PDF} yang ada di halaman \textit{Assignments} sudah dilakukan pada listing \ref{lst_1.1.1}
 	
-	\item Tautan yang ada pada tabel \textit{Problems} pada halaman \textit{Add Assignment} tidak memiliki label yang menjelaskan tujuannya, untuk itu perlu diberi label yang menjelaskan tujuannya. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}, potongan kode dapat dilihat pada listing \ref{lst_2.4.4}
+	\item Tautan yang ada pada tabel \textit{Problems} pada halaman \textit{Add Assignment} tidak memiliki label yang menjelaskan tujuannya, untuk itu perlu diberi label yang menjelaskan tujuannya. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
+	
+	Semua perubahan kode dapat dilihat pada \ref{lst_2.4.4}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.4.4, label=lst_2.4.4, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -761,102 +828,102 @@ index da069f2e..ce5a0e22 100644
 <div id="side_bar" class="sidebar_open">
 <ul>
 <li class="color-dashboard{{ selected=='dashboard' ? ' selected' }}">
-- 			<a href="{{ site_url('dashboard') }}">
-+ 			<a href="{{ site_url('dashboard') }}" aria-labelledby="dashboard-label">
+-    <a href="{{ site_url('dashboard') }}">
++    <a href="{{ site_url('dashboard') }}" aria-labelledby="dashboard-label">
 <i class="fa fa-dashboard fa-lg"></i>
-- 				<span class="sidebar_text">Dashboard</span>
-+ 				<span class="sidebar_text" id="dashboard-label">Dashboard</span>
+-    <span class="sidebar_text">Dashboard</span>
++    <span class="sidebar_text" id="dashboard-label">Dashboard</span>
 </a>
 </li>
 {% if user.level == 3 %}
 <li class="color-settings{{ selected=='settings' ? ' selected' }}">
-- 			<a href="{{ site_url('settings') }}">
-+ 			<a href="{{ site_url('settings') }}" aria-labelledby="settings-label">
+-    <a href="{{ site_url('settings') }}">
++    <a href="{{ site_url('settings') }}" aria-labelledby="settings-label">
 <i class="fa fa-gear fa-lg"></i>
-- 				<span class="sidebar_text">Settings</span>
-+ 				<span class="sidebar_text" id="settings-label">Settings</span>
+-    <span class="sidebar_text">Settings</span>
++    <span class="sidebar_text" id="settings-label">Settings</span>
 </a>
 </li>
 <li class="color-users{{ selected=='users' ? ' selected' }}">
-- 			<a href="{{ site_url('users') }}">
-+ 			<a href="{{ site_url('users') }}" aria-labelledby="users-label">
+-    <a href="{{ site_url('users') }}">
++    <a href="{{ site_url('users') }}" aria-labelledby="users-label">
 <i class="fa fa-users fa-lg"></i>
-- 				<span class="sidebar_text">Users</span>
-+ 				<span class="sidebar_text" id="users-label">Users</span>
+-    <span class="sidebar_text">Users</span>
++    <span class="sidebar_text" id="users-label">Users</span>
 </a>
 </li>
 {% endif %}
 <li class="color-notifications{{ selected=='notifications' ? ' selected' }}">
-- 			<a href="{{ site_url('notifications') }}">
-+ 			<a href="{{ site_url('notifications') }}" aria-labelledby="notifications-label">
+-    <a href="{{ site_url('notifications') }}">
++    <a href="{{ site_url('notifications') }}" aria-labelledby="notifications-label">
 <i class="fa fa-bell fa-lg"></i>
-- 				<span class="sidebar_text">Notifications</span>
-+ 				<span class="sidebar_text" id="notifications-label">Notifications</span>
+-    <span class="sidebar_text">Notifications</span>
++    <span class="sidebar_text" id="notifications-label">Notifications</span>
 </a>
 </li>
 <li class="color-assignments{{ selected=='assignments' ? ' selected' }}">
-- 			<a href="{{ site_url('assignments') }}">
-+ 			<a href="{{ site_url('assignments') }}" aria-labelledby="assignments-label">
+-    <a href="{{ site_url('assignments') }}">
++    <a href="{{ site_url('assignments') }}" aria-labelledby="assignments-label">
 <i class="fa fa-folder-open fa-lg"></i>
-- 				<span class="sidebar_text">Assignments</span>
-+ 				<span class="sidebar_text" id="assignments-label">Assignments</span>
+-    <span class="sidebar_text">Assignments</span>
++    <span class="sidebar_text" id="assignments-label">Assignments</span>
 </a>
 </li>
 <li class="color-problems{{ selected=='problems' ? ' selected' }}">
-- 			<a href="{{ site_url('problems') }}">
-+ 			<a href="{{ site_url('problems') }}" aria-labelledby="problems-label">
+-    <a href="{{ site_url('problems') }}">
++    <a href="{{ site_url('problems') }}" aria-labelledby="problems-label">
 <i class="fa fa-puzzle-piece fa-lg"></i>
-- 				<span class="sidebar_text">Problems</span>
-+ 				<span class="sidebar_text" id="problems-label">Problems</span>
+-    <span class="sidebar_text">Problems</span>
++    <span class="sidebar_text" id="problems-label">Problems</span>
 </a>
 </li>
 <li class="color-submit{{ selected=='submit' ? ' selected' }}">
-- 			<a href="{{ site_url('submit') }}">
-+ 			<a href="{{ site_url('submit') }}" aria-labelledby="submit-label">
+-    <a href="{{ site_url('submit') }}">
++    <a href="{{ site_url('submit') }}" aria-labelledby="submit-label">
 <i class="fa fa-location-arrow fa-lg"></i>
-- 				<span class="sidebar_text">Submit</span>
-+ 				<span class="sidebar_text" id="submit-label">Submit</span>
+-    <span class="sidebar_text">Submit</span>
++    <span class="sidebar_text" id="submit-label">Submit</span>
 </a>
 </li>
 <li class="color-final_submissions{{ selected=='final_submissions' ? ' selected' }}">
-- 			<a href="{{ site_url('submissions/final') }}">
-+ 			<a href="{{ site_url('submissions/final') }}" aria-labelledby="final-submission-label">
+-    <a href="{{ site_url('submissions/final') }}">
++    <a href="{{ site_url('submissions/final') }}" aria-labelledby="final-submission-label">
 <i class="fa fa-map-marker fa-lg"></i>
-- 				<span class="sidebar_text">Final Submissions</span>
-+ 				<span class="sidebar_text" id="final-submission-label">Final Submissions</span>
+-    <span class="sidebar_text">Final Submissions</span>
++    <span class="sidebar_text" id="final-submission-label">Final Submissions</span>
 </a>
 </li>
 <li class="color-all_submissions{{ selected=='all_submissions' ? ' selected' }}">
-- 			<a href="{{ site_url('submissions/all') }}">
-+ 			<a href="{{ site_url('submissions/all') }}" aria-labelledby="all-submission-label">
+-    <a href="{{ site_url('submissions/all') }}">
++    <a href="{{ site_url('submissions/all') }}" aria-labelledby="all-submission-label">
 <i class="fa fa-bars fa-lg"></i>
-- 				<span class="sidebar_text">All Submissions</span>
-+ 				<span class="sidebar_text" id="all-submission-label">All Submissions</span>
+-    <span class="sidebar_text">All Submissions</span>
++    <span class="sidebar_text" id="all-submission-label">All Submissions</span>
 </a>
 </li>
 <li class="color-scoreboard{{ selected=='scoreboard' ? ' selected' }}">
-- 			<a href="{{ site_url('scoreboard') }}">
-+ 			<a href="{{ site_url('scoreboard') }}" aria-labelledby="scoreboard-label">
+-    <a href="{{ site_url('scoreboard') }}">
++    <a href="{{ site_url('scoreboard') }}" aria-labelledby="scoreboard-label">
 <i class="fa fa-star fa-lg"></i>
-- 				<span class="sidebar_text">Scoreboard</span>
-+ 				<span class="sidebar_text" id="scoreboard-label">Scoreboard</span>
+-    <span class="sidebar_text">Scoreboard</span>
++    <span class="sidebar_text" id="scoreboard-label">Scoreboard</span>
 </a>
 </li>
 <li class="color-halloffame{{ selected=='halloffame' ? ' selected' }}">
-- 			<a href="{{ site_url('halloffame') }}">
-+ 			<a href="{{ site_url('halloffame') }}" aria-labelledby="hall-of-fame-label">
+-    <a href="{{ site_url('halloffame') }}">
++    <a href="{{ site_url('halloffame') }}" aria-labelledby="hall-of-fame-label">
 <i class="fa fa-list-alt fa-lg"></i>
-- 				<span class="sidebar_text">Hall of Fame</span>
-+ 				<span class="sidebar_text" id="hall-of-fame-label">Hall of Fame</span>
+-    <span class="sidebar_text">Hall of Fame</span>
++    <span class="sidebar_text" id="hall-of-fame-label">Hall of Fame</span>
 </a>
 </li>
 {% if user.level == 3 %}
 <li class="color-logs{{ selected=='logs' ? ' selected' }}">
-- 			<a href="{{ site_url('logs') }}">
-+ 			<a href="{{ site_url('logs') }}" aria-labelledby="24-hour-log-label">
+-    <a href="{{ site_url('logs') }}">
++    <a href="{{ site_url('logs') }}" aria-labelledby="24-hour-log-label">
 <i class="fa fa-book fa-lg"></i>
-- 				<span class="sidebar_text">24-hour Log</span>
-+ 				<span class="sidebar_text" id="24-hour-log-label">24-hour Log</span>
+-    <span class="sidebar_text">24-hour Log</span>
++    <span class="sidebar_text" id="24-hour-log-label">24-hour Log</span>
 </a>
 </li>
 {% endif %}
@@ -869,8 +936,8 @@ index ccb67df9..c49c8ab7 100644
 #}
 <div id="top_bar" class="color-{{ selected }}">
 <div class="top_object shj_menu" id="user_top">
-- 		<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
-+ 		<a href="{{ site_url('profile') }}" id="profile_link" aria-label="Profile"><i class="fa fa-user"></i></a>
+-    <a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
++    <a href="{{ site_url('profile') }}" id="profile_link" aria-label="Profile"><i class="fa fa-user"></i></a>
 <div class="top_menu user-menu">
 <div class="gravatar"><img src="http://www.gravatar.com/avatar/{{ md5(user.email) }}?s=70&d=identicon" /></div>
 <div class="name"><i class="fa fa-user"></i> {{ user.username }}</div>
@@ -893,8 +960,8 @@ index e580f5de..91b720a3 100644
 # author: Mohammad Javad Naderi <mjnaderi@gmail.com>
 #}
 <!DOCTYPE html>
-- <html>
-+ <html lang="en">
+-    <html>
++    <html lang="en">
 <head>
 <title>{% block head_title %}{% endblock %} - SharIF Judge</title>
 <meta content="text/html" charset="UTF-8">
@@ -934,8 +1001,8 @@ index 13a0ddea..a8bb55fd 100644
 Extra Time (minutes)<br>
 <span class="form_comment">Extra time for late submissions.</span>
 </label>
-- 		<input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
-+ 		<input id="form_extra_time" type="text" name="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
+-    <input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
++    <input id="form_extra_time" type="text" name="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
 {{ form_error('extra_time', '<div class="shj_error">', '</div>') }}
 </p>
 <p class="input_p clear">
