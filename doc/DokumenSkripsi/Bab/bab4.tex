@@ -1204,3 +1204,88 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk memilih \textit{Final 
 	\item Memilih \textit{Submission} yang akan dijadikan \textit{Final Submission} pada tabel \textit{All Submissions}
 	\item Menekan tombol pada kolom \textit{Final} untuk menjadikan \textit{Submission} menjadi \textit{Final Submission}.
 \end{enumerate}
+
+\subsection{Hasil Pengujian}
+\label{subsec:hasil_pengujian}
+TODO
+
+\subsubsection{Login}
+\label{subsubsec:hasil_login}
+Berikut adalah hasil pengujian \textit{Login}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Login}}
+	\label{tab:hasil_login}
+	\begin{tabular}{|c|p{12cm}|c|}
+		\toprule
+		Langkah & Cara Pengujian & Hasil \\
+		\midrule
+		1 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan \textit{''address and search bar''} kemudian pengguna memasukkan alamat \url{http://sharif-judge/login}. & Sukses\\
+		2 & Menekan tombol \textit{tab} untuk navigasi ke bidang masukan. Setelah \textit{screen reader} membacakan bidang masukan \textit{Username} dan \textit{Password}, pengguna mengisinya dengan benar. & Sukses\\
+		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Login}. Setelah itu pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Settings}
+\label{subsubsec:hasil_settings}
+Berikut adalah hasil pengujian \textit{Settings}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Settings}}
+	\label{tab:hasil_settings}
+	\begin{tabular}{|c|p{12cm}|c|}
+		\toprule
+		Langkah & Cara Pengujian & Hasil \\
+		\midrule
+		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
+		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Settings}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
+		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan bidang masukan. Setelah itu pengguna harus mengisi form dengan benar. Pengguna dapat menekan tombol \textit{tab} untuk navigasi maju, \textit{shift + tab} untuk navigasi mundur, dan \textit{spacebar} untuk centang \textit{checkbox}. & Sukses\\
+		4 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Save Changes} kemudian menekan tombol \textit{Enter} pada \textit{keyboard} & Sukses\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Add Users}
+\label{subsubsec:hasil_add_users}
+Berikut adalah hasil pengujian \textit{Add Users}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Add Users}}
+	\label{tab:hasil_add_users}
+	\begin{tabular}{|c|p{12cm}|c|}
+		\toprule
+		Langkah & Cara Pengujian & Hasil \\
+		\midrule
+		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
+		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
+		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tautan \textit{Add Users} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		4 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan bidang masukan. Setelah itu pengguna harus mengisi form dengan benar. Pengguna dapat menekan tombol \textit{tab} untuk navigasi maju, \textit{shift + tab} untuk navigasi mundur, dan \textit{spacebar} untuk centang \textit{checkbox}. & Sukses\\
+		5 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Add Users} kemudian menekan tombol \textit{Enter} pada \textit{keyboard} & Sukses\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Delete User}
+\label{subsubsec:hasil_delete_user}
+Berikut adalah hasil pengujian \textit{Delete User}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Delete User}}
+	\label{tab:hasil_delete_user}
+	\begin{tabular}{|c|p{12cm}|c|}
+		\toprule
+		Langkah & Cara Pengujian & Hasil \\
+		\midrule
+		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
+		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
+		3 & Menavigasikan browser sampai \textit{screen reader} membacakan baris \textit{user} yang akan dihapus pada tabel. & Sukses\\
+		4 & Menekan tombol navigasi maju \textit{screen reader} sampai \textit{screen reader} membacakan \textit{Delete User} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		5 & Menekan tombol navigasi maju \textit{screen reader} sampai \textit{screen reader} membacakan tombol \textit{Yes, Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		\bottomrule
+	\end{tabular}
+\end{table}
