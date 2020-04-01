@@ -294,7 +294,7 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.1
 
 	\item \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}.
 	
-	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''enter''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
+	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''space bar''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
 	
 	Aksi melihat status, melihat kode, melihat \textit{log} dan aksi \textit{rejudge} pada halaman \textit{All Submission} dan \textit{Final Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Selain itu fungsi dari elemen tersebut tidak dapat dijalankan ketika pengguna menekan tombol \textit{''enter''} pada \textit{keyboard} sehingga perlu ditambahkan sebuah fungsi yang menjalankan fungsi yang sama ketika pengguna menekan tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
 	
@@ -532,13 +532,22 @@ $.ajax({
 });
 });
 +    $(".set_final").on('keyup', function (e) {
-+      if(e.which==13){
++      if(e.which==32){
 +        $(this).trigger("click");
 +      }
 +    })
 $(".set_final").click(
 function () {
 var row = $(this).parents('tr');
+@@ -107,6 +122,8 @@ $(document).ready(function () {
+error: shj.loading_error,
+success: function (response) {
+if (response.done) {
++    $("tr[data-u='" + username + "'][data-p='" + problem + "'] i.set_final").attr("aria-checked", false);
++    $("tr[data-u='" + username + "'][data-p='" + problem + "'][data-s='" + submit_id + "'] i.set_final").attr("aria-checked", true);
+$("tr[data-u='" + username + "'][data-p='" + problem + "'] i.set_final").removeClass('fa-check-circle-o color11').addClass('fa-circle-o');
+$("tr[data-u='" + username + "'][data-p='" + problem + "'][data-s='" + submit_id + "'] i.set_final").removeClass('fa-circle-o').addClass('fa-check-circle-o color11');
+}
 \end{lstlisting}
 
 \end{itemize}
@@ -1010,21 +1019,20 @@ Extra Time (minutes)<br>
 
 \section{Pengujian}
 \label{sec:pengujian}
-TODO
+Pada bagian ini akan ditulis skenario pengujian dan hasil yang didapatkan dari setiap skenario pengujian. Tujuan dari pengujian ini untuk melihat perbaikan yang dilakukan pada \ref{sec:implementasi} berhasil atau tidak. Pengujian dilakukan dengan menggunakan perangkat komputer berupa laptop dengan sistem operasi Ubuntu, \textit{browser} Google Chrome, dan \textit{screen reader} ChromeVox sebagai teknologi alat bantu. Pengujian dilakukan pada server lokal milik penguji dan akun yang digunakan oleh penguji memiliki hak akses tak terbatas sehingga dapat menggunakan semua fitur yang terdapat pada halaman web \textit{SharIF Judge}.
 
 \subsection{Skenario Pengujian}
 \label{subsec:skenario_pengujian}
-TODO
+Pada bagian ini akan ditulis skenario pengujian yang dilakukan untuk menguji perbaikan yang telah dilakukan. Setiap skenario pengujian ditulis dalam bentuk poin-poin yang menjelaskan cara untuk menggunakan fitur-fitur yang ada pada aplikasi \textit{SharIF Judge}.
 
 \subsubsection{Login}
 \label{subsubsec:skenario_login}
-Tanya : Apakah istilah seperti login/user/assignment perlu diawali dengan huruf besar ?
-
 Berikut adalah langkah-langkah yang perlu dilakukan untuk \textit{Login}:
 
 \begin{enumerate}
-	\item Memasukkan alamat \url{http://sharif-judge/login} pada \textit{browser}.
-	\item Mengisi \textit{Username} dan \textit{Password} pada bidang masukkan yang sudah disediakan.
+	\item Memasukkan alamat \url{http://sharif-judge/login} pada \textit{address bar browser}.
+	\item Mengisi \textit{Username} pada bidang masukan yang sudah disediakan.
+	\item Mengisi \textit{Password} pada bidang masukan yang sudah disediakan.
 	\item Menekan tombol \textit{Login}.
 \end{enumerate}
 
@@ -1035,7 +1043,10 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Settin
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Settings} pada menu \textit{sidebar}.
-	\item Mengisi form yang disediakan.
+	\item Mengisi bidang masukan \textit{Timezone} dengan nilai \textit{''Asia/Jakarta''}.
+	\item Mengubah nilai \textit{Week Start Day} menjadi \textit{''Sunday''}.
+	\item Mengubah nilai \textit{Registration} menjadi \textit{''checked''}.
+	\item Mengubah isi \textit{Default Coefficient Rule} sesuai aturan yang sudah disediakan.
 	\item Menekan tombol \textit{Save Changes} untuk meyimpan perubahan.
 \end{enumerate}
 
@@ -1047,7 +1058,9 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{User}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Users} pada menu \textit{sidebar}.
 	\item Menekan tombol \textit{Add Users}.
-	\item Mengisi \textit{textarea} berdasarkan spesifikasi yang sudah disediakan.
+	\item Mengubah nilai \textit{Send mail} menjadi \textit{''checked''}.
+	\item Mengubah interval untuk mengirim pesan menjadi ''2''.
+	\item Mengisi perintah untuk membuat \textit{User} pada bidang masukan yang sudah disediakan.
 	\item Menekan tombol \textit{Add Users} untuk menambah \textit{User}.
 \end{enumerate}
 
@@ -1058,7 +1071,7 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{user} yang akan dihapus pada tabel \textit{Users}.
+	\item Mencari nama \textit{User} yang akan dihapus pada tabel \textit{Users}.
 	\item Menekan tombol \textit{Delete User} pada kolom \textit{action} di baris yang sesuai.
 	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
 \end{enumerate}
@@ -1070,7 +1083,7 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{user} yang akan dihapus \textit{submissions} pada tabel \textit{Users}.
+	\item Mencari nama \textit{User} yang akan dihapus \textit{Submissions} pada tabel \textit{Users}.
 	\item Menekan tombol \textit{Delete Submissions} pada kolom \textit{action} di baris yang sesuai.
 	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
 \end{enumerate}
@@ -1084,9 +1097,10 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{User}:
 	\item Memilih \textit{Users} pada menu \textit{sidebar}.
 	\item Mencari nama \textit{user} yang di \textit{edit} pada tabel \textit{Users}.
 	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
-	\item Mengisi form yang sudah disediakan.
+	\item Mengisi isi bidang masukan \textit{Name} menjadi \textit{''student''}.
+	\item Mengubah isi \textit{User Role} menjadi \textit{''student''}. 
 	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
-\end{enumerate}
+\end{enumerate}	
 
 \subsubsection{Add Notification}
 \label{subsubsec:skenario_add_notification}
@@ -1095,8 +1109,9 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah notifikasi:
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Notifications} pada menu \textit{sidebar}.
-	\item Menekan tombol \textit{New}.
-	\item Mengisi judul dan isi notifikasi pada bidang masukkan yang sudah disediakan.
+	\item Menekan tautan \textit{New}.
+	\item Mengisi judul pada bidang masukan \textit{Title}.
+	\item Mengisi notifikasi pada bidang masukan \textit{Text}.
 	\item Menekan tombol \textit{Add} untuk menambah notifikasi.
 \end{enumerate}
 
@@ -1107,8 +1122,11 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{Assig
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
-	\item Menekan tombol \textit{Add}.
-	\item Mengisi form yang sudah disediakan.
+	\item Menekan tautan \textit{Add}.
+	\item Mengisi bidang masukan \textit{Assignment Name} dengan nilai \textit{''Assignment 1''}.
+	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
+	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
+	\item Mengubah nilai \textit{Scoreboard} menjadi \textit{''checked''}.
 	\item Menekan tombol \textit{Add Assignment} untuk menambah \textit{Assignment}.
 \end{enumerate}
 
@@ -1131,9 +1149,12 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Assign
 \begin{enumerate}
 	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
 	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{Assignment} yang akan di hapus pada tabel \textit{Assignments}.
+	\item Mencari nama \textit{Assignment} yang akan disunting pada tabel \textit{Assignments}.
 	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
-	\item Mengisi form yang sudah disediakan.
+	\item Mengisi bidang masukan \textit{Extra Time} dengan nilai \textit{''0*60''}.
+	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
+	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
+	\item Mengubah nilai \textit{Open} menjadi \textit{''checked''}.
 	\item Menekan tombol \textit{Edit Assignment} untuk menyimpan perubahan.
 \end{enumerate}
 
@@ -1179,7 +1200,7 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masa
 	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
 \end{enumerate}
 
-\subsubsection{Submit}
+\subsubsection{Submit File}
 \label{subsubsec:skenario_submit}
 Berikut adalah langkah-langkah yang perlu dilakukan untuk mengumpulkan \textit{file}:
 
@@ -1193,7 +1214,7 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk mengumpulkan \textit{f
 	\item Menekan tombol \textit{Submit} untuk mengumpulkan \textit{file}.
 \end{enumerate}
 
-\subsubsection{Memilih Final Submission}
+\subsubsection{Final Submission}
 \label{subsubsec:skenario_final_submission}
 Berikut adalah langkah-langkah yang perlu dilakukan untuk memilih \textit{Final Submission}:
 
@@ -1217,13 +1238,14 @@ Berikut adalah hasil pengujian \textit{Login}:
 	\centering
 	\caption{Tabel hasil pengujian \textit{Login}}
 	\label{tab:hasil_login}
-	\begin{tabular}{|c|p{12cm}|c|}
+	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
-		Langkah & Cara Pengujian & Hasil \\
+		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan \textit{''address and search bar''} kemudian pengguna memasukkan alamat \url{http://sharif-judge/login}. & Sukses\\
-		2 & Menekan tombol \textit{tab} untuk navigasi ke bidang masukan. Setelah \textit{screen reader} membacakan bidang masukan \textit{Username} dan \textit{Password}, pengguna mengisinya dengan benar. & Sukses\\
-		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Login}. Setelah itu pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		1 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{''address and search bar''} kemudian pengguna memasukkan alamat \url{http://sharif-judge/login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Username}. Setelah itu pengguna memasukkan \textit{Username}.\\
+		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Password}. Setelah itu pengguna memasukkan \textit{Password}. \\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Login}. Setelah itu pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1236,14 +1258,16 @@ Berikut adalah hasil pengujian \textit{Settings}:
 	\centering
 	\caption{Tabel hasil pengujian \textit{Settings}}
 	\label{tab:hasil_settings}
-	\begin{tabular}{|c|p{12cm}|c|}
+	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
-		Langkah & Cara Pengujian & Hasil \\
+		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
-		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Settings}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
-		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan bidang masukan. Setelah itu pengguna harus mengisi form dengan benar. Pengguna dapat menekan tombol \textit{tab} untuk navigasi maju, \textit{shift + tab} untuk navigasi mundur, dan \textit{spacebar} untuk centang \textit{checkbox}. & Sukses\\
-		4 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Save Changes} kemudian menekan tombol \textit{Enter} pada \textit{keyboard} & Sukses\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Settings}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Timezone}. Setelah itu pengguna mengisi dengan nilai \textit{''Asia/Jakarta''}.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Week Start Day}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''Sunday''}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Default Coefficient Rule}. Setelah itu pengguna mengisi sesuai spesifikasi yang sudah ditentukan. Pengguna dapat melanjutkan navigasi dengan menekan tombol \textit{Tab} setelah mematikan fitur \textit{tab indent} pada \textit{textarea} dengan menekan tombol \textit{Esc} pada \textit{keyboard}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Save Changes} kemudian menekan tombol \textit{Enter} pada \textit{keyboard}\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1256,15 +1280,17 @@ Berikut adalah hasil pengujian \textit{Add Users}:
 	\centering
 	\caption{Tabel hasil pengujian \textit{Add Users}}
 	\label{tab:hasil_add_users}
-	\begin{tabular}{|c|p{12cm}|c|}
+	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
-		Langkah & Cara Pengujian & Hasil \\
+		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
-		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
-		3 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tautan \textit{Add Users} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
-		4 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan bidang masukan. Setelah itu pengguna harus mengisi form dengan benar. Pengguna dapat menekan tombol \textit{tab} untuk navigasi maju, \textit{shift + tab} untuk navigasi mundur, dan \textit{spacebar} untuk centang \textit{checkbox}. & Sukses\\
-		5 & Menekan tombol \textit{tab} sampai \textit{screen reader} membacakan tombol \textit{Add Users} kemudian menekan tombol \textit{Enter} pada \textit{keyboard} & Sukses\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Add Users} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{checkbox} untuk \textit{Send mail}. Kemudian pengguna menekan \textit{space bar} pada \textit{keyboard} untuk mengubah nilainya menjadi \textit{''checked''}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{''Delay''}. Setelah itu pengguna mengisi dengan nilai ''2''.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{''Command for creating new user''}. Setelah itu pengguna mengisi sesuai spesifikasi yang sudah ditentukan. Pengguna dapat melanjutkan navigasi dengan menekan tombol \textit{Tab} setelah mematikan fitur \textit{tab indent} pada \textit{textarea} dengan menekan tombol \textit{Esc} pada \textit{keyboard}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Add Users} kemudian menekan tombol \textit{Enter} pada \textit{keyboard}.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1277,15 +1303,264 @@ Berikut adalah hasil pengujian \textit{Delete User}:
 	\centering
 	\caption{Tabel hasil pengujian \textit{Delete User}}
 	\label{tab:hasil_delete_user}
-	\begin{tabular}{|c|p{12cm}|c|}
+	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
-		Langkah & Cara Pengujian & Hasil \\
+		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login} & Sukses\\
-		2 & Menekan tombol \textit{tab} untuk navigasi ke \textit{sidebar} sampai \textit{screen reader} membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard & Sukses\\
-		3 & Menavigasikan browser sampai \textit{screen reader} membacakan baris \textit{user} yang akan dihapus pada tabel. & Sukses\\
-		4 & Menekan tombol navigasi maju \textit{screen reader} sampai \textit{screen reader} membacakan \textit{Delete User} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
-		5 & Menekan tombol navigasi maju \textit{screen reader} sampai \textit{screen reader} membacakan tombol \textit{Yes, Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. & Sukses\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus pada tabel.\\
+		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete User} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan tombol \textit{Yes, Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Delete User Submissions}
+\label{subsubsec:hasil_delete_user_submissions}
+Berikut adalah hasil pengujian \textit{Delete User Submissions}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Delete User Submissions}}
+	\label{tab:hasil_delete_user_submissions}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus \textit{Submissions} pada tabel.\\
+		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete User Submissions} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan tombol \textit{Yes, Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Edit User}
+\label{subsubsec:hasil_edit_user}
+Berikut adalah hasil pengujian \textit{Edit User}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Edit User}}
+	\label{tab:hasil_edit_user}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus \textit{Submissions} pada tabel.\\
+		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Edit} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Name}. Setelah itu pengguna mengisi dengan nilai \textit{''student''}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{User Role}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''student''}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Save} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Add Notification}
+\label{subsubsec:hasil_add_notification}
+Berikut adalah hasil pengujian \textit{Add Notification}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Add Notification}}
+	\label{tab:hasil_add_notification}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Notifications}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{New} kemudian pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Title}. Setelah itu pengguna mengisi dengan nilai \textit{''Judul''}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Text}. Setelah itu pengguna mengisi dengan nilai \textit{''Isi Notifikasi''}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Add} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Add Assignment}
+\label{subsubsec:hasil_add_assignment}
+Berikut adalah hasil pengujian \textit{Add Assignment}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Add Assignment}}
+	\label{tab:hasil_add_assignment}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Add} kemudian pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Assignment Name}. Setelah itu pengguna mengisi dengan nilai \textit{''Assignment 1''}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Participants}. Setelah itu pengguna mengisi dengan nilai \textit{''All''}. Pengguna dapat melanjutkan navigasi dengan menekan tombol \textit{Tab} setelah mematikan fitur \textit{tab indent} pada \textit{textarea} dengan menekan tombol \textit{Esc} pada \textit{keyboard}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{PDF File} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. Setelah itu pengguna memilih \textit{file PDF} yang akan diunggah.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{checkbox} untuk \textit{Scoreboard}. Kemudian pengguna menekan \textit{space bar} pada \textit{keyboard} untuk mengubah nilainya menjadi \textit{''checked''}.\\
+		8 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Add ASsignment} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Delete Assignment}
+\label{subsubsec:hasil_delete_assignment}
+Berikut adalah hasil pengujian \textit{Delete Assignment}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Delete Assignment}}
+	\label{tab:hasil_delete_assignment}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Assignment} yang akan dihapus pada tabel.\\
+		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Delete this assignment} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Edit Assignment}
+\label{subsubsec:hasil_edit_assignment}
+Berikut adalah hasil pengujian \textit{Edit Assignment}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Edit Assignment}}
+	\label{tab:hasil_edit_assignment}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Assignment} yang akan disunting pada tabel.\\
+		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Edit} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Extra Time}. Setelah itu pengguna mengisi dengan nilai \textit{''0*60''}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Participants}. Setelah itu pengguna mengisi dengan nilai \textit{''All''}. Pengguna dapat melanjutkan navigasi dengan menekan tombol \textit{Tab} setelah mematikan fitur \textit{tab indent} pada \textit{textarea} dengan menekan tombol \textit{Esc} pada \textit{keyboard}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{PDF File} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}. Setelah itu pengguna memilih \textit{file PDF} yang akan diunggah.\\
+		8 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{checkbox} untuk \textit{Open}. Kemudian pengguna menekan \textit{space bar} pada \textit{keyboard} untuk mengubah nilainya menjadi \textit{''checked''}.\\
+		9 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Edit Assignment} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Edit Problem Description(Markdown)}
+\label{subsubsec:hasil_edit_problem_description_markdown}
+Berikut adalah hasil pengujian \textit{Edit Problem Description(Markdown)}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Edit Problem Description(Markdown)}}
+	\label{tab:hasil_edit_problem_description_markdown}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Edit Markdown} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Markdown Editor}. Setelah itu pengguna mengisi deskripsi sesuai dengan spesifikasinya. Pengguna dapat melanjutkan navigasi dengan menekan tombol \textit{Tab} setelah mematikan fitur \textit{tab indent} pada \textit{textarea} dengan menekan tombol \textit{Esc} pada \textit{keyboard}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Save} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Edit Problem Description(HTML)}
+\label{subsubsec:hasil_edit_problem_description_html}
+Berikut adalah hasil pengujian \textit{Edit Problem Description(HTML)}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Edit Problem Description(HTML)}}
+	\label{tab:hasil_edit_problem_description_html}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Edit HTML} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Edit Text}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Save} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Edit Problem Description(Plain HTML)}
+\label{subsubsec:hasil_edit_problem_description_plain_html}
+Berikut adalah hasil pengujian \textit{Edit Problem Description(Plain HTML)}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Edit Problem Description(Plain HTML)}}
+	\label{tab:hasil_edit_problem_description_plain_html}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Edit Plain HTML} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{HTML Editor}.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Save} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Submit File}
+\label{subsubsec:hasil_submit}
+Berikut adalah hasil pengujian untuk mengumpulkan \textit{file}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Submit}}
+	\label{tab:hasil_submit}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang sesuai. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Submit}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Problem}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''Problem 1''}.\\
+		5 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Language}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''Java''}.\\
+		6 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{File}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard. Pengguna harus memilih \textit{file} yang akan diunggah dengan benar.\\
+		7 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tombol \textit{Submit} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Final Submission}
+\label{subsubsec:hasil_final_submission}
+Berikut adalah hasil pengujian untuk memilih \textit{Final Submission}:
+
+\begin{table}[H]
+	\centering
+	\caption{Tabel hasil pengujian \textit{Final Submission}}
+	\label{tab:hasil_final_submission}
+	\begin{tabular}{|c|c|p{12cm}|}
+		\toprule
+		Langkah & Hasil & Aksi\\
+		\midrule
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang sesuai. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{All Submissions}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
+		4 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Submission} yang akan menjadi \textit{Final Submission} pada tabel.\\
+		5 & Sukses & Menavigasikan ChromeVox sampai membacakan tombol \textit{Set Final} pada \textit{Submission} yang akan menjadi \textit{Final Submission} pada tabel. Kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
