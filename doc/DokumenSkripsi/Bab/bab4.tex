@@ -280,21 +280,15 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.1
 
 	Pada \textit{Sub-menu} memilih \textit{Assignment} pada menu atas, pengguna tidak dapat memilih \textit{Assignment} dengan menggunakan \textit{keyboard}. Hal ini dapat diperbaiki dengan cara menambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan salah satu dari \textit{list} \textit{Assignment}. Pengguna harus menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini untuk menjalankan fungsi tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 	
-	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}.
-
-	Fungsi \textit{Delete User} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete User}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
-
-	Fungsi \textit{Delete Submission} tidak bisa dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi untuk menjalankan fungsi yang sama ketika pengguna menekan tombol \textit{Delete Submission}. Fungsi ini dapat dijalankan dengan cara menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_functions.js}.
+	\item Aksi untuk \textit{Delete User} dan \textit{Delete Submissions} pada halaman \textit{Users} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diubah menjadi button agar dapat difokuskan dengan keyboard. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/users.twig}.
 
 	\item \textit{checkbox} untuk memilih \textit{Assignment} pada halaman \textit{Assignments} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu diberi atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/assignments.twig}.
 
-	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar fokus \textit{keyboard} dapat terfokus pada elemen ini. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
-
-	Aksi \textit{Add} dan \textit{Delete Problem} tidak dapat dijalankan menggunakan \textit{keyboard} sehingga perlu ditambahkan fungsi yang sama ketika pengguna menekan tombol tersebut. Pengguna dapat menjalankan fungsi ini dengan menekan tombol \textit{''enter''} pada \textit{keyboard} ketika fokus \textit{keyboard} berada pada tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
+	\item Tombol \textit{Add} dan \textit{Delete Problems} pada halaman \textit{Add Assignment} tidak dapat difokuskan \textit{keyboard} sehingga perlu dirubah menjadi \texttt{button} agar dapat difokuskan dengan keyboard. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
 
 	\item \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/submissions.twig}.
 	
-	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''space bar''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
+	Aksi yang ada di \textit{checkbox} pada halaman \textit{All Submissions} tidak dapat dijalankan dengan \textit{keyboard} sehingga perlu ditambahkan fungsi yang jika dijalankan akan menjalankan fungsi yang sama ketika pengguna menekan \textit{checkbox} tersebut. Fungsi ini hanya bisa dijalankan jika fokus sedang berada pada \textit{checkbox} dan pengguna menekan tombol \textit{''spacebar''} pada \textit{keyboard}. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
 	
 	Aksi melihat status, melihat kode, melihat \textit{log} dan aksi \textit{rejudge} pada halaman \textit{All Submission} dan \textit{Final Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Selain itu fungsi dari elemen tersebut tidak dapat dijalankan ketika pengguna menekan tombol \textit{''enter''} pada \textit{keyboard} sehingga perlu ditambahkan sebuah fungsi yang menjalankan fungsi yang sama ketika pengguna menekan tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
 	
@@ -304,56 +298,53 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.1
 columns=fullflexible, keepspaces=true, breaklines=true]
 
 diff --git a/application/views/pages/admin/add_assignment.twig b/application/views/pages/admin/add_assignment.twig
-index 13a0ddea..aaae452c 100644
+index 13a0ddea..57e753c4 100644
 --- a/application/views/pages/admin/add_assignment.twig
 +++ b/application/views/pages/admin/add_assignment.twig
-@@ -34,6 +34,16 @@
-<td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
+@@ -31,7 +31,8 @@
+<td><input type="text" name="languages[]" class="sharif_input short2" value="C,C++,Python 2,Python 3,Java"/></td>\
+<td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="diff"/></td>\
+<td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="-bB"/></td>\
+-    <td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/><td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td></td>\
++    <td><input type="checkbox" name="is_upload_only[]" class="check" value="PID"/></td>\
++    <td><button class="delete_problem" type="button" aria-label="Delete Problem"><i class="fa fa-times-circle fa-lg color1 pointer"></i></button></td>\
 </tr>';
 $(document).ready(function(){
-+    $("#add").on('keyup', function (e) {
-+      if(e.which==13){
-+        $(this).trigger("click");
-+      }
-+    })
-+    $(".delete_problem").on('keyup', function (e) {
-+      if(e.which==13){
-+        $(this).trigger("click");
-+      }
-+    })
 $("#add").click(function(){
-$('#problems_table>tbody').append(shj.row.replace(/PID/g, (shj.num_of_problems+1)));
-shj.num_of_problems++;
-@@ -178,7 +188,7 @@
+@@ -178,7 +179,7 @@
 {{ form_error('late_rule', '<div class="shj_error">', '</div>') }}
 </p>
 </div>
 -    <p class="input_p" id="add_problems">Problems <i class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
-+    <p class="input_p" id="add_problems">Problems <i tabindex="0" class="fa fa-plus-circle fa-lg color11 pointer" id="add"></i>
++    <p class="input_p" id="add_problems">Problems <button type="button" id="add" aria-label="Add Problem"><i class="fa fa-plus-circle fa-lg color11 pointer"></i></button>
 <table id="problems_table">
 <thead>
 <tr>
-@@ -211,7 +221,7 @@
+@@ -211,7 +212,7 @@
 <td><input type="text" name="diff_cmd[]" class="sharif_input tiny" value="{{ problem.diff_cmd }}"/></td>
 <td><input type="text" name="diff_arg[]" class="sharif_input tiny" value="{{ problem.diff_arg }}"/></td>
 <td><input type="checkbox" name="is_upload_only[]" class="check" value="{{ problem.id }}" {{ problem.is_upload_only ? 'checked' }}/></td>
 -    <td><i class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
-+    <td><i tabindex="0" class="fa fa-times-circle fa-lg color1 delete_problem pointer"></i></td>
++    <td><button class="delete_problem" type="button" aria-label="Delete Problem"><i class="fa fa-times-circle fa-lg color1 pointer"></i></td>
 </tr>
 {% endfor %}
 </tbody>
 diff --git a/application/views/pages/admin/users.twig b/application/views/pages/admin/users.twig
-index 21d51fe2..1f3aef41 100644
+index 21d51fe2..d8bf0858 100644
 --- a/application/views/pages/admin/users.twig
 +++ b/application/views/pages/admin/users.twig
-@@ -54,8 +54,8 @@
+@@ -52,10 +52,10 @@
+<td>{{ user.first_login_time ? user.first_login_time : 'Never' }}</td>
+<td>{{ user.last_login_time ? user.last_login_time : 'Never' }}</td>
 <td>
-<a title="Edit" href="{{ site_url('profile/'~user.id) }}"><i class="fa fa-pencil fa-lg color9"></i></a>
-<a title="Submissions" href="{{ site_url('submissions/all/user/'~user.username) }}"><i class="fa fa-bars fa-lg color12"></i></a>
+-    <a title="Edit" href="{{ site_url('profile/'~user.id) }}"><i class="fa fa-pencil fa-lg color9"></i></a>
+-    <a title="Submissions" href="{{ site_url('submissions/all/user/'~user.username) }}"><i class="fa fa-bars fa-lg color12"></i></a>
 -    <span title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
 -    <span title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
-+    <span tabindex="0" title="Delete User" class="delete_user pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span>
-+    <span tabindex="0" title="Delete Submissions" class="delete_submissions pointer"><i class="fa fa-times-circle fa-lg color1"></i></span>
++    <a title="Edit User {{ user.username }}" href="{{ site_url('profile/'~user.id) }}"><i class="fa fa-pencil fa-lg color9"></i></a>
++    <a title="Submissions User {{ user.username }}" href="{{ site_url('submissions/all/user/'~user.username) }}"><i class="fa fa-bars fa-lg color12"></i></a>
++    <button class="delete_user"><span title="Delete User {{ user.username }}" class="pointer"><i title="Delete User" class="fa fa-times fa-lg color2"></i></span></button>
++    <button class="delete_submissions" ><span title="Delete Submissions {{ user.username }}" class="pointer"><i class="fa fa-times-circle fa-lg color1"></i></span></button>
 </td>
 </tr>
 {% endfor %}
@@ -371,7 +362,7 @@ index f4091385..e6b13589 100644
 <td><a href="{{ site_url('problems/'~item.id) }}">{{ item.problems }} problem{{ item.problems != 1 ? 's' }}</a></td>
 <td>{{ item.total_submits }} submission{{ item.total_submits != 1 ? 's' }}</td>
 diff --git a/application/views/pages/submissions.twig b/application/views/pages/submissions.twig
-index 2f58f9cf..fd02ac19 100644
+index 2f58f9cf..607c8370 100644
 --- a/application/views/pages/submissions.twig
 +++ b/application/views/pages/submissions.twig
 @@ -108,7 +108,7 @@
@@ -379,7 +370,7 @@ index 2f58f9cf..fd02ac19 100644
 {% if view == 'all' %}
 <td>
 -    <i class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
-+    <i tabindex="0" class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
++    <i tabindex="0" aria-label="Set Final" role="checkbox" aria-checked="{{ submission.is_final ? 'true' : 'false' }}" class="pointer set_final fa {{ submission.is_final ? 'fa-check-circle-o color11' : 'fa-circle-o' }} fa-2x"></i>
 </td>
 {% endif %}
 {% if user.level > 0 %}
@@ -443,7 +434,7 @@ Tools
 <span class="assignment_item" dir="auto">{{ assignment_item.name }}</span>
 </li>
 diff --git a/assets/js/shj_functions.js b/assets/js/shj_functions.js
-index c7b7140f..b5e63d62 100644
+index c7b7140f..18c162d1 100644
 --- a/assets/js/shj_functions.js
 +++ b/assets/js/shj_functions.js
 @@ -341,6 +341,16 @@ $(document).ready(function () {
@@ -475,32 +466,8 @@ selector: '.top_object.shj_menu'
 $(".select_assignment").click(
 function () {
 var id = $(this).children('i').addBack('i').data('id');
-@@ -392,6 +407,11 @@ $(document).ready(function () {
-* "Users" page
-*/
-$(document).ready(function(){
-+    $(".delete_user").on('keyup', function (e) {
-+      if(e.which==13){
-+        $(this).trigger("click");
-+      }
-+    })
-$('.delete_user').click(function(){
-var row = $(this).parents('tr');
-var user_id = row.data('id');
-@@ -435,6 +455,11 @@ $(document).ready(function(){
-]
-});
-});
-+    $(".delete_submissions").on('keyup', function (e) {
-+      if(e.which==13){
-+        $(this).trigger("click");
-+      }
-+    })
-$('.delete_submissions').click(function(){
-var row = $(this).parents('tr');
-var user_id = row.data('id');
 diff --git a/assets/js/shj_submissions.js b/assets/js/shj_submissions.js
-index e92c3f01..c27a86da 100644
+index e92c3f01..ba4d15f5 100644
 --- a/assets/js/shj_submissions.js
 +++ b/assets/js/shj_submissions.js
 @@ -12,6 +12,11 @@ $(document).ready(function () {
