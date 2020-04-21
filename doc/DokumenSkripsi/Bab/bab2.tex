@@ -780,7 +780,7 @@ Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat di
 	\end{tabular} 
 \end{table}
 
-Pengguna dapat menambahkan \textit{users} dengan masuk ke bagian \textit{Add Users} di halaman \textit{Users}. Pengguna harus mengisi semua informasi yang ada pada \textit{text area}. Baris yang diawali dengan \textit{\#} adalah komentar. Setiap baris lainnya mewakili pengguna dengan sintaksis berikut:
+Pengguna dapat menambahkan \textit{users} dengan masuk ke bagian \textit{Add Users} di halaman \textit{Users}. Pengguna harus mengisi semua informasi yang ada pada \textit{textarea}. Baris yang diawali dengan \textit{\#} adalah komentar. Setiap baris lainnya mewakili pengguna dengan sintaksis berikut:
 
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true, label=ls:4]
@@ -819,19 +819,19 @@ Pengguna dapat menambahkan \textit{assignment} dengan cara masuk ke bagian \text
 	\label{fig:add_assignment} 
 \end{figure} 
 
-Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments}:
+Berikut ini adalah pengaturan yang ada pada halaman \textit{Add Assignments}:
 \begin{itemize}
 	\item \textit{Assignment Name} \\
 	Nama \textit{assignment} yang akan ditampilkan dalam daftar \textit{assignment}.
 	
 	\item \textit{Start Time} \\
-	\textit{User} tidak dapat mengumpulkan assignment sebelum \textit{"Start Time"}. Format yang digunakan untuk pengaturan start time adalah \textit{MM/DD/YYYY HH:MM:SS}. Contohnya: 08/31/2013 12:00:00
+	\textit{User} tidak dapat mengumpulkan \textit{assignment} sebelum \textit{"Start Time"}. Format yang digunakan untuk pengaturan \textit{start time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contohnya: 08/31/2013 12:00:00
 	
 	\item \textit{Finish Time, Extra Time} \\
-	Peserta tidak dapat mengumpulkan \textit{assignment} setelah \textit{Finish Time + Extra Time}. \textit{Assignment} yang telat akan dikalikan dengan koefisien tertentu. Pengguna harus menulis \textit{script} PHP untuk menghitung koefisien pada bidang \textit{"Coefficient Rule"}. Format yang digunakan untuk pengaturan \textit{finish time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contoh: \textit{08/31/2013 23:59:59}. "\textit{Extra Time}" akan terhitung dalam satuan menit. Pengguna juga dapat menggunakan operator aritmatika seperti *, -, +, /. Contohnya \textit{120} (2 jam) atau \textit{48*60} (2 hari).
+	Peserta tidak dapat mengumpulkan \textit{assignment} setelah \textit{Finish Time + Extra Time}. \textit{Assignment} yang telat akan dikalikan dengan koefisien tertentu. Pengguna harus menulis \textit{script} \textit{PHP} untuk menghitung koefisien pada bidang \textit{"Coefficient Rule"}. Format yang digunakan untuk pengaturan \textit{finish time} adalah \textit{MM/DD/YYYY HH:MM:SS}. Contoh: \textit{08/31/2013 23:59:59}. "\textit{Extra Time}" akan terhitung dalam satuan menit. Pengguna juga dapat menggunakan operator aritmatika seperti *, -, +, /. Contohnya \textit{120} (2 jam) atau \textit{48*60} (2 hari).
 	
 	\item \textit{Participants} \\
-	Pengguna dapat menggunakan kata kunci \textit{ALL} pada kolom \textit{Participants} untuk mengijinkan seluruh peserta agar dapat mengumpulkan \textit{assignment}. Untuk membatasi peserta tertentu, pengguna dapat memasukan \textit{username} peserta pada kolom \textit{Participants}. Setiap \textit{username} dapat dipisahkan menggunakan tanda koma. Contoh: \textit{admin, instructor1, instructor2, student1, student2, student3, student4}.
+	Pengguna dapat menggunakan kata kunci \textit{ALL} pada kolom \textit{Participants} untuk mengizinkan seluruh peserta agar dapat mengumpulkan \textit{assignment}. Untuk membatasi peserta tertentu, pengguna dapat memasukan \textit{username} peserta pada kolom \textit{Participants}. Setiap \textit{username} dapat dipisahkan menggunakan tanda koma. Contoh: \textit{admin, instructor1, instructor2, student1, student2, student3, student4}.
 	
 	\item \textit{Test} \\
 	Pengguna dapat mengunggah \textit{test cases} dalam bentuk \textit{zip file} dengan struktur yang sudah ditentukan.
@@ -873,7 +873,7 @@ Berikut ini adalah pengaturan yang terdapat pada halaman \textit{Add Assignments
 	Jika fitur ini diaktifkan maka \textit{assignment} akan dibuat dengan \textit{Finish Time} 2038-01-18 00:00:00 (\textit{UTC}+ 7) dalam kata lain pengguna memiliki waktu yang tidak terbatas untuk mengumpulkan \textit{assignment} tersebut.
 	
 	\item \textit{Coefficient Rule} \\
-	Pengguna dapat menulis \textit{script} PHP pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} PHP pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
+	Pengguna dapat menulis \textit{script} \textit{PHP} pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} PHP pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
 	
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 	columns=fullflexible, keepspaces=true, breaklines=true, label=ls:7]
