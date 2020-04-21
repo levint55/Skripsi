@@ -44,7 +44,7 @@ Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit
 		\rowcolor{Red} 1.4.8 & AAA & Tidak Sukses\\
 		1.4.9 & AAA & Sukses\\
 		\rowcolor{LightRed} 1.4.10 & AA & Tidak Sukses\\
-		\rowcolor{LightRed} 1.4.11 & AA & Tidak Sukses\\
+		\rowcolor{Gray} 1.4.11 & AA & Diabaikan\\
 		1.4.12 & AA & Sukses\\
 		1.4.13 & AA & Sukses\\
 		\hline
@@ -493,15 +493,87 @@ Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{S
 
 \subsubsection{Kriteria Sukses 1.4.11 Non-text Contrast}
 \label{subsubsec:kepatuhan_kriteria_1.4.11}
-(Tidak Sukses) \\
+(Diabaikan) \\
 
-Kriteria ini tidak sukses karena masih ada konten \textit{non-text} yang memiliki kontras dengan perbandingan 3:1 terhadap warna yang berdekatan. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_11_reflow}.
+Kriteria ini diabaikan karena pengujiannya terlalu banyak dan tidak ada alat bantu untuk mempermudah pengujian ini. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_11_non_text_contrast}.
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.3]{kepatuhan_1_4_11}  
 	\caption[Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}]{Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}} 
-	\label{fig:kepatuhan_1_4_11_reflow} 
+	\label{fig:kepatuhan_1_4_11_non_text_contrast} 
 \end{figure}
+
+Untuk menghitung rasio kontras, \textit{relative luminance} warna yang lebih muda(L1) akan dibandingkan dengan \textit{relative luminance} warna yang lebih tua(L2). Dari hasil perbandingan tersebut hasilnya berkisar 1:1(tidak ada kontras) sampai 21:1(kontras paling tinggi). Berikut adalah rumus untuk perbandingan tersebut:
+\begin{equation}
+	(L1 + 0.05) : (L2 +0.05)
+\end{equation}
+
+Untuk menghitung \textit{relative luminance} sebuah warna \textit{sRGB}(\textit{standard Red Green Blue}) digunakan rumus sebagai berikut:
+\begin{equation}
+	L = 0.2126 * R + 0.7152 * G + 0.0722 * B
+\end{equation}
+
+Variabel $R$, $G$, dan $B$ didefinisikan sebagai berikut:
+\begin{itemize}
+	\item \textit{If} $R_{sRGB} <= 0.03928$ \textit{then} $R = R_{sRGB}/12.92$ \textit{else} $R = ((R_{sRGB} + 0.055)/1.055)^{2.4}$
+	\item \textit{If} $G_{sRGB} <= 0.03928$ \textit{then} $G = G_{sRGB}/12.92$ \textit{else} $G = ((G_{sRGB} + 0.055)/1.055)^{2.4}$
+	\item \textit{If} $B_{sRGB} <= 0.03928$ \textit{then} $B = B_{sRGB}/12.92$ \textit{else} $B = ((B_{sRGB} + 0.055)/1.055)^{2.4}$
+\end{itemize}
+
+Variabel $R_{sRGB}$, $G_{sRGB}$, dan $B_{sRGB}$ didefinisikan sebagai berikut:
+\begin{itemize}
+	\item $R_{sRGB} = R_{8bit} / 255$
+	\item $G_{sRGB} = G_{8bit} / 255$
+	\item $B_{sRGB} = B_{8bit} / 255$
+\end{itemize}
+
+Contohnya gambar x, yang memiliki spesifikasi warna sebagai berikut:
+\begin{itemize}
+	\item $R_{8bit} = 3$
+	\item $G_{8bit} = 166$
+	\item $B_{8bit} = 34$
+\end{itemize}
+
+Sedangkan warna latar belakangnya memiliki spesifikasi warna sebagai berikut:
+\begin{itemize}
+	\item $R_{8bit} = 252$
+	\item $G_{8bit} = 252$
+	\item $B_{8bit} = 252$
+\end{itemize}
+
+Berikut adalah contoh perhitungan \textit{relative luminance} gambar x:
+\begin{align*}
+	R_{sRGB} &= 3 / 255 = 0.01176 \\
+	G_{sRGB} &= 166 / 255 = 0.65098 \\
+	B_{sRGB} &= 34 / 255 = 1.33333 \\
+	\\
+	R &= 0.01176/12.92 = 0.00091 \\
+	G &= ((0.65098 + 0.055)/1.055)^{2.4} = 0.38132 \\
+	B &= ((1.33333 + 0.055)/1.055)^{2.4} = 1.93275 \\
+	\\
+	L &= 0.2126 * 0.00091 + 0.7152 * 0.38132 + 0.0722 * 1.93275 = 0.41245
+\end{align*}
+
+Sedangkan \textit{relative luminance} latar belakangnya sebagai berikut:
+\begin{align*}
+	R_{sRGB} &= 252 / 255 = 0.98823 \\
+	G_{sRGB} &= 252 / 255 = 0.98823 \\
+	B_{sRGB} &= 252 / 255 = 0.98823 \\
+	\\
+	R &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
+	G &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
+	B &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
+	\\
+	L &= 0.2126 * 0.97343 + 0.7152 *0.97343 + 0.0722 * 0.97343 = 0.97343
+\end{align*}
+
+Hasil perbandingan kontras gambar x dengan warna latar belakangnya sebagai berikut:
+\begin{align*}
+	Rasio &= (0.97343 + 0.05) : (0.41245 +0.05) \\
+	&= 2.21306 : 1
+\end{align*}
+
+Dari hasil perhitungan di atas ditemukan bahwa perbandingan rasio kontras gambar x dengan warna latar belakangnya memiliki hasil 2.21306 : 1.
 
 \subsubsection{Kriteria Sukses 1.4.12 Text Spacing}
 \label{subsubsec:kepatuhan_kriteria_1.4.12}

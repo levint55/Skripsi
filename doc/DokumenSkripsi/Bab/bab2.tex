@@ -873,7 +873,7 @@ Berikut ini adalah pengaturan yang ada pada halaman \textit{Add Assignments}:
 	Jika fitur ini diaktifkan maka \textit{assignment} akan dibuat dengan \textit{Finish Time} 2038-01-18 00:00:00 (\textit{UTC}+ 7) dalam kata lain pengguna memiliki waktu yang tidak terbatas untuk mengumpulkan \textit{assignment} tersebut.
 	
 	\item \textit{Coefficient Rule} \\
-	Pengguna dapat menulis \textit{script} \textit{PHP} pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} PHP pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
+	Pengguna dapat menulis \textit{script} \textit{PHP} pada bagian ini. Pengguna harus memasukan koefisien (dari 100) pada variabel \textit{\$coefficient}. Pengguna dapat menggunakan variabel \textit{\$extra\_time} dan \textit{\$delay}. \textit{\$extra\_time} merupakan total waktu ekstra yang diberikan kepada \textit{users} dalam satuan detik dan \textit{\$delay} merupakan jumlah detik berlalu dari waktu selesai (dapat negatif). \textit{Script} \textit{PHP} pada bagian ini tidak boleh mengandung \textit{tags <?php , <? , ?>}. Berikut contoh \textit{\$extra\_time} 172800 (2 hari):
 	
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 	columns=fullflexible, keepspaces=true, breaklines=true, label=ls:7]
@@ -903,13 +903,13 @@ Berikut ini adalah pengaturan yang ada pada halaman \textit{Add Assignments}:
 	\end{lstlisting}
 	
 	\item \textit{Time Limit} \\
-	Pengguna dapat mengatur batas waktu untuk menjalankan kode dalam satuan milisekon. Program yang ditulis menggunakan \textit{Python} dan \textit{Java} biasanya lebih lambat dari \textit{C/C++}. Oleh karena itu \textit{Python} dan \textit{Java} membutuhkan waktu yang lebih.
+	Pengguna dapat menentukan batas waktu untuk menjalankan kode dalam satuan milisekon. Program yang ditulis menggunakan \textit{Python} dan \textit{Java} biasanya lebih lambat dari \textit{C/C++}. Oleh karena itu \textit{Python} dan \textit{Java} membutuhkan waktu yang lebih.
 	
 	\item \textit{Memory Limit} \\
-	Pengguna dapat mengatur batas memori dalam satuan \textit{kilobytes}, namun penggunaan \textit{Memory Limit} tidak terlalu akurat.
+	Pengguna dapat menentukan batas memori dalam satuan \textit{kilobytes}, namun penggunaan \textit{Memory Limit} tidak terlalu akurat.
 	
 	\item \textit{Allowed Languages} \\
-	Pengguna dapat mengatur bahasa untuk setiap \textit{problem} (dipisahkan menggunakan koma). Bahasa yang tersedia seperti \textit{C, C++, Java, Python 2, Python 3, zip, PDF}. Pengguna dapat menggunakan \textit{zip} atau \textit{PDF} jika mengaktifkan pilihan \textit{Upload Only}. Contoh: \textit{C, C++ , zip} atau \textit{Python 2,Python 3} atau \textit{Java ,C}.
+	Pengguna dapat menentukan bahasa untuk setiap \textit{problem} (dipisahkan menggunakan koma). Bahasa yang tersedia seperti \textit{C, C++, Java, Python 2, Python 3, zip, PDF}. Pengguna dapat menggunakan \textit{zip} atau \textit{PDF} jika mengaktifkan pilihan \textit{Upload Only}. Contoh: \textit{C, C++ , zip} atau \textit{Python 2,Python 3} atau \textit{Java ,C}.
 	
 	\item \textit{Diff Command} \\
 	\textit{Command} ini digunakan untuk membandingkan keluaran dengan keluaran yang benar. Secara standar \textit{SharIF Judge} menggunakan \textit{diff}, namun pengguna dapat mengubah \textit{command} pada bagian ini. Bidang ini tidak boleh mengandung spasi.
@@ -924,11 +924,11 @@ Berikut ini adalah pengaturan yang ada pada halaman \textit{Add Assignments}:
 
 \subsection{\textit{Sample Assignment}}
 \label{subsec:sample_assignment}
-Berikut adalah contoh \textit{assignment} untuk testing pada \textit{SharIF Judge}. Untuk menambah \textit{assignment} pengguna dapat menekan \textit{Add} pada halaman \textit{Assignments}.
+Berikut adalah contoh \textit{assignment} untuk pengujian pada \textit{SharIF Judge}. Untuk menambah \textit{assignment} pengguna dapat menekan \textit{Add} pada halaman \textit{Assignments}.
 
 \begin{enumerate}
 	\item \textit{Problem} 1 (Penjumlahan) \\
-	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan n buah bilangan integer tersebut. Tabel \ref{tab:problem_sum} menunjukkan contoh hasil masukkan dan keluaran \textit{problem 1}.
+	Program pengguna akan menerima bilangan integer \textit{n}, kemudian menerima masukkan sebanyak \textit{n} buah bilangan integer dan akan menampilkan hasil penjumlahan \textit{n} buah bilangan integer tersebut. Tabel \ref{tab:problem_sum} menunjukkan contoh hasil masukkan dan keluaran \textit{problem 1}.
 	
 	\begin{table}[H]
 		\centering 
@@ -948,7 +948,7 @@ Berikut adalah contoh \textit{assignment} untuk testing pada \textit{SharIF Judg
 	\end{table}
 	
 	\item \textit{Problem} 2 (\textit{Max}) \\
-	Program pengguna akan menerima bilangan integer n, kemudian menerima masukkan sebanyak n buah bilangan integer dan akan menampilkan hasil penjumlahan dari dua nilai tertinggi. Tabel \ref{tab:problem_max} menunjukkan contoh hasil masukkan dan keluaran \textit{problem 2}.
+	Program pengguna akan menerima bilangan integer \textit{n}, kemudian menerima masukkan sebanyak \textit{n} buah bilangan integer dan akan menampilkan hasil penjumlahan dari dua nilai tertinggi. Tabel \ref{tab:problem_max} menunjukkan contoh hasil masukkan dan keluaran \textit{problem 2}.
 	
 	\begin{table}[H]
 		\centering 
@@ -1026,7 +1026,7 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls:8]
 
 \subsection{\textit{Test Structure}}
 \label{subsec:test_structure}
-Saat menambah \textit{assignments}, pengguna harus menyediakan \textit{file zip} yang berisi \textit{test cases}. \textit{File zip} ini berisi folder-folder untuk setiap \textit{problem}. Pengguna harus memberi nama folder sesuai aturan seperti \textit{p1, p2, p3}, dst. \textit{Assignment} yang menggunakan pilihan \textit{Upload-Only} tidak membutuhkan \textit{folder}.
+Ketika menambah \textit{assignments}, pengguna harus menyediakan \textit{file zip} yang berisi \textit{test cases}. \textit{File zip} ini berisi folder-folder untuk setiap \textit{problem}. Pengguna harus memberikan nama folder sesuai aturan seperti \textit{p1, p2, p3}, dst. \textit{Assignment} yang menggunakan pilihan \textit{Upload-Only} tidak membutuhkan \textit{folder}.
 
 \subsubsection{Metode Pengecekan}
 \label{subsubsec:metode_pengecekan}
@@ -1113,7 +1113,7 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls:10]
 --- output10.txt
 \end{lstlisting}
 
-\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk mengecek hasil keluarannya sehingga memiliki \textit{file tester.cpp}. Listing \ref{ls:11} menunjukkan isi dari \textit{file tester.cpp} untuk \textit{Problem} 1:
+\textit{Problem} 1 menggunakan metode \textit{"Tester"} untuk memeriksa hasil keluarannya sehingga memiliki \textit{file tester.cpp}. Listing \ref{ls:11} menunjukkan isi dari \textit{file tester.cpp} untuk \textit{Problem} 1:
 
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true, label=ls:11, caption=Isi \textit{File tester.cpp} untuk \textit{Problem} 1]
@@ -1162,7 +1162,7 @@ int main(int argc, char const *argv[])
 }
 \end{lstlisting}
 
-\textit{Problem} 2 menggunakan metode \textit{"Input/Output Comparison"} untuk mengecek hasil keluarannya sehingga memiliki dua folder \textit{in} dan \textit{out} yang berisi \textit{test cases}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only} sehingga tidak memiliki folder apapun.
+\textit{Problem} 2 menggunakan metode \textit{"Input/Output Comparison"} untuk memeriksa hasil keluarannya sehingga memiliki dua folder \textit{in} dan \textit{out} yang berisi \textit{test cases}. \textit{Problem} 3 menggunakan pilihan \textit{Upload-Only} sehingga tidak memiliki folder apapun.
 
 \subsection{Deteksi Kecurangan}
 \label{subsec:deteksi_kecurangan}
@@ -1215,11 +1215,11 @@ Pengguna dapat mengatur keamanan \textit{SharIF Judge} dengan beberapa langkah. 
 
 \subsubsection{Memakai \textit{Sandbox}}
 \label{subsubsec:memakai_sandbox}
-Pengguna harus memakai \textit{Sandbox} untuk \textit{C/C++} dan mengaktifkan \textit{Java Security Manager (Java Policy)} untuk \textit{Java}. Penjelasan lebih lanjut tentang \textit{Sandbox} ada pada point \ref{subsec:sandbox}.
+Pengguna dapat memakai \textit{Sandbox} untuk \textit{C/C++} dan mengaktifkan \textit{Java Security Manager (Java Policy)} untuk \textit{Java}. Penjelasan lebih lanjut tentang \textit{Sandbox} ada pada subbab \ref{subsec:sandbox}.
 
 \subsubsection{Memakai \textit{Shield}}
 \label{subsubsec:memakai_shield}
-\textit{Shield} bukan merupakan pertahanan yang asli, tetapi lebih baik ada daripada tidak sama sekali. Pengguna dapat mengaktifkan \textit{Shield} untuk \textit{C, C++, Python}. Penjelasan lebih lanjut tentang \textit{Shield} ada pada point \ref{subsubsec:shield}.
+\textit{Shield} bukan merupakan pertahanan yang asli, tetapi lebih baik ada daripada tidak sama sekali. Pengguna dapat mengaktifkan \textit{Shield} untuk \textit{C, C++, Python}. Penjelasan lebih lanjut tentang \textit{Shield} ada pada subbab \ref{subsubsec:shield}.
 
 \subsubsection{Jalankan sebagai \textit{Non-Privileged User}}
 \label{subsubsec:non_prileged_user}
@@ -1292,7 +1292,7 @@ Pengguna dapat memakai sebuah \textit{server} untuk antarmuka web dan menangani 
 \label{subsubsec:sandbox_c/c++}
 \textit{SharIF Judge} menggunakan \textit{EasySandbox} untuk \textit{sandboxing} kode \textit{C/C++}. \textit{EasySandbox} membatasi jalannya kode mengguna \textit{seccomp}, mekanisme \textit{sandboxing} pada \textit{Linux kernel}.
 
-Secara standar, \textit{EasySandbox} dinonaktifkan pada \textit{SharIF Judge}. Pengguna dapat mengaktifkannya pada halaman \textit{Settings}. Pengguna harus \textit{"Build EasySandbox"} sebelum mengaktifkannya.
+Umumnya \textit{EasySandbox} dinonaktifkan pada \textit{SharIF Judge}. Pengguna dapat mengaktifkannya pada halaman \textit{Settings}. Pengguna harus \textit{"Build EasySandbox"} sebelum mengaktifkannya.
 
 \paragraph{Build EasySandbox}
 \textit{EasySandbox files} terletak pada \textit{tester/easysandbox}. Untuk membangun \textit{EasySandbox} jalankan:
