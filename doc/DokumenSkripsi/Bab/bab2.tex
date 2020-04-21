@@ -647,7 +647,7 @@ Dalam konten yang diimplementasikan menggunakan bahasa \textit{markup}, pesan st
 
 \section{SharIF Judge}
 \label{sec:SharIF_Judge}
-\textit{SharIF Judge} adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa \textit{C , C++, Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan dari \textit{Sharif Judge} yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgniter framework})\cite{Codeigniter} dan bagian backendnya dibuat dengan \textit{BASH}.
+\textit{SharIF Judge} \cite{SharIF_Judge} (dengan huruf kapital ''IF'') adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai code berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan(\textit{fork}) dari \textit{Sharif Judge} \cite{Sharif_Judge_Original} (dengan huruf kecil ''if'') yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework})\cite{Codeigniter} dan bagian backendnya dibuat dengan BASH.
 
 \subsection{Instalasi}
 \label{subsec:instalasi}
@@ -655,31 +655,31 @@ Berikut adalah persyaratan dan langkah-langkah instalasi yang perlu dilakukan un
 
 \subsubsection{Persyaratan}
 \label{subsubsec:persyaratan}
-Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server} dengan persyaratan berikut:
+Untuk menjalankan aplikasi \textit{SharIF Judge}, diperlukan satu \textit{Linux server} dengan syarat berikut:
 \begin{itemize}
-	\item \textit{Webserver} menjalankan PHP versi 5.3 atau lebih baru
-	\item Pengguna dapat menjalankan PHP melalui \textit{command line}. Pada \textit{Ubuntu}, pengguna perlu menginstal paket \textit{php5-cli}
-	\item \textit{MySql database} (dengan ekstensi untuk PHP) atau \textit{PostgreSql database}
+	\item \textit{Webserver} dapat menjalankan PHP versi 5.3 atau lebih baru.
+	\item Pengguna dapat menjalankan PHP melalui \textit{command line}. Pada \textit{Ubuntu}, pengguna perlu menginstal paket \textit{php5-cli}.
+	\item \textit{MySql database} (dengan ekstensi untuk PHP) atau \textit{PostgreSql database}.
 	\item PHP harus diberikan akses untuk menjalankan perintah menggunakan fungsi \textit{shell\textunderscore exec}. Contoh seperti perintah berikut:
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 	columns=fullflexible, keepspaces=true, breaklines=true, label=ls:1]
 	echo shell_exec("php -v");
 	\end{lstlisting}
-	\item Perkakas yang digunakan untuk melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands})
+	\item Perkakas yang digunakan untuk dapat melakukan proses kompilasi dan menjalankan kode yang dikumpulkan (\textit{gcc, g++, javac, java, python2, python3 commands}).
 	\item \textit{Perl} lebih baik diinstall untuk alasan ketepatan waktu, batas memori dan memaksimalkan batas ukuran pada \textit{output} kode yang dikirim.
 \end{itemize}
 
 \subsubsection{Instalasi}
 \label{subsubsec:instalasi}
 \begin{itemize}
-	\item Mengunduh versi terakhir dari \textit{SharIF Judge} dan \textit{unpack} hasil unduhan di direktori \textit{public html}
-	\item Memindahkan folder \textit{system} dan \textit{application} ke luar \textit{public directory}, dan masukkan \textit{path} lengkap di \textit{file index.php}
+	\item Mengunduh versi terbaru dari \textit{SharIF Judge} dan \textit{unpack} hasil unduhan di direktori \textit{public html}.
+	\item Memindahkan folder \textit{system} dan \textit{application} ke luar \textit{public directory}, dan masukkan \textit{path} lengkap di \textit{file index.php}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
 	columns=fullflexible, keepspaces=true, breaklines=true, label=ls:2]
 	$system_path = '/home/mohammad/secret/system';
 	$application_folder = '/home/mohammad/secret/application';
 	\end{lstlisting}
-	\item Membuat sebuah database \textit{Mysql} atau \textit{PostgreSql} untuk Sharif Judge. Jangan menginstall paket koneksi database untuk \textit{C/C++, Java}, atau \textit{Python}
+	\item Membuat sebuah \textit{database} \textit{Mysql} atau \textit{PostgreSql} untuk \textit{SharIF Judge}. Jangan menginstall paket koneksi database untuk \textit{C/C++, Java}, atau \textit{Python}
 	\item Mengatur koneksi \textit{database} di \textit{file application/config/database.php}. Pengguna dapat
 	menggunakan awalan untuk nama tabel.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
@@ -693,24 +693,24 @@ Untuk menjalankan \textit{SharIF Judge}, diperlukan sebuah \textit{Linux server}
 	'dbprefix' => 'shj_',       // table prefix
 	/**********************************************/
 	\end{lstlisting}
-	\item Mengatur \textit{RADIUS server} dan \textit{mail server} pada \textit{file application/config/secrets.example.php} dan simpan dengan nama \textit{secrets.php}
-	\item Membuat direktori \textit{application/cache/Twig} agar dapat ditulis oleh PHP
-	\item Membuka halaman utama \textit{SharIF Judge} pada \textit{web browser} dan ikuti proses instalasi berikutnya
-	\item \textit{Log in} menggunakan akun \textit{admin}
-	\item Memindahkan folder \textit{tester} dan \textit{assigments} ke luar public directory lalu simpan path lengkap di halaman \textit{Settings}. Dua folder tersebut harus dapat ditulis oleh PHP. File-file yang diunggah
+	\item Mengatur \textit{RADIUS server} dan \textit{mail server} pada \textit{file application/config/secrets.example.php} dan simpan dengan nama \textit{secrets.php}.
+	\item Membuat direktori \textit{application/cache/Twig} agar dapat ditulis oleh \textit{PHP}.
+	\item Membuka halaman utama \textit{SharIF Judge} pada \textit{web browser} dan mengikuti proses instalasi berikutnya.
+	\item \textit{Log in} menggunakan akun \textit{admin}.
+	\item Memindahkan folder \textit{tester} dan \textit{assigments} ke luar \textit{public directory} lalu simpan \textit{path} lengkap di halaman \textit{Settings}. Dua folder tersebut harus dapat ditulis oleh \textit{PHP}. File-file yang diunggah
 	akan disimpan di folder \textit{assigments} sehingga tidak dapat diakses publik.
 \end{itemize}
 
 \subsection{\textit{Clean URLs}}
 \label{subsec:clean_urls}
-Secara standar, \textit{index.php} merupakan bagian dari seluruh \textit{URLs} yang ada pada \textit{SharIF Judge}. Berikut contoh \textit{URLs} \textit{SharIF Judge}:
+Umumnya \textit{index.php} merupakan bagian dari seluruh \textit{URLs} yang ada pada \textit{SharIF Judge}. Berikut contoh \textit{URLs} \textit{SharIF Judge}:
 
 \begin{itemize}
 	\item \path{http://example.mjnaderi.ir/index.php/dashboard}
 	\item \path{http://example.mjnaderi.ir/index.php/users/add}
 \end{itemize}
 
-Pengguna dapat menghilangkan \textit{index.php} di atas dan memiliki \textit{URLs} yang baik jika sistem pengguna mendukung \textit{URL rewriting}. \textit{URL rewriting} merupakan proses mengubah parameter yang terdapat pada \textit{URL}. Berikut adalah contoh \textit{URL} yang telah melewati proses \textit{URL rewriting}:
+Pengguna dapat menghapus \textit{index.php} di atas dan memiliki \textit{URLs} yang baik jika sistem pengguna mendukung \textit{URL rewriting}. \textit{URL rewriting} merupakan proses mengubah parameter yang terdapat pada \textit{URL}. Berikut adalah contoh \textit{URL} yang telah melewati proses \textit{URL rewriting}:
 
 \begin{itemize}
 	\item \path{http://example.mjnaderi.ir/dashboard}
@@ -721,8 +721,8 @@ Pengguna dapat menghilangkan \textit{index.php} di atas dan memiliki \textit{URL
 \label{subsubsec:clean_urls}
 Pengguna dapat melakukan langkah berikut untuk menggunakan \textit{clean URL}:
 \begin{itemize}
-	\item Mengubah nama \textit{file .htaccess2} menjadi \textit{.htaccess} yang ada di direktori utama \textit{SharIF Judge}. \textit{.htaccess} merupakan sebuah file konfigurasi yang digunakan pada \textit{web server}
-	\item Mengubah \textit{\$config['index\_page']} = \textit{'index.php'}; menjadi\textit{ \$config['index\_page']} = "; pada file \textit{application/config/config.php}
+	\item Mengubah nama \textit{file .htaccess2} menjadi \textit{.htaccess} yang ada di direktori utama \textit{SharIF Judge}. \textit{.htaccess} merupakan sebuah file konfigurasi yang digunakan pada \textit{web server}.
+	\item Mengubah \textit{\$config['index\_page']} = \textit{'index.php'}; menjadi\textit{ \$config['index\_page']} = "; pada \textit{file} \textit{application/config/config.php}.
 \end{itemize} 
 
 \subsection{Users}
@@ -748,7 +748,7 @@ Pada \textit{SharIF Judge}, \textit{users} dibagi menjadi 4 \textit{role}. Keemp
 	\end{tabular} 
 \end{table}
 
-Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat dilakukan para \textit{users} akan disesuaikan pada tingkat masing-masing. Tabel \ref{tab:permission_table} menunjukkan aksi yang dapat dilakukan pada setiap \textit{role}.
+Setiap \textit{users} dapat melakukan aksi yang berbeda-beda. Aksi yang dapat dilakukan oleh \textit{users} akan disesuaikan pada tingkat masing-masing. Tabel \ref{tab:permission_table} menunjukkan aksi yang dapat dilakukan pada setiap \textit{role}.
 
 \begin{table}[H] 
 	\centering 
