@@ -6,8 +6,8 @@ Pada Bab ini akan dijelaskan bagaimana implementasi untuk menaikkan tingkat kepa
 \section{Implementasi}
 \label{sec:implementasi}
 
-Pada bagian ini akan dibahas perbaikan apa saja yang dilakukan untuk membuat kriteria sukses pada bagian 3.1
-yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditampilkan dalam format \textit{diff} dengan jarak \textit{identation} sebanyak empat spasi.
+Pada bagian ini akan dibahas perbaikan apa saja yang dilakukan untuk membuat kriteria sukses pada subbab \ref{sec:peningkatan_level_A}
+yang belum sukses dipatuhi menjadi sukses dipatuhi. Setiap perubahan akan ditampilkan dalam format \textit{diff} dengan jarak \textit{identation} sudah dimodifikasi untuk menghemat ruang.
 
 \subsection{Implementasi Kriteria Sukses 1.1.1 Non-text Content}
 \label{subsec:implementasi_A_1.1.1}
@@ -19,7 +19,7 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.1
 
 	\item Pada halaman \textit{Assignments} terdapat gambar \textit{PDF} di daftar \textit{Assignment} yang tidak memiliki alternatif teks yang menjelaskan gambar tersebut sehingga perlu ditambahkan sebuah label untuk menjelaskan gambar tersebut. Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/pages/assignments.twig}.
 	
-	Semua perubahan kode dapat dilihat pada \ref{lst_1.1.1}.
+	Semua perubahan kode dapat dilihat pada listing \ref{lst_1.1.1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 1.1.1, label=lst_1.1.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -95,7 +95,7 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 1.3
 	\item Setiap judul bagian pada halaman \textit{SharIF Judge} tidak memakai \textit{tag heading}. Perubahan yang perlu dilakukan adalah dengan cara memakai \textit{tag heading} pada setiap judul bagian.
 	Perubahan yang terjadi ada pada \textit{file} \textit{/application/views/templates/base.twig}.
 	
-	Semua perubahan kode dapat dilihat pada \ref{lst_1.3.1}.
+	Semua perubahan kode dapat dilihat pada listing \ref{lst_1.3.1}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 1.3.1, label=lst_1.3.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -292,7 +292,7 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.1
 	
 	Aksi melihat status, melihat kode, melihat \textit{log} dan aksi \textit{rejudge} pada halaman \textit{All Submission} dan \textit{Final Submissions} tidak dapat difokuskan dengan \textit{keyboard} sehingga perlu ditambahkan atribut \textit{tabindex} yang bernilai 0 agar elemen dapat difokuskan dengan \textit{keyboard}. Selain itu fungsi dari elemen tersebut tidak dapat dijalankan ketika pengguna menekan tombol \textit{''enter''} pada \textit{keyboard} sehingga perlu ditambahkan sebuah fungsi yang menjalankan fungsi yang sama ketika pengguna menekan tombol tersebut. Perubahan dapat dilihat pada \textit{file} \textit{/assets/js/shj\_submissions.js}.
 	
-	Semua perubahan kode dapat dilihat pada \ref{lst_2.1.1}.
+	Semua perubahan kode dapat dilihat pada listing \ref{lst_2.1.1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.1.1, label=lst_2.1.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -695,7 +695,7 @@ Kriteria 2.4.1 dapat dipenuhi dengan cara menambahkan tautan di awal setiap hala
 
 Tidak semua \textit{browser} dapat menangani \textit{in-page links}. Secara visual fokus \textit{keyboard} sudah berada pada lokasi target, tetapi sebenarnya fokus \textit{keyboard} belum diset ke lokasi target. Masalah ini dapat diselesaikan dengan menggunakan \textit{Javascript} untuk set fokus \textit{keyboard} ke lokasi target. Perubahan ada pada \textit{file} \textit{/assets/js/shj\_functions.js}.
 
-Semua perubahan kode dapat dilihat pada \ref{lst_2.4.1}.
+Semua perubahan kode dapat dilihat pada listing \ref{lst_2.4.1}.
 
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.4.1, label=lst_2.4.1, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -792,7 +792,7 @@ Berikut adalah perubahan yang perlu dilakukan untuk memenuhi Kriteria Sukses 2.4
 	
 	\item Tautan yang ada pada tabel \textit{Problems} pada halaman \textit{Add Assignment} tidak memiliki label yang menjelaskan tujuannya, untuk itu perlu diberi label yang menjelaskan tujuannya. Perubahan dapat dilihat pada \textit{file} \textit{/application/views/pages/admin/add\_assignment.twig}.
 	
-	Semua perubahan kode dapat dilihat pada \ref{lst_2.4.4}.
+	Semua perubahan kode dapat dilihat pada listing \ref{lst_2.4.4}.
 	
 \begin{lstlisting}[language=diff, caption=Perubahan untuk mematuhi kriteria 2.4.4, label=lst_2.4.4, basicstyle=\ttfamily, frame=single,
 columns=fullflexible, keepspaces=true, breaklines=true]
@@ -1195,7 +1195,7 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk memilih \textit{Final 
 
 \subsection{Hasil Pengujian}
 \label{subsec:hasil_pengujian}
-Pada bagian ini akan ditulis hasil dari pengujian yang telah dilakukan berdasarkan skenario pengujian pada bagian \ref{subsec:skenario_pengujian}. Hasil pengujian akan dituliskan dalam bentuk tabel yang berisi langkah skenario pengujian, hasil pengujian, dan aksi yang dilakukan dalam pengujian.
+Pada bagian ini akan ditulis hasil dari pengujian yang telah dilakukan berdasarkan skenario pengujian pada subbab \ref{subsec:skenario_pengujian}. Hasil pengujian akan dituliskan dalam bentuk tabel yang berisi langkah skenario pengujian, hasil pengujian, dan aksi yang dilakukan dalam pengujian.
 
 \subsubsection{Login}
 \label{subsubsec:hasil_login}
@@ -1203,7 +1203,7 @@ Berikut adalah hasil pengujian \textit{Login}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Login}}
+	\caption{Hasil pengujian \textit{Login}}
 	\label{tab:hasil_login}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
@@ -1223,13 +1223,13 @@ Berikut adalah hasil pengujian \textit{Settings}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Settings}}
+	\caption{Hasil pengujian \textit{Settings}}
 	\label{tab:hasil_settings}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Settings}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Timezone}. Setelah itu pengguna mengisi dengan nilai \textit{''Asia/Jakarta''}.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Week Start Day}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''Sunday''}.\\
@@ -1245,13 +1245,13 @@ Berikut adalah hasil pengujian \textit{Add Users}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Add Users}}
+	\caption{Hasil pengujian \textit{Add Users}}
 	\label{tab:hasil_add_users}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Add Users} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{checkbox} untuk \textit{Send mail}. Kemudian pengguna menekan \textit{space bar} pada \textit{keyboard} untuk mengubah nilainya menjadi \textit{''checked''}.\\
@@ -1268,13 +1268,13 @@ Berikut adalah hasil pengujian \textit{Delete User}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Delete User}}
+	\caption{Hasil pengujian \textit{Delete User}}
 	\label{tab:hasil_delete_user}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus pada tabel.\\
 		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete User} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1289,13 +1289,13 @@ Berikut adalah hasil pengujian \textit{Delete User Submissions}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Delete User Submissions}}
+	\caption{Hasil pengujian \textit{Delete User Submissions}}
 	\label{tab:hasil_delete_user_submissions}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus \textit{Submissions} pada tabel.\\
 		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete User Submissions} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1310,13 +1310,13 @@ Berikut adalah hasil pengujian \textit{Edit User}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Edit User}}
+	\caption{Hasil pengujian \textit{Edit User}}
 	\label{tab:hasil_edit_user}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Users}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{User} yang akan dihapus \textit{Submissions} pada tabel.\\
 		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Edit} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1333,13 +1333,13 @@ Berikut adalah hasil pengujian \textit{Add Notification}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Add Notification}}
+	\caption{Hasil pengujian \textit{Add Notification}}
 	\label{tab:hasil_add_notification}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Notifications}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{New} kemudian pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Title}. Setelah itu pengguna mengisi dengan nilai \textit{''Judul''}.\\
@@ -1355,13 +1355,13 @@ Berikut adalah hasil pengujian \textit{Add Assignment}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Add Assignment}}
+	\caption{Hasil pengujian \textit{Add Assignment}}
 	\label{tab:hasil_add_assignment}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan tautan \textit{Add} kemudian pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Assignment Name}. Setelah itu pengguna mengisi dengan nilai \textit{''Assignment 1''}.\\
@@ -1379,13 +1379,13 @@ Berikut adalah hasil pengujian \textit{Delete Assignment}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Delete Assignment}}
+	\caption{Hasil pengujian \textit{Delete Assignment}}
 	\label{tab:hasil_delete_assignment}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Assignment} yang akan dihapus pada tabel.\\
 		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Delete} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1400,13 +1400,13 @@ Berikut adalah hasil pengujian \textit{Edit Assignment}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Edit Assignment}}
+	\caption{Hasil pengujian \textit{Edit Assignment}}
 	\label{tab:hasil_edit_assignment}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Assignments}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Assignment} yang akan disunting pada tabel.\\
 		4 & Sukses & Menekan tombol navigasi maju ChromeVox sampai membacakan \textit{Edit} kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1425,13 +1425,13 @@ Berikut adalah hasil pengujian \textit{Edit Problem Description(Markdown)}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Edit Problem Description(Markdown)}}
+	\caption{Hasil pengujian \textit{Edit Problem Description(Markdown)}}
 	\label{tab:hasil_edit_problem_description_markdown}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1448,13 +1448,13 @@ Berikut adalah hasil pengujian \textit{Edit Problem Description(HTML)}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Edit Problem Description(HTML)}}
+	\caption{Hasil pengujian \textit{Edit Problem Description(HTML)}}
 	\label{tab:hasil_edit_problem_description_html}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1471,13 +1471,13 @@ Berikut adalah hasil pengujian \textit{Edit Problem Description(Plain HTML)}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Edit Problem Description(Plain HTML)}}
+	\caption{Hasil pengujian \textit{Edit Problem Description(Plain HTML)}}
 	\label{tab:hasil_edit_problem_description_plain_html}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang akan disunting deskripsinya. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Problems}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan \textit{Problem} pada tabel yang akan disunting deskripsinya kemudian pengguna menekan tombol \textit{Enter} pada \textit{keyboard}.\\
@@ -1494,13 +1494,13 @@ Berikut adalah hasil pengujian untuk mengumpulkan \textit{file}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Submit}}
+	\caption{Hasil pengujian \textit{Submit}}
 	\label{tab:hasil_submit}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang sesuai. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{Submit}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menekan tombol \textit{Tab} sampai ChromeVox membacakan bidang masukan \textit{Problem}. Setelah itu pengguna mengubah isi \textit{combobox} dengan menekan tombol panah atas atau bawah pada \textit{keyboard} sampai ChromeVox membacakan \textit{''Problem 1''}.\\
@@ -1517,13 +1517,13 @@ Berikut adalah hasil pengujian untuk memilih \textit{Final Submission}:
 
 \begin{table}[H]
 	\centering
-	\caption{Tabel hasil pengujian \textit{Final Submission}}
+	\caption{Hasil pengujian \textit{Final Submission}}
 	\label{tab:hasil_final_submission}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\toprule
 		Langkah & Hasil & Aksi\\
 		\midrule
-		1 & Sukses & Langkah \textit{Login} dapat dilihat pada \ref{subsubsec:hasil_login}.\\
+		1 & Sukses & Langkah \textit{Login} dapat dilihat pada subbab \ref{subsubsec:hasil_login}.\\
 		2 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{topbar} sampai ChromeVox membacakan \textit{Assignment} yang sesuai. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		3 & Sukses & Menekan tombol \textit{Tab} untuk navigasi ke \textit{sidebar} sampai ChromeVox membacakan tautan untuk menu \textit{All Submissions}. Setelah itu pengguna menekan tombol \textit{Enter} pada keyboard.\\
 		4 & Sukses & Menavigasikan ChromeVox sampai membacakan baris \textit{Submission} yang akan menjadi \textit{Final Submission} pada tabel.\\
