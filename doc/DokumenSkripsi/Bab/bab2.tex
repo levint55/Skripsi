@@ -63,7 +63,7 @@ Untuk rekaman audio saja dan rekaman video saja, berikut ini benar, kecuali keti
 \label{subsec:kriteria_1.2.2}
 (Level A) \\
 
-Caption disediakan untuk semua konten rekaman audio di media berbasis waktu kecuali medianya adalah media alternatif untuk teks dan diberi label dengan jelas.
+\textit{Caption} disediakan untuk semua konten rekaman audio di media berbasis waktu kecuali medianya adalah media alternatif untuk teks dan diberi label dengan jelas.
 
 
 \subsection{Kriteria Sukses 1.2.3 Audio Descriptive atau Media Alternative (Prerecorded)}
@@ -184,6 +184,111 @@ Presentasi visual dari teks, gambar teks, memiliki rasio kontras setidaknya 4.5:
 	\item Logo: Teks yang merupakan bagian dari logo atau nama merek tidak memiliki syarat kontras.
 \end{itemize}
 
+Untuk menghitung rasio kontras, \textit{relative luminance} warna yang lebih muda(L1) akan dibandingkan dengan \textit{relative luminance} warna yang lebih tua(L2). Dari hasil perbandingan tersebut hasilnya berkisar 1:1(tidak ada kontras) sampai 21:1(kontras paling tinggi). Berikut adalah rumus untuk perbandingan tersebut:
+\begin{equation}
+\text{\textit{Contrast Ratio}} = (L1 + 0.05) : (L2 +0.05)
+\end{equation}
+
+Untuk menghitung \textit{relative luminance} sebuah warna \textit{sRGB}(\textit{standard Red Green Blue}) digunakan rumus sebagai berikut:
+\begin{equation}
+L = 0.2126 \times R + 0.7152 \times G + 0.0722 \times B
+\end{equation}
+
+Variabel $R$, $G$, dan $B$ didefinisikan sebagai berikut:
+\begin{equation}
+R = \begin{cases}
+R_{sRGB}/12.92 & \text{\textit{if} $R_{sRGB} <= 0.03928$}, \\
+((R_{sRGB} + 0.055)/1.055)^{2.4} & \text{\textit{otherwise}}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+G = \begin{cases}
+G_{sRGB}/12.92 & \text{\textit{if} $G_{sRGB} <= 0.03928$}, \\
+((G_{sRGB} + 0.055)/1.055)^{2.4} & \text{\textit{otherwise}}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+B = \begin{cases}
+B_{sRGB}/12.92 & \text{\textit{if} $B_{sRGB} <= 0.03928$}, \\
+((B_{sRGB} + 0.055)/1.055)^{2.4} & \text{\textit{otherwise}}
+\end{cases}
+\end{equation}
+
+Variabel $R_{sRGB}$, $G_{sRGB}$, dan $B_{sRGB}$ didefinisikan sebagai berikut:
+\begin{equation}
+R_{sRGB} = R_{8bit} / 255
+\end{equation}
+
+\begin{equation}
+G_{sRGB} = G_{8bit} / 255
+\end{equation}
+
+\begin{equation}
+B_{sRGB} = B_{8bit} / 255
+\end{equation}
+
+Sebagai contoh perhitungan, berikut adalah perhitungan kontras untuk teks berwarna hitam di atas latar belakang berwarna putih. Teks hitam memiliki spesifikasi warna sebagai berikut:
+\begin{equation}
+R_{8bit} = 0
+\end{equation}
+
+\begin{equation}
+G_{8bit} = 0
+\end{equation}
+
+\begin{equation}
+B_{8bit} = 0
+\end{equation}
+
+Sedangkan warna latar belakang putih memiliki spesifikasi warna sebagai berikut:
+\begin{equation}
+R_{8bit} = 255
+\end{equation}
+
+\begin{equation}
+G_{8bit} = 255
+\end{equation}
+
+\begin{equation}
+B_{8bit} = 255
+\end{equation}
+
+Berikut adalah contoh perhitungan \textit{relative luminance} untuk teks berwarna hitam:
+\begin{align*}
+R_{sRGB} &= 0 / 255 = 0 \\
+G_{sRGB} &= 0 / 255 = 0 \\
+B_{sRGB} &= 0 / 255 = 0 \\
+\\
+R &= 0/12.92 = 0 \\
+G &= 0/12.92 = 0 \\
+B &= 0/12.92 = 0 \\
+\\
+L &= 0.2126 \times 0 + 0.7152 \times 0 + 0.0722 \times 0 = 0
+\end{align*}
+
+Berikut adalah contoh perhitungan \textit{relative luminance} untuk latar belakang berwarna putih:
+\begin{align*}
+R_{sRGB} &= 255 / 255 = 1 \\
+G_{sRGB} &= 255 / 255 = 1 \\
+B_{sRGB} &= 255 / 255 = 1 \\
+\\
+R &= ((1 + 0.055)/1.055)^{2.4} = 1 \\
+G &= ((1 + 0.055)/1.055)^{2.4} = 1 \\
+B &= ((1 + 0.055)/1.055)^{2.4} = 1 \\
+\\
+L &= 0.2126 \times 1 + 0.7152 \times 1 + 0.0722 \times 1 = 1
+\end{align*}
+
+Hasil perbandingan kontras teks hitam di atas latar belakang putih sebagai berikut:
+\begin{align*}
+\text{\textit{Contrast Ratio}} &= (1 + 0.05) : (0 +0.05) \\
+&= 21 : 1
+\end{align*}
+
+Kriteria ini dapat diperiksa dengan menggunakan alat bantu \textit{axe - Web Accessibility Testing}. Alat bantu ini tersedia pada \textit{Chrome Web Store} sebagai ekstensi untuk \textit{Google Chrome}. Untuk menggunakan alat bantu ini pengguna harus menavigasi seluruh halaman \textit{website} dan menjalankan aplikasi \textit{axe - Web Accessibility Testing}. Setelah selesai dijalankan, aplikasi \textit{axe - Web Accessibility Testing} akan memberikan hasil pengujian \textit{accessibility} salah satunya kontras.
+
 \subsection{Kriteria Sukses 1.4.4 Resize text}
 \label{subsec:kriteria_1.4.4}
 (Level AA) \\
@@ -212,6 +317,8 @@ Presentasi visual dari teks, gambar teks, memiliki rasio kontras setidaknya 7:1,
 	\item Insidental: Teks atau gambar teks yang merupakan bagian dari komponen antarmuka yang tidak aktif, atau hanya dekorasi saja, atau yang tidak tampak, atau bagian dari gambar yang memiliki konten visual yang signifikan, tidak memiliki syarat kontras.
 	\item Logo: Teks yang merupakan bagian dari logo atau nama merek tidak memiliki syarat kontras.
 \end{enumerate}
+
+Rumus perhitungan kontras dapat dilihat pada subbab \ref{subsec:kriteria_1.4.3}.
 
 \subsection{Kriteria Sukses 1.4.7 Low atau No Background Audio}
 \label{subsec:kriteria_1.4.7}
@@ -268,6 +375,8 @@ Presentasi visual berikut harus memiliki rasio kontras setidaknya 3:1 terhadap w
 	\item Komponen antarmuka: Informasi visual diperlukan untuk mengidentifikasi komponen antarmuka dan statusnya, kecuali antarmuka yang tidak aktif atau tampilan komponen ditentukan oleh agen pengguna dan tidak diubah oleh pembuat web.
 	\item Objek grafik: Bagian dari grafik diperlukan untuk menjelaskan kontennya, kecuali tampilan grafik esensial untuk informasi yang disampaikan.
 \end{itemize}
+
+Rumus perhitungan kontras dapat dilihat pada subbab \ref{subsec:kriteria_1.4.3}.
 
 \subsection{Kriteria Sukses 1.4.12 Text Spacing}
 \label{subsec:kriteria_1.4.12}
