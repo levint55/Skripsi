@@ -1,6 +1,8 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
+Bab ini membahas tentang analisis tingkat kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1. 
+
 \definecolor{Pink}{rgb}{0.945,0.584,0.607}
 \definecolor{LightRed}{rgb}{0.941,0.454,0.439}
 \definecolor{Red}{rgb}{0.917,0.298,0.274}
@@ -8,7 +10,7 @@
 
 \section{Tingkat Kepatuhan \textit{SharIF Judge}}
 \label{sec:kepatuhan_sharif_judge_terhadap_wcag_2.1}
-Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit{WCAG} 2.1 ditulis dalam tabel-tabel berikut.
+Untuk membantu pemeriksaan kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1 digunakan alat bantu seperti \textit{axe - Web Accessibility Testing} dan \textit{Accessibility Insight for Web}, tetapi alat bantu tersebut tidak dapat memeriksa semua kriteria sukses \textit{WCAG} 2.1. Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit{WCAG} 2.1 ditulis dalam tabel-tabel berikut.
 
 \begin{table}[H]
 	\centering
@@ -146,6 +148,8 @@ Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit
 
 \subsection{\textit{Perceivable}}
 \label{subsec:kepatuhan_perceivable}
+
+Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{perceivable}.
 
 \subsubsection{Kriteria Sukses 1.1.1 Non-text Content}
 \label{subsubsec:kepatuhan_kriteria_1.1.1}
@@ -503,30 +507,6 @@ Kriteria ini diabaikan karena pengujiannya terlalu banyak dan tidak ada alat ban
 	\label{fig:kepatuhan_1_4_11_non_text_contrast} 
 \end{figure}
 
-Untuk menghitung rasio kontras, \textit{relative luminance} warna yang lebih muda(L1) akan dibandingkan dengan \textit{relative luminance} warna yang lebih tua(L2). Dari hasil perbandingan tersebut hasilnya berkisar 1:1(tidak ada kontras) sampai 21:1(kontras paling tinggi). Berikut adalah rumus untuk perbandingan tersebut:
-\begin{equation}
-	(L1 + 0.05) : (L2 +0.05)
-\end{equation}
-
-Untuk menghitung \textit{relative luminance} sebuah warna \textit{sRGB}(\textit{standard Red Green Blue}) digunakan rumus sebagai berikut:
-\begin{equation}
-	L = 0.2126 * R + 0.7152 * G + 0.0722 * B
-\end{equation}
-
-Variabel $R$, $G$, dan $B$ didefinisikan sebagai berikut:
-\begin{itemize}
-	\item \textit{If} $R_{sRGB} <= 0.03928$ \textit{then} $R = R_{sRGB}/12.92$ \textit{else} $R = ((R_{sRGB} + 0.055)/1.055)^{2.4}$
-	\item \textit{If} $G_{sRGB} <= 0.03928$ \textit{then} $G = G_{sRGB}/12.92$ \textit{else} $G = ((G_{sRGB} + 0.055)/1.055)^{2.4}$
-	\item \textit{If} $B_{sRGB} <= 0.03928$ \textit{then} $B = B_{sRGB}/12.92$ \textit{else} $B = ((B_{sRGB} + 0.055)/1.055)^{2.4}$
-\end{itemize}
-
-Variabel $R_{sRGB}$, $G_{sRGB}$, dan $B_{sRGB}$ didefinisikan sebagai berikut:
-\begin{itemize}
-	\item $R_{sRGB} = R_{8bit} / 255$
-	\item $G_{sRGB} = G_{8bit} / 255$
-	\item $B_{sRGB} = B_{8bit} / 255$
-\end{itemize}
-
 Sebagai contoh perhitungan berikut adalah gambar ikon \textit{Download Test and Description}.
 \begin{figure}[H]
 	\centering  
@@ -536,20 +516,33 @@ Sebagai contoh perhitungan berikut adalah gambar ikon \textit{Download Test and 
 \end{figure}
 
 Ikon \textit{Download Test and Description} memiliki spesifikasi warna sebagai berikut:
-\begin{itemize}
-	\item $R_{8bit} = 3$
-	\item $G_{8bit} = 166$
-	\item $B_{8bit} = 34$
-\end{itemize}
+\begin{equation}
+R_{8bit} = 3
+\end{equation}
+
+\begin{equation}
+G_{8bit} = 166
+\end{equation}
+
+\begin{equation}
+B_{8bit} = 34
+\end{equation}
+
 
 Sedangkan warna latar belakangnya memiliki spesifikasi warna sebagai berikut:
-\begin{itemize}
-	\item $R_{8bit} = 252$
-	\item $G_{8bit} = 252$
-	\item $B_{8bit} = 252$
-\end{itemize}
+\begin{equation}
+R_{8bit} = 252
+\end{equation}
 
-Berikut adalah contoh perhitungan \textit{relative luminance} untuk ikon \textit{Download Test and Description} pada gambar \ref{fig:kepatuhan_1_4_11_contoh}:
+\begin{equation}
+G_{8bit} = 252
+\end{equation}
+
+\begin{equation}
+B_{8bit} = 252
+\end{equation}
+
+Rumus perhitungan kontras dapat dilihat pada subbab \ref{subsec:kriteria_1.4.3}. Berikut adalah contoh perhitungan \textit{relative luminance} untuk ikon \textit{Download Test and Description} pada gambar \ref{fig:kepatuhan_1_4_11_contoh}:
 \begin{align*}
 	R_{sRGB} &= 3 / 255 = 0.01176 \\
 	G_{sRGB} &= 166 / 255 = 0.65098 \\
@@ -559,7 +552,7 @@ Berikut adalah contoh perhitungan \textit{relative luminance} untuk ikon \textit
 	G &= ((0.65098 + 0.055)/1.055)^{2.4} = 0.38132 \\
 	B &= ((1.33333 + 0.055)/1.055)^{2.4} = 1.93275 \\
 	\\
-	L &= 0.2126 * 0.00091 + 0.7152 * 0.38132 + 0.0722 * 1.93275 = 0.41245
+	L &= 0.2126 \times 0.00091 + 0.7152 \times 0.38132 + 0.0722 \times 1.93275 = 0.41245
 \end{align*}
 
 Sedangkan \textit{relative luminance} latar belakang pada ikon \textit{Download Test and Description} di gambar \ref{fig:kepatuhan_1_4_11_contoh} sebagai berikut:
@@ -572,12 +565,12 @@ Sedangkan \textit{relative luminance} latar belakang pada ikon \textit{Download 
 	G &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
 	B &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
 	\\
-	L &= 0.2126 * 0.97343 + 0.7152 *0.97343 + 0.0722 * 0.97343 = 0.97343
+	L &= 0.2126 \times 0.97343 + 0.7152 \times 0.97343 + 0.0722 \times 0.97343 = 0.97343
 \end{align*}
 
 Hasil perbandingan kontras ikon \textit{Download Test and Description} dengan warna latar belakangnya pada gambar \ref{fig:kepatuhan_1_4_11_contoh} sebagai berikut:
 \begin{align*}
-	Rasio &= (0.97343 + 0.05) : (0.41245 +0.05) \\
+	\text{\textit{Contrast Ratio}} &= (0.97343 + 0.05) : (0.41245 +0.05) \\
 	&= 2.21306 : 1
 \end{align*}
 
@@ -604,6 +597,8 @@ Kriteria ini sukses dipatuhi karena setiap konten tambahan yang muncul sesaat ke
 
 \subsection{\textit{Operable}}
 \label{subsec:kepatuhan_operable}
+
+Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{operable}.
 
 \subsubsection{Kriteria Sukses 2.1.1 Keyboard}
 \label{subsubsec:kepatuhan_kriteria_2.1.1}
@@ -952,6 +947,8 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak me
 \subsection{\textit{Understandable}}
 \label{subsec:kepatuhan_understandable}
 
+Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{understandable}.
+
 \subsubsection{Kriteria Sukses 3.1.1 Language of Page}
 \label{subsubsec:kepatuhan_kriteria_3.1.1}
 (Tidak Sukses) \\
@@ -1098,6 +1095,8 @@ Kriteria ini sukses dipatuhi karena pada halaman yang mengharuskan pengguna untu
 \subsection{\textit{Robust}}
 \label{subsec:kepatuhan_robust}
 
+Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{robust}.
+
 \subsubsection{Kriteria Sukses 4.1.1 Parsing}
 \label{subsubsec:kepatuhan_kriteria_4.1.1}
 (Tidak Sukses)\\
@@ -1174,6 +1173,7 @@ Kriteria ini dapat dipatuhi dengan cara memastikan semua fungsionalitas konten d
 
 \subsection{Kriteria Sukses 2.1.2 No Keyboard Trap}
 \label{subsec:peningkatan_A_2.1.2}
+Kriteria ini dapat dipatuhi dengan cara memastikan tidak ada \textit{keyboard trap} di semua halaman. Elemen yang harus diperbaiki adalah:
 
 \begin{itemize}
 	\item Seluruh \textit{Textarea} pada halaman \textit{Settings}.
