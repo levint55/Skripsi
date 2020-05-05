@@ -8,9 +8,9 @@ Pada zaman perkembangan teknologi saat ini, banyak sekali orang yang mengakses t
 
 Sejumlah individu dan organisasi dari berbagai negara bekerja sama membuat standar untuk \textit{Web content accessibility} yang memenuhi kebutuhan individu, organisasi, dan pemerintah secara internasional. Melalui perundingan tersebut terbentuklah \textit{Web Content Accessibility Guidelines} (\textit{WCAG}) 2.1 \cite{WCAG:2.1} yang memuat rekomendasi untuk membuat konten web lebih mudah diakses. Pedoman-pedoman ini akan membuat konten lebih mudah diakses untuk orang disabilitas termasuk akomodasi untuk kebutaan dan penglihatan rendah, ketulian dan gangguan pendengaran, gerakan terbatas, fotosensitif, atau kombinasinya, dan beberapa akomomodasi untuk kesulitan belajar dan keterbatasan kognitif; tetapi tidak akan memenuhi setiap kebutuhan pengguna dengan disabilitas. 
 
-Di dalam \textit{WCAG} 2.1 ada 78 kriteria sukses. Kriteria sukses adalah pedoman untuk membuat konten lebih mudah diakses. Ada 3 tingkat kepatuhan yaitu A (terkecil), AA, AAA (terbesar). Tingkat kepatuhan A adalah tingkat kepatuhan terkecil yang diperoleh jika seluruh kriteria sukses tingkat A terpenuhi atau versi alternatifnya tersedia. Tingkat kepatuhan AA adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat A dan AA terpenuhi atau versi alternatif tingkat AA tersedia. Tingkat kepatuhan AAA adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat A, AA, dan AAA terpenuhi atau veri alternatif tingkat AAA tersedia.
+Di dalam \textit{WCAG} 2.1 ada 78 kriteria sukses. Kriteria sukses adalah pedoman untuk membuat konten lebih mudah diakses. Ada 3 tingkat kepatuhan yaitu \textit{A} (terkecil), \textit{AA}, \textit{AAA} (terbesar). Tingkat kepatuhan \textit{A} adalah tingkat kepatuhan terkecil yang diperoleh jika seluruh kriteria sukses tingkat \textit{A} terpenuhi atau versi alternatifnya tersedia. Tingkat kepatuhan \textit{AA} adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat \textit{A} dan \textit{AA} terpenuhi atau versi alternatif tingkat \textit{AA} tersedia. Tingkat kepatuhan \textit{AAA} adalah tingkat kepatuhan yang diperoleh jika seluruh kriteria sukses tingkat \textit{A}, \textit{AA}, dan \textit{AAA} terpenuhi atau veri alternatif tingkat \textit{AAA} tersedia.
 
-\textit{SharIF Judge} \cite{SharIF_Judge} (dengan huruf kapital ''IF'') adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai \textit{code} berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan(\textit{fork}) dari \textit{Sharif Judge} \cite{Sharif_Judge_Original} (dengan huruf kecil ''if'') yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework})\cite{Codeigniter} dan bagian backendnya dibuat dengan BASH.
+\textit{SharIF Judge} \cite{SharIF_Judge} (dengan huruf kapital ''IF'') adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai \textit{code} berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan(\textit{fork}) dari \textit{Sharif Judge} \cite{Sharif_Judge_Original} (dengan huruf kecil ''if'') yang telah dibuat oleh Mohammed Javad Naderi. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dibuat menggunakan PHP (\textit{CodeIgnitor framework})\cite{Codeigniter} dan bagian \textit{backend} dibuat dengan BASH.
 
 Pada skripsi ini, akan dilakukan analisis tingkat kepatuhan dan rekomendasi perbaikan aplikasi \textit{SharIF Judge} berdasarkan \textit{Web Content Accessibility Guideline} 2.1. Selain itu, aplikasi \textit{SharIF Judge} juga akan diuji dengan kondisi keterbatasan visual. Dengan perbaikan ini diharapkan aplikasi \textit{SharIF Judge} dapat diakses oleh banyak kalangan.
 
@@ -18,7 +18,7 @@ Pada skripsi ini, akan dilakukan analisis tingkat kepatuhan dan rekomendasi perb
 \label{sec:rumusan}
 \begin{itemize}
 	\item Bagaimana tingkat kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1 ?
-	\item Rekomendasi perbaikan apa saja yang perlu dilakukan terhadap \textit{SharIF Judge} untuk menaikkan tingkat kepatuhannya ?
+	\item Rekomendasi perbaikan apa saja yang perlu dilakukan terhadap \textit{SharIF Judge} untuk meningkatkan tingkat kepatuhannya ?
 	\item Bagaimana pengaruh peningkatan tingkat kepatuhan \textit{WCAG} 2.1 terhadap penggunaan aplikasi \textit{SharIF Judge} oleh pengguna dengan keterbatasan penglihatan ?
 \end{itemize}
 
@@ -26,7 +26,7 @@ Pada skripsi ini, akan dilakukan analisis tingkat kepatuhan dan rekomendasi perb
 \label{sec:tujuan}
 \begin{itemize}
 	\item Mengukur tingkat kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1.
-	\item Membuat rekomendasi perbaikan yang perlu dilakukan terhadap \textit{SharIF Judge} untuk menaikkan tingkat kepatuhannya.
+	\item Membuat rekomendasi perbaikan yang perlu dilakukan terhadap \textit{SharIF Judge} untuk meningkatkan tingkat kepatuhannya.
 	\item Mengetahui pengaruh peningkatan tingkat kepatuhan \textit{WCAG} 2.1 terhadap penggunaan aplikasi \textit{SharIF Judge} oleh pengguna dengan keterbatasan penglihatan.
 \end{itemize} 
 
@@ -36,7 +36,7 @@ Batasan masalah pada skripsi ini adalah sebagai berikut:
 
 \begin{enumerate}
 	\item Pengujian hanya dilakukan dalam kondisi keterbatasan visual dan perangkat yang digunakan adalah komputer.
-	\item Peningkatan tingkat kepatuhan hanya dilakukan sampai tingkat A.
+	\item Peningkatan tingkat kepatuhan hanya dilakukan sampai tingkat \textit{A}.
 	\item Untuk beberapa kriteria sukses tidak dapat diukur karena keterbatasan alat, waktu, dan sumber daya (akan dibahas pada subbab \ref{subsubsec:kepatuhan_kriteria_1.4.11})
 \end{enumerate}
 
