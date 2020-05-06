@@ -10,7 +10,7 @@ Bab ini membahas tentang analisis tingkat kepatuhan \textit{SharIF Judge} terhad
 
 \section{Tingkat Kepatuhan \textit{SharIF Judge}}
 \label{sec:kepatuhan_sharif_judge_terhadap_wcag_2.1}
-Untuk membantu pemeriksaan kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1 digunakan alat bantu seperti \textit{axe - Web Accessibility Testing} dan \textit{Accessibility Insight for Web}, tetapi alat bantu tersebut tidak dapat memeriksa semua kriteria sukses \textit{WCAG} 2.1. Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit{WCAG} 2.1 ditulis dalam tabel-tabel berikut.
+Untuk membantu pemeriksaan kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1 digunakan alat bantu seperti \textit{axe - Web Accessibility Testing}\footnote{https://www.deque.com/axe/} dan \textit{Accessibility Insight for Web}\footnote{https://accessibilityinsights.io/}, tetapi alat bantu tersebut tidak dapat memeriksa seluruh kriteria sukses \textit{WCAG} 2.1. Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit{WCAG} 2.1 ditulis dalam tabel \ref{tab:kepatuhan_sharif_judge_perceivable}, \ref{tab:kepatuhan_sharif_judge_operable}, \ref{tab:kepatuhan_sharif_judge_understandable}, dan \ref{tab:kepatuhan_sharif_judge_robust}. Penjelasan untuk analisis setiap kriteria sukses dapat dilihat pada subbab \ref{subsec:kepatuhan_perceivable}, \ref{subsec:kepatuhan_operable}, \ref{subsec:kepatuhan_understandable}, dan \ref{subsec:kepatuhan_robust}.
 
 \begin{table}[H]
 	\centering
@@ -159,7 +159,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 \begin{itemize}
 	\item Gambar logo \textit{SharIF Judge} pada menu bagian atas tidak memiliki alternatif teks. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_sharif_judge}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_sharif_judge, caption=Kriteria Sukses 1.1.1 - Logo SharIF Judge Tidak Diberi Alternatif Teks]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_sharif_judge, caption=Pelanggaran Kriteria Sukses 1.1.1 - Logo \textit{SharIF Judge} Tidak Diberi Alternatif Teks]
 	...
 	<a href="{{ site_url('/') }}">
 		<img src="{{ base_url('assets/images/logo_small.png') }}"/>
@@ -169,7 +169,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\end{lstlisting}
 	\item Gambar pdf pada halaman \textit{Assignment} tidak memiliki alternatif teks. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_1_1_logo_pdf}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_pdf, caption=Kriteria Sukses 1.1.1 - Gambar PDF Tidak Diberi Alternatif Teks]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_1_1_logo_pdf, caption=Pelanggaran Kriteria Sukses 1.1.1 - Gambar PDF Tidak Diberi Alternatif Teks]
 	...
 	<td>
 	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
@@ -242,12 +242,12 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_add_user}  
-		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}} 
+		\caption[Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}]{Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Add Users}} 
 		\label{fig:kepatuhan_1_3_1_add_user} 
 	\end{figure}
-	\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label. Selain itu masih ada juga bidang masukan \textit{required} tetapi tidak diberikan tanda \textit{asterisk}(*) dan diberi warna merah. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_1_add_assignment}.
+	\item Dalam halaman \textit{Add Assignment} ada elemen dalam form \textit{problems} tidak diberi label. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_1_add_assignment}.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_1_add_assignment, caption=Kriteria Sukses 1.3.1 - Elemen Dalam Form yang Tidak Diberi Label]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_1_add_assignment, caption=Pelanggaran Kriteria Sukses 1.3.1 - Elemen Dalam Form yang Tidak Diberi Label]
 	...
 	<td><input type="text" name="name[]" class="sharif_input short" value="Problem "/></td>\
 	...
@@ -257,13 +257,13 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_problem_edit_markdown}  
-		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}} 
+		\caption[Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]{Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}} 
 		\label{fig:kepatuhan_1_3_1_problem_edit_markdown} 
 	\end{figure}
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[width=0.5\textwidth]{kepatuhan_1_3_1_edit_plain_html}  
-		\caption[Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}]{Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}} 
+		\caption[Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}]{Pelanggaran Kriteria Sukses 1.3.1 - Elemen yang Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Plain Html}} 
 		\label{fig:kepatuhan_1_3_1_plain_html} 
 	\end{figure}
 \end{itemize}
@@ -292,7 +292,7 @@ Kriteria ini sukses dipatuhi karena konten dari \textit{SharIF Judge} dapat dita
 
 Kriteria ini tidak sukses karena masih ada bidang masukan yang tidak memiliki label, salah satunya pada halaman \textit{Problems} bagian \textit{Edit Markdown}. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_5}.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5, caption=Kriteria Sukses 1.3.5 - Elemen Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5, caption=Pelanggaran Kriteria Sukses 1.3.5 - Elemen Tidak Diberi Label Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]
 ...
 <p class="input_p">
 	<textarea name="text">{{ problem.description }}</textarea>
@@ -306,7 +306,7 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5
 
 Kriteria ini tidak sukses dipatuhi karena ada elemen \textit{HTML} yang seharusnya dapat dipakai tetapi tidak digunakan, seperti bagian navigasi dan judul bagian. Kesalahan dapat dilihat pada potongan kode \ref{ls_kepatuhan_1_3_6}.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_6, caption=Kriteria Sukses 1.3.6 - \textit{Sidebar}]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_6, caption=Pelanggaran Kriteria Sukses 1.3.6 - \textit{Sidebar} Tidak Memakai \textit{Tag} \textit{Nav}]
 ...
 <div id="side_bar" class="sidebar_open">
 	<ul>
@@ -336,7 +336,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.25]{kepatuhan_1_4_3_navigasi_atas}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas]{Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen Navigasi Atas} 
 		\label{fig:kepatuhan_1_4_3_navigasi_atas} 
 	\end{figure}
 
@@ -344,7 +344,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_3_dashboard}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Dashboard]{Kriteria Sukses 1.4.3 - Kontras Elemen Dashboard} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Dashboard}]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Dashboard}} 
 		\label{fig:kepatuhan_1_4_3_dashboard} 
 	\end{figure}
 
@@ -352,7 +352,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_3_settings}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Settings]{Kriteria Sukses 1.4.3 - Kontras Elemen Settings} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Settings}]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Settings}} 
 		\label{fig:kepatuhan_1_4_3_settings} 
 	\end{figure}
 
@@ -360,7 +360,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_3_notifications}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Notifications]{Kriteria Sukses 1.4.3 - Kontras Elemen Notifications} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Notifications}]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Notifications}} 
 		\label{fig:kepatuhan_1_4_3_notifications} 
 	\end{figure}
 	
@@ -368,7 +368,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.3]{kepatuhan_1_4_3_assignments}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen Assignments]{Kriteria Sukses 1.4.3 - Kontras Elemen Assignments} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Assignments}]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Assignments}} 
 		\label{fig:kepatuhan_1_4_3_assignments} 
 	\end{figure}
 	
@@ -376,7 +376,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_3_add_assignment}  
-		\caption[Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}]{Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}]{Pelanggaran Kriteria Sukses 1.4.3 - Kontras Elemen \textit{Add Assignments}} 
 		\label{fig:kepatuhan_1_4_3_add_assignment} 
 	\end{figure}
 	
@@ -386,11 +386,11 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 \label{subsubsec:kepatuhan_kriteria_1.4.4}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena fungsionalitas \textit{navigation bar} tidak berjalan pada pembesaran 125 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_4_nav_bar}.
+Kriteria ini tidak sukses dipatuhi karena konten \textit{navigation bar} akan hilang pada pembesaran 125 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_4_nav_bar}.
 \begin{figure}[H]
 	\centering  
 	\includegraphics[width=0.5\textwidth]{kepatuhan_1_4_4_nav_bar}  
-	\caption[Kriteria Sukses 1.4.4 - Sidenav]{Kriteria Sukses 1.4.4 - Sidenav} 
+	\caption[Pelanggaran Kriteria Sukses 1.4.4 - \textit{Sidenav}]{Pelanggaran Kriteria Sukses 1.4.4 - \textit{Sidenav}} 
 	\label{fig:kepatuhan_1_4_4_nav_bar} 
 \end{figure}
 
@@ -412,7 +412,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.25]{kepatuhan_1_4_6_navigasi_atas}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas]{Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen Navigasi Atas} 
 		\label{fig:kepatuhan_1_4_6_navigasi_atas} 
 	\end{figure}
 
@@ -420,7 +420,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_6_dashboard}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Dashboard]{Kriteria Sukses 1.4.6 - Kontras Elemen Dashboard} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Dashboard}]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Dashboard}} 
 		\label{fig:kepatuhan_1_4_6_dashboard} 
 	\end{figure}
 
@@ -428,7 +428,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_6_settings}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Settings]{Kriteria Sukses 1.4.6 - Kontras Elemen Settings} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Settings}]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Settings}} 
 		\label{fig:kepatuhan_1_4_6_settings} 
 	\end{figure}
 
@@ -436,7 +436,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_6_notifications}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Notifications]{Kriteria Sukses 1.4.6 - Kontras Elemen Notifications} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Notifications}]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Notifications}} 
 		\label{fig:kepatuhan_1_4_6_notifications} 
 	\end{figure}
 
@@ -444,7 +444,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.3]{kepatuhan_1_4_6_assignments}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Assignments]{Kriteria Sukses 1.4.6 - Kontras Elemen Assignments} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Assignments}]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Assignments}} 
 		\label{fig:kepatuhan_1_4_6_assignments} 
 	\end{figure}
 
@@ -452,7 +452,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_1_4_6_add_assignment}  
-		\caption[Kriteria Sukses 1.4.6 - Kontras Elemen Add Assignments]{Kriteria Sukses 1.4.6 - Kontras Elemen Add Assignments} 
+		\caption[Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Add Assignments}]{Pelanggaran Kriteria Sukses 1.4.6 - Kontras Elemen \textit{Add Assignments}} 
 		\label{fig:kepatuhan_1_4_6_add_assignment} 
 	\end{figure}
 
@@ -473,7 +473,7 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \t
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.25]{kepatuhan_1_4_8_notifications}  
-	\caption[Kriteria Sukses 1.4.8 - Notifications]{Kriteria Sukses 1.4.8 - Notifications} 
+	\caption[Pelanggaran Kriteria Sukses 1.4.8 - Lebar \textit{Notifications}]{Pelanggaran Kriteria Sukses 1.4.8 - \textit{Notifications}} 
 	\label{fig:kepatuhan_1_4_8_notifications} 
 \end{figure}
 
@@ -487,11 +487,11 @@ Kriteria ini sukses dipatuhi karena semua gambar teks yang ada pada aplikasi \te
 \label{subsubsec:kepatuhan_kriteria_1.4.10}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{SharIF Judge} memerlukan \textit{scroll} secara horizontal ketika ditampilkan pada resolusi layar 1280 pixel dengan pembesaran 400 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_10_reflow}
+Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{SharIF Judge} memerlukan \textit{scroll} secara \textit{horizontal} ketika ditampilkan pada resolusi layar 1280 \textit{pixel} dengan pembesaran 400 persen. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_1_4_10_reflow}
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.25]{kepatuhan_1_4_10}  
-	\caption[Kriteria Sukses 1.4.10 - Horizontal \textit{Scroll}]{Kriteria Sukses 1.4.10 - Horizontal \textit{Scroll}} 
+	\caption[Pelanggaran Kriteria Sukses 1.4.10 - \textit{Horizontal} \textit{Scroll}]{Pelanggaran Kriteria Sukses 1.4.10 - \textit{Horizontal} \textit{Scroll}} 
 	\label{fig:kepatuhan_1_4_10_reflow} 
 \end{figure}
 
@@ -503,7 +503,7 @@ Kriteria ini diabaikan karena pengujiannya terlalu banyak dan tidak ada alat ban
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.3]{kepatuhan_1_4_11}  
-	\caption[Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}]{Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}} 
+	\caption[Pelanggaran Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}]{Pelanggaran Kriteria Sukses 1.4.11 - Ikon Pada Halaman \textit{Assignments}} 
 	\label{fig:kepatuhan_1_4_11_non_text_contrast} 
 \end{figure}
 
@@ -544,26 +544,26 @@ B_{8bit} = 252
 
 Rumus perhitungan kontras dapat dilihat pada subbab \ref{subsec:kriteria_1.4.3}. Berikut adalah contoh perhitungan \textit{relative luminance} untuk ikon \textit{Download Test and Description} pada gambar \ref{fig:kepatuhan_1_4_11_contoh}:
 \begin{align*}
-	R_{sRGB} &= 3 / 255 = 0.01176 \\
-	G_{sRGB} &= 166 / 255 = 0.65098 \\
-	B_{sRGB} &= 34 / 255 = 1.33333 \\
+	R_{sRGB} &= 3 \div 255 = 0.01176 \\
+	G_{sRGB} &= 166 \div 255 = 0.65098 \\
+	B_{sRGB} &= 34 \div 255 = 1.33333 \\
 	\\
-	R &= 0.01176/12.92 = 0.00091 \\
-	G &= ((0.65098 + 0.055)/1.055)^{2.4} = 0.38132 \\
-	B &= ((1.33333 + 0.055)/1.055)^{2.4} = 1.93275 \\
+	R &= 0.01176 \div 12.92 = 0.00091 \\
+	G &= ((0.65098 + 0.055) \div 1.055)^{2.4} = 0.38132 \\
+	B &= ((1.33333 + 0.055) \div 1.055)^{2.4} = 1.93275 \\
 	\\
 	L &= 0.2126 \times 0.00091 + 0.7152 \times 0.38132 + 0.0722 \times 1.93275 = 0.41245
 \end{align*}
 
 Sedangkan \textit{relative luminance} latar belakang pada ikon \textit{Download Test and Description} di gambar \ref{fig:kepatuhan_1_4_11_contoh} sebagai berikut:
 \begin{align*}
-	R_{sRGB} &= 252 / 255 = 0.98823 \\
-	G_{sRGB} &= 252 / 255 = 0.98823 \\
-	B_{sRGB} &= 252 / 255 = 0.98823 \\
+	R_{sRGB} &= 252 \div 255 = 0.98823 \\
+	G_{sRGB} &= 252 \div 255 = 0.98823 \\
+	B_{sRGB} &= 252 \div 255 = 0.98823 \\
 	\\
-	R &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
-	G &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
-	B &= ((0.98823 + 0.055)/1.055)^{2.4} = 0.97343 \\
+	R &= ((0.98823 + 0.055) \div 1.055)^{2.4} = 0.97343 \\
+	G &= ((0.98823 + 0.055) \div 1.055)^{2.4} = 0.97343 \\
+	B &= ((0.98823 + 0.055) \div 1.055)^{2.4} = 0.97343 \\
 	\\
 	L &= 0.2126 \times 0.97343 + 0.7152 \times 0.97343 + 0.0722 \times 0.97343 = 0.97343
 \end{align*}
@@ -584,7 +584,7 @@ Kriteria ini sukses dipatuhi karena penulis telah melakukan uji coba pada salah 
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.3]{kepatuhan_1_4_12}  
-	\caption[Kriteria Sukses 1.4.12 - Halaman \textit{Add Assignment}]{Kriteria Sukses 1.4.12 - Halaman \textit{Add Assignment}} 
+	\caption[Pelanggaran Kriteria Sukses 1.4.12 - \textit{Text Spacing} Halaman \textit{Add Assignment}]{Pelanggaran Kriteria Sukses 1.4.12 - \textit{Text Spacing} Halaman \textit{Add Assignment}} 
 	\label{fig:kepatuhan_1_4_12} 
 \end{figure}
 
@@ -604,25 +604,13 @@ Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{opera
 \label{subsubsec:kepatuhan_kriteria_2.1.1}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena:
-\begin{itemize}
-	\item Tombol \textit{Collapse Menu} pada \textit{sidebar} tidak dapat dioperasikan dengan keyboard. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_1_collapse_menu}.
-	\begin{figure}[H]
-		\centering  
-		\includegraphics[scale=0.5]{kepatuhan_2_1_1_collapse_menu}  
-		\caption[Kriteria Sukses 2.1.1 - \textit{Collapse Menu}]{Kriteria Sukses 2.1.1 - \textit{Collapse Menu}} 
-		\label{fig:kepatuhan_2_1_1_collapse_menu} 
-	\end{figure}
-
-	\item Tombol \textit{Tools} pada \textit{Menu} tidak dapat dioperasikan dengan keyboard. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_1_tools}.
-	\begin{figure}[H]
-		\centering  
-		\includegraphics[scale=0.5]{kepatuhan_2_1_1_tools}  
-		\caption[Kriteria Sukses 2.1.1 - \textit{Tools}]{Kriteria Sukses 2.1.1 - \textit{Tools}} 
-		\label{fig:kepatuhan_2_1_1_tools} 
-	\end{figure}
-
-\end{itemize}
+Kriteria ini tidak sukses dipatuhi karena masih banyak elemen yang tidak dioperasikan dengan keyboard, salah satunya tombol \textit{Tools} pada \textit{Menu}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_1_tools}.
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{kepatuhan_2_1_1_tools}  
+	\caption[Pelanggaran Kriteria Sukses 2.1.1 - Tombol \textit{Tools}]{Pelanggaran Kriteria Sukses 2.1.1 - Tombol \textit{Tools}} 
+	\label{fig:kepatuhan_2_1_1_tools} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 2.1.2 \textit{No Keyboard Trap}}
 \label{subsubsec:kepatuhan_kriteria_2.1.2}
@@ -634,31 +622,31 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_2_1_2_settings}  
-		\caption[Kriteria Sukses 2.1.2 - \textit{Settings}]{Kriteria Sukses 2.1.2 - \textit{Settings}} 
+		\caption[Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Settings}]{Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Settings}} 
 		\label{fig:kepatuhan_2_1_2_settings} 
 	\end{figure}
 
-	\item Dalam halaman \textit{Add User} ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}.\textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_add_user}.
+	\item Dalam halaman \textit{Add User} ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}. \textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_add_user}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_2_1_2_add_user}  
-		\caption[Kriteria Sukses 2.1.2 - \textit{Add User}]{Kriteria Sukses 2.1.2 - \textit{Add User}} 
+		\caption[Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Add User}]{Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Add User}} 
 		\label{fig:kepatuhan_2_1_2_add_user} 
 	\end{figure}
 
-	\item Dalam halaman \textit{Add Assignment} ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}.\textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_add_assignment}.
+	\item Dalam halaman \textit{Add Assignment} ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}. \textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_add_assignment}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_2_1_2_add_assignment}  
-		\caption[Kriteria Sukses 2.1.2 - \textit{Add Assignment}]{Kriteria Sukses 2.1.2 - \textit{Add Assignment}} 
+		\caption[Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Add Assignment}]{Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Add Assignment}} 
 		\label{fig:kepatuhan_2_1_2_add_assignment} 
 	\end{figure}
 
-	\item Dalam halaman \textit{Problems}(\textit{Edit Markdown}) ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}.\textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_problems_edit_markdown}.
+	\item Dalam halaman \textit{Problems}(\textit{Edit Markdown}) ada \textit{input field} yang fokusnya tidak dapat dipindahkan menggunakan antarmuka \textit{keyboard}. \textit{Input field} yang dimaksud dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_2_problems_edit_markdown}.
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_2_1_2_problems_edit_markdown}  
-		\caption[Kriteria Sukses 2.1.2 - \textit{Problems} Bagian \textit{Edit Markdown}]{Kriteria Sukses 2.1.2 - \textit{Problems} Bagian \textit{Edit Markdown}} 
+		\caption[Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}]{Pelanggaran Kriteria Sukses 2.1.2 - \textit{Keyboard Trap} Pada Halaman \textit{Problems} Bagian \textit{Edit Markdown}} 
 		\label{fig:kepatuhan_2_1_2_problems_edit_markdown} 
 	\end{figure}
 
@@ -668,25 +656,13 @@ Kriteria ini tidak sukses dipatuhi karena:
 \label{subsubsec:kepatuhan_kriteria_2.1.3}
 (Tidak Sukses) \\
 
-Kriteria ini tidak sukses dipatuhi karena:
-\begin{itemize}
-	\item Tombol \textit{Collapse Menu} pada \textit{sidebar} tidak dapat dioperasikan dengan keyboard. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_3_collapse_menu}.
-	\begin{figure}[H]
-		\centering  
-		\includegraphics[scale=0.5]{kepatuhan_2_1_3_collapse_menu}  
-		\caption[Kriteria Sukses 2.1.3 - \textit{Collapse Menu}]{Kriteria Sukses 2.1.3 - \textit{Collapse Menu}} 
-		\label{fig:kepatuhan_2_1_3_collapse_menu} 
-	\end{figure}
-
-	\item Tombol \textit{Tools} dan \textit{Assignments} pada \textit{Menu} tidak dapat dioperasikan dengan keyboard. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_3_tools}.
-	\begin{figure}[H]
-		\centering  
-		\includegraphics[scale=0.5]{kepatuhan_2_1_3_tools}  
-		\caption[Kriteria Sukses 2.1.3 - \textit{Tools}]{Kriteria Sukses 2.1.3 - \textit{Tools}} 
-		\label{fig:kepatuhan_2_1_3_tools} 
-	\end{figure}
-
-\end{itemize}
+Kriteria ini tidak sukses dipatuhi karena masih banyak elemen yang tidak dioperasikan dengan keyboard, salah satunya tombol \textit{Tools} pada \textit{Menu}. Tampilan halaman web dapat dilihat pada gambar \ref{fig:kepatuhan_2_1_3_tools}.
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{kepatuhan_2_1_1_tools}  
+	\caption[Pelanggaran Kriteria Sukses 2.1.1 - Tombol \textit{Tools}]{Pelanggaran Kriteria Sukses 2.1.1 - Tombol \textit{Tools}} 
+	\label{fig:kepatuhan_2_1_3_tools} 
+\end{figure}
 
 \subsubsection{Kriteria Sukses 2.1.4 \textit{Character Key Shortcuts}}
 \label{subsubsec:kepatuhan_kriteria_2.1.4}
@@ -730,7 +706,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ke
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} waktu ketidakaktifan yang dapat menyebabkan kehilangan data kurang dari 20 jam. Pada potongan kode \ref{ls_kepatuhan_2_2_6} ditunjukkan bahwa sesi autentikasi hanya berlangsung selama 2 jam ketika user tidak melakukan tindakan apa pun.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_2_6, caption=Kriteria Sukses 2.2.6 - Sesi Autentikasi]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_2_6, caption=Pelanggaran Kriteria Sukses 2.2.6 - Sesi Autentikasi]
 ...
 $config['sess_cookie_name']		= 'shjsession';
 $config['sess_expiration']		= 7200;
@@ -781,7 +757,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 \begin{itemize}
 	\item Pada halaman \textit{Assignment} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_4_assignment} ditunjukkan bahwa gambar pdf memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_assignment, caption=Kriteria Sukses 2.4.4 - Gambar PDF]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_assignment, caption=Pelanggaran Kriteria Sukses 2.4.4 - Gambar PDF Tidak Diberi Teks Alternatif]
 	...
 	<td>
 		<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
@@ -791,7 +767,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 	\item Pada menu \textit{Top Bar} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_4_top_bar} ditunjukkan bahwa gambar logo profil memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_top_bar, caption=Kriteria Sukses 2.4.4 - Gambar Logo Profile]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_4_top_bar, caption=Pelanggaran Kriteria Sukses 2.4.4 - Gambar Logo \textit{Profile} Tidak Diberi Teks Alternatif]
 	...
 	<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
 	...
@@ -807,7 +783,7 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman aplikasi \textit{SharIF J
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.5]{kepatuhan_2_4_5}  
-	\caption[Kriteria Sukses 2.4.5 - Menemukan Halaman Web Pada Navigasi]{Kriteria Sukses 2.4.5 - Menemukan Halaman Web Pada Navigasi} 
+	\caption[Pelanggaran Kriteria Sukses 2.4.5 - Menemukan Halaman Web Pada Navigasi]{Pelanggaran Kriteria Sukses 2.4.5 - Menemukan Halaman Web Pada Navigasi} 
 	\label{fig:kepatuhan_2_4_5} 
 \end{figure}
 
@@ -819,7 +795,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 \begin{itemize}
 	\item Pada halaman \textit{Add User} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_user} ada bidang masukan yang tidak memiliki label.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_user, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add User}]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_user, caption=Pelanggaran Kriteria Sukses 2.4.6 - Halaman \textit{Add User} Tidak Memiliki Label]
 	...
 	<p class="input_p">
 		<textarea name="new_users" id="new_users" rows="20" cols="80" class="sharif_input">
@@ -829,7 +805,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 	\item Pada halaman \textit{Add Assignment} ada \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_add_assignment} ada bidang masukan yang tidak memiliki label.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_assignment, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Add Assignment}]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_add_assignment, caption=Pelanggaran Kriteria Sukses 2.4.6 - Halaman \textit{Add Assignment} Tidak Memiliki Label]
 	...
 	<td><input type="text" name="name[]" class="sharif_input short" value="{{ problem.name }}"/></td>
 	...
@@ -837,7 +813,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 	\item Pada halaman \textit{Problems} bagian \textit{Edit Markdown} dan \textit{Edit Plain HTML} memiliki \textit{field input} yang tidak memiliki label yang menjelaskan tujuannya. Pada potongan kode \ref{ls_kepatuhan_2_4_6_edit_markdown} ada bidang masukan yang tidak memiliki label.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_edit_markdown, caption=Kriteria Sukses 2.4.6 - Halaman \textit{Problems} bagian \textit{Edit Markdown}]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_6_edit_markdown, caption=Pelanggaran Kriteria Sukses 2.4.6 - Halaman \textit{Problems} bagian \textit{Edit Markdown} Tidak Memiliki Label]
 	...
 	<p class="input_p">
 		<textarea name="text">{{ problem.description }}</textarea>
@@ -867,7 +843,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 \begin{itemize}
 	\item Pada halaman \textit{Assignment} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_9_assignment} ditunjukkan bahwa gambar pdf memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_assignment, caption=Kriteria Sukses 2.4.9 - Gambar PDF]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_assignment, caption=Pelanggaran Kriteria Sukses 2.4.9 - Gambar PDF Tidak Diberi Teks Alternatif]
 	...
 	<td>
 	<a href="{{ site_url('assignments/pdf/'~item.id) }}"><img src="{{ base_url('assets/images/pdf.svg') }}" /></a>
@@ -877,7 +853,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 	\item Pada menu \textit{Top Bar} ada gambar yang memiliki tautan tetapi tidak ada teks yang menjelaskan tujuan dari tautan tersebut. Pada potongan kode \ref{ls_kepatuhan_2_4_9_top_bar} ditunjukkan bahwa gambar logo profil memiliki tautan yang tidak memiliki teks yang menjelaskan tujuannya.
 	\begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_top_bar, caption=Kriteria Sukses 2.4.9 - Gambar Logo Profile]
+	columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_9_top_bar, caption=Pelanggaran Kriteria Sukses 2.4.9 - Gambar Logo \textit{Profile} Tidak Diberi Teks Alternatif]
 	...
 	<a href="{{ site_url('profile') }}" id="profile_link"><i class="fa fa-user"></i></a>
 	...
@@ -891,7 +867,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} judul bagian tidak dipakai untuk mengatur konten. Pada potongan kode \ref{ls_kepatuhan_2_4_10_section_headings} bagian judul bagian tidak menggunakan tag \textit{heading}.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_10_section_headings, caption=Kriteria Sukses 2.4.10 - Title Heading]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_10_section_headings, caption=Pelanggaran Kriteria Sukses 2.4.10 - \textit{Title Heading} Tidak Dipakai]
 ...
 <div id="page_title">
 	<i class="fa {% block icon %}{% endblock %}"></i>
@@ -934,7 +910,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ma
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.5]{kepatuhan_2_5_5}  
-	\caption[Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 CSS Piksel]{Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 CSS Piksel} 
+	\caption[Pelanggaran Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 \textit{CSS Pixel}]{Pelanggaran Kriteria Sukses 2.5.5 - Bidang Masukan Berukuran 30 \textit{CSS Pixel}} 
 	\label{fig:kepatuhan_2_5_5} 
 \end{figure}
 
@@ -955,7 +931,7 @@ Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{under
 
 Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}. Pada potongan kode \ref{ls_kepatuhan_3_1_1} ditunjukkan bahwa elemen \textit{html} tidak memiliki atribut \textit{lang}.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_3_1_1, caption=Kriteria Sukses 3.1.1 - Elemen \textit{HTML}]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_3_1_1, caption=Pelanggaran Kriteria Sukses 3.1.1 - Elemen \textit{HTML} Tidak Memiliki Atribut \textit{lang}]
 ...
 <html>
 <head>
@@ -1021,7 +997,7 @@ Kriteria ini tidak sukses dipatuhi karena ada komponen yang memiliki fungsi yang
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_3_2_4_assignments}  
-		\caption[Kriteria Sukses 3.2.4 - \textit{Assignments}]{Kriteria Sukses 3.2.4 - \textit{Assignments}} 
+		\caption[Pelanggaran Kriteria Sukses 3.2.4 - \textit{Assignments}]{Pelanggaran Kriteria Sukses 3.2.4 - \textit{Assignments}} 
 		\label{fig:kepatuhan_3_2_4_assignments} 
 	\end{figure}
 
@@ -1029,7 +1005,7 @@ Kriteria ini tidak sukses dipatuhi karena ada komponen yang memiliki fungsi yang
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_3_2_4_users}  
-		\caption[Kriteria Sukses 3.2.4 - \textit{Users}]{Kriteria Sukses 3.2.4 - \textit{Users}} 
+		\caption[Pelanggaran Kriteria Sukses 3.2.4 - \textit{Users}]{Pelanggaran Kriteria Sukses 3.2.4 - \textit{Users}} 
 		\label{fig:kepatuhan_3_2_4_users} 
 	\end{figure}
 
@@ -1037,7 +1013,7 @@ Kriteria ini tidak sukses dipatuhi karena ada komponen yang memiliki fungsi yang
 	\begin{figure}[H]
 		\centering  
 		\includegraphics[scale=0.5]{kepatuhan_3_2_4_notifications}  
-		\caption[Kriteria Sukses 3.2.4 - \textit{Notifications}]{Kriteria Sukses 3.2.4 - \textit{Notifications}} 
+		\caption[Pelanggaran Kriteria Sukses 3.2.4 - \textit{Notifications}]{Pelanggaran Kriteria Sukses 3.2.4 - \textit{Notifications}} 
 		\label{fig:kepatuhan_3_2_4_notifications} 
 	\end{figure}
 
@@ -1063,7 +1039,7 @@ Kriteria ini tidak sukses karena pada halaman problem bagian edit html, edit mar
 \begin{figure}[H]
 	\centering  
 	\includegraphics[scale=0.25]{kepatuhan_3_3_2_edit_markdown}  
-	\caption[Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi]{Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi} 
+	\caption[Pelanggaran Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi]{Pelanggaran Kriteria Sukses 3.3.2 - \textit{Edit Markdown} Tidak Diberi Label Atau Instruksi} 
 	\label{fig:kepatuhan_3_3_2_edit_markdown} 
 \end{figure}
 
@@ -1103,7 +1079,7 @@ Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{robus
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} masih banyak elemen yang tidak memiliki tag awal dan akhir yang lengkap, elemen tidak disusun berlapis sesuai dengan spesifikasinya, elemen mengandung atribut duplikat, dan ada ID yang unik. Pada potongan kode \ref{ls_kepatuhan_4_1_1} ditunjukkan bahwa masih ada elemen yang memiliki atribut yang duplikat.
 \begin{lstlisting}[basicstyle=\ttfamily, frame=single,
-columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_4_1_1, caption=Kriteria Sukses 4.1.1 - Elemen Memiliki Atribut Duplikat]
+columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_4_1_1, caption=Pelanggaran Kriteria Sukses 4.1.1 - Elemen Memiliki Atribut Duplikat]
 ...
 <input id="form_extra_time" type="text" name="extra_time" id="extra_time" class="sharif_input medium" value="{{ edit ? edit_assignment.extra_time|extra_time_formatter : set_value('extra_time') }}" />
 ...
