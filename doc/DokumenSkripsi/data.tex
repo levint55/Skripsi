@@ -75,8 +75,8 @@
 %=============================================================================
 %\mode{bimbingan} 		% untuk keperluan bimbingan
 %\mode{sidang} 			% untuk sidang 1
-\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
-%\mode{final} 			% untuk mencetak buku skripsi 
+%\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
+\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -197,8 +197,8 @@
 %=============================================================================
 \namanpm{Amabel Levint}{2016730013}
 \tanggal{<<tanggal>>}{<<bulan>>}{<<tahun>>}         %isi bulan dengan angka
-\pembimbing{}
-\penguji{}{} 
+\pembimbing{\PAN}{}
+\penguji{\RCP}{} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -214,7 +214,7 @@
 % - gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
-\judulINA{Kepatuhan dan Rekomendasi Perbaikan Web Content Accessibility Guideline untuk Aplikasi SharIF Judge}
+\judulINA{Kepatuhan dan Rekomendasi Perbaikan \textit{Web Content Accessibility Guideline} untuk Aplikasi \textit{SharIF Judge}}
 \judulENG{Conformance and Improvement Recommendations of Web Content Accessibility Guidelines for SharIF Judge Application}
 %_____________________________________________________________________________
 %=============================================================================
@@ -229,10 +229,14 @@
 %=============================================================================
 \abstrakINA{\textit{SharIF Judge} (dengan huruf kapital ''IF'') adalah sebuah aplikasi gratis dan \textit{open source} untuk menilai \textit{code} berbahasa \textit{C} , \textit{C++}, \textit{Java} dan \textit{Python}. \textit{SharIF Judge} adalah pencabangan(\textit{fork}) dari \textit{Sharif Judge} (dengan huruf kecil ''if'') yang telah dibuat oleh Mohammed Javad Naderi pada tahun 2014. Versi dari pencabangan ini memuat fitur baru yang diperlukan oleh jurusan teknik informatika UNPAR. Aplikasi ini dapat digunakan oleh mahasiswa dan dosen. Banyaknya pengguna yang mengakses aplikasi \textit{SharIF Judge} menjadikan kemudahan menggunakan aplikasi ini menjadi hal yang penting.
 	
-\textit{Web Content Accessibility Guidelines} (\textit{WCAG}) 2.1 telah membuat pedoman untuk mengukur kemudahan sebuah situs dapat diakses. Hasil pengukurannya disebut tingkat kepatuhan. Aplikasi \textit{SharIF Judge} akan diukur tingkat kepatuhannya terhadap pedoman \textit{WCAG} 2.1. Beberapa bagian dalam aplikasi \textit{SharIF Judge} yang belum memenuhi syarat akan diperbaiki untuk meningkatkan tingkat kepatuhan \textit{SharIF Judge}.
+\textit{Web Content Accessibility Guidelines}(\textit{WCAG}) 2.1 telah membuat pedoman untuk mengukur kemudahan sebuah situs dapat diakses. Hasil pengukurannya disebut tingkat kepatuhan. Aplikasi \textit{SharIF Judge} akan diukur tingkat kepatuhannya terhadap pedoman \textit{WCAG} 2.1. Beberapa bagian dalam aplikasi \textit{SharIF Judge} yang belum memenuhi syarat akan diperbaiki untuk meningkatkan tingkat kepatuhan \textit{SharIF Judge}.
 	
-Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang ada dalam kondisi seakan-akan penguji tidak dapat melihat. Pengujian ini menggunakan teknologi alat bantu pembaca layar. Berdasarkan pengujian yang telah dilakukan, penguji berhasil menggunakan fitur yang ada pada aplikasi \textit{SharIF Judge} dengan mengandalkan teknologi alat bantu, pendengaran, dan \textit{keyboard} sebagai alat bantu navigasi}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>>} 
+Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang ada dalam kondisi seakan-akan penguji tidak dapat melihat. Pengujian ini menggunakan teknologi alat bantu pembaca layar. Berdasarkan pengujian yang telah dilakukan, penguji berhasil menggunakan fitur yang ada pada aplikasi \textit{SharIF Judge} dengan mengandalkan teknologi alat bantu, pendengaran, dan \textit{keyboard} sebagai alat bantu navigasi.}
+\abstrakENG{SharIF Judge is a free and open source online judge for C, C++, Java and Python programming course. SharIF Judge is a branch(fork) of the original Sharif Judge created by Mohammed Javad Naderi in 2014. This version contains many improvements due to the needs of the Computer Science department of UNPAR. This application can be used by students and lecturers. The many amount of users that use SharIF Judge makes accessibility for this application important.
+	
+Web Content Accessibility Guideline(WCAG) 2.1 has made guidelines to measure accessibility for websites. The measurement result is called conformance level. SharIF Judge's accessibility will be measured using the WCAG 2.1 guidelines. Parts of the SharIF Judge application that have not met requirements determined by WCAG 2.1 will be fixed.
+	
+SharIF Judge will be tested by using features in which the tester is conditioned as if they  cannot see. This test is done using a screen reader technology. Based on the results, testers are able to use SharIF Judge by utilizing the screen reader, hearing, and keyboard as navigation tools.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -244,8 +248,8 @@ Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang
 % - kunciENG: keywords in english
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciINA{\textit{SharIF Judge}, aksesibilitas, aplikasi \textit{web}, \textit{WCAG 2.1}}
+\kunciENG{SharIF Judge, accessibility, web application, WCAG 2.1}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -255,7 +259,7 @@ Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\untuk{<<kepada siapa anda mempersembahkan skripsi ini\ldots?>>}
+\untuk{Dipersembahkan untuk Tuhan YME, keluarga tercinta, Bapak Pascal Alfadian sebagai dosen pembimbing, teman-teman yang telah membantu dan memberi semangat dalam penyusunan skripsi ini, dan diri sendiri}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -266,7 +270,17 @@ Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang
 % kasih kepada yang telah membantu anda bla bla bla ....  
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\prakata{<<Tuliskan kata pengantar dari anda di sini \ldots>>} 
+\prakata{Puji syukur penulis panjatkan kepada Tuhan Yang Maha Esa karena atas karunia-Nya, penulis dapat menyelesaikan penyusunan skripsi yang berjudul "Kepatuhan dan Rekomendasi Perbaikan \textit{Web Content Accessibility Guideline} untuk Aplikasi \textit{SharIF Judge}". Penulis menyadari bahwa penyusunan skripsi ini tidak terlepas dari bantuan berbagai pihak. Pada kesempatan kali ini penulis ingin mengucapkan terima kasih kepada:
+	
+\begin{enumerate}
+	\item Keluarga yang sudah memberikan dukungan kepada penulis.
+	\item Bapak Pascal Alfadian M.Comp. selaku dosen pembimbing yang telah membimbing penulis dan memberikan dukungan serta bantuan kepada penulis dalam proses penyusunan skripsi ini.
+	\item Bapak Raymond Chandra Putra M.T. selaku dosen penguji yang telah memberikan kritik dan saran sehingga penelitian ini menjadi lebih baik.
+	\item Teman-teman seperjuangan kuliah dan skripsi, khususnya Hizkia Steven dan Cahyadi Hartanto Sulaiman yang sudah memberikan bantuan, kritik, dan saran untuk penyusunan skripsi ini.
+	\item Pihak-pihak lain yang terlalu banyak untuk disebutkan satu per satu yang telah membantu skripsi ini.
+\end{enumerate}
+
+Penulis menyadari bahwa penelitian ini masih jauh dari kata sempurna. Oleh karena itu, penulis memohon maaf jika terjadi kesalahan. Semoga penelitian ini dapat memberikan informasi yang bermanfaat dan inspirasi untuk penelitian berikutnya.} 
 %=============================================================================
 
 %_____________________________________________________________________________
