@@ -198,21 +198,21 @@ L = 0.2126 \times R + 0.7152 \times G + 0.0722 \times B
 Variabel $R$, $G$, dan $B$ didefinisikan sebagai berikut:
 \begin{equation}
 R = \begin{cases}
-R_{sRGB}/12.92 & \text{\textit{if} $R_{sRGB} \leqslant 0.03928$}, \\
+R_{sRGB}\div 12.92 & \text{\textit{if} $R_{sRGB} \leqslant 0.03928$}, \\
 ((R_{sRGB} + 0.055)\div 1.055)^{2.4} & \text{\textit{otherwise}}
 \end{cases}
 \end{equation}
 
 \begin{equation}
 G = \begin{cases}
-G_{sRGB}/12.92 & \text{\textit{if} $G_{sRGB} \leqslant 0.03928$}, \\
+G_{sRGB}\div 12.92 & \text{\textit{if} $G_{sRGB} \leqslant 0.03928$}, \\
 ((G_{sRGB} + 0.055)\div 1.055)^{2.4} & \text{\textit{otherwise}}
 \end{cases}
 \end{equation}
 
 \begin{equation}
 B = \begin{cases}
-B_{sRGB}/12.92 & \text{\textit{if} $B_{sRGB} \leqslant 0.03928$}, \\
+B_{sRGB}\div 12.92 & \text{\textit{if} $B_{sRGB} \leqslant 0.03928$}, \\
 ((B_{sRGB} + 0.055)\div 1.055)^{2.4} & \text{\textit{otherwise}}
 \end{cases}
 \end{equation}
