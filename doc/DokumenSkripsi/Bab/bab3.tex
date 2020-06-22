@@ -8,6 +8,18 @@ Bab ini membahas tentang analisis tingkat kepatuhan \textit{SharIF Judge} terhad
 \definecolor{Red}{rgb}{0.917,0.298,0.274}
 \definecolor{Gray}{gray}{0.7}
 
+\section{Metodologi Pengecekan}
+\label{sec:metodologi_pengecekan}
+Proses pengecekan kepatuhan setiap kriteria sukses pada aplikasi \textit{SharIF Judge} dilakukan 
+dengan tahap-tahap sebagai berikut: 
+
+\begin{enumerate}
+	\item Menggunakan \textit{tools} \textit{axe - Web Accessibility Testing} dan \textit{Accessibility Insight for Web} pada seluruh halaman web untuk mendeteksi kepatuhan kriteria sukses.
+	\item Jika kepatuhan kriteria sukses tidak terdeteksi dengan \textit{tools}, maka dilakukan pengecekan manual pada \textit{source code}.
+\end{enumerate}
+
+\textit{Tools} \textit{axe - Web Accessibility Testing} dan \textit{Accessibility Insight for Web} dapat memeriksa kepatuhan kriteria sukses \ref{subsec:kriteria_1.1.1}, \ref{subsec:kriteria_1.3.1}, \ref{subsec:kriteria_1.4.3}, \ref{subsec:kriteria_2.4.4}, \ref{subsec:kriteria_3.1.1}, \ref{subsec:kriteria_3.3.2}, dan \ref{subsec:kriteria_4.1.2}.
+
 \section{Tingkat Kepatuhan \textit{SharIF Judge}}
 \label{sec:kepatuhan_sharif_judge_terhadap_wcag_2.1}
 Untuk membantu pemeriksaan kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG} 2.1 digunakan alat bantu seperti \textit{axe - Web Accessibility Testing}\footnote{https://www.deque.com/axe/} dan \textit{Accessibility Insight for Web}\footnote{https://accessibilityinsights.io/}, tetapi alat bantu tersebut tidak dapat memeriksa seluruh kriteria sukses \textit{WCAG} 2.1. Kesuksesan aplikasi \textit{SharIF Judge} dalam mematuhi kriteria sukses \textit{WCAG} 2.1 ditulis dalam tabel \ref{tab:kepatuhan_sharif_judge_understandable}, \ref{tab:kepatuhan_sharif_judge_robust}, \ref{tab:kepatuhan_sharif_judge_perceivable}, dan \ref{tab:kepatuhan_sharif_judge_operable}. Penjelasan untuk analisis setiap kriteria sukses dapat dilihat pada subbab \ref{subsec:kepatuhan_perceivable}, \ref{subsec:kepatuhan_operable}, \ref{subsec:kepatuhan_understandable}, dan \ref{subsec:kepatuhan_robust}.
@@ -151,7 +163,12 @@ Untuk membantu pemeriksaan kepatuhan \textit{SharIF Judge} terhadap \textit{WCAG
 
 Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{perceivable}.
 
-\subsubsection{Kriteria Sukses 1.1.1 \textit{Non-text Content}}
+\subsubsection{\textit{Text Alternatives}}
+\label{subsubsec:text_alternatives}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{text alternatives}. Kategori ini mensyaratkan agar konten yang bukan teks memiliki teks alternatif.
+
+\paragraph{Kriteria Sukses 1.1.1 \textit{Non-text Content}}
 \label{subsubsec:kepatuhan_kriteria_1.1.1}
 (Tidak Sukses) \\
 
@@ -178,61 +195,71 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\end{lstlisting}
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 1.2.1 \textit{Audio-only dan Video-only (Prerecorded)}}
+\subsubsection{\textit{Time-based Media}}
+\label{subsubsec:time-based_media}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{time-based media}. Kategori ini mensyaratkan agar konten berbasis waktu memiliki versi alternatifnya.
+
+\paragraph{Kriteria Sukses 1.2.1 \textit{Audio-only dan Video-only (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.1}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.2 \textit{Captions (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.2 \textit{Captions (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.3 \textit{Audio Descriptive atau Media Alternative (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.3 \textit{Audio Descriptive atau Media Alternative (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.4 \textit{Captions (Live)}}
+\paragraph{Kriteria Sukses 1.2.4 \textit{Captions (Live)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.5 \textit{Audio Description (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.5 \textit{Audio Description (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.5}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.6 \textit{Sign Language (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.6 \textit{Sign Language (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.6}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.7 \textit{Extended Audio Description (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.7 \textit{Extended Audio Description (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.7}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.8 \textit{Media Alternative (Prerecorded)}}
+\paragraph{Kriteria Sukses 1.2.8 \textit{Media Alternative (Prerecorded)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.8}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.2.9 \textit{Audio-only (Live)}}
+\paragraph{Kriteria Sukses 1.2.9 \textit{Audio-only (Live)}}
 \label{subsubsec:kepatuhan_kriteria_1.2.9}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.3.1 \textit{Info and Relationships}}
+\subsubsection{\textit{Adaptable}}
+\label{subsubsec:adaptable}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{adaptable}. Kategori ini mensyaratkan agar konten dapat ditampilkan dengan berbagai cara (contohnya tata letak yang lebih sederhana) tanpa kehilangan informasi atau struktur konten tersebut.
+
+\paragraph{Kriteria Sukses 1.3.1 \textit{Info and Relationships}}
 \label{subsubsec:kepatuhan_kriteria_1.3.1}
 (Tidak Sukses) \\
 
@@ -268,25 +295,25 @@ Kriteria ini tidak sukses dipatuhi karena:
 	\end{figure}
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 1.3.2 \textit{Meaningful Sequence}}
+\paragraph{Kriteria Sukses 1.3.2 \textit{Meaningful Sequence}}
 \label{subsubsec:kepatuhan_kriteria_1.3.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena setiap halaman pada \textit{SharIF Judge} memiliki urutan baca dan navigasi yang benar.
 
-\subsubsection{Kriteria Sukses 1.3.3 \textit{Sensory Characteristics}}
+\paragraph{Kriteria Sukses 1.3.3 \textit{Sensory Characteristics}}
 \label{subsubsec:kepatuhan_kriteria_1.3.3}
 (Sukses)\\
 
 Kriteria ini sukses dipatuhi karena petunjuk yang diberikan pada aplikasi \textit{SharIF Judge} tidak hanya bergantung pada komponen karakteristik sensorik seperti bentuk, warna, ukuran, lokasi visual, orientasi, atau suara.
 
-\subsubsection{Kriteria Sukses 1.3.4 \textit{Orientation}}
+\paragraph{Kriteria Sukses 1.3.4 \textit{Orientation}}
 \label{subsubsec:kepatuhan_kriteria_1.3.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena konten dari \textit{SharIF Judge} dapat ditampilkan dalam orientasi \textit{portrait} atau \textit{landscape}.
 
-\subsubsection{Kriteria Sukses 1.3.5 \textit{Identify Input Purpose}}
+\paragraph{Kriteria Sukses 1.3.5 \textit{Identify Input Purpose}}
 \label{subsubsec:kepatuhan_kriteria_1.3.5}
 (Tidak Sukses)\\
 
@@ -300,7 +327,7 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_5
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 1.3.6 \textit{Identify Purpose}}
+\paragraph{Kriteria Sukses 1.3.6 \textit{Identify Purpose}}
 \label{subsubsec:kepatuhan_kriteria_1.3.6}
 (Tidak Sukses) \\
 
@@ -314,19 +341,24 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_1_3_6
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 1.4.1 \textit{Use of Color}}
+\subsubsection{\textit{Distinguishable}}
+\label{subsubsec:distinguishable}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{distinguishable}. Kategori ini mensyaratkan agar konten dapat dilihat dan didengar dengan mudah, termasuk memisahkan latar depan dari latar belakang.
+
+\paragraph{Kriteria Sukses 1.4.1 \textit{Use of Color}}
 \label{subsubsec:kepatuhan_kriteria_1.4.1}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena warna tidak digunakan sebagai satu-satunya cara untuk menyampaikan informasi, menunjukkan aksi, menampilkan respon, atau membedakan elemen visual. Selain warna, ada juga teks yang menjelaskan informasi yang ditampilkan.
 
-\subsubsection{Kriteria Sukses 1.4.2 \textit{Audio Control}}
+\paragraph{Kriteria Sukses 1.4.2 \textit{Audio Control}}
 \label{subsubsec:kepatuhan_kriteria_1.4.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
-\subsubsection{Kriteria Sukses 1.4.3 \textit{Contrast (Minimum)}}
+\paragraph{Kriteria Sukses 1.4.3 \textit{Contrast (Minimum)}}
 \label{subsubsec:kepatuhan_kriteria_1.4.3}
 (Tidak Sukses) \\
 
@@ -382,7 +414,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 	
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 1.4.4 \textit{Resize text}}
+\paragraph{Kriteria Sukses 1.4.4 \textit{Resize text}}
 \label{subsubsec:kepatuhan_kriteria_1.4.4}
 (Tidak Sukses) \\
 
@@ -395,13 +427,13 @@ Kriteria ini tidak sukses dipatuhi karena konten \textit{navigation bar} akan hi
 \end{figure}
 
 
-\subsubsection{Kriteria Sukses 1.4.5 \textit{Images of Text}}
+\paragraph{Kriteria Sukses 1.4.5 \textit{Images of Text}}
 \label{subsubsec:kepatuhan_kriteria_1.4.5}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena semua gambar teks yang ada pada aplikasi \textit{SharIF Judge} penting untuk informasi yang disampaikan.
 
-\subsubsection{Kriteria Sukses 1.4.6 \textit{Contrast (Enhanced)}}
+\paragraph{Kriteria Sukses 1.4.6 \textit{Contrast (Enhanced)}}
 \label{subsubsec:kepatuhan_kriteria_1.4.6}
 
 (Tidak Sukses) \\
@@ -458,14 +490,14 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} te
 
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 1.4.7 \textit{Low or No Background Audio}}
+\paragraph{Kriteria Sukses 1.4.7 \textit{Low or No Background Audio}}
 \label{subsubsec:kepatuhan_kriteria_1.4.7}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat konten berbasis waktu.
 
 
-\subsubsection{Kriteria Sukses 1.4.8 \textit{Visual Presentation}}
+\paragraph{Kriteria Sukses 1.4.8 \textit{Visual Presentation}}
 \label{subsubsec:kepatuhan_kriteria_1.4.8}
 (Tidak Sukses) \\
 
@@ -477,13 +509,13 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman \textit{Dashboard} dan \t
 	\label{fig:kepatuhan_1_4_8_notifications} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 1.4.9 \textit{Images of Text (No Exception)}}
+\paragraph{Kriteria Sukses 1.4.9 \textit{Images of Text (No Exception)}}
 \label{subsubsec:kepatuhan_kriteria_1.4.9}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena semua gambar teks yang ada pada aplikasi \textit{SharIF Judge} penting untuk informasi yang disampaikan.
 
-\subsubsection{Kriteria Sukses 1.4.10 \textit{Reflow}}
+\paragraph{Kriteria Sukses 1.4.10 \textit{Reflow}}
 \label{subsubsec:kepatuhan_kriteria_1.4.10}
 (Tidak Sukses) \\
 
@@ -495,7 +527,7 @@ Kriteria ini tidak sukses dipatuhi karena pada setiap halaman aplikasi \textit{S
 	\label{fig:kepatuhan_1_4_10_reflow} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 1.4.11 \textit{Non-text Contrast}}
+\paragraph{Kriteria Sukses 1.4.11 \textit{Non-text Contrast}}
 \label{subsubsec:kepatuhan_kriteria_1.4.11}
 (Diabaikan) \\
 
@@ -516,31 +548,26 @@ Sebagai contoh perhitungan berikut adalah gambar ikon \textit{Download Test and 
 \end{figure}
 
 Ikon \textit{Download Test and Description} memiliki spesifikasi warna sebagai berikut:
-\begin{equation}
+\[
 R_{8bit} = 3
-\end{equation}
-
-\begin{equation}
+\]
+\[
 G_{8bit} = 166
-\end{equation}
-
-\begin{equation}
+\]
+\[
 B_{8bit} = 34
-\end{equation}
-
+\]
 
 Sedangkan warna latar belakangnya memiliki spesifikasi warna sebagai berikut:
-\begin{equation}
+\[
 R_{8bit} = 252
-\end{equation}
-
-\begin{equation}
+\]
+\[
 G_{8bit} = 252
-\end{equation}
-
-\begin{equation}
+\]
+\[
 B_{8bit} = 252
-\end{equation}
+\]
 
 Rumus perhitungan kontras dapat dilihat pada subbab \ref{subsec:kriteria_1.4.3}. Berikut adalah contoh perhitungan \textit{relative luminance} untuk ikon \textit{Download Test and Description} pada gambar \ref{fig:kepatuhan_1_4_11_contoh}:
 \begin{align*}
@@ -576,7 +603,7 @@ Hasil perbandingan kontras ikon \textit{Download Test and Description} dengan wa
 
 Dari hasil perhitungan di atas ditemukan bahwa perbandingan rasio kontras ikon \textit{Download Test and Description} dengan warna latar belakangnya pada gambar \ref{fig:kepatuhan_1_4_11_contoh} bernilai 2.21306 : 1.
 
-\subsubsection{Kriteria Sukses 1.4.12 \textit{Text Spacing}}
+\paragraph{Kriteria Sukses 1.4.12 \textit{Text Spacing}}
 \label{subsubsec:kepatuhan_kriteria_1.4.12}
 (Sukses) \\
 
@@ -588,8 +615,7 @@ Kriteria ini sukses dipatuhi karena penulis telah melakukan uji coba pada salah 
 	\label{fig:kepatuhan_1_4_12} 
 \end{figure}
 
-
-\subsubsection{Kriteria Sukses 1.4.13 \textit{Content on Hover or Focus}}
+\paragraph{Kriteria Sukses 1.4.13 \textit{Content on Hover or Focus}}
 \label{subsubsec:kepatuhan_kriteria_1.4.13}
 (Sukses) \\
 
@@ -600,7 +626,12 @@ Kriteria ini sukses dipatuhi karena setiap konten tambahan yang muncul sesaat ke
 
 Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{operable}.
 
-\subsubsection{Kriteria Sukses 2.1.1 \textit{Keyboard}}
+\subsubsection{\textit{Keyboard Accessible}}
+\label{subsubsec:keyboard_accessible}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{Keyboard Accessible}. Kategori ini mensyaratkan semua fungsionalitas dapat diakses dengan \textit{keyboard}.
+
+\paragraph{Kriteria Sukses 2.1.1 \textit{Keyboard}}
 \label{subsubsec:kepatuhan_kriteria_2.1.1}
 (Tidak Sukses) \\
 
@@ -612,7 +643,7 @@ Kriteria ini tidak sukses dipatuhi karena masih banyak elemen yang tidak diopera
 	\label{fig:kepatuhan_2_1_1_tools} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 2.1.2 \textit{No Keyboard Trap}}
+\paragraph{Kriteria Sukses 2.1.2 \textit{No Keyboard Trap}}
 \label{subsubsec:kepatuhan_kriteria_2.1.2}
 (Tidak Sukses) \\
 
@@ -652,7 +683,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 2.1.3 \textit{Keyboard (No Exception)}}
+\paragraph{Kriteria Sukses 2.1.3 \textit{Keyboard (No Exception)}}
 \label{subsubsec:kepatuhan_kriteria_2.1.3}
 (Tidak Sukses) \\
 
@@ -664,43 +695,48 @@ Kriteria ini tidak sukses dipatuhi karena masih banyak elemen yang tidak diopera
 	\label{fig:kepatuhan_2_1_3_tools} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 2.1.4 \textit{Character Key Shortcuts}}
+\paragraph{Kriteria Sukses 2.1.4 \textit{Character Key Shortcuts}}
 \label{subsubsec:kepatuhan_kriteria_2.1.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat pintasan \textit{keyboard} untuk konten yang ditampilkan.
 
-\subsubsection{Kriteria Sukses 2.2.1 \textit{Timing Adjustable}}
+\subsubsection{\textit{Enough Time}}
+\label{subsubsec:enough_time}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{enough time}. Kategori ini mensyaratkan agar tersedianya waktu yang cukup untuk pengguna membaca dan memanfaatkan konten.
+
+\paragraph{Kriteria Sukses 2.2.1 \textit{Timing Adjustable}}
 \label{subsubsec:kepatuhan_kriteria_2.2.1}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} batas waktu untuk mengumpulkan \textit{Assignment} merupakan hal yang esensial dan perpanjangan batas waktu menyalahi inti dari kegiatan tersebut.
 
-\subsubsection{Kriteria Sukses 2.2.2 \textit{Pause, Stop, Hide}}
+\paragraph{Kriteria Sukses 2.2.2 \textit{Pause, Stop, Hide}}
 \label{subsubsec:kepatuhan_kriteria_2.2.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} satu-satunya informasi yang diperbarui secara otomatis adalah batas waktu pengumpulan \textit{Assignment} yang merupakan bagian dari aktivitas yang esensial.
 
-\subsubsection{Kriteria Sukses 2.2.3 \textit{No Timing}}
+\paragraph{Kriteria Sukses 2.2.3 \textit{No Timing}}
 \label{subsubsec:kepatuhan_kriteria_2.2.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} waktu pengumpulan \textit{Assignment} bukanlah bagian esensial, pengguna dapat mendapatkan nilai yang sama selama mengumpulkan \textit{Assignment} dalam batas waktu yang telah ditentukan.
 
-\subsubsection{Kriteria Sukses 2.2.4 \textit{Interruptions}}
+\paragraph{Kriteria Sukses 2.2.4 \textit{Interruptions}}
 \label{subsubsec:kepatuhan_kriteria_2.2.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada interupsi.
 
-\subsubsection{Kriteria Sukses 2.2.5 \textit{Re-authenticating}}
+\paragraph{Kriteria Sukses 2.2.5 \textit{Re-authenticating}}
 \label{subsubsec:kepatuhan_kriteria_2.2.5}
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ketika sesi autentikasi berakhir, data yang belum disimpan akan hilang.
 
-\subsubsection{Kriteria Sukses 2.2.6 \textit{Timeouts}}
+\paragraph{Kriteria Sukses 2.2.6 \textit{Timeouts}}
 \label{subsubsec:kepatuhan_kriteria_2.2.6}
 (Tidak Sukses) \\
 
@@ -713,43 +749,53 @@ $config['sess_expiration']		= 7200;
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 2.3.1 \textit{Three Flashes or Below Threshold}}
+\subsubsection{\textit{Seizures and Physical Reactions}}
+\label{subsubsec:seizures_and_physical_reactions}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{seizures and physical reactions}. Kategori ini mensyaratkan agar desain konten dirancang dan ditampilkan tidak menyebabkan kejang atau reaksi fisik bagi pengguna.
+
+\paragraph{Kriteria Sukses 2.3.1 \textit{Three Flashes or Below Threshold}}
 \label{subsubsec:kepatuhan_kriteria_2.3.1}
 (Sukses)\\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada konten yang berkedip lebih dari tiga detik dalam periode satu detik.
 
-\subsubsection{Kriteria Sukses 2.3.2 \textit{Three Flashes}}
+\paragraph{Kriteria Sukses 2.3.2 \textit{Three Flashes}}
 \label{subsubsec:kepatuhan_kriteria_2.3.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada konten yang berkedip lebih dari tiga detik dalam periode satu detik.
 
-\subsubsection{Kriteria Sukses 2.3.3 \textit{Animation from Interactions}}
+\paragraph{Kriteria Sukses 2.3.3 \textit{Animation from Interactions}}
 \label{subsubsec:kepatuhan_kriteria_2.3.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena satu-satunya animasi yang terdapat di aplikasi \textit{SharIF Judge} adalah tampilan batas waktu pengumpulan \textit{Assignment}, animasi ini penting untuk informasi yang disampaikan.
 
-\subsubsection{Kriteria Sukses 2.4.1 \textit{Bypass Blocks}}
+\subsubsection{\textit{Navigable}}
+\label{subsubsec:navigable}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{navigable}. Kategori ini mensyaratkan agar tersedianya cara untuk membantu pengguna bernavigasi, mencari konten, dan menentukan di mana mereka berada.
+
+\paragraph{Kriteria Sukses 2.4.1 \textit{Bypass Blocks}}
 \label{subsubsec:kepatuhan_kriteria_2.4.1}
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena tidak ada mekanisme untuk meloncati menu pada \textit{sidebar}.
 
-\subsubsection{Kriteria Sukses 2.4.2 \textit{Page Titled}}
+\paragraph{Kriteria Sukses 2.4.2 \textit{Page Titled}}
 \label{subsubsec:kepatuhan_kriteria_2.4.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena semua halaman pada aplikasi \textit{SharIF Judge} memiliki judul yang menggambarkan topik atau tujuan.
 
-\subsubsection{Kriteria Sukses 2.4.3 \textit{Focus Order}}
+\paragraph{Kriteria Sukses 2.4.3 \textit{Focus Order}}
 \label{subsubsec:kepatuhan_kriteria_2.4.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena semua halaman pada aplikasi \textit{SharIF Judge} yang memiliki urutan navigasi dapat menerima fokus dalam urutan yang menjaga makna dan pengoperasiannya.
 
-\subsubsection{Kriteria Sukses 2.4.4 \textit{Link Purpose (In Context)}}
+\paragraph{Kriteria Sukses 2.4.4 \textit{Link Purpose (In Context)}}
 \label{subsubsec:kepatuhan_kriteria_2.4.4}
 (Tidak Sukses) \\
 
@@ -775,7 +821,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 2.4.5 \textit{Multiple Ways}}
+\paragraph{Kriteria Sukses 2.4.5 \textit{Multiple Ways}}
 \label{subsubsec:kepatuhan_kriteria_2.4.5}
 (Tidak Sukses) \\
 
@@ -787,7 +833,7 @@ Kriteria ini tidak sukses dipatuhi karena pada halaman aplikasi \textit{SharIF J
 	\label{fig:kepatuhan_2_4_5} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 2.4.6 \textit{Headings and Labels}}
+\paragraph{Kriteria Sukses 2.4.6 \textit{Headings and Labels}}
 \label{subsubsec:kepatuhan_kriteria_2.4.6}
 (Tidak Sukses) \\
 
@@ -823,19 +869,19 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 2.4.7 \textit{Focus Visible}}
+\paragraph{Kriteria Sukses 2.4.7 \textit{Focus Visible}}
 \label{subsubsec:kepatuhan_kriteria_2.4.7}
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena fokus tidak tampak ketika fokus sedang berada pada menu \textit{sidebar}.
 
-\subsubsection{Kriteria Sukses 2.4.8 \textit{Location}}
+\paragraph{Kriteria Sukses 2.4.8 \textit{Location}}
 \label{subsubsec:kepatuhan_kriteria_2.4.8}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada setiap halaman aplikasi \textit{SharIF Judge} terdapat judul yang menjelaskan lokasi pengguna.
 
-\subsubsection{Kriteria Sukses 2.4.9 \textit{Link Purpose (Link Only)}}
+\paragraph{Kriteria Sukses 2.4.9 \textit{Link Purpose (Link Only)}}
 \label{subsubsec:kepatuhan_kriteria_2.4.9}
 (Tidak Sukses) \\
 
@@ -861,7 +907,7 @@ Kriteria ini tidak sukses dipatuhi karena:
 	
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 2.4.10 \textit{Section Headings}}
+\paragraph{Kriteria Sukses 2.4.10 \textit{Section Headings}}
 \label{subsubsec:kepatuhan_kriteria_2.4.10}
 (Tidak Sukses) \\
 
@@ -877,31 +923,36 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_2_4_1
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 2.5.1 \textit{Pointer Gestures}}
+\subsubsection{\textit{Input Modalities}}
+\label{subsubsec:input_modalities}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{input modalities}. Kategori ini mensyaratkan agar pengguna dapat mengoperasikan fungsionalitas dengan mudah melalui berbagai \textit{input} selain \textit{keyboard}.
+
+\paragraph{Kriteria Sukses 2.5.1 \textit{Pointer Gestures}}
 \label{subsubsec:kepatuhan_kriteria_2.5.1}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada fungsionalitas yang harus dijalankan dengan menggunakan \textit{multipoint} atau gestur berbasis \textit{path}.
 
-\subsubsection{Kriteria Sukses 2.5.2 \textit{Pointer Cancellation}}
+\paragraph{Kriteria Sukses 2.5.2 \textit{Pointer Cancellation}}
 \label{subsubsec:kepatuhan_kriteria_2.5.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada fungsionalitas yang dapat dioperasikan dengan pointer tunggal dijalankan dengan menggunakan \textit{down-event}.
 
-\subsubsection{Kriteria Sukses 2.5.3 \textit{Label in Name}}
+\paragraph{Kriteria Sukses 2.5.3 \textit{Label in Name}}
 \label{subsubsec:kepatuhan_kriteria_2.5.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} komponen dengan label yang menyertakan teks atau gambar teks, nama tersebut berisi teks yang ditampilkan secara visual.
 
-\subsubsection{Kriteria Sukses 2.5.4 \textit{Motion Actuation}}
+\paragraph{Kriteria Sukses 2.5.4 \textit{Motion Actuation}}
 \label{subsubsec:kepatuhan_kriteria_2.5.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak terdapat fungsionalitas yang dapat dioperasikan oleh gerakan perangkat atau gerakan pengguna.
 
-\subsubsection{Kriteria Sukses 2.5.5 \textit{Target Size}}
+\paragraph{Kriteria Sukses 2.5.5 \textit{Target Size}}
 \label{subsubsec:kepatuhan_kriteria_2.5.5}
 (Tidak Sukses) \\
 
@@ -914,7 +965,7 @@ Kriteria ini tidak sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} ma
 	\label{fig:kepatuhan_2_5_5} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 2.5.6 \textit{Concurrent Input Mechanisms}}
+\paragraph{Kriteria Sukses 2.5.6 \textit{Concurrent Input Mechanisms}}
 \label{subsubsec:kepatuhan_kriteria_2.5.6}
 (Sukses) \\
 
@@ -925,7 +976,12 @@ Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak me
 
 Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{understandable}.
 
-\subsubsection{Kriteria Sukses 3.1.1 \textit{Language of Page}}
+\subsubsection{\textit{Readable}}
+\label{subsubsec:readable}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{readable}. Kategori ini mensyaratkan agar konten teks dapat dibaca dan dipahami.
+
+\paragraph{Kriteria Sukses 3.1.1 \textit{Language of Page}}
 \label{subsubsec:kepatuhan_kriteria_3.1.1}
 (Tidak Sukses) \\
 
@@ -938,55 +994,60 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_3_1_1
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 3.1.2 \textit{Language of Parts}}
+\paragraph{Kriteria Sukses 3.1.2 \textit{Language of Parts}}
 \label{subsubsec:kepatuhan_kriteria_3.1.2}
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena elemen \textit{html} tidak memiliki atribut \textit{lang}. Semua halaman pada aplikasi \textit{SharIF Judge} memakai bahasa Inggris, jika elemen \textit{html} memiliki atribut \textit{lang} maka kriteria ini akan terpenuhi.
 
-\subsubsection{Kriteria Sukses 3.1.3 \textit{Unusual Words}}
+\paragraph{Kriteria Sukses 3.1.3 \textit{Unusual Words}}
 \label{subsubsec:kepatuhan_kriteria_3.1.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada kata atau frasa tertentu yang digunakan dengan cara tidak biasa atau terbatas. 
 
-\subsubsection{Kriteria Sukses 3.1.4 \textit{Abbreviations}}
+\paragraph{Kriteria Sukses 3.1.4 \textit{Abbreviations}}
 \label{subsubsec:kepatuhan_kriteria_3.1.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena singkatan yang ada pada \textit{SharIF Judge} lazim digunakan oleh kalangan informatika, singkatan yang dimaksud adalah IP, PDF.
 
-\subsubsection{Kriteria Sukses 3.1.5 \textit{Reading Level}}
+\paragraph{Kriteria Sukses 3.1.5 \textit{Reading Level}}
 \label{subsubsec:kepatuhan_kriteria_3.1.5}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada aplikasi \textit{SharIF Judge} tidak ada teks yang membutuhkan kemampuan membaca lebih maju daripada tingkat pendidikan menengah bawah.
 
-\subsubsection{Kriteria Sukses 3.1.6 \textit{Pronunciation}}
+\paragraph{Kriteria Sukses 3.1.6 \textit{Pronunciation}}
 \label{subsubsec:kepatuhan_kriteria_3.1.6}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada halaman aplikasi \textit{SharIF Judge} setiap kata dapat dimengerti artinya tanpa pengguna perlu mengetahui cara mengucapkan kata tersebut.
 
-\subsubsection{Kriteria Sukses 3.2.1 \textit{On Focus}}
+\subsubsection{\textit{Predictable}}
+\label{subsubsec:predictable}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{predictable}. Kategori ini mensyaratkan agar halaman web ditampilkan dan dapat dioperasikan dengan cara yang mudah ditebak.
+
+\paragraph{Kriteria Sukses 3.2.1 \textit{On Focus}}
 \label{subsubsec:kepatuhan_kriteria_3.2.1}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada halaman aplikasi \textit{SharIF Judge} setiap komponen antarmuka yang menerima fokus tidak menyebabkan perubahan konteks.
 
-\subsubsection{Kriteria Sukses 3.2.2 \textit{On Input}}
+\paragraph{Kriteria Sukses 3.2.2 \textit{On Input}}
 \label{subsubsec:kepatuhan_kriteria_3.2.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada setiap pengguna mengubah setelan komponen antarmuka tidak menyebabkan perubahan konteks.
 
-\subsubsection{Kriteria Sukses 3.2.3 \textit{Consistent Navigation}}
+\paragraph{Kriteria Sukses 3.2.3 \textit{Consistent Navigation}}
 \label{subsubsec:kepatuhan_kriteria_3.2.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena bagian navigasi menu yang muncul berulang pada tiap halaman aplikasi \textit{SharIF Judge}, muncul dalam urutan relatif yang sama setiap kali terlihat.
 
-\subsubsection{Kriteria Sukses 3.2.4 \textit{Consistent Identification}}
+\paragraph{Kriteria Sukses 3.2.4 \textit{Consistent Identification}}
 \label{subsubsec:kepatuhan_kriteria_3.2.4}
 (Tidak Sukses) \\
 
@@ -1019,19 +1080,24 @@ Kriteria ini tidak sukses dipatuhi karena ada komponen yang memiliki fungsi yang
 
 \end{itemize}
 
-\subsubsection{Kriteria Sukses 3.2.5 \textit{Change on Request}}
+\paragraph{Kriteria Sukses 3.2.5 \textit{Change on Request}}
 \label{subsubsec:kepatuhan_kriteria_3.2.5}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena perubahan konteks hanya terjadi bila dilakukan oleh pengguna.
 
-\subsubsection{Kriteria Sukses 3.3.1 \textit{Error Identification}}
+\subsubsection{\textit{Input Assistance}}
+\label{subsubsec:input_assistance}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{input assistance}. Kategori ini mensyaratkan agar tersedianya bantuan untuk pengguna menghindari kesalahan dan mengoreksi kesalahan tersebut.
+
+\paragraph{Kriteria Sukses 3.3.1 \textit{Error Identification}}
 \label{subsubsec:kepatuhan_kriteria_3.3.1}
 (Sukses)\\
 
 Kriteria ini sukses dipatuhi karena kesalahan masukan terdeteksi secara otomatis, \textit{item} yang salah diidentifikasi dan kesalahan tersebut dijelaskan kepada pengguna dalam teks.
 
-\subsubsection{Kriteria Sukses 3.3.2 \textit{Labels or Instructions}}
+\paragraph{Kriteria Sukses 3.3.2 \textit{Labels or Instructions}}
 \label{subsubsec:kepatuhan_kriteria_3.3.2}
 (Tidak Sukses) \\
 
@@ -1043,26 +1109,26 @@ Kriteria ini tidak sukses karena pada halaman problem bagian edit html, edit mar
 	\label{fig:kepatuhan_3_3_2_edit_markdown} 
 \end{figure}
 
-\subsubsection{Kriteria Sukses 3.3.3 \textit{Error Suggestion}}
+\paragraph{Kriteria Sukses 3.3.3 \textit{Error Suggestion}}
 \label{subsubsec:kepatuhan_kriteria_3.3.3}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena ketika kesalahan masukan terdeteksi secara otomatis dan saran untuk mengoreksi diketahui, maka saran tersebut diberikan kepada pengguna.
 
-\subsubsection{Kriteria Sukses 3.3.4 \textit{Error Prevention (Legal, Financial, Data)}}
+\paragraph{Kriteria Sukses 3.3.4 \textit{Error Prevention (Legal, Financial, Data)}}
 \label{subsubsec:kepatuhan_kriteria_3.3.4}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena pada halaman yang mengirim tanggapan pengguna, data yang dimasukkan oleh pengguna diperiksa terkait kesalahan masukan dan pengguna dipersilakan untuk mengoreksinya.
 
-\subsubsection{Kriteria Sukses 3.3.5 \textit{Help}}
+\paragraph{Kriteria Sukses 3.3.5 \textit{Help}}
 \label{subsubsec:kepatuhan_kriteria_3.3.5}
 (Tidak Sukses) \\
 
 Kriteria ini tidak sukses dipatuhi karena
 pada aplikasi \textit{SharIF Judge} masih ada konten yang tidak diberi label. Pengguna harus dapat mengetahui tujuan dari konten melalui labelnya.
 
-\subsubsection{Kriteria Sukses 3.3.6 \textit{Error Prevention (All)}}
+\paragraph{Kriteria Sukses 3.3.6 \textit{Error Prevention (All)}}
 \label{subsubsec:kepatuhan_kriteria_3.3.6}
 (Sukses) \\
 
@@ -1073,7 +1139,12 @@ Kriteria ini sukses dipatuhi karena pada halaman yang mengharuskan pengguna untu
 
 Berikut adalah kepatuhan \textit{SharIF Judge} berdasarkan prinsip \textit{robust}.
 
-\subsubsection{Kriteria Sukses 4.1.1 \textit{Parsing}}
+\subsubsection{\textit{Compatible}}
+\label{subsubsec:compatible}
+
+Pada subbab ini dibahas kriteria sukses yang termasuk kedalam kategori \textit{compatible}. Kategori ini mensyaratkan agar konten yang dibuat memiliki kompatibilitas dengan \textit{user agent} saat ini maupun saat yang akan datang, termasuk teknologi alat bantu.
+
+\paragraph{Kriteria Sukses 4.1.1 \textit{Parsing}}
 \label{subsubsec:kepatuhan_kriteria_4.1.1}
 (Tidak Sukses)\\
 
@@ -1085,13 +1156,13 @@ columns=fullflexible, keepspaces=true, breaklines=true, label=ls_kepatuhan_4_1_1
 ...
 \end{lstlisting}
 
-\subsubsection{Kriteria Sukses 4.1.2 \textit{Name, Role, Value}}
+\paragraph{Kriteria Sukses 4.1.2 \textit{Name, Role, Value}}
 \label{subsubsec:kepatuhan_kriteria_4.1.2}
 (Sukses) \\
 
 Kriteria ini sukses dipatuhi karena program yang dibuat menggunakan standar \textit{HTML} sudah memenuhi kriteria ini jika digunakan sesuai spesifikasi.
 
-\subsubsection{Kriteria Sukses 4.1.3 \textit{Status Messages}}
+\paragraph{Kriteria Sukses 4.1.3 \textit{Status Messages}}
 \label{subsubsec:kepatuhan_kriteria_4.1.3}
 (Tidak Sukses) \\
 
