@@ -966,11 +966,11 @@ Extra Time (minutes)<br>
 
 \section{Pengujian}
 \label{sec:pengujian}
-Pada bagian ini akan ditulis skenario pengujian dan hasil yang didapatkan dari setiap skenario pengujian. Tujuan dari pengujian ini untuk melihat perbaikan yang dilakukan pada subbab \ref{sec:implementasi} berhasil atau tidak. Pengujian dilakukan dengan menggunakan perangkat komputer berupa laptop dengan sistem operasi Ubuntu, \textit{browser} \textit{Google Chrome}, dan \textit{screen reader} \textit{ChromeVox} sebagai teknologi alat bantu. Pengujian dilakukan pada server lokal milik penguji dan akun yang digunakan oleh penguji memiliki hak akses tak terbatas sehingga dapat menggunakan semua fitur yang terdapat pada halaman web \textit{SharIF Judge}. Selain itu pengujian juga dilakukan dengan kondisi seakan-akan memiliki keterbatasan visual.
+Pada bagian ini ditulis skenario pengujian dan hasil yang didapatkan dari setiap skenario pengujian. Tujuan dari pengujian ini untuk melihat perbaikan yang dilakukan pada subbab \ref{sec:implementasi} berhasil atau tidak. Pengujian dilakukan dengan menggunakan perangkat komputer berupa laptop dengan sistem operasi Ubuntu, \textit{browser} \textit{Google Chrome}, dan \textit{screen reader} \textit{ChromeVox} sebagai teknologi alat bantu. Pengujian dilakukan pada server lokal milik penguji dan akun yang digunakan oleh penguji memiliki hak akses tak terbatas sehingga dapat menggunakan semua fitur yang terdapat pada halaman web \textit{SharIF Judge}. Selain itu pengujian juga dilakukan dengan kondisi seakan-akan memiliki keterbatasan visual.
 
-\subsection{Skenario Pengujian}
+\subsection{Skenario dan Hasil Pengujian}
 \label{subsec:skenario_pengujian}
-Pada bagian ini akan ditulis skenario pengujian yang dilakukan untuk menguji perbaikan yang telah dilakukan. Setiap skenario pengujian ditulis dalam bentuk poin-poin yang menjelaskan cara untuk menggunakan fitur-fitur yang ada pada aplikasi \textit{SharIF Judge}.
+Pada bagian ini akan ditulis skenario dan hasil pengujian yang dilakukan untuk menguji perbaikan yang telah dilakukan. Setiap skenario pengujian ditulis dalam bentuk poin-poin yang menjelaskan cara untuk menggunakan fitur-fitur yang ada pada aplikasi \textit{SharIF Judge} dan hasil pengujian dituliskan dalam bentuk tabel yang berisi langkah skenario pengujian, hasil pengujian, dan aksi yang dilakukan dalam pengujian.
 
 \subsubsection{\textit{Login}}
 \label{subsubsec:skenario_login}
@@ -983,202 +983,6 @@ Berikut adalah langkah-langkah yang perlu dilakukan untuk \textit{Login}:
 	\item Menekan tombol \textit{Login}.
 \end{enumerate}
 
-\subsubsection{\textit{Settings}}
-\label{subsubsec:skenario_settings}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Settings}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Settings} pada menu \textit{sidebar}.
-	\item Mengisi bidang masukan \textit{Timezone} dengan nilai \textit{''Asia/Jakarta''}.
-	\item Mengubah nilai \textit{Week Start Day} menjadi \textit{''Sunday''}.
-	\item Mengubah nilai \textit{Registration} menjadi \textit{''checked''}.
-	\item Mengubah isi \textit{Default Coefficient Rule} sesuai aturan yang sudah disediakan.
-	\item Menekan tombol \textit{Save Changes} untuk meyimpan perubahan.
-\end{enumerate}
-
-\subsubsection{\textit{Add Users}}
-\label{subsubsec:skenario_add_users}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{User}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Menekan tombol \textit{Add Users}.
-	\item Mengubah nilai \textit{Send mail} menjadi \textit{''checked''}.
-	\item Mengubah interval untuk mengirim pesan menjadi ''2''.
-	\item Mengisi perintah untuk membuat \textit{User} pada bidang masukan yang sudah disediakan.
-	\item Menekan tombol \textit{Add Users} untuk menambah \textit{User}.
-\end{enumerate}
-
-\subsubsection{\textit{Delete User}}
-\label{subsubsec:skenario_delete_user}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{User} yang akan dihapus pada tabel \textit{Users}.
-	\item Menekan tombol \textit{Delete User} pada kolom \textit{action} di baris yang sesuai.
-	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
-\end{enumerate}
-
-\subsubsection{\textit{Delete User Submissions}}
-\label{subsubsec:skenario_delete_user_submissions}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User submissions}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{User} yang akan dihapus \textit{Submissions} pada tabel \textit{Users}.
-	\item Menekan tombol \textit{Delete Submissions} pada kolom \textit{action} di baris yang sesuai.
-	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
-\end{enumerate}
-
-\subsubsection{\textit{Edit User}}
-\label{subsubsec:skenario_edit_user}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{User}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Users} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{user} yang di \textit{edit} pada tabel \textit{Users}.
-	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
-	\item Mengisi isi bidang masukan \textit{Name} menjadi \textit{''student''}.
-	\item Mengubah isi \textit{User Role} menjadi \textit{''student''}. 
-	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
-\end{enumerate}	
-
-\subsubsection{\textit{Add Notification}}
-\label{subsubsec:skenario_add_notification}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah notifikasi:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Notifications} pada menu \textit{sidebar}.
-	\item Menekan tautan \textit{New}.
-	\item Mengisi judul pada bidang masukan \textit{Title}.
-	\item Mengisi notifikasi pada bidang masukan \textit{Text}.
-	\item Menekan tombol \textit{Add} untuk menambah notifikasi.
-\end{enumerate}
-
-\subsubsection{\textit{Add Assignment}}
-\label{subsubsec:skenario_add_assignment}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{Assignment}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
-	\item Menekan tautan \textit{Add}.
-	\item Mengisi bidang masukan \textit{Assignment Name} dengan nilai \textit{''Assignment 1''}.
-	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
-	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
-	\item Mengubah nilai \textit{Scoreboard} menjadi \textit{''checked''}.
-	\item Menekan tombol \textit{Add Assignment} untuk menambah \textit{Assignment}.
-\end{enumerate}
-
-\subsubsection{\textit{Delete Assignment}}
-\label{subsubsec:skenario_delete_assignment}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{Assignment}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{Assignment} yang akan di hapus pada tabel \textit{Assignments}.
-	\item Menekan tombol \textit{Delete} pada kolom \textit{action} di baris yang sesuai.
-	\item Menekan tombol \textit{Delete this assignment} untuk menghapus \textit{Assignment}.
-\end{enumerate}
-
-\subsubsection{\textit{Edit Assignment}}
-\label{subsubsec:skenario_edit_assignment}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Assignment}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
-	\item Mencari nama \textit{Assignment} yang akan disunting pada tabel \textit{Assignments}.
-	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
-	\item Mengisi bidang masukan \textit{Extra Time} dengan nilai \textit{''0*60''}.
-	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
-	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
-	\item Mengubah nilai \textit{Open} menjadi \textit{''checked''}.
-	\item Menekan tombol \textit{Edit Assignment} untuk menyimpan perubahan.
-\end{enumerate}
-
-\subsubsection{\textit{Edit Problem Description(Markdown)}}
-\label{subsubsec:skenario_edit_problem_description_markdown}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{markdown}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignment} pada menu bagian atas.
-	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
-	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
-	\item Menekan tautan \textit{Edit Markdown}.
-	\item Mengisi deskripsi \textit{Problem} pada \textit{textarea}.
-	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
-\end{enumerate}
-
-\subsubsection{\textit{Edit Problem Description(HTML)}}
-\label{subsubsec:skenario_edit_problem_description_html}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{HTML}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignment} pada menu bagian atas.
-	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
-	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
-	\item Menekan tautan \textit{Edit HTML}.
-	\item Mengisi deskripsi \textit{Problem} pada \textit{text editor}.
-	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
-\end{enumerate}
-
-\subsubsection{\textit{Edit Problem Description(HTML)}}
-\label{subsubsec:skenario_edit_problem_description_plain_html}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{plain HTML}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignment} pada menu bagian atas.
-	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
-	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
-	\item Menekan tautan \textit{Edit Plain HTML}.
-	\item Mengisi deskripsi \textit{Problem} pada \textit{textarea}.
-	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
-\end{enumerate}
-
-\subsubsection{\textit{Submit File}}
-\label{subsubsec:skenario_submit}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk mengumpulkan \textit{file}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignment} pada menu bagian atas.
-	\item Memilih \textit{Submit} pada menu \textit{sidebar}.
-	\item Memilih \textit{Problem} pada \textit{dropdown Problem}.
-	\item Memilih bahasa pemrograman pada \textit{dropdown Language}.
-	\item Memilih \textit{file} yang akan dikumpulkan.
-	\item Menekan tombol \textit{Submit} untuk mengumpulkan \textit{file}.
-\end{enumerate}
-
-\subsubsection{\textit{Final Submission}}
-\label{subsubsec:skenario_final_submission}
-Berikut adalah langkah-langkah yang perlu dilakukan untuk memilih \textit{Final Submission}:
-
-\begin{enumerate}
-	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
-	\item Memilih \textit{Assignment} pada menu bagian atas.
-	\item Memilih \textit{All Submission} pada menu \textit{sidebar}.
-	\item Memilih \textit{Submission} yang akan dijadikan \textit{Final Submission} pada tabel \textit{All Submissions}
-	\item Menekan tombol pada kolom \textit{Final} untuk menjadikan \textit{Submission} menjadi \textit{Final Submission}.
-\end{enumerate}
-
-\subsection{Hasil Pengujian}
-\label{subsec:hasil_pengujian}
-Pada bagian ini akan ditulis hasil dari pengujian yang telah dilakukan berdasarkan skenario pengujian pada subbab \ref{subsec:skenario_pengujian}. Hasil pengujian akan dituliskan dalam bentuk tabel yang berisi langkah skenario pengujian, hasil pengujian, dan aksi yang dilakukan dalam pengujian.
-
-\subsubsection{\textit{Login}}
-\label{subsubsec:hasil_login}
 Hasil pengujian \textit{Login} dapat dilihat pada tabel \ref{tab:hasil_login}.
 
 \begin{table}[H]
@@ -1198,7 +1002,19 @@ Hasil pengujian \textit{Login} dapat dilihat pada tabel \ref{tab:hasil_login}.
 \end{table}
 
 \subsubsection{\textit{Settings}}
-\label{subsubsec:hasil_settings}
+\label{subsubsec:skenario_settings}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Settings}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Settings} pada menu \textit{sidebar}.
+	\item Mengisi bidang masukan \textit{Timezone} dengan nilai \textit{''Asia/Jakarta''}.
+	\item Mengubah nilai \textit{Week Start Day} menjadi \textit{''Sunday''}.
+	\item Mengubah nilai \textit{Registration} menjadi \textit{''checked''}.
+	\item Mengubah isi \textit{Default Coefficient Rule} sesuai aturan yang sudah disediakan.
+	\item Menekan tombol \textit{Save Changes} untuk meyimpan perubahan.
+\end{enumerate}
+
 Hasil pengujian \textit{Settings} dapat dilihat pada tabel \ref{tab:hasil_settings}.
 
 \begin{table}[H]
@@ -1220,7 +1036,19 @@ Hasil pengujian \textit{Settings} dapat dilihat pada tabel \ref{tab:hasil_settin
 \end{table}
 
 \subsubsection{\textit{Add Users}}
-\label{subsubsec:hasil_add_users}
+\label{subsubsec:skenario_add_users}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{User}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Users} pada menu \textit{sidebar}.
+	\item Menekan tombol \textit{Add Users}.
+	\item Mengubah nilai \textit{Send mail} menjadi \textit{''checked''}.
+	\item Mengubah interval untuk mengirim pesan menjadi ''2''.
+	\item Mengisi perintah untuk membuat \textit{User} pada bidang masukan yang sudah disediakan.
+	\item Menekan tombol \textit{Add Users} untuk menambah \textit{User}.
+\end{enumerate}
+
 Hasil pengujian \textit{Add Users} dapat dilihat pada tabel \ref{tab:hasil_add_users}.
 
 \begin{table}[H]
@@ -1243,7 +1071,17 @@ Hasil pengujian \textit{Add Users} dapat dilihat pada tabel \ref{tab:hasil_add_u
 \end{table}
 
 \subsubsection{\textit{Delete User}}
-\label{subsubsec:hasil_delete_user}
+\label{subsubsec:skenario_delete_user}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Users} pada menu \textit{sidebar}.
+	\item Mencari nama \textit{User} yang akan dihapus pada tabel \textit{Users}.
+	\item Menekan tombol \textit{Delete User} pada kolom \textit{action} di baris yang sesuai.
+	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
+\end{enumerate}
+
 Hasil pengujian \textit{Delete User} dapat dilihat pada tabel \ref{tab:hasil_delete_user}.
 
 \begin{table}[H]
@@ -1264,7 +1102,17 @@ Hasil pengujian \textit{Delete User} dapat dilihat pada tabel \ref{tab:hasil_del
 \end{table}
 
 \subsubsection{\textit{Delete User Submissions}}
-\label{subsubsec:hasil_delete_user_submissions}
+\label{subsubsec:skenario_delete_user_submissions}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{User submissions}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Users} pada menu \textit{sidebar}.
+	\item Mencari nama \textit{User} yang akan dihapus \textit{Submissions} pada tabel \textit{Users}.
+	\item Menekan tombol \textit{Delete Submissions} pada kolom \textit{action} di baris yang sesuai.
+	\item Menekan tombol \textit{Yes, Delete} pada \textit{popup} yang muncul.
+\end{enumerate}
+
 Hasil pengujian \textit{Delete User Submissions} dapat dilihat pada tabel \ref{tab:hasil_delete_user_submissions}.
 
 \begin{table}[H]
@@ -1285,7 +1133,19 @@ Hasil pengujian \textit{Delete User Submissions} dapat dilihat pada tabel \ref{t
 \end{table}
 
 \subsubsection{\textit{Edit User}}
-\label{subsubsec:hasil_edit_user}
+\label{subsubsec:skenario_edit_user}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{User}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Users} pada menu \textit{sidebar}.
+	\item Mencari nama \textit{user} yang di \textit{edit} pada tabel \textit{Users}.
+	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
+	\item Mengisi isi bidang masukan \textit{Name} menjadi \textit{''student''}.
+	\item Mengubah isi \textit{User Role} menjadi \textit{''student''}. 
+	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
+\end{enumerate}	
+
 Hasil pengujian \textit{Edit User} dapat dilihat pada tabel \ref{tab:hasil_edit_user}.
 
 \begin{table}[H]
@@ -1308,7 +1168,18 @@ Hasil pengujian \textit{Edit User} dapat dilihat pada tabel \ref{tab:hasil_edit_
 \end{table}
 
 \subsubsection{\textit{Add Notification}}
-\label{subsubsec:hasil_add_notification}
+\label{subsubsec:skenario_add_notification}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah notifikasi:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Notifications} pada menu \textit{sidebar}.
+	\item Menekan tautan \textit{New}.
+	\item Mengisi judul pada bidang masukan \textit{Title}.
+	\item Mengisi notifikasi pada bidang masukan \textit{Text}.
+	\item Menekan tombol \textit{Add} untuk menambah notifikasi.
+\end{enumerate}
+
 Hasil pengujian \textit{Add Notification} dapat dilihat pada tabel \ref{tab:hasil_add_notification}.
 
 \begin{table}[H]
@@ -1330,7 +1201,20 @@ Hasil pengujian \textit{Add Notification} dapat dilihat pada tabel \ref{tab:hasi
 \end{table}
 
 \subsubsection{\textit{Add Assignment}}
-\label{subsubsec:hasil_add_assignment}
+\label{subsubsec:skenario_add_assignment}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menambah \textit{Assignment}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
+	\item Menekan tautan \textit{Add}.
+	\item Mengisi bidang masukan \textit{Assignment Name} dengan nilai \textit{''Assignment 1''}.
+	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
+	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
+	\item Mengubah nilai \textit{Scoreboard} menjadi \textit{''checked''}.
+	\item Menekan tombol \textit{Add Assignment} untuk menambah \textit{Assignment}.
+\end{enumerate}
+
 Hasil pengujian \textit{Add Assignment} dapat dilihat pada tabel \ref{tab:hasil_add_assignment}.
 
 \begin{table}[H]
@@ -1354,7 +1238,17 @@ Hasil pengujian \textit{Add Assignment} dapat dilihat pada tabel \ref{tab:hasil_
 \end{table}
 
 \subsubsection{\textit{Delete Assignment}}
-\label{subsubsec:hasil_delete_assignment}
+\label{subsubsec:skenario_delete_assignment}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk menghapus \textit{Assignment}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
+	\item Mencari nama \textit{Assignment} yang akan di hapus pada tabel \textit{Assignments}.
+	\item Menekan tombol \textit{Delete} pada kolom \textit{action} di baris yang sesuai.
+	\item Menekan tombol \textit{Delete this assignment} untuk menghapus \textit{Assignment}.
+\end{enumerate}
+
 Hasil pengujian \textit{Delete Assignment} dapat dilihat pada tabel \ref{tab:hasil_delete_assignment}.
 
 \begin{table}[H]
@@ -1375,7 +1269,21 @@ Hasil pengujian \textit{Delete Assignment} dapat dilihat pada tabel \ref{tab:has
 \end{table}
 
 \subsubsection{\textit{Edit Assignment}}
-\label{subsubsec:hasil_edit_assignment}
+\label{subsubsec:skenario_edit_assignment}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting \textit{Assignment}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignments} pada menu \textit{sidebar}.
+	\item Mencari nama \textit{Assignment} yang akan disunting pada tabel \textit{Assignments}.
+	\item Menekan tombol \textit{Edit} pada kolom \textit{action} di baris yang sesuai.
+	\item Mengisi bidang masukan \textit{Extra Time} dengan nilai \textit{''0*60''}.
+	\item Mengisi bidang masukan \textit{Participants} dengan nilai \textit{''ALL''}.
+	\item Mengunggah \textit{PDF File} dengan \textit{file PDF} yang sesuai.
+	\item Mengubah nilai \textit{Open} menjadi \textit{''checked''}.
+	\item Menekan tombol \textit{Edit Assignment} untuk menyimpan perubahan.
+\end{enumerate}
+
 Hasil pengujian \textit{Edit Assignment} dapat dilihat pada tabel \ref{tab:hasil_edit_assignment}.
 
 \begin{table}[H]
@@ -1399,8 +1307,20 @@ Hasil pengujian \textit{Edit Assignment} dapat dilihat pada tabel \ref{tab:hasil
 	\end{tabular}
 \end{table}
 
-\subsubsection{\textit{Edit Problem Description (Markdown)}}
-\label{subsubsec:hasil_edit_problem_description_markdown}
+\subsubsection{\textit{Edit Problem Description(Markdown)}}
+\label{subsubsec:skenario_edit_problem_description_markdown}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{markdown}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignment} pada menu bagian atas.
+	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
+	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
+	\item Menekan tautan \textit{Edit Markdown}.
+	\item Mengisi deskripsi \textit{Problem} pada \textit{textarea}.
+	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
+\end{enumerate}
+
 Hasil pengujian \textit{Edit Problem Description (Markdown)} dapat dilihat pada tabel \ref{tab:hasil_edit_problem_description_markdown}.
 
 \begin{table}[H]
@@ -1422,8 +1342,20 @@ Hasil pengujian \textit{Edit Problem Description (Markdown)} dapat dilihat pada 
 	\end{tabular}
 \end{table}
 
-\subsubsection{\textit{Edit Problem Description (HTML)}}
-\label{subsubsec:hasil_edit_problem_description_html}
+\subsubsection{\textit{Edit Problem Description(HTML)}}
+\label{subsubsec:skenario_edit_problem_description_html}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{HTML}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignment} pada menu bagian atas.
+	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
+	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
+	\item Menekan tautan \textit{Edit HTML}.
+	\item Mengisi deskripsi \textit{Problem} pada \textit{text editor}.
+	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
+\end{enumerate}
+
 Hasil pengujian \textit{Edit Problem Description (HTML)} dapat dilihat pada tabel \ref{tab:hasil_edit_problem_description_html}.
 
 \begin{table}[H]
@@ -1445,8 +1377,20 @@ Hasil pengujian \textit{Edit Problem Description (HTML)} dapat dilihat pada tabe
 	\end{tabular}
 \end{table}
 
-\subsubsection{\textit{Edit Problem Description (Plain HTML)}}
-\label{subsubsec:hasil_edit_problem_description_plain_html}
+\subsubsection{\textit{Edit Problem Description(HTML)}}
+\label{subsubsec:skenario_edit_problem_description_plain_html}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk sunting deskripsi masalah dalam format \textit{plain HTML}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignment} pada menu bagian atas.
+	\item Memilih \textit{Problems} pada menu \textit{sidebar}.
+	\item Memilih \textit{Problem} pada tabel \textit{Problems}.
+	\item Menekan tautan \textit{Edit Plain HTML}.
+	\item Mengisi deskripsi \textit{Problem} pada \textit{textarea}.
+	\item Menekan tombol \textit{Save} untuk menyimpan perubahan.
+\end{enumerate}
+
 Hasil pengujian \textit{Edit Problem Description (Plain HTML)} dapat dilihat pada tabel \ref{tab:hasil_edit_problem_description_plain_html}.
 
 \begin{table}[H]
@@ -1469,7 +1413,19 @@ Hasil pengujian \textit{Edit Problem Description (Plain HTML)} dapat dilihat pad
 \end{table}
 
 \subsubsection{\textit{Submit File}}
-\label{subsubsec:hasil_submit}
+\label{subsubsec:skenario_submit}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk mengumpulkan \textit{file}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignment} pada menu bagian atas.
+	\item Memilih \textit{Submit} pada menu \textit{sidebar}.
+	\item Memilih \textit{Problem} pada \textit{dropdown Problem}.
+	\item Memilih bahasa pemrograman pada \textit{dropdown Language}.
+	\item Memilih \textit{file} yang akan dikumpulkan.
+	\item Menekan tombol \textit{Submit} untuk mengumpulkan \textit{file}.
+\end{enumerate}
+
 Hasil pengujian untuk mengumpulkan \textit{file} dapat dilihat pada tabel \ref{tab:hasil_submit}.
 
 \begin{table}[H]
@@ -1492,7 +1448,17 @@ Hasil pengujian untuk mengumpulkan \textit{file} dapat dilihat pada tabel \ref{t
 \end{table}
 
 \subsubsection{\textit{Final Submission}}
-\label{subsubsec:hasil_final_submission}
+\label{subsubsec:skenario_final_submission}
+Berikut adalah langkah-langkah yang perlu dilakukan untuk memilih \textit{Final Submission}:
+
+\begin{enumerate}
+	\item \textit{Login} pada aplikasi \textit{SharIF Judge}.
+	\item Memilih \textit{Assignment} pada menu bagian atas.
+	\item Memilih \textit{All Submission} pada menu \textit{sidebar}.
+	\item Memilih \textit{Submission} yang akan dijadikan \textit{Final Submission} pada tabel \textit{All Submissions}
+	\item Menekan tombol pada kolom \textit{Final} untuk menjadikan \textit{Submission} menjadi \textit{Final Submission}.
+\end{enumerate}
+
 Hasil pengujian untuk memilih \textit{Final Submission} dapat dilihat pada tabel \ref{tab:hasil_final_submission}.
 
 \begin{table}[H]
