@@ -73,6 +73,7 @@
 \usepackage{multirow}% untul multirow pada tabel
 \usepackage{verbatim}% comment multi-line
 \usepackage{amsmath}
+\usepackage{longtable}
  
 \newcommand{\vtemplateauthor}{lionov}
 \newcommand{\dtext}[1]{{\color{lightgray} \lipsum[#1]}}%command untuk dummy text
@@ -413,8 +414,6 @@
 \setpagewiselinenumbers  %supaya reset ke 1 di setiap halaman
  
 \pagestyle{fancy}%header 
-
-
 
 %include bab 
 \foreach \i in \vbab { \edef\vfile{Bab/bab\i} \IfFileExists{\vfile}{\include{\vfile}}} 
