@@ -1,13 +1,15 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v11 (22-07-2020) dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v11 (24-07-2020) dibuat oleh Lionov - Informatika FTIS UNPAR
 %
-% Perubahan pada versi 11 (22-07-2020)
+% Perubahan pada versi 11 (24-07-2020)
 %	- Penambahan enumitem dan nosep untuk semua list, untuk menghemat kertas
-%   - Bagian V: penambahan opsi Daftar Kode Program
-%   - Bagian XIV: menjadi Bagian XV
-%   - Bagian XV: menjadi Bagian XVI
+%   - Bagian V: penambahan opsi Daftar Kode Program dan Daftar Notasi
+%   - Bagian XIV: menjadi Bagian XVI
+%   - Bagian XV: menjadi Bagian XVII
 %   - Bagian XIV yang baru: untuk pilihan jenis tanda tangan mahasiswa
+%   - Bagian XV yang baru: untuk pilihan munculnya tanda tangan digital untuk
+%     dosen/pejabat
 %_____________________________________________________________________________
 %=============================================================================
 
@@ -121,13 +123,13 @@
 %=============================================================================
 % 								BAGIAN V
 %=============================================================================
-% Tidak semua skripsi memuat gambar, tabel, dan/atau kode program. Untuk 
-% skripsi yang tidak memuat gambar, tabel, dan/atau kode program, maka tidak 
-% diperlukan Daftar Gambar, Daftar Tabel, dan/atau Daftar Kode Program. 
+% Tidak semua skripsi memuat gambar, tabel, kode program, dan/atau notasi. 
+% Untuk skripsi yang tidak memuat hal-hal tersebut, maka tidak diperlukan 
+% Daftar Gambar, Daftar Tabel, Daftar Kode Program, dan/atau Daftar Notasi. 
 % Sayangnya hal tsb sulit dilakukan secara manual karena membutuhkan 
 % kedisiplinan pengguna template.  
-% Jika tidak ingin menampilkan Daftar Gambar, Daftar Tabel, dan/atau Daftar 
-% Kode Program (misalnya untuk bimbingan), isi dengan "no" (e.g. \gambar{no})
+% Jika tidak ingin menampilkan satu/lebih daftar-daftar tersebut (misalnya 
+% untuk bimbingan), isi dengan "no" (e.g. \gambar{no})
 %=============================================================================
 \gambar{yes}
 %\gambar{no}
@@ -135,6 +137,8 @@
 %\tabel{no} 
 %\kode{yes}
 \kode{no} 
+%\notasi{yes}
+\notasi{no}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -239,7 +243,7 @@ Pengujian aplikasi \textit{SharIF Judge} dilakukan dengan menggunakan fitur yang
 	
 Web Content Accessibility Guideline(WCAG) 2.1 has made guidelines to measure accessibility for websites. The measurement result is called conformance level. SharIF Judge's accessibility will be measured using the WCAG 2.1 guidelines. Parts of the SharIF Judge application that have not met requirements determined by WCAG 2.1 will be fixed.
 
-SharIF Judge will be tested by using features in which the tester is conditioned as if they  cannot see. This test is done using a screen reader technology. Based on the results, testers are able to use SharIF Judge by utilizing the screen reader, hearing, and keyboard as navigation tools.} 
+SharIF Judge will be tested by using features in which the tester is conditioned as if they  cannot see. This test is done using a screen reader technology. Based on the results, testers are able to use SharIF Judge by utilizing the screen reader, hearing, and keyboard as navigation tools.}  
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -291,7 +295,7 @@ Penulis menyadari bahwa penelitian ini masih jauh dari kata sempurna. Oleh karen
 % 								BAGIAN XIV
 %=============================================================================
 % Jenis tandatangan di lembar pernyataan mahasiswa tentang plagiarisme.
-% Ada 3 pilihan:
+% Ada 4 pilihan:
 %   - digital   : diisi menggunakan digital signature (menggunakan pengolah
 %                 pdf seperti Adobe Acrobat Reader DC).
 %   - gambar    : diisi dengan gambar tandatangan mahasiswa (file tandatangan
@@ -301,16 +305,37 @@ Penulis menyadari bahwa penelitian ini masih jauh dari kata sempurna. Oleh karen
 %                 yang digunakan sebagai contoh
 %   - materai   : khusus bagi yang ingin mencetak buku dan menandatangani di 
 %                 atas materai. Sama dengan pilihan ``digital'' dan dicetak.
+%   - kosong    : tempat kosong ini bisa diisi dengan tanda tangan yang
+%                 digambar langsung di atas pdf (fill&sign via acrobat, tanda
+%                 tangan dapat dibuat dengan mouse atau stylus)
 %=============================================================================
 \ttd{digital}
 %\ttd{gambar}
 %\ttd{materai}
+%\ttd{kosong}
 %=============================================================================
 %\ttd{gambar}
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN XV
+%=============================================================================
+% Pilihan tanda tangan digital untuk dosen/pejabat:
+%   - no    : pdf TIDAK dapat ditandatangani secara digital, mengakomodasi 
+%             yang akan menandatangani via ``menulis'' di file pdf
+%   - yes   : pdf dapat ditandatangani secara digital
+% 
+% PERHATIAN: perubahan ini harus ditanyakan ke kaprodi/dosen koordinator, 
+% apakah harus mengisi ``no" atau ``yes". Default = no 
+% Untuk mahasiswa Informatika = yes
+%=============================================================================
+\ttddosen{yes}
+%=============================================================================
+%\ttddosen{no}
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XVI
 %=============================================================================
 % Tambahkan hyphen (pemenggalan kata) yang anda butuhkan di sini 
 %=============================================================================
@@ -322,7 +347,7 @@ Penulis menyadari bahwa penelitian ini masih jauh dari kata sempurna. Oleh karen
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN XVI
+% 								BAGIAN XVII
 %=============================================================================
 % Tambahkan perintah yang anda buat sendiri di sini 
 %=============================================================================

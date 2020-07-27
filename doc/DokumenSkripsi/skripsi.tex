@@ -1,9 +1,3 @@
-%%
-%%
-%%  SEBELUM MENGGUNAKAN, MOHON BACA DULU FILE "READ_ME_FIRST_v13-0_!!!!!!.txt"
-%%
-%%
-
 %% skripsi.tex
 %% Copyright 2011-2020 Lionov W.
 %%
@@ -21,7 +15,7 @@
 %% The Current Maintainer of this work is Lionov W (lionov@unpar.ac.id) 
 %_____________________________________________________________________________
 %=============================================================================
-% skripsi.tex v13 (22-07-2020) dibuat oleh Lionov - Informatika FTIS UNPAR 
+% skripsi.tex v13 (24-07-2020) dibuat oleh Lionov - Informatika FTIS UNPAR 
 % 
 % Ini adalah file utama (skripsi.tex), berisi perintah-perintah yang khusus 
 % dibuat untuk template ini
@@ -30,7 +24,7 @@
 %			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!! 
 % 
 % Perubahan pada versi 13:
-%   - penambahan digital signature untuk para dosen
+%   - penambahan opsi digital signature untuk para dosen
 %   - penambahan tiga opsi tanda tangan untuk mahasiswa
 %   - penambahan file ttd.jpg (dari Husnul Hakim)
 %   - dapat menangani format npm baru (per angkatan 2018)
@@ -38,6 +32,7 @@
 %   - penambahan gambar kotak untuk kode program
 %   - pemindahan file compj.bst dan digsig.sty ke folder .sty
 %   - format kode program di bab dan penambahan kotak untuk kode program
+%   - penambahan daftar notasi
 %_____________________________________________________________________________
 %=============================================================================
 
@@ -64,14 +59,15 @@
 \usepackage{xstring}%manipulasi string, strchar, ifstreq
 \usepackage[table]{xcolor}%untuk kode program
 \usepackage{pgffor}% untuk foreach
+\usepackage{.sty/digsig}% untuk digital signature
+\usepackage{nomencl} % daftar simbol
 \usepackage{amssymb}% untuk symbol check
 \usepackage{pifont}% untuk symbol check
 \usepackage{multirow}% untul multirow pada tabel
 \usepackage{verbatim}% comment multi-line
 \usepackage{amsmath}
 \usepackage{longtable}
-\usepackage{.sty/digsig}% untuk digital signature
- 
+
 \newcommand{\vtemplateauthor}{lionov}
 \newcommand{\dtext}[1]{{\color{lightgray} \lipsum[#1]}}%command untuk dummy text
 \newcommand{\rtext}[1]{{\color{red} \small #1}}%command untuk default text
@@ -189,12 +185,14 @@
 \newcommand{\gambar}[1]{\newcommand{\vgambar}{#1}}
 \newcommand{\tabel}[1]{\newcommand{\vtabel}{#1}}
 \newcommand{\kode}[1]{\newcommand{\vkode}{#1}}
+\newcommand{\notasi}[1]{\newcommand{\vnotasi}{#1}}
 \edef\vbab{1,2,3,4,5,6,7,8,9}
 \newcommand{\bab}[1]{\IfStrEq{#1}{all}{}{\IfStrEq{\vmode}{bimbingan}{\edef\vbab{#1}}{}}}
 \edef\vlamp{A,B,C,D,E,F,G,H,I}
 \newcommand{\lampiran}[1]{\IfStrEq{\vmode}{bimbingan}{\IfStrEq{#1}{all}{}
 		{\IfStrEq{#1}{none}{\edef\vlamp{}}{\edef\vlamp{#1}}}}{}}
 \newcommand{\ttd}[1]{\newcommand{\vttd}{#1}}
+\newcommand{\ttddosen}[1]{\newcommand{\vttddosen}{#1}}
 
 %spacing, mode buku selalu didahulukan
 \newcommand{\appspacing}{
@@ -236,6 +234,8 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\lstlistingname}{Kode}
 \renewcommand{\lstlistlistingname}{Daftar Kode Program}
+\makenomenclature
+\renewcommand{\nomname}{Daftar Notasi}
 
 \let\Chapter\chapter
 \def\chapter{\addtocontents{lol}{\protect\addvspace{10pt}}\Chapter}
@@ -247,7 +247,7 @@
 	identifierstyle=\color{black}, stringstyle=\color{orange},
 	literate={-}{-}1{-\,-}{--}1
 } 
-
+%\toggletrue{develop} % aktifkan untuk mode develop
 %apakah dalam develop mode ?
 \iftoggle{develop}{ 
 	\usepackage{booktabs,pgfplots}\usepackage[table]{xcolor}
@@ -257,7 +257,7 @@
 	\gambar{yes}\tabel{no}\kode{yes} 
 	\bab{1,2}\lampiran{A} 
 	\namanpm{Lionov}{1997730020}\tanggal{1}{8}{2002}
-	\pembimbing{\CEN}{\MRA}\penguji{\PNG}{\HAS}
+	\pembimbing{\LNV}{}\penguji{\VAN}{\HUH}
 	\judulINA{Balonku Ada Lima}
 	\judulENG{The Five Baboons}
 	\abstrakINA{\lipsum[6]}
@@ -267,7 +267,9 @@
 	\untuk{Odin}
 	\prakata{\lipsum[1-5]}
 	\pgfplotsset{compat=newest}
-	\ttd{digital}
+	\ttd{kosong}
+	\ttddosen{no}
+	\notasi{yes}
 }{\include{data}} 
 
 %isi dokumen
@@ -337,16 +339,19 @@
 			Menyetujui,\\ \vspace{0.25cm}
 			\ifdefempty{\vpembs}
 			{\begin{center} Pembimbing\\ 
-			    \begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembu}\ \end{Form}\\
+			    \IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}			    
+			    {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembu}\ \end{Form}\\}
 			    \vpembu\end{center}}
 			{\begin{minipage}[b]{0.475\textwidth}
 				 \begin{center}Pembimbing Utama \\ 
-				 \begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembu}\ \end{Form}\\ 
+				 \IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+				 {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembu}\ \end{Form}\\} 
 				 \vpembu\end{center}
 			 \end{minipage} \hspace{0.5cm}
 			 \begin{minipage}[b]{0.475\textwidth}
-				 \begin{center} Pembimbing Pendamping \\	
-				 \begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembs}\ \end{Form}\\
+				 \begin{center} Pembimbing Pendamping \\
+				 \IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+				 {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembs}\ \end{Form}\\}
 				 \vpembs\end{center}
 			 \end{minipage}	
 			}
@@ -355,20 +360,23 @@
 		\begin{center}	
 			\begin{minipage}[b]{0.475\textwidth}
 				\begin{center}Ketua Tim Penguji \\ 
-				\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpengi}\ \end{Form}\\
+				\IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+				{\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpengi}\ \end{Form}\\}
 				\vpengi\end{center}
 			\end{minipage} \hspace{0.5cm}
 			\begin{minipage}[b]{0.475\textwidth}
 				\begin{center}Anggota Tim Penguji \\ 
-				\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpengii}\ \end{Form}\\
+				\IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+				{\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpengii}\ \end{Form}\\}
 				\vpengii\end{center} 
 			\end{minipage} 
 		\end{center}
 		\vspace{0.75cm}
 		\begin{center} 
 		Mengetahui,\\ \vspace{0.5cm}	
-		Ketua Program Studi \\ 
-		\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vkaprodi}\ \end{Form}\\
+		Ketua Program Studi \\
+		\IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+		{\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vkaprodi}\ \end{Form}\\}
 		\vkaprodi
 		\end{center}
 		}}			 
@@ -396,9 +404,13 @@
 		    {\begin{Form} \ \digsigfield{5cm}{2.25cm}{\vnama}\ \end{Form}\\}
 		    {\IfStrEq{\vttd}{gambar}
 		        {\includegraphics[width=3.5cm,height=3.5cm,keepaspectratio]{ttd}\\}
-		        {\vspace{0.5cm}
-        		\begin{tabular}{|p{1.75cm}|}\hline\\Meterai\\Rp. 6000\\ \hline\end{tabular}\\
-        		\vspace{0.5cm}}}
+		        {{\IfStrEq{\vttd}{meterai}
+		            {\vspace{0.5cm}
+        		    \begin{tabular}{|p{1.75cm}|}\hline\\Meterai\\Rp. 6000\\ \hline\end{tabular}\\\vspace{0.5cm}}
+        		    {\vspace{2.5cm}}
+		        }
+		        }    
+        	}
 		\vnama \\
 		NPM: \vnpm
 	\end{flushright}
@@ -444,8 +456,13 @@
 \IfStrEq{\vgambar}{yes}{\listoffigures \cleardoublepage}{} 	% Daftar gambar
 \IfStrEq{\vtabel}{yes}{\listoftables \cleardoublepage}{} 	% Daftar tabel  
 \IfStrEq{\vkode}{yes}{
-\addcontentsline{toc}{chapter}{Daftar Kode Program}
-\lstlistoflistings \cleardoublepage}{} 	% Daftar kode 
+    \lstlistoflistings \addcontentsline{toc}{chapter}{Daftar Kode Program}
+    \cleardoublepage}{} % Daftar kode 
+\IfStrEq{\vnotasi}{yes}{    
+    \setlength{\nomitemsep}{-\parsep}
+    \printnomenclature 
+    \addcontentsline{toc}{chapter}{Daftar Notasi}
+    \cleardoublepage}{} % Daftar notasi 
 }{} %vbimbingan
 
 \pagenumbering{arabic} %nomor halaman 

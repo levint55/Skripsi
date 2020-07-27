@@ -1,7 +1,7 @@
 
         TEMPLATE SKRIPSI / TUGAS AKHIR FTIS UNPAR 
             http://tiny.cc/templateSkripsiFTIS
-			   versi: 13.0 (22-07-2020)
+			   versi: 13.0 (24-07-2020)
 
 ===============================================================================
 				0. SELAMAT DATANG
@@ -35,12 +35,12 @@ di komputer/laptop, klik "Menu" (kiri atas) dan pilih "Source" di bagian
 				1. VERSI
 ===============================================================================
 
-Versi: 13.0 (22-07-2020)
+Versi: 13.0 (24-07-2020)
 terdiri dari : 
 - READ_ME_FIRST_v13-0_!!!!!!.txt*
-- skripsi.tex (v.13) (22-07-2020)*
-- data.tex (v.11) (22-07-2020)*
-- dosen.tex (v.9) (22-07-2020)*
+- skripsi.tex (v.13) (24-07-2020)*
+- data.tex (v.11) (24-07-2020)*
+- dosen.tex (v.9) (24-07-2020)*
 - referensi.bib (v.2) (03-10-2016)
 - ttd.jpg
 - Logo-UNPAR.png
@@ -111,7 +111,7 @@ di file dosen.tex
    menghasilkan file PDF)
 
 ===============================================================================
-				4. CARA MELAKUKAN UPDATE 
+				4. CARA MELAKUKAN UPDATE & TANDA TANGAN DIGITAL
 ===============================================================================
 Cara melakukan update apabila ada template dengan versi lebih baru :
 - Perhatikan versi yang anda gunakan dan versi terbaru (versi X.Y).  
@@ -128,6 +128,8 @@ A. Cara 1
        anda (yang lama)
     5. Tambahkan perintah \kode{no} di data.tex Bagian V (lihat data.tex yang 
        baru) atau \kode{yes} jika anda ingin membuat daftar kode program
+       Tambahkan perintah \notasi{no} di data.tex Bagian V (lihat data.tex yang 
+       baru) atau \notasi{yes} jika anda ingin membuat daftar notasi
     6. Tambahkan perintah \ttd{gambar} di bagian bawah data.tex anda
        atau \ttd{digital} jika anda ingin membuat tanda tangan digital. Lihat 
        Bagian XIV di data.tex yg baru agar lebih jelas mengenai tanda tangan
@@ -141,7 +143,17 @@ B. Cara 2
        baru di data.tex yang baru. Bagian XIV dan XV di data.tex lama menjadi
        Bagian XV dan XVI di data.tex baru
 
-CARA MEMBUAT TANDA TANGAN DIGITAL DENGAN ADOBE ACROBAT READER DC
+Tambahan: 
+Cara melakukan update dari versi 13.0 (tgl 22-07-2020) ke 13.0 (tgl 22-07-2020)
+1. Overwrite file skripsi.tex dengan file skripsi.tex yang baru (perhatikan 
+tanggal di baris 18)
+2. tambahkan perintah ``\ttddosen{yes}'' atau ``\ttddosen{no}'' di file data.tex 
+
+---------------------------------------------------------------------------------
+CARA TANDA TANGAN MANUAL DENGAN MENGGUNAKAN FILE BERISI GAMBAR TANDA TANGAN:
+lihat di Bagian XIV pada file data.tex
+
+CARA TANDA TANGAN DIGITAL DENGAN ADOBE ACROBAT READER DC
 Persiapan:
     1. Siapkan gambar tanda tangan anda, berformat PDF (BUKAN JPG/PNG/GIF/dlsb)
     2. Install program Adobe Acrobat Reader DC (free) disarankan yang terbaru
@@ -176,11 +188,11 @@ Cara menggunakan:
     5. Pilih Digital ID anda dan klik Continue
     6. Pilih Appearance yang telah anda buat dan perhatikan bahwa hanya boleh 
        ada gambar tanda tangan anda tanpa adanya tulisan lain
-    7. _JANGAN_ men-check pilihan "Lock document after signing"!!!!!!!
+    7. _JANGAN_ men-check pilihan "Lock document after signing"!!!! (kalau ada)
     8. Reason: pilih "I am the author of this document"
-    9. Isi Location, kota tempat anda membuat ini
+    9. Isi Location, kota tempat anda membuat ini dan contact info dengan email
     10.Isi password dan klik Sign
-    11.Simpan file skripsi dengan nama Skripsi-<npm>, misal Skripsi-1997730020.pdf
+    11.Simpan file skripsi dgn nama Skripsi-<npm>, mis:Skripsi-1997730020.pdf
     12.File pdf tsb siap dikirim ke pembimbing
 
 ===============================================================================
@@ -225,32 +237,35 @@ Template ini terdiri dari:
 				7. DAFTAR CATATAN PERUBAHAN 
 ===============================================================================
 
-CATATAN Versi 13.0 (22-07-2020)
+CATATAN Versi 13.0 (24-07-2020)
 terdiri dari : 
-- skripsi.tex (v.13) (22-07-2020)*
-- data.tex (v.11) (22-07-2020)*
-- dosen.tex (v.9) (22-07-2020)*
+- skripsi.tex (v.13) (24-07-2020)*
+- data.tex (v.11) (24-07-2020)*
+- dosen.tex (v.9) (24-07-2020)*
 - referensi.bib (v.2) (03-10-2016)
 *: yang berubah dari versi 12.1
 
 Perubahan pada:
-- skripsi.tex (v.13) (22-07-2020)*
-    - penambahan digital signature untuk para dosen
+- skripsi.tex (v.13) (24-07-2020)*
+    - penambahan opsi digital signature untuk para dosen
     - penambahan tiga opsi tanda tangan untuk mahasiswa
     - dapat menangani format npm baru (per angkatan 2018)
     - penambahan daftar listings (kode program)
     - penambahan gambar kotak untuk kode program
     - pemindahan file compj.bst dan digsig.sty ke folder .sty
     - format kode program di bab dan penambahan kotak untuk kode program
+    - penambahan daftar notasi
 
-- data.tex (v.11) (22-07-2020)*
+- data.tex (v.11) (24-07-2020)*
 	- Penambahan enumitem dan nosep untuk semua list, untuk menghemat kertas
-    - Bagian V: penambahan opsi Daftar Kode Program
-    - Bagian XIV: menjadi Bagian XV
-    - Bagian XV: menjadi Bagian XVI
-    - Bagian XIV yang baru: untuk pilihan jenis tanda tangan mahasiswa
+    - Bagian V: penambahan opsi Daftar Kode Program dan Daftar Notasi
+    - Bagian XIV: menjadi Bagian XVI
+    - Bagian XV: menjadi Bagian XVII
+    - Bagian XIV yang baru: pilihan jenis tanda tangan mahasiswa
+    - Bagian XV yang baru: pilihan munculnya tanda tangan digital untuk
+      dosen/pejabat
 
-- dosen.tex (v.9) (22-07-2020)*
+- dosen.tex (v.9) (24-07-2020)*
     - MAT: gelar FAR,IVM,BNY,MRA,FEL,WSB,FJP; tambah DAS,APW
  	- FIS: gelar JVS,RUS; nama HRY
  	- IF : hapus TAB; gelar LNV; pembimbing HUH,PAS
